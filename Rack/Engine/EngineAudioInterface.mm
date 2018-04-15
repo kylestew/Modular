@@ -7,7 +7,7 @@
 #import "engine.h"
 #import "audio.h"
 
-#import "osc1.h"
+using namespace rack;
 
 
 @interface EngineAudioInterface ()
@@ -20,10 +20,7 @@
 @implementation EngineAudioInterface {
     // C++ members need to be ivars; they would be copied on access if they were properties.
     AudioIO _audio;
-    Engine _engine;
-    
-    Osc1 _osc1;
-    
+
     BufferedOutputBus _outputBusBuffer;
 }
 
@@ -58,11 +55,14 @@
 
     self.maximumFramesToRender = 512;
     
+    // engine setup
+    engineInit();
+    
     return self;
 }
 
 - (void)dealloc {
-    _engine.stop();
+    engineDestroy();
 }
 
 #pragma mark - AUAudioUnit (Overrides)
@@ -79,12 +79,9 @@
     _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
 
     _audio.setSampleRate(self.outputBus.format.sampleRate);
-    _engine.setSampleRate(self.outputBus.format.sampleRate);
+    engineSetSampleRate(self.outputBus.format.sampleRate);
+    engineStart();
     
-    _engine.addModule(&_osc1);
-
-    _engine.start();
-
     return YES;
 }
 

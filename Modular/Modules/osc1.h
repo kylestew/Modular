@@ -1,7 +1,8 @@
 #ifndef osc1_h
 #define osc1_h
 
-#include "module.h"
+#include "engine.h"
+using namespace rack;
 
 struct Osc1 : Module {
     Osc1() : Module(1) {}
