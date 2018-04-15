@@ -5,13 +5,15 @@ struct AudioIO {
     
     int sampleRate;
 
-    void init(double inSampleRate) {
+    void setSampleRate(double inSampleRate) {
         sampleRate = inSampleRate;
     }
     
     void process(AudioBufferList* outBufferList, AUAudioFrameCount frameCount) {
         
         // TODO: pull from ring buffer
+        // how does the ring buffer get filled?
+        // last module is the output module that controls the ring buffer
 
         //        float* outL = (float*)outBufferList->mBuffers[0].mData;
         //        float* outR = (float*)outBufferList->mBuffers[1].mData;

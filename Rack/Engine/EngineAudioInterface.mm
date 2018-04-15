@@ -4,8 +4,10 @@
 
 #import "BufferedAudioBus.hpp"
 
-#import "engine.hpp"
-#import "audio.hpp"
+#import "engine.h"
+#import "audio.h"
+
+#import "osc1.h"
 
 
 @interface EngineAudioInterface ()
@@ -19,6 +21,8 @@
     // C++ members need to be ivars; they would be copied on access if they were properties.
     AudioIO _audio;
     Engine _engine;
+    
+    Osc1 _osc1;
     
     BufferedOutputBus _outputBusBuffer;
 }
@@ -40,13 +44,11 @@
           [[NSProcessInfo processInfo] processIdentifier]);
 
     // Initialize a default format for the busses.
-    AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100. channels:1];
+    AVAudioFormat *defaultFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:44100. channels:2];
     
-    _audio.init(defaultFormat.sampleRate);
-
     // Create the output bus.
     // bus buffer needs to exist in C++ land to be usable in DSP render method
-    _outputBusBuffer.init(defaultFormat, 1);
+    _outputBusBuffer.init(defaultFormat, 2);
     _outputBus = _outputBusBuffer.bus;
 
     // Create the input and output bus arrays.
@@ -56,9 +58,6 @@
 
     self.maximumFramesToRender = 512;
     
-    // prep the engine
-    _engine.setSampleRate(defaultFormat.sampleRate);
-
     return self;
 }
 
@@ -79,7 +78,11 @@
 
     _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
 
-    _audio.init(self.outputBus.format.sampleRate);
+    _audio.setSampleRate(self.outputBus.format.sampleRate);
+    _engine.setSampleRate(self.outputBus.format.sampleRate);
+    
+    _engine.addModule(&_osc1);
+
     _engine.start();
 
     return YES;
@@ -109,8 +112,8 @@
                               const AURenderEvent        *realtimeEventListHead,
                               AURenderPullInputBlock      pullInputBlock) {
         
-        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
-        audio->process(outputData, frameCount);
+//        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
+//        audio->process(outputData, frameCount);
 
         return noErr;
     };

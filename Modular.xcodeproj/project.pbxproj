@@ -16,12 +16,14 @@
 		FF3BBC03207AC18C004F7834 /* EngineAudioInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF3BBC04207AC36B004F7834 /* Rack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB37780207AAC5D002640BA /* Rack.swift */; };
 		FF3BBC08207AC672004F7834 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */; };
-		FF3BBC0E207ADF0B004F7834 /* engine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBC0D207ADF0B004F7834 /* engine.hpp */; };
+		FF3BBC0E207ADF0B004F7834 /* engine.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBC0D207ADF0B004F7834 /* engine.h */; };
 		FFA6C0A82079DF5300F039B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */; };
 		FFA6C0AD2079DF5300F039B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AB2079DF5300F039B3 /* Main.storyboard */; };
 		FFA6C0AF2079DF5300F039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */; };
 		FFA6C0B22079DF5300F039B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0B02079DF5300F039B3 /* LaunchScreen.storyboard */; };
-		FFAA01862083D3F70024C260 /* audio.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FFAA01852083D3F70024C260 /* audio.hpp */; };
+		FFAA01862083D3F70024C260 /* audio.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAA01852083D3F70024C260 /* audio.h */; };
+		FFAA01892083EAAB0024C260 /* module.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAA01882083EAAB0024C260 /* module.h */; };
+		FFAA018C2083EC480024C260 /* osc1.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAA018B2083EC480024C260 /* osc1.h */; };
 		FFB3777F207AABD7002640BA /* AudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3777E207AABD7002640BA /* AudioTestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,14 +88,16 @@
 		FF3BBBFF207AC128004F7834 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
-		FF3BBC0D207ADF0B004F7834 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
+		FF3BBC0D207ADF0B004F7834 /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
 		FFA6C0A42079DF5300F039B3 /* Modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFA6C0AC2079DF5300F039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFA6C0B12079DF5300F039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFA6C0B32079DF5300F039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFAA01852083D3F70024C260 /* audio.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = audio.hpp; sourceTree = "<group>"; };
+		FFAA01852083D3F70024C260 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		FFAA01882083EAAB0024C260 /* module.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = module.h; sourceTree = "<group>"; };
+		FFAA018B2083EC480024C260 /* osc1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osc1.h; sourceTree = "<group>"; };
 		FFADB8172079E0DB007350C5 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "AudioKit-4.1/AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
 		FFB3777E207AABD7002640BA /* AudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestViewController.swift; sourceTree = "<group>"; };
 		FFB37780207AAC5D002640BA /* Rack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rack.swift; sourceTree = "<group>"; };
@@ -166,14 +170,24 @@
 		FFA9923A207AEF5400EA7F6E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				FF3BBC0D207ADF0B004F7834 /* engine.hpp */,
-				FFAA01852083D3F70024C260 /* audio.hpp */,
+				FFAA018A2083EC370024C260 /* Modules */,
+				FFAA01882083EAAB0024C260 /* module.h */,
+				FF3BBC0D207ADF0B004F7834 /* engine.h */,
+				FFAA01852083D3F70024C260 /* audio.h */,
 				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
 				FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */,
 				FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */,
 				FFB37780207AAC5D002640BA /* Rack.swift */,
 			);
 			path = Engine;
+			sourceTree = "<group>";
+		};
+		FFAA018A2083EC370024C260 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA018B2083EC480024C260 /* osc1.h */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		FFADB8182079E0DB007350C5 /* Products */ = {
@@ -203,9 +217,11 @@
 			files = (
 				FF3BBC03207AC18C004F7834 /* EngineAudioInterface.h in Headers */,
 				FF3BBBF5207AC0C0004F7834 /* Rack.h in Headers */,
-				FFAA01862083D3F70024C260 /* audio.hpp in Headers */,
+				FFAA018C2083EC480024C260 /* osc1.h in Headers */,
+				FFAA01862083D3F70024C260 /* audio.h in Headers */,
 				FF3BBC08207AC672004F7834 /* BufferedAudioBus.hpp in Headers */,
-				FF3BBC0E207ADF0B004F7834 /* engine.hpp in Headers */,
+				FFAA01892083EAAB0024C260 /* module.h in Headers */,
+				FF3BBC0E207ADF0B004F7834 /* engine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

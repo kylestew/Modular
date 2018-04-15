@@ -3,6 +3,9 @@
 
 #include <thread>
 #include <vector>
+#include <iostream>
+
+#include "module.h"
 
 /*
  * Engine and Audio threads are independent of each other
@@ -17,7 +20,7 @@ public:
         // TEMP:
         sampleRate = 2;
 //        sampleRate = newSampleRate;
-//        sampleTime = 1.0 / sampleRate;
+        sampleTime = 1.0 / sampleRate;
 	}
     
     void start() {
@@ -30,19 +33,39 @@ public:
         thread.join();
     }
     
+    void addModule(Module* module) {
+        modules.push_back(module);
+    }
+    
 private:
     bool running;
     float sampleRate;
     float sampleTime;
     
-    void step() {}
+    std::vector<Module*> modules;
+    
+    void step() {
+        for (Module *module : modules) {
+            module->step();
+        }
+        
+//        // step cables by moving their output values to inputs
+//        for (Wire* wire : wires) {
+//            wire->step();
+//        }
+    }
 
     std::thread thread;
     
     void engineRun() {
         
         while (running) {
+            step();
+//
+            std::cout << "step" << std::endl;
             
+            double stepTime = sampleTime;
+            std::this_thread::sleep_for(std::chrono::duration<double>(stepTime));
         }
     }
 
