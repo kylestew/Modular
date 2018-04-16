@@ -7,36 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF3BBBF5207AC0C0004F7834 /* Rack.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBBF3207AC0C0004F7834 /* Rack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF3BBBF8207AC0C0004F7834 /* Rack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3BBBF1207AC0C0004F7834 /* Rack.framework */; };
-		FF3BBBFA207AC0C0004F7834 /* Rack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF3BBBF1207AC0C0004F7834 /* Rack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FF3BBBFE207AC0C7004F7834 /* EngineAudioInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */; };
-		FF3BBC00207AC128004F7834 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3BBBFF207AC128004F7834 /* AVFoundation.framework */; };
-		FF3BBC02207AC12D004F7834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */; };
-		FF3BBC03207AC18C004F7834 /* EngineAudioInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF3BBC04207AC36B004F7834 /* Rack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB37780207AAC5D002640BA /* Rack.swift */; };
-		FF3BBC08207AC672004F7834 /* BufferedAudioBus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */; };
-		FF3BBC0E207ADF0B004F7834 /* engine.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3BBC0D207ADF0B004F7834 /* engine.h */; };
+		FF0D405E208451740011E6E4 /* WireWidget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF0D405D208451740011E6E4 /* WireWidget.mm */; };
+		FF0D40602084528E0011E6E4 /* Rack.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE0502084472F002BA19D /* Rack.m */; };
+		FF0D4061208453150011E6E4 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFAA01942083F6AA0024C260 /* engine.cpp */; };
 		FFA6C0A82079DF5300F039B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */; };
 		FFA6C0AD2079DF5300F039B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AB2079DF5300F039B3 /* Main.storyboard */; };
 		FFA6C0AF2079DF5300F039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */; };
 		FFA6C0B22079DF5300F039B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0B02079DF5300F039B3 /* LaunchScreen.storyboard */; };
-		FFAA01862083D3F70024C260 /* audio.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAA01852083D3F70024C260 /* audio.h */; };
-		FFAA018C2083EC480024C260 /* osc1.h in Headers */ = {isa = PBXBuildFile; fileRef = FFAA018B2083EC480024C260 /* osc1.h */; };
 		FFAA01912083F46A0024C260 /* Osc1Widget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAA018E2083F2240024C260 /* Osc1Widget.mm */; };
-		FFAA01952083F6AA0024C260 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFAA01942083F6AA0024C260 /* engine.cpp */; };
-		FFB3777F207AABD7002640BA /* AudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3777E207AABD7002640BA /* AudioTestViewController.swift */; };
+		FFBEE04620843657002BA19D /* AudioIOWidget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE0432084259B002BA19D /* AudioIOWidget.mm */; };
+		FFBEE04C20844598002BA19D /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE04B20844598002BA19D /* MainViewController.mm */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FF3BBBF6207AC0C0004F7834 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFA6C09C2079DF5300F039B3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FF3BBBF0207AC0C0004F7834;
-			remoteInfo = Rack;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FF3BBBF9207AC0C0004F7834 /* Embed Frameworks */ = {
@@ -45,7 +26,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FF3BBBFA207AC0C0004F7834 /* Rack.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,11 +33,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF0D405C208451740011E6E4 /* WireWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireWidget.h; sourceTree = "<group>"; };
+		FF0D405D208451740011E6E4 /* WireWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WireWidget.mm; sourceTree = "<group>"; };
 		FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EngineAudioInterface.mm; sourceTree = "<group>"; };
 		FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EngineAudioInterface.h; sourceTree = "<group>"; };
-		FF3BBBF1207AC0C0004F7834 /* Rack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF3BBBF3207AC0C0004F7834 /* Rack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
-		FF3BBBF4207AC0C0004F7834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF3BBBFF207AC128004F7834 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
@@ -70,50 +49,32 @@
 		FFA6C0B32079DF5300F039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFAA01852083D3F70024C260 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
 		FFAA018B2083EC480024C260 /* osc1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osc1.h; sourceTree = "<group>"; };
-		FFAA018D2083F2240024C260 /* Osc1Widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Osc1Widget.h; sourceTree = "<group>"; };
+		FFAA018D2083F2240024C260 /* Osc1Widget.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Osc1Widget.hpp; sourceTree = "<group>"; };
 		FFAA018E2083F2240024C260 /* Osc1Widget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Osc1Widget.mm; sourceTree = "<group>"; };
 		FFAA01942083F6AA0024C260 /* engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
-		FFAA01992083FA0A0024C260 /* Modular-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modular-Bridging-Header.h"; sourceTree = "<group>"; };
-		FFB3777E207AABD7002640BA /* AudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTestViewController.swift; sourceTree = "<group>"; };
-		FFB37780207AAC5D002640BA /* Rack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rack.swift; sourceTree = "<group>"; };
+		FFBEE0422084259B002BA19D /* AudioIOWidget.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioIOWidget.hpp; sourceTree = "<group>"; };
+		FFBEE0432084259B002BA19D /* AudioIOWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioIOWidget.mm; sourceTree = "<group>"; };
+		FFBEE04A20844598002BA19D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FFBEE04B20844598002BA19D /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
+		FFBEE04F2084472F002BA19D /* Rack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
+		FFBEE0502084472F002BA19D /* Rack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FF3BBBED207AC0C0004F7834 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF3BBC02207AC12D004F7834 /* AudioToolbox.framework in Frameworks */,
-				FF3BBC00207AC128004F7834 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FFA6C0A12079DF5300F039B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3BBBF8207AC0C0004F7834 /* Rack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF3BBBF2207AC0C0004F7834 /* Rack */ = {
-			isa = PBXGroup;
-			children = (
-				FFA9923A207AEF5400EA7F6E /* Engine */,
-				FF3BBBF3207AC0C0004F7834 /* Rack.h */,
-				FF3BBBF4207AC0C0004F7834 /* Info.plist */,
-			);
-			path = Rack;
-			sourceTree = "<group>";
-		};
 		FFA6C09B2079DF5300F039B3 = {
 			isa = PBXGroup;
 			children = (
 				FFA6C0A62079DF5300F039B3 /* Modular */,
-				FF3BBBF2207AC0C0004F7834 /* Rack */,
 				FFA6C0A52079DF5300F039B3 /* Products */,
 				FFADB8262079E3A8007350C5 /* Frameworks */,
 			);
@@ -123,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				FFA6C0A42079DF5300F039B3 /* Modular.app */,
-				FF3BBBF1207AC0C0004F7834 /* Rack.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,14 +91,17 @@
 		FFA6C0A62079DF5300F039B3 /* Modular */ = {
 			isa = PBXGroup;
 			children = (
+				FFA9923A207AEF5400EA7F6E /* Engine */,
 				FFAA018A2083EC370024C260 /* Modules */,
-				FFB3777E207AABD7002640BA /* AudioTestViewController.swift */,
+				FF0D405C208451740011E6E4 /* WireWidget.h */,
+				FF0D405D208451740011E6E4 /* WireWidget.mm */,
+				FFBEE04A20844598002BA19D /* MainViewController.h */,
+				FFBEE04B20844598002BA19D /* MainViewController.mm */,
 				FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */,
 				FFA6C0AB2079DF5300F039B3 /* Main.storyboard */,
 				FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */,
 				FFA6C0B02079DF5300F039B3 /* LaunchScreen.storyboard */,
 				FFA6C0B32079DF5300F039B3 /* Info.plist */,
-				FFAA01992083FA0A0024C260 /* Modular-Bridging-Header.h */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -146,13 +109,14 @@
 		FFA9923A207AEF5400EA7F6E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				FFBEE04120842572002BA19D /* Widget */,
 				FF3BBC0D207ADF0B004F7834 /* engine.h */,
 				FFAA01942083F6AA0024C260 /* engine.cpp */,
-				FFAA01852083D3F70024C260 /* audio.h */,
 				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
 				FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */,
 				FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */,
-				FFB37780207AAC5D002640BA /* Rack.swift */,
+				FFBEE04F2084472F002BA19D /* Rack.h */,
+				FFBEE0502084472F002BA19D /* Rack.m */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -160,8 +124,10 @@
 		FFAA018A2083EC370024C260 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FFBEE0422084259B002BA19D /* AudioIOWidget.hpp */,
+				FFBEE0432084259B002BA19D /* AudioIOWidget.mm */,
 				FFAA018B2083EC480024C260 /* osc1.h */,
-				FFAA018D2083F2240024C260 /* Osc1Widget.h */,
+				FFAA018D2083F2240024C260 /* Osc1Widget.hpp */,
 				FFAA018E2083F2240024C260 /* Osc1Widget.mm */,
 			);
 			path = Modules;
@@ -176,43 +142,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FFBEE04120842572002BA19D /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				FFAA01852083D3F70024C260 /* audio.h */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		FF3BBBEE207AC0C0004F7834 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF3BBC03207AC18C004F7834 /* EngineAudioInterface.h in Headers */,
-				FF3BBBF5207AC0C0004F7834 /* Rack.h in Headers */,
-				FFAA018C2083EC480024C260 /* osc1.h in Headers */,
-				FFAA01862083D3F70024C260 /* audio.h in Headers */,
-				FF3BBC08207AC672004F7834 /* BufferedAudioBus.hpp in Headers */,
-				FF3BBC0E207ADF0B004F7834 /* engine.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		FF3BBBF0207AC0C0004F7834 /* Rack */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FF3BBBFB207AC0C0004F7834 /* Build configuration list for PBXNativeTarget "Rack" */;
-			buildPhases = (
-				FF3BBBEC207AC0C0004F7834 /* Sources */,
-				FF3BBBED207AC0C0004F7834 /* Frameworks */,
-				FF3BBBEE207AC0C0004F7834 /* Headers */,
-				FF3BBBEF207AC0C0004F7834 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Rack;
-			productName = Rack;
-			productReference = FF3BBBF1207AC0C0004F7834 /* Rack.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		FFA6C0A32079DF5300F039B3 /* Modular */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFA6C0B62079DF5300F039B3 /* Build configuration list for PBXNativeTarget "Modular" */;
@@ -225,7 +165,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FF3BBBF7207AC0C0004F7834 /* PBXTargetDependency */,
 			);
 			name = Modular;
 			productName = Modular;
@@ -242,10 +181,6 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Kyle Stewart";
 				TargetAttributes = {
-					FF3BBBF0207AC0C0004F7834 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
 					FFA6C0A32079DF5300F039B3 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -267,19 +202,11 @@
 			projectRoot = "";
 			targets = (
 				FFA6C0A32079DF5300F039B3 /* Modular */,
-				FF3BBBF0207AC0C0004F7834 /* Rack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FF3BBBEF207AC0C0004F7834 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FFA6C0A22079DF5300F039B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,35 +220,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FF3BBBEC207AC0C0004F7834 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FF3BBBFE207AC0C7004F7834 /* EngineAudioInterface.mm in Sources */,
-				FFAA01952083F6AA0024C260 /* engine.cpp in Sources */,
-				FF3BBC04207AC36B004F7834 /* Rack.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FFA6C0A02079DF5300F039B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB3777F207AABD7002640BA /* AudioTestViewController.swift in Sources */,
+				FFBEE04C20844598002BA19D /* MainViewController.mm in Sources */,
 				FFAA01912083F46A0024C260 /* Osc1Widget.mm in Sources */,
+				FF0D4061208453150011E6E4 /* engine.cpp in Sources */,
+				FFBEE04620843657002BA19D /* AudioIOWidget.mm in Sources */,
+				FF0D405E208451740011E6E4 /* WireWidget.mm in Sources */,
+				FF0D40602084528E0011E6E4 /* Rack.m in Sources */,
 				FFA6C0A82079DF5300F039B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FF3BBBF7207AC0C0004F7834 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FF3BBBF0207AC0C0004F7834 /* Rack */;
-			targetProxy = FF3BBBF6207AC0C0004F7834 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FFA6C0AB2079DF5300F039B3 /* Main.storyboard */ = {
@@ -343,54 +256,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FF3BBBFC207AC0C0004F7834 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = EQRQCAG846;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Rack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Rack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FF3BBBFD207AC0C0004F7834 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = EQRQCAG846;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Rack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Rack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		FFA6C0B42079DF5300F039B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,7 +366,6 @@
 		FFA6C0B72079DF5300F039B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,7 +375,7 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixite.Modular;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Modular/Modular-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,7 +385,6 @@
 		FFA6C0B82079DF5300F039B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,7 +394,7 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixite.Modular;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Modular/Modular-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -540,15 +403,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF3BBBFB207AC0C0004F7834 /* Build configuration list for PBXNativeTarget "Rack" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF3BBBFC207AC0C0004F7834 /* Debug */,
-				FF3BBBFD207AC0C0004F7834 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FFA6C09F2079DF5300F039B3 /* Build configuration list for PBXProject "Modular" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

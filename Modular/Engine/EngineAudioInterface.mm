@@ -5,8 +5,6 @@
 #import "BufferedAudioBus.hpp"
 
 #import "engine.h"
-#import "audio.h"
-
 using namespace rack;
 
 
@@ -19,8 +17,6 @@ using namespace rack;
     
 @implementation EngineAudioInterface {
     // C++ members need to be ivars; they would be copied on access if they were properties.
-    AudioIO _audio;
-
     BufferedOutputBus _outputBusBuffer;
 }
 
@@ -78,7 +74,6 @@ using namespace rack;
 
     _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
 
-    _audio.setSampleRate(self.outputBus.format.sampleRate);
     engineSetSampleRate(self.outputBus.format.sampleRate);
     engineStart();
     
@@ -98,7 +93,7 @@ using namespace rack;
      Capture in locals to avoid ObjC member lookups. If "self" is captured in
      render, we're doing it wrong.
      */
-    __block AudioIO* audio = &_audio;
+//    __block AudioIO* audio = engineGetAudioInterface();
 
     return ^AUAudioUnitStatus(
                               AudioUnitRenderActionFlags *actionFlags,
@@ -109,8 +104,8 @@ using namespace rack;
                               const AURenderEvent        *realtimeEventListHead,
                               AURenderPullInputBlock      pullInputBlock) {
         
-//        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
-//        audio->process(outputData, frameCount);
+        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
+        engineProcessAudio((float*)outputData->mBuffers[0].mData, (float*)outputData->mBuffers[1].mData, (uint32_t)frameCount);
 
         return noErr;
     };

@@ -5,7 +5,7 @@
 using namespace rack;
 
 struct Osc1 : Module {
-    Osc1() : Module(1) {}
+    Osc1() : Module(0, 1) {}
     
     void step() override {
         outputs[0].value = 0;

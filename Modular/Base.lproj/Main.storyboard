@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Audio Test View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="E3w-nP-enp">
             <objects>
-                <viewController id="KaY-Bp-VFQ" customClass="AudioTestViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KaY-Bp-VFQ" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3d5-M8-1TP"/>
                         <viewControllerLayoutGuide type="bottom" id="AMY-xf-H8N"/>
