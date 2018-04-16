@@ -10,6 +10,8 @@
 		FF0D405E208451740011E6E4 /* WireWidget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF0D405D208451740011E6E4 /* WireWidget.mm */; };
 		FF0D40602084528E0011E6E4 /* Rack.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE0502084472F002BA19D /* Rack.m */; };
 		FF0D4061208453150011E6E4 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFAA01942083F6AA0024C260 /* engine.cpp */; };
+		FF0D40642084559A0011E6E4 /* ModuleWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0D40632084559A0011E6E4 /* ModuleWidget.m */; };
+		FF0D40652084593B0011E6E4 /* EngineAudioInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */; };
 		FFA6C0A82079DF5300F039B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */; };
 		FFA6C0AD2079DF5300F039B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AB2079DF5300F039B3 /* Main.storyboard */; };
 		FFA6C0AF2079DF5300F039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		FF0D405C208451740011E6E4 /* WireWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WireWidget.h; sourceTree = "<group>"; };
 		FF0D405D208451740011E6E4 /* WireWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WireWidget.mm; sourceTree = "<group>"; };
+		FF0D40622084559A0011E6E4 /* ModuleWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleWidget.h; sourceTree = "<group>"; };
+		FF0D40632084559A0011E6E4 /* ModuleWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleWidget.m; sourceTree = "<group>"; };
 		FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EngineAudioInterface.mm; sourceTree = "<group>"; };
 		FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EngineAudioInterface.h; sourceTree = "<group>"; };
 		FF3BBBFF207AC128004F7834 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				FFAA01852083D3F70024C260 /* audio.h */,
+				FF0D40622084559A0011E6E4 /* ModuleWidget.h */,
+				FF0D40632084559A0011E6E4 /* ModuleWidget.m */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -227,9 +233,11 @@
 				FFBEE04C20844598002BA19D /* MainViewController.mm in Sources */,
 				FFAA01912083F46A0024C260 /* Osc1Widget.mm in Sources */,
 				FF0D4061208453150011E6E4 /* engine.cpp in Sources */,
+				FF0D40642084559A0011E6E4 /* ModuleWidget.m in Sources */,
 				FFBEE04620843657002BA19D /* AudioIOWidget.mm in Sources */,
 				FF0D405E208451740011E6E4 /* WireWidget.mm in Sources */,
 				FF0D40602084528E0011E6E4 /* Rack.m in Sources */,
+				FF0D40652084593B0011E6E4 /* EngineAudioInterface.mm in Sources */,
 				FFA6C0A82079DF5300F039B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
