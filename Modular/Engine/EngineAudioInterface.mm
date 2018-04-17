@@ -75,6 +75,7 @@ using namespace rack;
     _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
 
     engineSetSampleRate(self.outputBus.format.sampleRate);
+    engineGetAudioIO()->init(self.outputBus.format.channelCount, self.maximumFramesToRender);
     engineStart();
     
     return YES;
@@ -93,7 +94,7 @@ using namespace rack;
      Capture in locals to avoid ObjC member lookups. If "self" is captured in
      render, we're doing it wrong.
      */
-//    __block AudioIO* audio = engineGetAudioInterface();
+    __block AudioIO* audio = engineGetAudioIO();
 
     return ^AUAudioUnitStatus(
                               AudioUnitRenderActionFlags *actionFlags,
@@ -105,7 +106,7 @@ using namespace rack;
                               AURenderPullInputBlock      pullInputBlock) {
         
         _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
-        engineProcessAudio((float*)outputData->mBuffers[0].mData, (float*)outputData->mBuffers[1].mData, (uint32_t)frameCount);
+        audio->process(outputData, frameCount);
 
         return noErr;
     };

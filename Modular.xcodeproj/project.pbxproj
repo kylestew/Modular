@@ -17,8 +17,10 @@
 		FFA6C0AF2079DF5300F039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */; };
 		FFA6C0B22079DF5300F039B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA6C0B02079DF5300F039B3 /* LaunchScreen.storyboard */; };
 		FFAA01912083F46A0024C260 /* Osc1Widget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAA018E2083F2240024C260 /* Osc1Widget.mm */; };
-		FFBEE04620843657002BA19D /* AudioIOWidget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE0432084259B002BA19D /* AudioIOWidget.mm */; };
+		FFBEE04620843657002BA19D /* AudioInterfaceWidget.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE0432084259B002BA19D /* AudioInterfaceWidget.mm */; };
 		FFBEE04C20844598002BA19D /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFBEE04B20844598002BA19D /* MainViewController.mm */; };
+		FFF15D872086A3AE00DD1451 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */; };
+		FFF15D8B2086A54500DD1451 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF15D852086A35400DD1451 /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,17 +53,22 @@
 		FFA6C0AE2079DF5300F039B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFA6C0B12079DF5300F039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFA6C0B32079DF5300F039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFAA01852083D3F70024C260 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		FFAA01852083D3F70024C260 /* audio_interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio_interface.h; sourceTree = "<group>"; };
 		FFAA018B2083EC480024C260 /* osc1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osc1.h; sourceTree = "<group>"; };
 		FFAA018D2083F2240024C260 /* Osc1Widget.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Osc1Widget.hpp; sourceTree = "<group>"; };
 		FFAA018E2083F2240024C260 /* Osc1Widget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Osc1Widget.mm; sourceTree = "<group>"; };
 		FFAA01942083F6AA0024C260 /* engine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
-		FFBEE0422084259B002BA19D /* AudioIOWidget.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioIOWidget.hpp; sourceTree = "<group>"; };
-		FFBEE0432084259B002BA19D /* AudioIOWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioIOWidget.mm; sourceTree = "<group>"; };
+		FFBEE0422084259B002BA19D /* AudioInterfaceWidget.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioInterfaceWidget.hpp; sourceTree = "<group>"; };
+		FFBEE0432084259B002BA19D /* AudioInterfaceWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioInterfaceWidget.mm; sourceTree = "<group>"; };
 		FFBEE04A20844598002BA19D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FFBEE04B20844598002BA19D /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		FFBEE04F2084472F002BA19D /* Rack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rack.h; sourceTree = "<group>"; };
 		FFBEE0502084472F002BA19D /* Rack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rack.m; sourceTree = "<group>"; };
+		FFF15D842086998A00DD1451 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		FFF15D852086A35400DD1451 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		FFF15D882086A3B300DD1451 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		FFF15D8C2086A99900DD1451 /* ring_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ring_buffer.h; sourceTree = "<group>"; };
+		FFF15D8D2086AA9000DD1451 /* mathx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathx.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF15D8B2086A54500DD1451 /* CoreAudio.framework in Frameworks */,
+				FFF15D872086A3AE00DD1451 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,10 +122,11 @@
 		FFA9923A207AEF5400EA7F6E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				FFF15D8E2086AA9B00DD1451 /* Util */,
 				FFBEE04120842572002BA19D /* Widget */,
 				FF3BBC0D207ADF0B004F7834 /* engine.h */,
 				FFAA01942083F6AA0024C260 /* engine.cpp */,
-				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
+				FFF15D842086998A00DD1451 /* audio.h */,
 				FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */,
 				FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */,
 				FFBEE04F2084472F002BA19D /* Rack.h */,
@@ -128,8 +138,9 @@
 		FFAA018A2083EC370024C260 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FFBEE0422084259B002BA19D /* AudioIOWidget.hpp */,
-				FFBEE0432084259B002BA19D /* AudioIOWidget.mm */,
+				FFAA01852083D3F70024C260 /* audio_interface.h */,
+				FFBEE0422084259B002BA19D /* AudioInterfaceWidget.hpp */,
+				FFBEE0432084259B002BA19D /* AudioInterfaceWidget.mm */,
 				FFAA018B2083EC480024C260 /* osc1.h */,
 				FFAA018D2083F2240024C260 /* Osc1Widget.hpp */,
 				FFAA018E2083F2240024C260 /* Osc1Widget.mm */,
@@ -140,6 +151,8 @@
 		FFADB8262079E3A8007350C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFF15D882086A3B300DD1451 /* AudioUnit.framework */,
+				FFF15D852086A35400DD1451 /* CoreAudio.framework */,
 				FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */,
 				FF3BBBFF207AC128004F7834 /* AVFoundation.framework */,
 			);
@@ -149,11 +162,20 @@
 		FFBEE04120842572002BA19D /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				FFAA01852083D3F70024C260 /* audio.h */,
 				FF0D40622084559A0011E6E4 /* ModuleWidget.h */,
 				FF0D40632084559A0011E6E4 /* ModuleWidget.m */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		FFF15D8E2086AA9B00DD1451 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
+				FFF15D8C2086A99900DD1451 /* ring_buffer.h */,
+				FFF15D8D2086AA9000DD1451 /* mathx.h */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +256,7 @@
 				FFAA01912083F46A0024C260 /* Osc1Widget.mm in Sources */,
 				FF0D4061208453150011E6E4 /* engine.cpp in Sources */,
 				FF0D40642084559A0011E6E4 /* ModuleWidget.m in Sources */,
-				FFBEE04620843657002BA19D /* AudioIOWidget.mm in Sources */,
+				FFBEE04620843657002BA19D /* AudioInterfaceWidget.mm in Sources */,
 				FF0D405E208451740011E6E4 /* WireWidget.mm in Sources */,
 				FF0D40602084528E0011E6E4 /* Rack.m in Sources */,
 				FF0D40652084593B0011E6E4 /* EngineAudioInterface.mm in Sources */,

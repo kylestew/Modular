@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include "audio.h"
+
 namespace rack {
     
     struct Module;
@@ -14,15 +16,16 @@ namespace rack {
     void engineStart();
     void engineStop();
     
-    // redo this interface
-    Module* engineAudioInterfaceModule();
-    void engineProcessAudio(float* outL, float* outR, uint32_t frameCount);
+    AudioIO* engineGetAudioIO();
 
     void engineSetSampleRate(float sampleRate);
+    float engineGetSampleRate();
+    // inverse of current sample rate
+    float engineGetSampleTime();
     
+    // does not take ownership
     void engineAddModule(Module* module);
     void engineRemoveModule(Module* module);
-    
     void engineAddWire(Wire* wire);
     void engineRemoveWire(Wire* wire);
     /* ============================================ */
@@ -53,12 +56,14 @@ namespace rack {
         
         Module() {}
         Module(int numInputs, int numOutputs) {
-            inputs.resize(numOutputs);
+            inputs.resize(numInputs);
             outputs.resize(numOutputs);
         }
         virtual ~Module() {}
-
+        
         virtual void step() = 0;
+        
+        virtual void onSampleRateChange() {}
     };
     
     struct Wire {

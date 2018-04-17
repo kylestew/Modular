@@ -17,10 +17,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.engine = [[AVAudioEngine alloc] init];
+        
         // register AUAudioUnit for local process
         // this is the audio interface for our engine
         AudioComponentDescription unitDescription;
-        unitDescription.componentType = kAudioUnitType_Generator;
+        unitDescription.componentType = kAudioUnitType_MusicDevice;
         unitDescription.componentSubType = 0x5261636b; //'Rack'
         unitDescription.componentManufacturer = 0x544f444f; //'TODO'
         unitDescription.componentFlags = 0;
@@ -65,6 +67,7 @@
 
         // connect to output mixer
         AVAudioFormat* hardwareFormat = [self.engine.outputNode outputFormatForBus:0];
+
         // TODO: does the modular default to stereo?
         AVAudioFormat* stereoFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:hardwareFormat.sampleRate channels:2];
         [self.engine connect:avAudioUnit to:self.engine.mainMixerNode format:stereoFormat];

@@ -1,7 +1,9 @@
 #import <UIKit/UIKit.h>
 
+#include "engine.h"
+
 @interface Osc1Widget : UIView
 
-- (void*)getModule;
+- (rack::Module*)getModule;
 
 @end

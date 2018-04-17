@@ -3,7 +3,6 @@
 #include <thread>
 
 #include "engine.h"
-#include "audio.h"
 
 namespace rack {
     static bool running = false;
@@ -13,7 +12,8 @@ namespace rack {
     std::thread thread;
     void engineRun();
 
-    AudioIO audioInterfaceModule;
+    AudioIO* audioIo;
+
     static std::vector<Module*> modules;
     static std::vector<Wire*> wires;
 
@@ -25,6 +25,9 @@ namespace rack {
     
     void engineInit() {
         engineSetSampleRate(44100.0);
+        
+        // global ref to share
+        audioIo = new AudioIO;
     }
     
     void engineDestroy() {}
@@ -41,25 +44,27 @@ namespace rack {
         thread.join();
     }
     
-    Module* engineAudioInterfaceModule() {
-        return (Module*)&audioInterfaceModule;
+    AudioIO* engineGetAudioIO() {
+        return audioIo;
     }
     
-    void engineProcessAudio(float* outL, float* outR, uint32_t frameCount) {
-        int sample;
-        for (sample = 0; sample < frameCount; ++sample) {
-            outL[sample] = 0.0;
-            outR[sample] = 0.0;
+    void engineSetSampleRate(float newSampleRate) {
+        sampleRate = newSampleRate;
+        sampleTime = 1.0 / sampleRate;
+        
+        for (Module* module : modules) {
+            module->onSampleRateChange();
         }
     }
-
-    void engineSetSampleRate(float sampleRate) {
-        // TEMP:
-        sampleRate = 2;
-        //        sampleRate = newSampleRate;
-        sampleTime = 1.0 / sampleRate;
+    
+    float engineGetSampleRate() {
+        return sampleRate;
     }
     
+    float engineGetSampleTime() {
+        return sampleTime;
+    }
+
     static void updateActive() {
         // inactivate all
         for (Module* module : modules) {
@@ -101,19 +106,20 @@ namespace rack {
     }
     
     void engineStep() {
-        
         // step modules
         for (Module *module : modules) {
             module->step();
         }
-
+        
+        // Step cables by moving their output values to inputs
+        for (Wire *wire : wires) {
+            wire->step();
+        }
     }
 
     void engineRun() {
         while (running) {
             engineStep();
-            //
-            printf("step\n");
 
             double stepTime = sampleTime;
             std::this_thread::sleep_for(std::chrono::duration<double>(stepTime));

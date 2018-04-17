@@ -2,7 +2,7 @@
 
 #include "engine.h"
 
-@interface AudioIOWidget : UIView
+@interface AudioInterfaceWidget : UIView
 
 - (rack::Module*)getModule;
 

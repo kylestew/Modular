@@ -10,8 +10,8 @@
     Osc1* _module;
 }
 
-- (void*)getModule {
-    return (void*)_module;
+- (rack::Module*)getModule {
+    return (Module*)_module;
 }
 
 - (instancetype)init

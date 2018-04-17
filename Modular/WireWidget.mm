@@ -7,10 +7,10 @@
 
 + (WireWidget*)CreateForModuleOut:(Module*)moduleOut withOutputId:(int)outId andModuleIn:(Module*)moduleIn withInputId:(int)inId {
     Wire* wire = new Wire;
-    wire->inputModule = moduleIn;
-    wire->inputId = inId;
     wire->outputModule = moduleOut;
     wire->outputId = outId;
+    wire->inputModule = moduleIn;
+    wire->inputId = inId;
     return [[WireWidget alloc] initWithWire:wire];
 }
 
