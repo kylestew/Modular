@@ -37,10 +37,8 @@ namespace rack {
 
                 for (int i = 0; i < frameCount; i++) {
                     Frame<CHANNEL_COUNT> f = outputBuffer.shift();
-                    outL[0] = f.samples[0];
-                    outR[1] = f.samples[1];
-                    
-//                    printf("%f\n", f.samples[0]);
+                    outL[i] = f.samples[0];
+                    outR[i] = f.samples[1];
                 }
             } else {
 
@@ -54,7 +52,7 @@ namespace rack {
             // done processing block of audio, ready for the engine to make more
             engineCv.notify_all();
         }
-        
+
         uint32_t blockSize = 0;
         
         // 32k buffer?

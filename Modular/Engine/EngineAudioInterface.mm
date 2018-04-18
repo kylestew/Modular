@@ -103,8 +103,8 @@ using namespace rack;
                               const AURenderEvent        *realtimeEventListHead,
                               AURenderPullInputBlock      pullInputBlock) {
         
-        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
-
+//        _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
+        
         // pack the stereo buffers, don't need the rest of the junk they have
         assert(outputData->mNumberBuffers == 2);
         float* outBuffers[] = {
