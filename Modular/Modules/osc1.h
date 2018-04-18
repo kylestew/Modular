@@ -26,7 +26,7 @@ struct Osc1 : Module {
         // default pitch is C4
 //        float freq = 261.626 * powf(2.0f, pitch);
         
-        float freq = 220.0f;
+        float freq = 440.0f;
         
         // accumulate the phase
         phase += freq * deltaTime;

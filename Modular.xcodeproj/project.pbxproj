@@ -47,6 +47,7 @@
 		FF3BBC01207AC12D004F7834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
 		FF3BBC0D207ADF0B004F7834 /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
+		FF6F2A8B2086F50F0035AB95 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		FFA6C0A42079DF5300F039B3 /* Modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA6C0A72079DF5300F039B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFA6C0AC2079DF5300F039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
 				FFF15D8C2086A99900DD1451 /* ring_buffer.h */,
 				FFF15D8D2086AA9000DD1451 /* mathx.h */,
+				FF6F2A8B2086F50F0035AB95 /* common.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";

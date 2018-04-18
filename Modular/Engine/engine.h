@@ -11,14 +11,14 @@ namespace rack {
     struct Wire;
     
     /* == ENGINE ================================== */
-    void engineInit();
+    void engineInit(uint32_t sampleRate, uint32_t targetFrames);
     void engineDestroy();
     void engineStart();
     void engineStop();
+    void enginePause(bool paused);
     
     AudioIO* engineGetAudioIO();
 
-    void engineSetSampleRate(float sampleRate);
     float engineGetSampleRate();
     // inverse of current sample rate
     float engineGetSampleTime();

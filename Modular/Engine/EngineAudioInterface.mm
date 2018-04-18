@@ -2,6 +2,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
+// why is this needed?
 #import "BufferedAudioBus.hpp"
 
 #import "engine.h"
@@ -51,9 +52,6 @@ using namespace rack;
 
     self.maximumFramesToRender = 512;
     
-    // engine setup
-    engineInit();
-    
     return self;
 }
 
@@ -74,8 +72,8 @@ using namespace rack;
 
     _outputBusBuffer.allocateRenderResources(self.maximumFramesToRender);
 
-    engineSetSampleRate(self.outputBus.format.sampleRate);
-    engineGetAudioIO()->init(self.outputBus.format.channelCount, self.maximumFramesToRender);
+    // engine setup
+    engineInit(self.outputBus.format.sampleRate, self.maximumFramesToRender);
     engineStart();
     
     return YES;
@@ -106,7 +104,15 @@ using namespace rack;
                               AURenderPullInputBlock      pullInputBlock) {
         
         _outputBusBuffer.prepareOutputBufferList(outputData, frameCount, true);
-        audio->process(outputData, frameCount);
+
+        // pack the stereo buffers, don't need the rest of the junk they have
+        assert(outputData->mNumberBuffers == 2);
+        float* outBuffers[] = {
+            (float*)outputData->mBuffers[0].mData,
+            (float*)outputData->mBuffers[1].mData
+        };
+
+        audio->process(outBuffers, frameCount);
 
         return noErr;
     };

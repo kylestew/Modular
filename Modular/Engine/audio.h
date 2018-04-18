@@ -8,8 +8,8 @@
 
 #include "ring_buffer.h"
 
-
 static const auto audioTimeout = std::chrono::milliseconds(100);
+static const int CHANNEL_COUNT = 2;
 
 namespace rack {
     
@@ -19,50 +19,47 @@ namespace rack {
     };
     
     struct AudioIO {
-        
-        void init(uint32_t channels, uint32_t targetFrames) {
-            this->channels = channels;
-            this->targetFrames = targetFrames;
-            
-            // TODO: reset ring buffer
+        void setBlockSize(uint32_t newBlockSize) {
+            blockSize = newBlockSize;
         }
         
-        void process(AudioBufferList* outBuffers, uint32_t frameCount) {
-            assert(outBuffers->mNumberBuffers == channels);
-
-            if (channels > 0) {
-                std::unique_lock<std::mutex> lock(audioMutex);
-                
-                // wait until buffer has enough data
-                auto cond = [&] {
-                    return outputBuffer.size() >= frameCount;
-                };
-                
-                if (audioCv.wait_for(lock, audioTimeout, cond)) {
-                    
-                    // TODO: consume audio block
-                    printf("we haaaaaave audio\n");
-                    
-                } else {
-                    
-                    // Timed out, fill output with zeros
-                    printf("DROPPING AUDIO FRAMES\n");
-                    int channel;
-                    for (channel = 0; channel < channels; ++channel) {
-                        AudioBuffer buf = outBuffers->mBuffers[channel];
-                        memset(buf.mData, 0, frameCount * sizeof(float));
-                    }
-                }
-            }
+        void process(float* outBuffers[], uint32_t frameCount) {
+            std::unique_lock<std::mutex> lock(audioMutex);
             
+            // wait until buffer has enough data
+            auto cond = [&] {
+                return outputBuffer.size() >= frameCount;
+            };
+
+            if (audioCv.wait_for(lock, audioTimeout, cond)) {
+                float* outL = outBuffers[0];
+                float* outR = outBuffers[1];
+
+                for (int i = 0; i < frameCount; i++) {
+                    Frame<CHANNEL_COUNT> f = outputBuffer.shift();
+                    outL[0] = f.samples[0];
+                    outR[1] = f.samples[1];
+                    
+//                    printf("%f\n", f.samples[0]);
+                }
+            } else {
+
+                printf("DROPPING AUDIO FRAMES\n");
+
+                // Timed out, fill output with zeros
+                memset(outBuffers[0], 0, frameCount * sizeof(float));
+                memset(outBuffers[1], 0, frameCount * sizeof(float));
+            }
+
+            // done processing block of audio, ready for the engine to make more
             engineCv.notify_all();
         }
         
-        uint32_t channels = 0;
-        uint32_t targetFrames = 0;
+        uint32_t blockSize = 0;
         
         // 32k buffer?
-        DoubleRingBuffer<Frame<2>, (1<<15)> outputBuffer;
+        DoubleRingBuffer<Frame<CHANNEL_COUNT>, (1<<15)> outputBuffer;
+        
         std::mutex engineMutex;
         std::condition_variable engineCv;
         std::mutex audioMutex;

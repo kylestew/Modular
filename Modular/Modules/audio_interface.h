@@ -10,6 +10,7 @@ using namespace rack;
 struct AudioInterface : Module {
     enum InputIds {
         INPUT0,
+        INPUT1,
         NUM_INPUTS
     };
     enum OutputIds {
@@ -20,20 +21,26 @@ struct AudioInterface : Module {
     
     void step() override {
         AudioIO* audioIO = engineGetAudioIO();
+        
+        // block engine until outputs are needed
+        std::unique_lock<std::mutex> lock(audioIO->engineMutex);
+        auto cond = [&] {
+            return audioIO->outputBuffer.size() < audioIO->blockSize;
+        };
+        if (audioIO->engineCv.wait_for(lock, audioTimeout, cond)) {
+            
+            // we have the go ahead to fill the ring buffer
+            // TODO: do in larger chunks to save on overhead
+            
+            // go to line level [-1,1]
+            Frame<CHANNEL_COUNT> frame;
+            frame.samples[0] = inputs[INPUT0].value * 0.2;
+            frame.samples[1] = inputs[INPUT1].value * 0.2;
 
-        // probably need to mutex buffer access
-        if (audioIO->channels > 0) {
-            // TODO: sum all inputs and clip
-            float value = inputs[INPUT0].value;
-            
-            // go to line level
-            value = clamp(value * 0.2, 0.0, 1.0);
-            
-            Frame<2> frame;
-            frame.samples[0] = value;
-            frame.samples[1] = value;
-            
             audioIO->outputBuffer.push(frame);
+
+        } else {
+            // give up?
         }
 
         // let the audio processing thread know there is new audio data

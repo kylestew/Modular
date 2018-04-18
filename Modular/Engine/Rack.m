@@ -67,8 +67,6 @@
 
         // connect to output mixer
         AVAudioFormat* hardwareFormat = [self.engine.outputNode outputFormatForBus:0];
-
-        // TODO: does the modular default to stereo?
         AVAudioFormat* stereoFormat = [[AVAudioFormat alloc] initStandardFormatWithSampleRate:hardwareFormat.sampleRate channels:2];
         [self.engine connect:avAudioUnit to:self.engine.mainMixerNode format:stereoFormat];
 

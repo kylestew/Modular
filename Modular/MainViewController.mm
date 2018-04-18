@@ -1,8 +1,6 @@
 #import "MainViewController.h"
 
 #import "Rack.h"
-#import "engine.h"
-using namespace rack;
 
 #import "WireWidget.h"
 
