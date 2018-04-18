@@ -24,9 +24,8 @@
 
         self.backgroundColor = [UIColor redColor];
         
-        // connect to output module
-        // need to hold on to wiring
-//        engineGetAudioModule();
+        _module->params[0].value = 0.0f;
+//        [0] = 220.0f;
     }
     return self;
 }

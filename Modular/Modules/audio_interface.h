@@ -8,6 +8,9 @@
 using namespace rack;
 
 struct AudioInterface : Module {
+    enum ParamIds {
+        NUM_PARAMS
+    };
     enum InputIds {
         INPUT0,
         INPUT1,
@@ -17,7 +20,7 @@ struct AudioInterface : Module {
         NUM_OUTPUTS
     };
     
-    AudioInterface() : Module(NUM_INPUTS, NUM_OUTPUTS) {}
+    AudioInterface() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {}
     
     void step() override {
         AudioIO* audioIO = engineGetAudioIO();

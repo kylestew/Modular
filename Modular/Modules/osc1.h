@@ -5,6 +5,10 @@
 using namespace rack;
 
 struct Osc1 : Module {
+    enum ParamIds {
+        PITCH_PARAM,
+        NUM_PARAMS
+    };
     enum InputIds {
         PITCH_INPUT,
         NUM_INPUTS
@@ -14,20 +18,18 @@ struct Osc1 : Module {
         NUM_OUTPUTS
     };
     
-    Osc1() : Module(NUM_INPUTS, NUM_OUTPUTS) {}
+    Osc1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {}
     
     void step() override {
         // 1/sampleRate
         float deltaTime = engineGetSampleTime();
         
         // compute frequency from the pitch param and input
-//        float pitch = params[PITCH_PARAM].value;
-//        pitch = clamp(pitch, -4.0f, 4.0f);
+        float pitch = params[PITCH_PARAM].value;
+        pitch = clamp(pitch, -4.0f, 4.0f);
         // default pitch is C4
-//        float freq = 261.626 * powf(2.0f, pitch);
-        
-        float freq = 240.0f;
-        
+        float freq = 261.626 * powf(2.0f, pitch);
+
         // accumulate the phase
         phase += freq * deltaTime;
         if (phase >= 1.0f)

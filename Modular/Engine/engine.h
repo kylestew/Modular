@@ -31,6 +31,10 @@ namespace rack {
     /* ============================================ */
     
     /* == MODULE ================================== */
+    struct Param {
+        float value = 0.0;
+    };
+    
     struct Input {
         bool active = false;
         
@@ -51,11 +55,13 @@ namespace rack {
     };
 
     struct Module {
+        std::vector<Param> params;
         std::vector<Input> inputs;
         std::vector<Output> outputs;
         
         Module() {}
-        Module(int numInputs, int numOutputs) {
+        Module(int numParams, int numInputs, int numOutputs) {
+            params.resize(numParams);
             inputs.resize(numInputs);
             outputs.resize(numOutputs);
         }
