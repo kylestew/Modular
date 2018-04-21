@@ -35,6 +35,11 @@ namespace rack {
         float value = 0.0;
     };
     
+    struct ParamRange {
+        float low = 0.0;
+        float high = 1.0;
+    };
+    
     struct Input {
         bool active = false;
         
@@ -56,12 +61,14 @@ namespace rack {
 
     struct Module {
         std::vector<Param> params;
+        std::vector<ParamRange> paramRanges;
         std::vector<Input> inputs;
         std::vector<Output> outputs;
         
         Module() {}
         Module(int numParams, int numInputs, int numOutputs) {
             params.resize(numParams);
+            paramRanges.resize(numParams);
             inputs.resize(numInputs);
             outputs.resize(numOutputs);
         }

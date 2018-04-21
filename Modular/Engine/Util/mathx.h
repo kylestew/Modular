@@ -22,5 +22,11 @@ inline int clamp(int x, int minimum, int maximum) {
     return min(max(x, minimum), maximum);
 }
 
+/** Limits a value between a minimum and maximum
+ Assumes min <= max
+ */
+inline float clamp(float x, float minimum, float maximum) {
+    return fminf(fmaxf(x, minimum), maximum);
+}
 
 #endif /* mathx_h */

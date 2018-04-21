@@ -21,7 +21,7 @@ struct AudioInterface : Module {
     };
     
     AudioInterface() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {}
-    
+
     void step() override {
         AudioIO* audioIO = engineGetAudioIO();
         
@@ -37,8 +37,8 @@ struct AudioInterface : Module {
             
             // go to line level [-1,1]
             Frame<CHANNEL_COUNT> frame;
-            frame.samples[0] = inputs[INPUT0].value * 0.2;
-            frame.samples[1] = inputs[INPUT1].value * 0.2;
+            frame.samples[0] = inputs[INPUT0].value * 0.1;
+            frame.samples[1] = inputs[INPUT1].value * 0.1;
 
             audioIO->outputBuffer.push(frame);
 

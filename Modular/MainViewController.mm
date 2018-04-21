@@ -1,18 +1,17 @@
 #import "MainViewController.h"
 
 #import "Rack.h"
-
+#import "ModuleBuilder.h"
 #import "WireWidget.h"
+#import "ModuleWidget.h"
 
-#import "Osc1Widget.hpp"
-#import "AudioInterfaceWidget.hpp"
+#import "engine.h"
 
 @interface MainViewController ()
 
 @property (nonatomic, strong) Rack* rack;
 
-@property (nonatomic, strong) Osc1Widget* osc1;
-@property (nonatomic, strong) AudioInterfaceWidget* audioOut;
+@property (nonatomic, strong) NSMutableArray* widgets;
 
 @property (nonatomic, strong) WireWidget* wire;
 
@@ -20,16 +19,14 @@
 
 @implementation MainViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.osc1 = [[Osc1Widget alloc] init];
-    [self.view addSubview:self.osc1];
-    self.osc1.frame = CGRectMake(0, 0, 100, 100);
-
-    self.audioOut = [[AudioInterfaceWidget alloc] init];
-    [self.view addSubview:self.audioOut];
-    self.audioOut.frame = CGRectMake(100, 0, 100, 100);
+    
+    self.widgets = [NSMutableArray array];
 
     // start engine and message any errors
     self.rack = [[Rack alloc] init];
@@ -38,12 +35,43 @@
             NSLog(@"%@", error);
             NSAssert(false, @"could not rack off");
         } else {
-            
-            // TEMP: test wiring
-            self.wire = [WireWidget CreateForModuleOut:(Module*)self.osc1.getModule withOutputId:0 andModuleIn:(Module*)self.audioOut.getModule withInputId:0];
-            
+            [self demo];
         }
     }];
+}
+
+- (void)demo {
+    ModuleDescription* desc = [[[ModuleBuilder sharedInstance] modules] firstObject];
+    [self addWidgetFromDescription:desc];
+    
+    desc = [[ModuleBuilder sharedInstance] modules][1];
+    [self addWidgetFromDescription:desc];
+
+    ModuleWidget* mod0 = self.widgets[0];
+    ModuleWidget* mod1 = self.widgets[1];
+    self.wire = [WireWidget CreateForModuleOut:(Module*)mod0.module withOutputId:0 andModuleIn:(Module*)mod1.module withInputId:0];
+}
+
+- (void)addWidgetFromDescription:(ModuleDescription*)description {
+    
+    // modules are 400 units high
+    // width is defined by a modules "hp" which is 20 units
+    // Therfore a 20hp modules is square
+    
+    ModuleWidget* widget = [[ModuleBuilder sharedInstance] createModuleForDescription:description];
+    [self addChildViewController:widget];
+    [self.view addSubview:widget.view];
+    [widget didMoveToParentViewController:self];
+
+    // position right of last added module
+    CGFloat xPos = 0.0f;
+    ModuleWidget* lastWidget = self.widgets.lastObject;
+    if (lastWidget) {
+        xPos = lastWidget.view.frame.origin.x + lastWidget.view.frame.size.width;
+    }
+    widget.view.frame = CGRectMake(xPos, 0, widget.view.frame.size.width, widget.view.frame.size.height);
+    
+    [self.widgets addObject:widget];
 }
 
 @end
