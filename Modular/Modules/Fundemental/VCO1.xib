@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Vco1Widget">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VCO1Widget">
             <connections>
                 <outlet property="pitch" destination="kAs-VU-rs1" id="Ri4-db-Qbz"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wmx-Sz-JCG"/>

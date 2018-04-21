@@ -1,10 +1,10 @@
-#ifndef Vco1_h
-#define Vco1_h
+#ifndef VCO1_h
+#define VCO1_h
 
 #include "engine.h"
 using namespace rack;
 
-struct Vco1 : Module {
+struct VCO1 : Module {
     enum ParamIds {
         PITCH_PARAM,
         NUM_PARAMS
@@ -22,7 +22,7 @@ struct Vco1 : Module {
         NUM_LIGHTS
     };
     
-    Vco1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {
+    VCO1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {
         // defaults
         params[PITCH_PARAM].value = 0.0f;
         paramRanges[PITCH_PARAM].low = -4.0f;
@@ -62,4 +62,4 @@ private:
     float phase = 0.0;
 };
 
-#endif /* Vco1_h */
+#endif /* VCO1_h */

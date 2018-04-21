@@ -12,8 +12,7 @@
 @property (nonatomic, strong) Rack* rack;
 
 @property (nonatomic, strong) NSMutableArray* widgets;
-
-@property (nonatomic, strong) WireWidget* wire;
+@property (nonatomic, strong) NSMutableArray* wires;
 
 @end
 
@@ -27,6 +26,7 @@
     [super viewDidLoad];
     
     self.widgets = [NSMutableArray array];
+    self.wires = [NSMutableArray array];
 
     // start engine and message any errors
     self.rack = [[Rack alloc] init];
@@ -41,15 +41,28 @@
 }
 
 - (void)demo {
-    ModuleDescription* desc = [[[ModuleBuilder sharedInstance] modules] firstObject];
-    [self addWidgetFromDescription:desc];
+    // add all the things!
+    for (ModuleDescription* desc in [[ModuleBuilder sharedInstance] modules]) {
+        [self addWidgetFromDescription:desc];
+    }
     
-    desc = [[ModuleBuilder sharedInstance] modules][1];
-    [self addWidgetFromDescription:desc];
+    NSLog(@"%@", self.widgets);
 
-    ModuleWidget* mod0 = self.widgets[0];
-    ModuleWidget* mod1 = self.widgets[1];
-    self.wire = [WireWidget CreateForModuleOut:(Module*)mod0.module withOutputId:0 andModuleIn:(Module*)mod1.module withInputId:0];
+    ModuleWidget* vco = self.widgets[0];
+    ModuleWidget* aio = self.widgets[1];
+    ModuleWidget* lfo = self.widgets[2];
+    
+    // lfo -> vco pitch
+    WireWidget* wire = [WireWidget CreateForModuleOut:(Module*)lfo.module withOutputId:0 andModuleIn:(Module*)vco.module withInputId:0];
+    [self.wires addObject:wire];
+    
+    // output L
+    wire = [WireWidget CreateForModuleOut:(Module*)vco.module withOutputId:0 andModuleIn:(Module*)aio.module withInputId:0];
+    [self.wires addObject:wire];
+    
+    // output R
+    wire = [WireWidget CreateForModuleOut:(Module*)vco.module withOutputId:0 andModuleIn:(Module*)aio.module withInputId:1];
+    [self.wires addObject:wire];
 }
 
 - (void)addWidgetFromDescription:(ModuleDescription*)description {

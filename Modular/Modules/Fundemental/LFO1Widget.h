@@ -2,5 +2,5 @@
 
 #include "ModuleWidget.h"
 
-@interface Vco1Widget : ModuleWidget
+@interface LFO1Widget : ModuleWidget
 @end
