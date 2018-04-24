@@ -29,4 +29,17 @@ inline float clamp(float x, float minimum, float maximum) {
     return fminf(fmaxf(x, minimum), maximum);
 }
 
+/** Euclidean modulus, always returns 0 <= mod < base for positive base.
+ */
+inline int eucmod(int a, int base) {
+    int mod = a % base;
+    return (mod >= 0) ? mod : mod + base;
+}
+
+inline float eucmod(float a, float base) {
+    float mod = fmodf(a, base);
+    return (mod >= 0.0f) ? mod : mod + base;
+}
+
+
 #endif /* mathx_h */

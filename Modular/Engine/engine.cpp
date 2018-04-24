@@ -158,6 +158,25 @@ namespace rack {
         // step modules
         for (Module *module : modules) {
             module->step();
+            
+            // smooth parameters if needed
+            for (Param &param : module->params) {
+                if (param.isSmoothing) {
+                    // smooth current value towards target smooth value
+                    float currentValue = param.value;
+                    const float lambda = 60.0; // decay rate is 1 graphics frame
+                    float delta = param.smoothValue - currentValue;
+                    float newValue = currentValue + delta * lambda * sampleTime;
+                    
+                    if (currentValue == newValue) {
+                        // if close enough, snap to smooth value and stop smoothing
+                        param.value = param.smoothValue;
+                        param.isSmoothing = false;
+                    } else {
+                        param.value = newValue;
+                    }
+                }
+            }
         }
 
         // Step cables by moving their output values to inputs
@@ -206,10 +225,37 @@ namespace rack {
     }
     
     /* ================================================ */
-
+    
+    /* === WIRES ====================================== */
+    
     void Wire::step() {
         float value = outputModule->outputs[outputId].value;
         inputModule->inputs[inputId].value = value;
     }
     
+    /* ================================================ */
+    
+    /* === LIGHTS ===================================== */
+    
+    float Light::getBrightness() {
+        return sqrtf(fmaxf(0.f, value));
+    }
+    
+    void Light::setBrightness(float brightness) {
+        value = (brightness > 0.f) ? brightness * brightness : 0.f;
+    }
+    
+    void Light::setBrightnessSmooth(float brightness) {
+        float v = (brightness > 0.f) ? brightness * brightness : 0.f;
+        if (v < value) {
+            // fade out light with lambda = framerate
+            value += (v - value) * sampleTime * (60.f * 1.f);
+        } else {
+            // immediate
+            value = v;
+        }
+    }
+    
+    /* ================================================ */
+
 }

@@ -19,8 +19,11 @@ struct AudioInterface : Module {
     enum OutputIds {
         NUM_OUTPUTS
     };
+    enum LightIds {
+        NUM_LIGHTS
+    };
     
-    AudioInterface() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {}
+    AudioInterface() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS) {}
 
     void step() override {
         AudioIO* audioIO = engineGetAudioIO();

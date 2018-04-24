@@ -4,7 +4,7 @@
 #include "engine.h"
 using namespace rack;
 
-#include "LFO.h"
+#include "LowFrequencyOscillator.h"
 
 struct LFO1 : Module {
     enum ParamIds {
@@ -22,10 +22,11 @@ struct LFO1 : Module {
         NUM_OUTPUTS
     };
     enum LightIds {
+        PHASE_LIGHT,
         NUM_LIGHTS
     };
     
-    LFO1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {
+    LFO1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS) {
         params[PITCH_PARAM].value = -1.0f;
         paramRanges[PITCH_PARAM].low = -8.0f;
         paramRanges[PITCH_PARAM].high = 6.0f;
@@ -37,6 +38,8 @@ struct LFO1 : Module {
         oscillator.step(engineGetSampleTime());
 
         outputs[SIN_OUTPUT].value = 5.0f * oscillator.sin();
+        
+//        lights[PHASE_LIGHT]
     }
 
 private:

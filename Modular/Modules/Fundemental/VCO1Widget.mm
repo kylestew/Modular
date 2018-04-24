@@ -28,8 +28,7 @@
 }
 
 - (IBAction)pitchDidChange:(UISlider *)sender {
-    super.module->params[0].value = sender.value;
-    NSLog(@"%f", sender.value);
+    super.module->params[0].setValueSmooth(sender.value);
 }
 
 @end

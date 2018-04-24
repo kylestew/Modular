@@ -6,7 +6,7 @@
 
 #include <AudioToolbox/AudioToolbox.h>
 
-#include "ring_buffer.h"
+#include "ringbuffer.h"
 
 static const auto audioTimeout = std::chrono::milliseconds(100);
 static const int CHANNEL_COUNT = 2;

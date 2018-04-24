@@ -52,9 +52,11 @@
     ModuleWidget* aio = self.widgets[1];
     ModuleWidget* lfo = self.widgets[2];
     
+    WireWidget* wire;
+    
     // lfo -> vco pitch
-    WireWidget* wire = [WireWidget CreateForModuleOut:(Module*)lfo.module withOutputId:0 andModuleIn:(Module*)vco.module withInputId:0];
-    [self.wires addObject:wire];
+//    WireWidget* wire = [WireWidget CreateForModuleOut:(Module*)lfo.module withOutputId:0 andModuleIn:(Module*)vco.module withInputId:0];
+//    [self.wires addObject:wire];
     
     // output L
     wire = [WireWidget CreateForModuleOut:(Module*)vco.module withOutputId:0 andModuleIn:(Module*)aio.module withInputId:0];

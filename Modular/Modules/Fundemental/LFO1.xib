@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-VU-rs1">
-                    <rect key="frame" x="18" y="20" width="124" height="30"/>
+                    <rect key="frame" x="18" y="49" width="124" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="29" id="Ksh-4C-uTh"/>
                     </constraints>
@@ -30,12 +30,34 @@
                         <action selector="pitchDidChange:" destination="-1" eventType="valueChanged" id="DVS-8L-zx7"/>
                     </connections>
                 </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LFO-1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEJ-jz-A4h">
+                    <rect key="frame" x="20" y="20" width="120" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="QqN-ob-mZI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3v-H9-uPD">
+                    <rect key="frame" x="132" y="8" width="20" height="20"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="3L8-qD-dwo"/>
+                        <constraint firstAttribute="height" constant="20" id="kV0-ND-LwY"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="0.5885096219" blue="0.51328518479999996" alpha="0.4041095890410959" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kAs-VU-rs1" secondAttribute="trailing" constant="20" id="5Q8-jv-2SL"/>
-                <constraint firstItem="kAs-VU-rs1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="fHf-e3-JTL"/>
+                <constraint firstItem="kAs-VU-rs1" firstAttribute="top" secondItem="OEJ-jz-A4h" secondAttribute="bottom" constant="8" id="80v-kg-iWS"/>
+                <constraint firstItem="e3v-H9-uPD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Gm8-4g-fjS"/>
+                <constraint firstItem="OEJ-jz-A4h" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="PIq-t1-PqI"/>
+                <constraint firstAttribute="trailing" secondItem="e3v-H9-uPD" secondAttribute="trailing" constant="8" id="VpR-Ak-QrB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OEJ-jz-A4h" secondAttribute="trailing" constant="20" id="j5N-fx-Qh5"/>
                 <constraint firstItem="kAs-VU-rs1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="mVe-pq-dio"/>
+                <constraint firstItem="OEJ-jz-A4h" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="zRN-PM-Plg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -33,6 +33,14 @@ namespace rack {
     /* == MODULE ================================== */
     struct Param {
         float value = 0.0;
+        
+        float smoothValue = 0.0;
+        bool isSmoothing = true;
+        
+        void setValueSmooth(float value) {
+            smoothValue = value;
+            isSmoothing = true;
+        }
     };
     
     struct ParamRange {
@@ -58,19 +66,30 @@ namespace rack {
         // voltage of the port, write-only by Module
         float value = 0.0;
     };
+    
+    struct Light {
+        // the square of the brightness value
+        float value = 0.0;
+        
+        float getBrightness();
+        void setBrightness(float brightness);
+        void setBrightnessSmooth(float brightness);
+    };
 
     struct Module {
         std::vector<Param> params;
         std::vector<ParamRange> paramRanges;
         std::vector<Input> inputs;
         std::vector<Output> outputs;
+        std::vector<Light> lights;
         
         Module() {}
-        Module(int numParams, int numInputs, int numOutputs) {
+        Module(int numParams, int numInputs, int numOutputs, int numLights) {
             params.resize(numParams);
             paramRanges.resize(numParams);
             inputs.resize(numInputs);
             outputs.resize(numOutputs);
+            lights.resize(numLights);
         }
         virtual ~Module() {}
         

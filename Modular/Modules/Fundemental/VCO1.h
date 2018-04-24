@@ -4,6 +4,8 @@
 #include "engine.h"
 using namespace rack;
 
+#include "VoltageControlledOscillator.h"
+
 struct VCO1 : Module {
     enum ParamIds {
         PITCH_PARAM,
@@ -14,52 +16,39 @@ struct VCO1 : Module {
         NUM_INPUTS
     };
     enum OutputIds {
-        SINE_OUTPUT,
+        SIN_OUTPUT,
+        TRI_OUTPUT,
         NUM_OUTPUTS
     };
     enum LightIds {
-        BLINK_LIGHT,
+        PHASE_LIGHT,
         NUM_LIGHTS
     };
     
-    VCO1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS) {
-        // defaults
+    VCO1() : Module(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS) {
+        // param defaults
+        
+        // pitch is an exponential input
         params[PITCH_PARAM].value = 0.0f;
-        paramRanges[PITCH_PARAM].low = -4.0f;
-        paramRanges[PITCH_PARAM].high = 4.0f;
+        paramRanges[PITCH_PARAM].low = -54.0f;
+        paramRanges[PITCH_PARAM].high = 54.0f;
     }
 
     void step() override {
-        // 1/sampleRate
-        float deltaTime = engineGetSampleTime();
+        oscillator.setPitch(params[PITCH_PARAM].value);
         
-        // compute frequency from the pitch param and input
-        float pitch = params[PITCH_PARAM].value;
-        pitch += inputs[PITCH_INPUT].value;
-        pitch = clamp(pitch, -4.0f, 4.0f);
-        
-        // default pitch is C4
-        float freq = 261.626 * powf(2.0f, pitch);
+        oscillator.process(engineGetSampleTime());
 
-        // accumulate the phase
-        phase += freq * deltaTime;
-        if (phase >= 1.0f)
-            phase -= 1.0f;
-        
-        // compute the sine output
-        float sine = sinf(2.0f * M_PI * phase);
-        outputs[SINE_OUTPUT].value = 5.0f * sine;
-        
-        // Blink light at 1Hz
-        // not tied to frequency
-//        blinkPhase += deltaTime;
-//        if (blinkPhase >= 1.0f)
-//            blinkPhase -= 1.0f;
-//        lights[BLINK_LIGHT].value = (blinkPhase < 0.5f) ? 1.0f : 0.0f;
+        if (outputs[SIN_OUTPUT].active)
+            outputs[SIN_OUTPUT].value = 5.0f * oscillator.sin();
+        if (outputs[TRI_OUTPUT].active)
+            outputs[TRI_OUTPUT].value = 5.0f * oscillator.tri();
+
+        lights[PHASE_LIGHT].setBrightnessSmooth(fmaxf(0.0f, oscillator.light()));
     }
 
 private:
-    float phase = 0.0;
+    VoltageControlledOscillator<16, 16> oscillator;
 };
 
 #endif /* VCO1_h */

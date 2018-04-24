@@ -47,11 +47,15 @@
 		FF0D405D208451740011E6E4 /* WireWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WireWidget.mm; sourceTree = "<group>"; };
 		FF0D40622084559A0011E6E4 /* ModuleWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleWidget.h; sourceTree = "<group>"; };
 		FF0D40632084559A0011E6E4 /* ModuleWidget.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModuleWidget.mm; sourceTree = "<group>"; };
-		FF215E1E208BB78D0005A5AD /* LFO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFO.h; sourceTree = "<group>"; };
+		FF215E1E208BB78D0005A5AD /* LowFrequencyOscillator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LowFrequencyOscillator.h; sourceTree = "<group>"; };
 		FF260F05208BB35800821190 /* LFO1Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFO1Widget.h; sourceTree = "<group>"; };
 		FF260F06208BB35800821190 /* LFO1Widget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LFO1Widget.mm; sourceTree = "<group>"; };
 		FF260F07208BB35800821190 /* LFO1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFO1.h; sourceTree = "<group>"; };
 		FF260F08208BB35900821190 /* LFO1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFO1.xib; sourceTree = "<group>"; };
+		FF3715E2208F95B000C869DC /* VoltageControlledOscillator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoltageControlledOscillator.h; sourceTree = "<group>"; };
+		FF3715E4208F9A0200C869DC /* decimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decimator.h; sourceTree = "<group>"; };
+		FF3715E5208F9A4000C869DC /* fir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fir.h; sourceTree = "<group>"; };
+		FF3715E6208F9A5500C869DC /* functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
 		FF3BBBE9207ABF68004F7834 /* EngineAudioInterface.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = EngineAudioInterface.mm; sourceTree = "<group>"; };
 		FF3BBBEA207ABF68004F7834 /* EngineAudioInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EngineAudioInterface.h; sourceTree = "<group>"; };
 		FF3BBBFF207AC128004F7834 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -85,7 +89,7 @@
 		FFF15D842086998A00DD1451 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
 		FFF15D852086A35400DD1451 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		FFF15D882086A3B300DD1451 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		FFF15D8C2086A99900DD1451 /* ring_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ring_buffer.h; sourceTree = "<group>"; };
+		FFF15D8C2086A99900DD1451 /* ringbuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ringbuffer.h; sourceTree = "<group>"; };
 		FFF15D8D2086AA9000DD1451 /* mathx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mathx.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,10 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF3715E3208F99E600C869DC /* DSP */ = {
+			isa = PBXGroup;
+			children = (
+				FF3715E6208F9A5500C869DC /* functions.h */,
+				FF3715E5208F9A4000C869DC /* fir.h */,
+				FFF15D8C2086A99900DD1451 /* ringbuffer.h */,
+				FF3715E4208F9A0200C869DC /* decimator.h */,
+			);
+			path = DSP;
+			sourceTree = "<group>";
+		};
 		FF87A480208A4EC50005184B /* Fundemental */ = {
 			isa = PBXGroup;
 			children = (
-				FF215E1E208BB78D0005A5AD /* LFO.h */,
+				FF215E1E208BB78D0005A5AD /* LowFrequencyOscillator.h */,
+				FF3715E2208F95B000C869DC /* VoltageControlledOscillator.h */,
 				FF260F07208BB35800821190 /* LFO1.h */,
 				FF260F08208BB35900821190 /* LFO1.xib */,
 				FF260F05208BB35800821190 /* LFO1Widget.h */,
@@ -167,6 +183,7 @@
 		FFA9923A207AEF5400EA7F6E /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				FF3715E3208F99E600C869DC /* DSP */,
 				FFF15D8E2086AA9B00DD1451 /* Util */,
 				FF3BBC0D207ADF0B004F7834 /* engine.h */,
 				FFAA01942083F6AA0024C260 /* engine.cpp */,
@@ -209,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				FF3BBC07207AC672004F7834 /* BufferedAudioBus.hpp */,
-				FFF15D8C2086A99900DD1451 /* ring_buffer.h */,
 				FFF15D8D2086AA9000DD1451 /* mathx.h */,
 				FF6F2A8B2086F50F0035AB95 /* common.h */,
 			);
