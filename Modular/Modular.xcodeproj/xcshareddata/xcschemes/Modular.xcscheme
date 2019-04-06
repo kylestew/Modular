@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF39CC25220F8A2B00C9AF52"
-               BuildableName = "VCNode.app"
-               BlueprintName = "VCNode"
-               ReferencedContainer = "container:VCNode.xcodeproj">
+               BuildableName = "Modular.app"
+               BlueprintName = "Modular"
+               ReferencedContainer = "container:Modular.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF39CC25220F8A2B00C9AF52"
-            BuildableName = "VCNode.app"
-            BlueprintName = "VCNode"
-            ReferencedContainer = "container:VCNode.xcodeproj">
+            BuildableName = "Modular.app"
+            BlueprintName = "Modular"
+            ReferencedContainer = "container:Modular.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF39CC25220F8A2B00C9AF52"
-            BuildableName = "VCNode.app"
-            BlueprintName = "VCNode"
-            ReferencedContainer = "container:VCNode.xcodeproj">
+            BuildableName = "Modular.app"
+            BlueprintName = "Modular"
+            ReferencedContainer = "container:Modular.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FF39CC25220F8A2B00C9AF52"
-            BuildableName = "VCNode.app"
-            BlueprintName = "VCNode"
-            ReferencedContainer = "container:VCNode.xcodeproj">
+            BuildableName = "Modular.app"
+            BlueprintName = "Modular"
+            ReferencedContainer = "container:Modular.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

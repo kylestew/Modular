@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_VCNodeVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_VCNodeVersionString[];
+FOUNDATION_EXPORT double Pods_ModularVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ModularVersionString[];
 

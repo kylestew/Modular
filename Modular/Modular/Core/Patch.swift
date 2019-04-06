@@ -55,9 +55,9 @@ class Patch: PatchDelegate {
 
     // MARK: - Serialize/De
 
-    func tempStorageUrl() -> URL {
-
-    }
+//    func tempStorageUrl() -> URL {
+//
+//    }
 
     convenience init(with url: URL) {
         self.init()

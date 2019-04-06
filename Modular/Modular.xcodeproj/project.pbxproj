@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E593EC20DABA03E7DC7BC89 /* Pods_VCNode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B744A631500F681BFC78A082 /* Pods_VCNode.framework */; };
+		09CB0D42B969831F851557A6 /* Pods_Modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE504852102B129E569ED018 /* Pods_Modular.framework */; };
 		FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
@@ -73,9 +73,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5210A4D09BD6D132F9F84015 /* Pods-Modular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modular.release.xcconfig"; path = "Pods/Target Support Files/Pods-Modular/Pods-Modular.release.xcconfig"; sourceTree = "<group>"; };
 		902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCNode.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCNode/Pods-VCNode.release.xcconfig"; sourceTree = "<group>"; };
 		AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCNode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCNode/Pods-VCNode.debug.xcconfig"; sourceTree = "<group>"; };
 		B744A631500F681BFC78A082 /* Pods_VCNode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCNode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28797FCE2B86211142172AE /* Pods-Modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modular.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Modular/Pods-Modular.debug.xcconfig"; sourceTree = "<group>"; };
+		FE504852102B129E569ED018 /* Pods_Modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFO.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
@@ -86,7 +89,7 @@
 		FF2AE3602243ED840098091E /* ToggleWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleWidget.swift; sourceTree = "<group>"; };
 		FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCF.xib; sourceTree = "<group>"; };
 		FF35D4E9221B37050024D5CA /* PortWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortWidget.swift; sourceTree = "<group>"; };
-		FF39CC26220F8A2B00C9AF52 /* VCNode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCNode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF39CC26220F8A2B00C9AF52 /* Modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF39CC2E220F8A2B00C9AF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,7 +101,7 @@
 		FF39CC3F220F8C9500C9AF52 /* mo_def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
 		FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FF39CC7B220F925A00C9AF52 /* VCVNode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCVNode-Bridging-Header.h"; sourceTree = "<group>"; };
+		FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modular-Bridging-Header.h"; sourceTree = "<group>"; };
 		FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudibleInstruments_Branches.xib; sourceTree = "<group>"; };
 		FF3FC9452210F0F700496378 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
 		FF3FC9472210F0F700496378 /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
@@ -172,7 +175,7 @@
 			files = (
 				FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */,
 				FF39CC74220F8EC900C9AF52 /* CoreAudio.framework in Frameworks */,
-				6E593EC20DABA03E7DC7BC89 /* Pods_VCNode.framework in Frameworks */,
+				09CB0D42B969831F851557A6 /* Pods_Modular.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +187,8 @@
 			children = (
 				AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */,
 				902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */,
+				D28797FCE2B86211142172AE /* Pods-Modular.debug.xcconfig */,
+				5210A4D09BD6D132F9F84015 /* Pods-Modular.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -245,7 +250,7 @@
 		FF39CC1D220F8A2B00C9AF52 = {
 			isa = PBXGroup;
 			children = (
-				FF39CC28220F8A2B00C9AF52 /* VCNode */,
+				FF39CC28220F8A2B00C9AF52 /* Modular */,
 				FF39CC27220F8A2B00C9AF52 /* Products */,
 				FF39CC72220F8EC900C9AF52 /* Frameworks */,
 				6C625129461CE0FF84DB4BBB /* Pods */,
@@ -255,12 +260,12 @@
 		FF39CC27220F8A2B00C9AF52 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF39CC26220F8A2B00C9AF52 /* VCNode.app */,
+				FF39CC26220F8A2B00C9AF52 /* Modular.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FF39CC28220F8A2B00C9AF52 /* VCNode */ = {
+		FF39CC28220F8A2B00C9AF52 /* Modular */ = {
 			isa = PBXGroup;
 			children = (
 				FF977087221CD21B002283E2 /* Helpers */,
@@ -276,9 +281,9 @@
 				FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */,
 				FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */,
 				FF39CC35220F8A2C00C9AF52 /* Info.plist */,
-				FF39CC7B220F925A00C9AF52 /* VCVNode-Bridging-Header.h */,
+				FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */,
 			);
-			path = VCNode;
+			path = Modular;
 			sourceTree = "<group>";
 		};
 		FF39CC3B220F8C6700C9AF52 /* MoMu */ = {
@@ -297,6 +302,7 @@
 				FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */,
 				FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */,
 				B744A631500F681BFC78A082 /* Pods_VCNode.framework */,
+				FE504852102B129E569ED018 /* Pods_Modular.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -504,9 +510,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF39CC25220F8A2B00C9AF52 /* VCNode */ = {
+		FF39CC25220F8A2B00C9AF52 /* Modular */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "VCNode" */;
+			buildConfigurationList = FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "Modular" */;
 			buildPhases = (
 				A92798C6258B44580A396DC9 /* [CP] Check Pods Manifest.lock */,
 				FF39CC22220F8A2B00C9AF52 /* Sources */,
@@ -518,9 +524,9 @@
 			);
 			dependencies = (
 			);
-			name = VCNode;
+			name = Modular;
 			productName = VCNode;
-			productReference = FF39CC26220F8A2B00C9AF52 /* VCNode.app */;
+			productReference = FF39CC26220F8A2B00C9AF52 /* Modular.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -538,7 +544,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "VCNode" */;
+			buildConfigurationList = FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "Modular" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -551,7 +557,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF39CC25220F8A2B00C9AF52 /* VCNode */,
+				FF39CC25220F8A2B00C9AF52 /* Modular */,
 			);
 		};
 /* End PBXProject section */
@@ -595,7 +601,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-VCNode/Pods-VCNode-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Modular/Pods-Modular-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Fingertips/Fingertips.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -606,7 +612,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCNode/Pods-VCNode-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Modular/Pods-Modular-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A92798C6258B44580A396DC9 /* [CP] Check Pods Manifest.lock */ = {
@@ -624,7 +630,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VCNode-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Modular-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -821,7 +827,7 @@
 		};
 		FF39CC39220F8A2C00C9AF52 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */;
+			baseConfigurationReference = D28797FCE2B86211142172AE /* Pods-Modular.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -832,15 +838,15 @@
 					"../DSPCore/dsp/include/**",
 					"../DSPCore/library/**",
 				);
-				INFOPLIST_FILE = VCNode/Info.plist;
+				INFOPLIST_FILE = Modular/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.VCNode;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Modular;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VCNode/VCVNode-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Modular/Modular-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -848,7 +854,7 @@
 		};
 		FF39CC3A220F8A2C00C9AF52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */;
+			baseConfigurationReference = 5210A4D09BD6D132F9F84015 /* Pods-Modular.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -859,15 +865,15 @@
 					"../DSPCore/dsp/include/**",
 					"../DSPCore/library/**",
 				);
-				INFOPLIST_FILE = VCNode/Info.plist;
+				INFOPLIST_FILE = Modular/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.VCNode;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Modular;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VCNode/VCVNode-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Modular/Modular-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -876,7 +882,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "VCNode" */ = {
+		FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "Modular" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF39CC36220F8A2C00C9AF52 /* Debug */,
@@ -885,7 +891,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "VCNode" */ = {
+		FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "Modular" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF39CC39220F8A2C00C9AF52 /* Debug */,
