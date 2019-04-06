@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="VCNode" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="212" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-GA-fNe" userLabel="input" customClass="PortWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="12" y="12" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Tj-aUO">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="9lE-Lg-aKO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="2We-Tj-aUO" secondAttribute="bottom" constant="-14" id="DIm-xb-hT8"/>
+                        <constraint firstAttribute="height" constant="60" id="ORh-xX-hhl"/>
+                        <constraint firstAttribute="trailing" secondItem="2We-Tj-aUO" secondAttribute="trailing" constant="-20" id="PJL-mo-bBv"/>
+                        <constraint firstItem="2We-Tj-aUO" firstAttribute="leading" secondItem="vSd-GA-fNe" secondAttribute="leading" constant="-20" id="bTv-eR-u0b"/>
+                        <constraint firstAttribute="width" constant="60" id="d1m-Qp-SYM"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-Ko-F2e" userLabel="input" customClass="PortWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="72" y="12" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-xl-fhB">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="wFV-CZ-zm1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FDZ-bf-bn6"/>
+                        <constraint firstAttribute="bottom" secondItem="0vp-xl-fhB" secondAttribute="bottom" constant="-14" id="V9w-GI-aJk"/>
+                        <constraint firstAttribute="trailing" secondItem="0vp-xl-fhB" secondAttribute="trailing" constant="-20" id="WEK-cQ-OBu"/>
+                        <constraint firstItem="0vp-xl-fhB" firstAttribute="leading" secondItem="hAe-Ko-F2e" secondAttribute="leading" constant="-20" id="jzg-Kt-4ru"/>
+                        <constraint firstAttribute="width" constant="60" id="n8T-Hu-YHq"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRf-w8-VVn" userLabel="output" customClass="PortWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="140" y="12" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="HsW-eA-CuH"/>
+                        <constraint firstAttribute="height" constant="60" id="Qvy-gt-eV3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sequencer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
+                    <rect key="frame" x="46" y="457" width="120" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="Tgc-2e-QVU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-5I-ICa" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="48" y="136" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="D2S-7b-raH"/>
+                        <constraint firstAttribute="height" constant="16" id="I3H-aN-r6h"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="aXv-iY-cPL"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e03-Gc-QGg" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="16" y="104" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="uzI-EX-9A6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiL-LO-8wR" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="148" y="136" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="9Tc-le-d4Z"/>
+                        <constraint firstAttribute="width" constant="16" id="zx3-sE-rUC"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="uyq-zr-pTq"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5i-LE-2Tl" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="116" y="104" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="3dM-tY-dar"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-fK-AQT" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="48" y="224" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="lSO-Q4-VNZ"/>
+                        <constraint firstAttribute="height" constant="16" id="tZg-Al-9ev"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="EJl-Fm-3GB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Uu-SHE" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="16" y="192" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="OaF-1V-jWC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OC-Tu-Rju" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="148" y="224" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="3v4-8s-dgM"/>
+                        <constraint firstAttribute="height" constant="16" id="JJG-Fl-eCu"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="hff-lp-cUh"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFN-Uc-R10" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="116" y="192" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Y9a-vf-kku"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-SG-oWQ" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="48" y="312" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="tZH-As-7VQ"/>
+                        <constraint firstAttribute="width" constant="16" id="vuW-DZ-Kyy"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="AAk-gE-DJj"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvd-BT-gzt" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="16" y="280" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Gvf-4S-Cut"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-7s-G5X" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="148" y="312" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="khR-ul-ZIF"/>
+                        <constraint firstAttribute="height" constant="16" id="rNY-tX-lhM"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="pze-1C-HQx"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-dp-DqD" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="116" y="280" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="wzL-di-8zM"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yq-59-aMK" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="48" y="400" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="S47-cb-WzZ"/>
+                        <constraint firstAttribute="height" constant="16" id="U3w-YP-6bg"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="egs-1a-nOC"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLD-GA-8I3" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="16" y="368" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="xEo-ir-x6g"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwj-oI-VCm" customClass="LightWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="148" y="400" width="16" height="16"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="IKw-dv-y03"/>
+                        <constraint firstAttribute="height" constant="16" id="dfg-eo-jN9"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="iWv-4M-guU"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rB-Hm-tTg" customClass="KnobWidget" customModule="VCNode" customModuleProvider="target">
+                    <rect key="frame" x="116" y="368" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="N7M-GH-FWB"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fxe-Uu-SHE" firstAttribute="width" secondItem="fxe-Uu-SHE" secondAttribute="height" multiplier="1:1" id="2Iz-Aq-RIy"/>
+                <constraint firstItem="fxe-Uu-SHE" firstAttribute="centerX" secondItem="e03-Gc-QGg" secondAttribute="centerX" id="3XH-uV-MdG"/>
+                <constraint firstItem="5OC-Tu-Rju" firstAttribute="centerY" secondItem="FFN-Uc-R10" secondAttribute="centerY" id="3wR-Sb-zSz"/>
+                <constraint firstItem="pEt-fK-AQT" firstAttribute="centerX" secondItem="fxe-Uu-SHE" secondAttribute="centerX" id="4Zq-cm-90x"/>
+                <constraint firstItem="4rB-Hm-tTg" firstAttribute="centerX" secondItem="AXY-dp-DqD" secondAttribute="centerX" id="5Cg-bE-C3v"/>
+                <constraint firstItem="YiL-LO-8wR" firstAttribute="centerX" secondItem="A5i-LE-2Tl" secondAttribute="centerX" id="6Tv-hv-cgM"/>
+                <constraint firstItem="vSd-GA-fNe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="8ju-ZM-kCx"/>
+                <constraint firstItem="pEt-fK-AQT" firstAttribute="centerY" secondItem="fxe-Uu-SHE" secondAttribute="centerY" id="9MT-3V-JYC"/>
+                <constraint firstItem="gmQ-7s-G5X" firstAttribute="centerY" secondItem="AXY-dp-DqD" secondAttribute="centerY" id="AEe-K3-y03"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A5i-LE-2Tl" secondAttribute="trailing" constant="16" id="BOZ-DS-jQM"/>
+                <constraint firstItem="4rB-Hm-tTg" firstAttribute="centerY" secondItem="cLD-GA-8I3" secondAttribute="centerY" id="Blh-hu-2cd"/>
+                <constraint firstItem="mvd-BT-gzt" firstAttribute="top" secondItem="fxe-Uu-SHE" secondAttribute="bottom" constant="8" id="EMP-Wc-6j1"/>
+                <constraint firstItem="cLD-GA-8I3" firstAttribute="width" secondItem="cLD-GA-8I3" secondAttribute="height" multiplier="1:1" id="FhD-AK-Mni"/>
+                <constraint firstItem="mvd-BT-gzt" firstAttribute="centerX" secondItem="fxe-Uu-SHE" secondAttribute="centerX" id="GBX-eP-Qkc"/>
+                <constraint firstItem="cLD-GA-8I3" firstAttribute="centerX" secondItem="mvd-BT-gzt" secondAttribute="centerX" id="KXi-QF-hx7"/>
+                <constraint firstItem="FFN-Uc-R10" firstAttribute="centerY" secondItem="fxe-Uu-SHE" secondAttribute="centerY" id="Kfw-We-cgF"/>
+                <constraint firstItem="vSd-GA-fNe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="N7P-aI-WfF"/>
+                <constraint firstItem="5Mk-SG-oWQ" firstAttribute="centerY" secondItem="mvd-BT-gzt" secondAttribute="centerY" id="PEN-vz-Mpz"/>
+                <constraint firstItem="AXY-dp-DqD" firstAttribute="centerY" secondItem="mvd-BT-gzt" secondAttribute="centerY" id="S3P-5i-i3b"/>
+                <constraint firstItem="4rB-Hm-tTg" firstAttribute="width" secondItem="4rB-Hm-tTg" secondAttribute="height" multiplier="1:1" id="TMi-gD-WyU"/>
+                <constraint firstItem="AXY-dp-DqD" firstAttribute="centerX" secondItem="FFN-Uc-R10" secondAttribute="centerX" id="UNb-YL-ljQ"/>
+                <constraint firstItem="A5i-LE-2Tl" firstAttribute="centerY" secondItem="e03-Gc-QGg" secondAttribute="centerY" id="V3r-LP-aGa"/>
+                <constraint firstItem="FFN-Uc-R10" firstAttribute="width" secondItem="FFN-Uc-R10" secondAttribute="height" multiplier="1:1" id="Vyk-1X-q4L"/>
+                <constraint firstItem="fxe-Uu-SHE" firstAttribute="top" secondItem="e03-Gc-QGg" secondAttribute="bottom" constant="8" id="WCU-ZS-ppy"/>
+                <constraint firstItem="e03-Gc-QGg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="XC1-4k-czd"/>
+                <constraint firstItem="1Yq-59-aMK" firstAttribute="centerX" secondItem="cLD-GA-8I3" secondAttribute="centerX" id="Z9Y-O6-Url"/>
+                <constraint firstItem="hAe-Ko-F2e" firstAttribute="centerY" secondItem="vSd-GA-fNe" secondAttribute="centerY" id="Zpb-L1-hvr"/>
+                <constraint firstItem="AC9-5I-ICa" firstAttribute="centerX" secondItem="e03-Gc-QGg" secondAttribute="centerX" id="ZvD-wC-RHq"/>
+                <constraint firstItem="YiL-LO-8wR" firstAttribute="centerY" secondItem="A5i-LE-2Tl" secondAttribute="centerY" id="aU3-8G-hld"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
+                <constraint firstItem="AC9-5I-ICa" firstAttribute="centerY" secondItem="e03-Gc-QGg" secondAttribute="centerY" id="bRd-FD-RF6"/>
+                <constraint firstItem="mvd-BT-gzt" firstAttribute="width" secondItem="mvd-BT-gzt" secondAttribute="height" multiplier="1:1" id="bWU-M2-yAe"/>
+                <constraint firstItem="5Mk-SG-oWQ" firstAttribute="centerX" secondItem="mvd-BT-gzt" secondAttribute="centerX" id="biS-yn-0Dr"/>
+                <constraint firstItem="e03-Gc-QGg" firstAttribute="width" secondItem="e03-Gc-QGg" secondAttribute="height" multiplier="1:1" id="cde-YG-MI0"/>
+                <constraint firstItem="e03-Gc-QGg" firstAttribute="top" secondItem="vSd-GA-fNe" secondAttribute="bottom" constant="32" id="clp-zA-YBl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xRf-w8-VVn" secondAttribute="trailing" constant="12" id="fAs-pG-fBq"/>
+                <constraint firstItem="gmQ-7s-G5X" firstAttribute="centerX" secondItem="AXY-dp-DqD" secondAttribute="centerX" id="fYe-MX-F3h"/>
+                <constraint firstItem="FFN-Uc-R10" firstAttribute="centerX" secondItem="A5i-LE-2Tl" secondAttribute="centerX" id="fpO-QW-BHc"/>
+                <constraint firstItem="gwj-oI-VCm" firstAttribute="centerX" secondItem="4rB-Hm-tTg" secondAttribute="centerX" id="hAM-8Z-puy"/>
+                <constraint firstItem="5OC-Tu-Rju" firstAttribute="centerX" secondItem="FFN-Uc-R10" secondAttribute="centerX" id="iLN-LW-MGx"/>
+                <constraint firstItem="1Yq-59-aMK" firstAttribute="centerY" secondItem="cLD-GA-8I3" secondAttribute="centerY" id="lCi-Rk-1fL"/>
+                <constraint firstItem="gwj-oI-VCm" firstAttribute="centerY" secondItem="4rB-Hm-tTg" secondAttribute="centerY" id="lMf-71-IZt"/>
+                <constraint firstItem="xRf-w8-VVn" firstAttribute="centerY" secondItem="vSd-GA-fNe" secondAttribute="centerY" id="lWO-jH-05g"/>
+                <constraint firstItem="hAe-Ko-F2e" firstAttribute="leading" secondItem="vSd-GA-fNe" secondAttribute="trailing" id="mSx-9G-CBN"/>
+                <constraint firstItem="AXY-dp-DqD" firstAttribute="width" secondItem="AXY-dp-DqD" secondAttribute="height" multiplier="1:1" id="rYe-tu-x88"/>
+                <constraint firstItem="cLD-GA-8I3" firstAttribute="top" secondItem="mvd-BT-gzt" secondAttribute="bottom" constant="8" id="uDA-fj-3xy"/>
+                <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
+                <constraint firstItem="A5i-LE-2Tl" firstAttribute="width" secondItem="A5i-LE-2Tl" secondAttribute="height" multiplier="1:1" id="vcl-ch-6bh"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-593.60000000000002" y="-123.23838080959521"/>
+        </view>
+    </objects>
+</document>

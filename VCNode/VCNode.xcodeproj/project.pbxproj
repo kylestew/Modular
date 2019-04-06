@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E593EC20DABA03E7DC7BC89 /* Pods_VCNode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B744A631500F681BFC78A082 /* Pods_VCNode.framework */; };
+		FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */; };
+		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
+		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
+		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
+		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
+		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
+		FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C65A2215D976004F4991 /* UIColor+Hex.swift */; };
+		FF2AE3612243ED840098091E /* ToggleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AE3602243ED840098091E /* ToggleWidget.swift */; };
+		FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */; };
+		FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF35D4E9221B37050024D5CA /* PortWidget.swift */; };
+		FF39CC2A220F8A2B00C9AF52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */; };
+		FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */; };
+		FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC2D220F8A2B00C9AF52 /* Main.storyboard */; };
+		FF39CC31220F8A2C00C9AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */; };
+		FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */; };
+		FF39CC74220F8EC900C9AF52 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */; };
+		FF39CC75220F8F2F00C9AF52 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC3D220F8C7500C9AF52 /* mo_audio.mm */; };
+		FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */; };
+		FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */; };
+		FF3FC9562210F0F700496378 /* asset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC94F2210F0F700496378 /* asset.cpp */; };
+		FF3FC9572210F0F700496378 /* string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9512210F0F700496378 /* string.cpp */; };
+		FF3FC9582210F0F700496378 /* logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9522210F0F700496378 /* logger.cpp */; };
+		FF3FC9592210F0F700496378 /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9532210F0F700496378 /* audio.cpp */; };
+		FF3FC95A2210F0F700496378 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9542210F0F700496378 /* engine.cpp */; };
+		FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC95B2210F4B500496378 /* DSPCore.mm */; };
+		FF3FC96A2210F5F800496378 /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9642210F5F800496378 /* library.cpp */; };
+		FF4BEA6222164F53004E9D0B /* Fundamental_VCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */; };
+		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
+		FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Fundamental_ADSR.xib */; };
+		FF5DBD582244534F006B98FE /* Fundamental_VCAb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD572244534F006B98FE /* Fundamental_VCAb.xib */; };
+		FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */; };
+		FF5DC85D221F4A2D0018AC42 /* Fundamental_Scope.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DC85C221F4A2D0018AC42 /* Fundamental_Scope.xib */; };
+		FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF8E221C922D0086DDA8 /* Port.swift */; };
+		FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */; };
+		FF7059792228D4A300C6268E /* IXWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7059782228D4A300C6268E /* IXWidget.swift */; };
+		FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597A2228DB3D00C6268E /* WidgetThemes.swift */; };
+		FF70597D222904BC00C6268E /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597C222904BB00C6268E /* Param.swift */; };
+		FF90CBD7222C62A400263593 /* ParamWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90CBD6222C62A400263593 /* ParamWidget.swift */; };
+		FF959EFD22449BD4008F4FFC /* Befaco_Attenuverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF959EFC22449BD4008F4FFC /* Befaco_Attenuverter.xib */; };
+		FF977086221CCD52002283E2 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* Patch.swift */; };
+		FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE12221244C60028740B /* ModuleWrapper.mm */; };
+		FF98BE1722124B070028740B /* WireWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE1622124B070028740B /* WireWrapper.mm */; };
+		FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */; };
+		FF9A460322480933004F9765 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460222480933004F9765 /* Light.swift */; };
+		FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460422480ACE004F9765 /* LightWidget.swift */; };
+		FF9BD92C224494F6008277EE /* Fundamental_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */; };
+		FFA02B6B2246B07E0022A182 /* JW-Modules_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* JW-Modules_Quantizer.xib */; };
+		FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */; };
+		FFB178F8222D96B000DF019A /* Wireable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB178F7222D96B000DF019A /* Wireable.swift */; };
+		FFB9A72022292AFC003E0B06 /* Wire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9A71F22292AFC003E0B06 /* Wire.swift */; };
+		FFBC6BC82221DED200B973D5 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BC72221DED200B973D5 /* Buffer.swift */; };
+		FFBC6BCA22233F3500B973D5 /* ButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BC922233F3500B973D5 /* ButtonWidget.swift */; };
+		FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCB22233F6A00B973D5 /* Option.swift */; };
+		FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */; };
+		FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA57C9222912C600881D8B /* WireRegister.swift */; };
+		FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */; };
+		FFD313952246A9AF0057178C /* JW-Modules_SimpleClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD313942246A9AE0057178C /* JW-Modules_SimpleClock.xib */; };
+		FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */; };
+		FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */; };
+		FFE3A006221C689400960453 /* WireWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE3A005221C689400960453 /* WireWidget.swift */; };
+		FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */; };
+		FFF3B744222C606C0058B759 /* Fundamental_VCA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCNode.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCNode/Pods-VCNode.release.xcconfig"; sourceTree = "<group>"; };
+		AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCNode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCNode/Pods-VCNode.debug.xcconfig"; sourceTree = "<group>"; };
+		B744A631500F681BFC78A082 /* Pods_VCNode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCNode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFO.xib; sourceTree = "<group>"; };
+		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
+		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
+		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
+		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
+		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
+		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FF2AE3602243ED840098091E /* ToggleWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleWidget.swift; sourceTree = "<group>"; };
+		FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCF.xib; sourceTree = "<group>"; };
+		FF35D4E9221B37050024D5CA /* PortWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortWidget.swift; sourceTree = "<group>"; };
+		FF39CC26220F8A2B00C9AF52 /* VCNode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCNode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF39CC2E220F8A2B00C9AF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF39CC33220F8A2C00C9AF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF39CC35220F8A2C00C9AF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF39CC3C220F8C7500C9AF52 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
+		FF39CC3D220F8C7500C9AF52 /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
+		FF39CC3F220F8C9500C9AF52 /* mo_def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
+		FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FF39CC7B220F925A00C9AF52 /* VCVNode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCVNode-Bridging-Header.h"; sourceTree = "<group>"; };
+		FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudibleInstruments_Branches.xib; sourceTree = "<group>"; };
+		FF3FC9452210F0F700496378 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
+		FF3FC9472210F0F700496378 /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
+		FF3FC9482210F0F700496378 /* common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
+		FF3FC9492210F0F700496378 /* dsp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = dsp.hpp; sourceTree = "<group>"; };
+		FF3FC94A2210F0F700496378 /* audio.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = audio.hpp; sourceTree = "<group>"; };
+		FF3FC94C2210F0F700496378 /* ringbuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ringbuffer.hpp; sourceTree = "<group>"; };
+		FF3FC94D2210F0F700496378 /* asset.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = asset.hpp; sourceTree = "<group>"; };
+		FF3FC94F2210F0F700496378 /* asset.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asset.cpp; sourceTree = "<group>"; };
+		FF3FC9512210F0F700496378 /* string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = string.cpp; sourceTree = "<group>"; };
+		FF3FC9522210F0F700496378 /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
+		FF3FC9532210F0F700496378 /* audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio.cpp; sourceTree = "<group>"; };
+		FF3FC9542210F0F700496378 /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
+		FF3FC95B2210F4B500496378 /* DSPCore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPCore.mm; sourceTree = "<group>"; };
+		FF3FC95D2210F4C300496378 /* DSPCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPCore.h; sourceTree = "<group>"; };
+		FF3FC9612210F5F800496378 /* AudioInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AudioInterface.hpp; sourceTree = "<group>"; };
+		FF3FC9622210F5F800496378 /* Core.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Core.hpp; sourceTree = "<group>"; };
+		FF3FC9632210F5F800496378 /* library.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = library.hpp; sourceTree = "<group>"; };
+		FF3FC9642210F5F800496378 /* library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = library.cpp; sourceTree = "<group>"; };
+		FF3FC9662210F5F800496378 /* VCO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO.hpp; sourceTree = "<group>"; };
+		FF3FC9672210F5F800496378 /* Fundamental.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fundamental.hpp; sourceTree = "<group>"; };
+		FF3FC9682210F5F800496378 /* VoltageControlledOscillator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoltageControlledOscillator.h; sourceTree = "<group>"; };
+		FF3FC96B2210F79300496378 /* momuaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = momuaudio.h; sourceTree = "<group>"; };
+		FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Fundamental_VCO.xib; sourceTree = "<group>"; };
+		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
+		FF513B4022483E7900C24F98 /* AudibleInstruments.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AudibleInstruments.hpp; sourceTree = "<group>"; };
+		FF513B4122483E7900C24F98 /* Branches.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Branches.hpp; sourceTree = "<group>"; };
+		FF513B422248422300C24F98 /* Fundamental_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_ADSR.xib; sourceTree = "<group>"; };
+		FF5DBD572244534F006B98FE /* Fundamental_VCAb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCAb.xib; sourceTree = "<group>"; };
+		FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFOb.xib; sourceTree = "<group>"; };
+		FF5DC85C221F4A2D0018AC42 /* Fundamental_Scope.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_Scope.xib; sourceTree = "<group>"; };
+		FF64DF8E221C922D0086DDA8 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
+		FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Geometry.swift"; sourceTree = "<group>"; };
+		FF7059782228D4A300C6268E /* IXWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IXWidget.swift; sourceTree = "<group>"; };
+		FF70597A2228DB3D00C6268E /* WidgetThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetThemes.swift; sourceTree = "<group>"; };
+		FF70597C222904BB00C6268E /* Param.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
+		FF90CBD6222C62A400263593 /* ParamWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamWidget.swift; sourceTree = "<group>"; };
+		FF959EFC22449BD4008F4FFC /* Befaco_Attenuverter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_Attenuverter.xib; sourceTree = "<group>"; };
+		FF977085221CCD52002283E2 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
+		FF98BE12221244C60028740B /* ModuleWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModuleWrapper.mm; sourceTree = "<group>"; };
+		FF98BE14221244FA0028740B /* ModuleWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleWrapper.h; sourceTree = "<group>"; };
+		FF98BE1522124B070028740B /* WireWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireWrapper.h; sourceTree = "<group>"; };
+		FF98BE1622124B070028740B /* WireWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WireWrapper.mm; sourceTree = "<group>"; };
+		FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformWidget.swift; sourceTree = "<group>"; };
+		FF9A4601224803C0004F9765 /* Seq3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Seq3.hpp; sourceTree = "<group>"; };
+		FF9A460222480933004F9765 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		FF9A460422480ACE004F9765 /* LightWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
+		FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_Delay.xib; sourceTree = "<group>"; };
+		FFA02B6A2246B07E0022A182 /* JW-Modules_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JW-Modules_Quantizer.xib"; sourceTree = "<group>"; };
+		FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _ScopeWidget.swift; sourceTree = "<group>"; };
+		FFB178F7222D96B000DF019A /* Wireable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireable.swift; sourceTree = "<group>"; };
+		FFB9A71F22292AFC003E0B06 /* Wire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wire.swift; sourceTree = "<group>"; };
+		FFBC6BC72221DED200B973D5 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		FFBC6BC922233F3500B973D5 /* ButtonWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonWidget.swift; sourceTree = "<group>"; };
+		FFBC6BCB22233F6A00B973D5 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lerp.swift"; sourceTree = "<group>"; };
+		FFCA57C9222912C600881D8B /* WireRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireRegister.swift; sourceTree = "<group>"; };
+		FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_SEQ3.xib; sourceTree = "<group>"; };
+		FFD313942246A9AE0057178C /* JW-Modules_SimpleClock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JW-Modules_SimpleClock.xib"; sourceTree = "<group>"; };
+		FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Core_AudioInterface.xib; sourceTree = "<group>"; };
+		FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBrowserViewController.swift; sourceTree = "<group>"; };
+		FFE3A005221C689400960453 /* WireWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireWidget.swift; sourceTree = "<group>"; };
+		FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_Mixer.xib; sourceTree = "<group>"; };
+		FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCA.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF39CC23220F8A2B00C9AF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */,
+				FF39CC74220F8EC900C9AF52 /* CoreAudio.framework in Frameworks */,
+				6E593EC20DABA03E7DC7BC89 /* Pods_VCNode.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C625129461CE0FF84DB4BBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */,
+				902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF2514D32246C3F900FD1D44 /* ML_Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
+			);
+			path = ML_Modules;
+			sourceTree = "<group>";
+		};
+		FF29C6552215C1D2004F4991 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				FF70597A2228DB3D00C6268E /* WidgetThemes.swift */,
+				FF4BEA652216506D004E9D0B /* ModuleWidget.swift */,
+				FF7059782228D4A300C6268E /* IXWidget.swift */,
+				FF90CBD6222C62A400263593 /* ParamWidget.swift */,
+				FF29C6572215C282004F4991 /* KnobWidget.swift */,
+				FF35D4E9221B37050024D5CA /* PortWidget.swift */,
+				FFE3A005221C689400960453 /* WireWidget.swift */,
+				FFBC6BC922233F3500B973D5 /* ButtonWidget.swift */,
+				FF2AE3602243ED840098091E /* ToggleWidget.swift */,
+				FF9A460422480ACE004F9765 /* LightWidget.swift */,
+				FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */,
+				FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */,
+				FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		FF29C6562215C1F5004F4991 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC96B2210F79300496378 /* momuaudio.h */,
+				FF3FC95D2210F4C300496378 /* DSPCore.h */,
+				FF3FC95B2210F4B500496378 /* DSPCore.mm */,
+				FF98BE14221244FA0028740B /* ModuleWrapper.h */,
+				FF98BE12221244C60028740B /* ModuleWrapper.mm */,
+				FF98BE1522124B070028740B /* WireWrapper.h */,
+				FF98BE1622124B070028740B /* WireWrapper.mm */,
+				FF3FC9412210F0EB00496378 /* DSPCore */,
+				FF39CC3B220F8C6700C9AF52 /* MoMu */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		FF29C6592215D969004F4991 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF29C65A2215D976004F4991 /* UIColor+Hex.swift */,
+				FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */,
+				FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF39CC1D220F8A2B00C9AF52 = {
+			isa = PBXGroup;
+			children = (
+				FF39CC28220F8A2B00C9AF52 /* VCNode */,
+				FF39CC27220F8A2B00C9AF52 /* Products */,
+				FF39CC72220F8EC900C9AF52 /* Frameworks */,
+				6C625129461CE0FF84DB4BBB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FF39CC27220F8A2B00C9AF52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF39CC26220F8A2B00C9AF52 /* VCNode.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF39CC28220F8A2B00C9AF52 /* VCNode */ = {
+			isa = PBXGroup;
+			children = (
+				FF977087221CD21B002283E2 /* Helpers */,
+				FF29C6592215D969004F4991 /* Extensions */,
+				FF29C6562215C1F5004F4991 /* Bridge */,
+				FF29C6552215C1D2004F4991 /* Widgets */,
+				FF4BEA6022164F35004E9D0B /* Modules */,
+				FF5DC860221F64AC0018AC42 /* Core */,
+				FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */,
+				FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */,
+				FF39CC2D220F8A2B00C9AF52 /* Main.storyboard */,
+				FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */,
+				FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */,
+				FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */,
+				FF39CC35220F8A2C00C9AF52 /* Info.plist */,
+				FF39CC7B220F925A00C9AF52 /* VCVNode-Bridging-Header.h */,
+			);
+			path = VCNode;
+			sourceTree = "<group>";
+		};
+		FF39CC3B220F8C6700C9AF52 /* MoMu */ = {
+			isa = PBXGroup;
+			children = (
+				FF39CC3F220F8C9500C9AF52 /* mo_def.h */,
+				FF39CC3C220F8C7500C9AF52 /* mo_audio.h */,
+				FF39CC3D220F8C7500C9AF52 /* mo_audio.mm */,
+			);
+			path = MoMu;
+			sourceTree = "<group>";
+		};
+		FF39CC72220F8EC900C9AF52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */,
+				FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */,
+				B744A631500F681BFC78A082 /* Pods_VCNode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF39D9DC22483A2600BE830C /* AudibleInstruments */ = {
+			isa = PBXGroup;
+			children = (
+				FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */,
+			);
+			path = AudibleInstruments;
+			sourceTree = "<group>";
+		};
+		FF3FC9412210F0EB00496378 /* DSPCore */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9422210F0F700496378 /* dsp */,
+				FF3FC95E2210F5F800496378 /* modules */,
+			);
+			path = DSPCore;
+			sourceTree = "<group>";
+		};
+		FF3FC9422210F0F700496378 /* dsp */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9442210F0F700496378 /* include */,
+				FF3FC94E2210F0F700496378 /* src */,
+			);
+			name = dsp;
+			path = ../../../../DSPCore/dsp;
+			sourceTree = "<group>";
+		};
+		FF3FC9442210F0F700496378 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9452210F0F700496378 /* engine.hpp */,
+				FF3FC9462210F0F700496378 /* util */,
+				FF3FC9492210F0F700496378 /* dsp.hpp */,
+				FF3FC94A2210F0F700496378 /* audio.hpp */,
+				FF3FC94B2210F0F700496378 /* dsp */,
+				FF3FC94D2210F0F700496378 /* asset.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FF3FC9462210F0F700496378 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9472210F0F700496378 /* math.hpp */,
+				FF3FC9482210F0F700496378 /* common.hpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		FF3FC94B2210F0F700496378 /* dsp */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC94C2210F0F700496378 /* ringbuffer.hpp */,
+			);
+			path = dsp;
+			sourceTree = "<group>";
+		};
+		FF3FC94E2210F0F700496378 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC94F2210F0F700496378 /* asset.cpp */,
+				FF3FC9502210F0F700496378 /* util */,
+				FF3FC9532210F0F700496378 /* audio.cpp */,
+				FF3FC9542210F0F700496378 /* engine.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FF3FC9502210F0F700496378 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9512210F0F700496378 /* string.cpp */,
+				FF3FC9522210F0F700496378 /* logger.cpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		FF3FC95E2210F5F800496378 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				FF513B3F22483E7900C24F98 /* AudibleInstruments */,
+				FF3FC9602210F5F800496378 /* Core */,
+				FF3FC9632210F5F800496378 /* library.hpp */,
+				FF3FC9642210F5F800496378 /* library.cpp */,
+				FF3FC9652210F5F800496378 /* Fundamental */,
+			);
+			name = modules;
+			path = ../../../../DSPCore/modules;
+			sourceTree = "<group>";
+		};
+		FF3FC9602210F5F800496378 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9612210F5F800496378 /* AudioInterface.hpp */,
+				FF3FC9622210F5F800496378 /* Core.hpp */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FF3FC9652210F5F800496378 /* Fundamental */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FC9662210F5F800496378 /* VCO.hpp */,
+				FF9A4601224803C0004F9765 /* Seq3.hpp */,
+				FF3FC9672210F5F800496378 /* Fundamental.hpp */,
+				FF3FC9682210F5F800496378 /* VoltageControlledOscillator.h */,
+			);
+			path = Fundamental;
+			sourceTree = "<group>";
+		};
+		FF4BEA6022164F35004E9D0B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FF39D9DC22483A2600BE830C /* AudibleInstruments */,
+				FF2514D32246C3F900FD1D44 /* ML_Modules */,
+				FFD313932246A9700057178C /* JW-Modules */,
+				FF959EFB22449BAA008F4FFC /* Befaco */,
+				FF5DC85F221F4A3A0018AC42 /* Core */,
+				FF5DC85E221F4A310018AC42 /* Fundamental */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FF513B3F22483E7900C24F98 /* AudibleInstruments */ = {
+			isa = PBXGroup;
+			children = (
+				FF513B4022483E7900C24F98 /* AudibleInstruments.hpp */,
+				FF513B4122483E7900C24F98 /* Branches.hpp */,
+			);
+			path = AudibleInstruments;
+			sourceTree = "<group>";
+		};
+		FF5DC85E221F4A310018AC42 /* Fundamental */ = {
+			isa = PBXGroup;
+			children = (
+				FF5DC85C221F4A2D0018AC42 /* Fundamental_Scope.xib */,
+				FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */,
+				FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */,
+				FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */,
+				FF5DBD572244534F006B98FE /* Fundamental_VCAb.xib */,
+				FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */,
+				FF513B422248422300C24F98 /* Fundamental_ADSR.xib */,
+				FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */,
+				FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */,
+				FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */,
+			);
+			path = Fundamental;
+			sourceTree = "<group>";
+		};
+		FF5DC85F221F4A3A0018AC42 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FF5DC860221F64AC0018AC42 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FF977085221CCD52002283E2 /* Patch.swift */,
+				FF2780E02249895500B300F8 /* PatchStorage.swift */,
+				FFCA57C9222912C600881D8B /* WireRegister.swift */,
+				FF70597C222904BB00C6268E /* Param.swift */,
+				FFB178F7222D96B000DF019A /* Wireable.swift */,
+				FFBC6BCB22233F6A00B973D5 /* Option.swift */,
+				FF64DF8E221C922D0086DDA8 /* Port.swift */,
+				FF9A460222480933004F9765 /* Light.swift */,
+				FF0D8EC22249240400D9FBCC /* PowerMeter.swift */,
+				FFB9A71F22292AFC003E0B06 /* Wire.swift */,
+				FFBC6BC72221DED200B973D5 /* Buffer.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FF959EFB22449BAA008F4FFC /* Befaco */ = {
+			isa = PBXGroup;
+			children = (
+				FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */,
+				FF959EFC22449BD4008F4FFC /* Befaco_Attenuverter.xib */,
+			);
+			path = Befaco;
+			sourceTree = "<group>";
+		};
+		FF977087221CD21B002283E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FFD313932246A9700057178C /* JW-Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FFA02B6A2246B07E0022A182 /* JW-Modules_Quantizer.xib */,
+				FFD313942246A9AE0057178C /* JW-Modules_SimpleClock.xib */,
+			);
+			path = "JW-Modules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF39CC25220F8A2B00C9AF52 /* VCNode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "VCNode" */;
+			buildPhases = (
+				A92798C6258B44580A396DC9 /* [CP] Check Pods Manifest.lock */,
+				FF39CC22220F8A2B00C9AF52 /* Sources */,
+				FF39CC23220F8A2B00C9AF52 /* Frameworks */,
+				FF39CC24220F8A2B00C9AF52 /* Resources */,
+				8E401869E7DD0EF35E18C090 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VCNode;
+			productName = VCNode;
+			productReference = FF39CC26220F8A2B00C9AF52 /* VCNode.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF39CC1E220F8A2B00C9AF52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Kyle Stewart";
+				TargetAttributes = {
+					FF39CC25220F8A2B00C9AF52 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "VCNode" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF39CC1D220F8A2B00C9AF52;
+			productRefGroup = FF39CC27220F8A2B00C9AF52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF39CC25220F8A2B00C9AF52 /* VCNode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF39CC24220F8A2B00C9AF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */,
+				FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */,
+				FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */,
+				FFD313952246A9AF0057178C /* JW-Modules_SimpleClock.xib in Resources */,
+				FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */,
+				FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */,
+				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
+				FF4BEA6222164F53004E9D0B /* Fundamental_VCO.xib in Resources */,
+				FF5DC85D221F4A2D0018AC42 /* Fundamental_Scope.xib in Resources */,
+				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
+				FF959EFD22449BD4008F4FFC /* Befaco_Attenuverter.xib in Resources */,
+				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
+				FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */,
+				FF9BD92C224494F6008277EE /* Fundamental_Delay.xib in Resources */,
+				FF39CC31220F8A2C00C9AF52 /* Assets.xcassets in Resources */,
+				FFA02B6B2246B07E0022A182 /* JW-Modules_Quantizer.xib in Resources */,
+				FFF3B744222C606C0058B759 /* Fundamental_VCA.xib in Resources */,
+				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
+				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
+				FF5DBD582244534F006B98FE /* Fundamental_VCAb.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E401869E7DD0EF35E18C090 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VCNode/Pods-VCNode-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fingertips/Fingertips.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fingertips.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VCNode/Pods-VCNode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A92798C6258B44580A396DC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VCNode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF39CC22220F8A2B00C9AF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3FC9572210F0F700496378 /* string.cpp in Sources */,
+				FF3FC96A2210F5F800496378 /* library.cpp in Sources */,
+				FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */,
+				FF7059792228D4A300C6268E /* IXWidget.swift in Sources */,
+				FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */,
+				FF98BE1722124B070028740B /* WireWrapper.mm in Sources */,
+				FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */,
+				FFBC6BCA22233F3500B973D5 /* ButtonWidget.swift in Sources */,
+				FF39CC75220F8F2F00C9AF52 /* mo_audio.mm in Sources */,
+				FFBC6BC82221DED200B973D5 /* Buffer.swift in Sources */,
+				FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */,
+				FF977086221CCD52002283E2 /* Patch.swift in Sources */,
+				FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */,
+				FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */,
+				FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */,
+				FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */,
+				FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */,
+				FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */,
+				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
+				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
+				FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */,
+				FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */,
+				FF9A460322480933004F9765 /* Light.swift in Sources */,
+				FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */,
+				FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */,
+				FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */,
+				FF3FC9562210F0F700496378 /* asset.cpp in Sources */,
+				FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */,
+				FF70597D222904BC00C6268E /* Param.swift in Sources */,
+				FF2AE3612243ED840098091E /* ToggleWidget.swift in Sources */,
+				FF3FC9592210F0F700496378 /* audio.cpp in Sources */,
+				FF3FC9582210F0F700496378 /* logger.cpp in Sources */,
+				FF90CBD7222C62A400263593 /* ParamWidget.swift in Sources */,
+				FFE3A006221C689400960453 /* WireWidget.swift in Sources */,
+				FF39CC2A220F8A2B00C9AF52 /* AppDelegate.swift in Sources */,
+				FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */,
+				FFB178F8222D96B000DF019A /* Wireable.swift in Sources */,
+				FFB9A72022292AFC003E0B06 /* Wire.swift in Sources */,
+				FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */,
+				FF3FC95A2210F0F700496378 /* engine.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF39CC2D220F8A2B00C9AF52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF39CC2E220F8A2B00C9AF52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF39CC33220F8A2C00C9AF52 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF39CC36220F8A2C00C9AF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF39CC37220F8A2C00C9AF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF39CC39220F8A2C00C9AF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF99F2327D68A4811DAB9B27 /* Pods-VCNode.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EQRQCAG846;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"../DSPCore/dsp/include/**",
+					"../DSPCore/library/**",
+				);
+				INFOPLIST_FILE = VCNode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.VCNode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCNode/VCVNode-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF39CC3A220F8A2C00C9AF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 902DD686D0CA245736EA5D02 /* Pods-VCNode.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EQRQCAG846;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"../DSPCore/dsp/include/**",
+					"../DSPCore/library/**",
+				);
+				INFOPLIST_FILE = VCNode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.VCNode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCNode/VCVNode-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF39CC21220F8A2B00C9AF52 /* Build configuration list for PBXProject "VCNode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF39CC36220F8A2C00C9AF52 /* Debug */,
+				FF39CC37220F8A2C00C9AF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF39CC38220F8A2C00C9AF52 /* Build configuration list for PBXNativeTarget "VCNode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF39CC39220F8A2C00C9AF52 /* Debug */,
+				FF39CC3A220F8A2C00C9AF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF39CC1E220F8A2B00C9AF52 /* Project object */;
+}
