@@ -8,10 +8,18 @@ set(SOURCES
         src/asset.cpp
         src/util/string.cpp
         src/util/logger.cpp
-        src/dsp/minblep.cpp)
+        src/dsp/minblep.cpp
+
+        dep/libsamplerate-0.1.9/src/samplerate.c
+        dep/libsamplerate-0.1.9/src/src_linear.c
+        dep/libsamplerate-0.1.9/src/src_sinc.c
+        dep/libsamplerate-0.1.9/src/src_zoh.c
+        )
 add_library(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
         ${PROJECT_SOURCE_DIR}/include
+
+        ${PROJECT_SOURCE_DIR}/dep/libsamplerate-0.1.9/src
         )
