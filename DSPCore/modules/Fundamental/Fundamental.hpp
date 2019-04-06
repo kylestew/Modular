@@ -19,7 +19,7 @@ namespace library {
         struct VCF;
         struct ADSR;
         struct SEQ3;
-//        struct Delay;
+        struct Delay;
         struct Scope;
 
         struct Fundamental {
@@ -35,7 +35,7 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
                 p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
                 p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
-//                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
+                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
                 p->addModuleBuilder(ModuleBuilder::create<Scope>("Scope"));
 
                 return p;

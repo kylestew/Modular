@@ -25,7 +25,7 @@ class ModuleBrowserViewController : UITableViewController {
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
-//            "Delay",
+            "Delay",
             "Scope"
             ]),
 //        Pack.init(title: "Befaco", modules: [

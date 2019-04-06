@@ -8,13 +8,12 @@ using namespace dsp;
 
 #define HISTORY_SIZE (1<<21)
 
-namespace library {
+namespace library { namespace fundamental {
 
     struct Delay: Module {
         enum ParamIds {
             TIME_PARAM,
             FEEDBACK_PARAM,
-            COLOR_PARAM,
             MIX_PARAM,
             NUM_PARAMS
         };
@@ -22,11 +21,10 @@ namespace library {
             NUM_OPTIONS,
         };
         enum InputIds {
-            INPUT,
             TIME_CV,
             FEEDBACK_CV,
-            COLOR_CV,
             MIX_CV,
+            IN_INPUT,
             NUM_INPUTS
         };
         enum OutputIds {
@@ -42,107 +40,76 @@ namespace library {
         DoubleRingBuffer<float, HISTORY_SIZE> historyBuffer;
         DoubleRingBuffer<float, 16> outBuffer;
         SRC_STATE *src;
+        float lastWet = 0.f;
 
         Delay() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
             // map CVs to Params
-//            params[FREQ_PARAM].cvIndex = FREQ_CV;
-//            params[AMP_PARAM].cvIndex = AMP_CV;
-//            params[PW_PARAM].cvIndex = PWM_CV;
+            params[TIME_PARAM].cvIndex = TIME_CV;
+            params[FEEDBACK_PARAM].cvIndex = FEEDBACK_CV;
+            params[MIX_PARAM].cvIndex = MIX_CV;
 
-            assert(src);
             src = src_new(SRC_SINC_FASTEST, 1, NULL);
+            assert(src);
         }
         ~Delay() {
             src_delete(src);
         }
 
+        void reset() override {
+            params[TIME_PARAM].setting = 0.f;
+            params[FEEDBACK_PARAM].setting = 0.f;
+            params[MIX_PARAM].setting = 0.f;
+        }
+
         void step() override {
             // get input to delay block
-//            float in
+            float in = inputs[IN_INPUT].value;
+            float feedback = params[FEEDBACK_PARAM].valueNormalized();
+            float dry = in + lastWet * feedback;
 
+            // compute delay time in seconds
+            float time = params[TIME_PARAM].valueNormalized();
+            float delay = 1e-3 * powf(10.0f / 1e-3, time);
+            // number of delay samples
+            float index = delay * engineGetSampleRate();
 
-
-
-
-            /*
-            float freq = params[FREQ_PARAM].value;
-            float amp = params[AMP_PARAM].value;
-            float pw = params[PW_PARAM].value;
-            int waveform = options[WAVEFORM_BUTTON].value;
-            int invert = options[INVERT_TOGGLE].value;
-
-            // clamp some values as CVs may push them out of range
-            amp = clamp(amp, 0.f, 1.f);
-            pw = clamp(pw, 0.f, 1.f);
-
-            oscillator.setPitch(freq);
-            oscillator.setPulseWidth(pw);
-            oscillator.invert = invert == 1 ? true : false;
-            oscillator.process(engineGetSampleTime());
-
-            float output = 0.f;
-            switch (waveform) {
-                case SINE:
-                    output = oscillator.sin();
-                    break;
-                case TRIANGLE:
-                    output = oscillator.tri();
-                    break;
-                case SAW:
-                    output = oscillator.saw();
-                    break;
-                case PULSE:
-                    output = oscillator.sqr();
+            // push dry sample into history buffer
+            if (!historyBuffer.full()) {
+                historyBuffer.push(dry);
             }
-            outputs[OUTPUT].value = output * amp;
 
-            // update waveform preview if changes effect its display
-            if (lastWaveform != waveform ||
-                lastAmp != amp ||
-                lastPW != pw ||
-                lastInvert != invert) {
+            // how many samples do we need to consume to catch up?
+            float consume = index - historyBuffer.size();
 
-                lastWaveform = waveform;
-                lastAmp = amp;
-                lastPW = pw;
-                lastInvert = invert;
-
-                // update params
-                previewOsc.setPulseWidth(pw);
-                previewOsc.invert = invert;
-
-                // fill full preview buffer
-                float* buffer = buffers[WAVE_PREVIEW_BUFFER].samples;
-                float deltaTime = 1.0f / (float)(WAVE_PREVIEW_BUFFER_SIZE - 1);
-                if (waveform == PULSE)
-                    deltaTime = 1.0f / (float)(WAVE_PREVIEW_BUFFER_SIZE);
-                previewOsc.phase = -deltaTime; // reset for new waveform
-                for (int i = 0; i < WAVE_PREVIEW_BUFFER_SIZE; ++i) {
-                    previewOsc.process(deltaTime);
-                    float output = 0.f;
-                    switch (waveform) {
-                        case SINE:
-                            output = previewOsc.sin();
-                            break;
-                        case TRIANGLE:
-                            output = previewOsc.tri();
-                            break;
-                        case SAW:
-                            output = previewOsc.saw();
-                            break;
-                        case PULSE:
-                            output = previewOsc.sqr();
-                    }
-                    *buffer = output * amp;
-                    buffer++;
+            if (outBuffer.empty()) {
+                double ratio = 1.f;
+                if (fabsf(consume) >= 16.f) {
+                    ratio = powf(10.f, clamp(consume / 10000.f, -1.f, 1.f));
                 }
 
-                // increment version for UI updates
-                buffers[WAVE_PREVIEW_BUFFER].version++;
+                SRC_DATA srcData;
+                srcData.data_in = (const float*) historyBuffer.startData();
+                srcData.data_out = (float*) outBuffer.endData();
+                srcData.input_frames = min(historyBuffer.size(), 16);
+                srcData.output_frames = outBuffer.capacity();
+                srcData.end_of_input = false;
+                srcData.src_ratio = ratio;
+                src_process(src, &srcData);
+                historyBuffer.startIncr(srcData.input_frames_used);
+                outBuffer.endIncr(srcData.output_frames_gen);
             }
-             */
+
+            float wet = 0.f;
+            if (!outBuffer.empty()) {
+                wet = outBuffer.shift();
+            }
+            lastWet = wet;
+
+            float mix = params[MIX_PARAM].valueNormalized();
+            float out = crossfade(in, wet, mix);
+            outputs[OUTPUT].value = out;
         }
     };
-}
+}}
 
 
