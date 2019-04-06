@@ -2,6 +2,7 @@
 #include "Fundamental.hpp"
 #include "dsp/ringbuffer.hpp"
 #include "dsp/filter.hpp"
+#include "samplerate.h"
 
 using namespace dsp;
 
@@ -40,7 +41,7 @@ namespace library {
 
         DoubleRingBuffer<float, HISTORY_SIZE> historyBuffer;
         DoubleRingBuffer<float, 16> outBuffer;
-//        SRC_STATE *src;
+        SRC_STATE *src;
 
         Delay() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
             // map CVs to Params
@@ -48,9 +49,11 @@ namespace library {
 //            params[AMP_PARAM].cvIndex = AMP_CV;
 //            params[PW_PARAM].cvIndex = PWM_CV;
 
+            assert(src);
+            src = src_new(SRC_SINC_FASTEST, 1, NULL);
         }
         ~Delay() {
-//            src_delete(src);
+            src_delete(src);
         }
 
         void step() override {
