@@ -32,7 +32,7 @@ namespace library {
 
                 p->addModuleBuilder(ModuleBuilder::create<VCO1>("VCO-1"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
-//                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
+                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
 //                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCAb"));

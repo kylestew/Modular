@@ -76,25 +76,23 @@ class SelectorWidget : UIControl, Option {
     let PORT_SIZE_PERC: CGFloat = 0.4
     let KNOB_IX_ZOOM_SCALE: CGFloat = 1.4
 
+    private let animateLayer = CAShapeLayer()
     private let outlineLayer = CAShapeLayer()
     private let trackLayer = CAShapeLayer()
     private let valueLayer = CAShapeLayer()
 
     private func setupUI() {
-        layer.addSublayer(outlineLayer)
-        layer.addSublayer(trackLayer)
-        layer.addSublayer(valueLayer)
+        layer.addSublayer(animateLayer)
+        animateLayer.addSublayer(outlineLayer)
+        animateLayer.addSublayer(trackLayer)
+        animateLayer.addSublayer(valueLayer)
     }
 
     private func zoomUI(zoomed: Bool = true) {
         if zoomed {
-            outlineLayer.transform = CATransform3DMakeScale(KNOB_IX_ZOOM_SCALE, KNOB_IX_ZOOM_SCALE, 1.0)
-            trackLayer.transform = CATransform3DMakeScale(KNOB_IX_ZOOM_SCALE, KNOB_IX_ZOOM_SCALE, 1.0)
-            valueLayer.transform = CATransform3DMakeScale(KNOB_IX_ZOOM_SCALE, KNOB_IX_ZOOM_SCALE, 1.0)
+            animateLayer.transform = CATransform3DMakeScale(KNOB_IX_ZOOM_SCALE, KNOB_IX_ZOOM_SCALE, 1.0)
         } else {
-            outlineLayer.transform = CATransform3DIdentity
-            trackLayer.transform = CATransform3DIdentity
-            valueLayer.transform = CATransform3DIdentity
+            animateLayer.transform = CATransform3DIdentity
         }
     }
 
@@ -115,9 +113,15 @@ class SelectorWidget : UIControl, Option {
 
         // re-position layers
         let squareFrame = CGRect(x: dx, y: dy, width: knobSize, height: knobSize)
-        outlineLayer.frame = squareFrame
-        trackLayer.frame = squareFrame
-        valueLayer.frame = squareFrame
+        animateLayer.bounds = squareFrame
+        animateLayer.position = CGPoint(x: frame.width / 2.0, y: frame.height / 2.0)
+
+        outlineLayer.bounds = animateLayer.bounds
+        outlineLayer.position = animateLayer.position
+        trackLayer.bounds = animateLayer.bounds
+        trackLayer.position = animateLayer.position
+        valueLayer.bounds = animateLayer.bounds
+        valueLayer.position = animateLayer.position
 
         // draw track path
         let rad = knobSize / 2.0

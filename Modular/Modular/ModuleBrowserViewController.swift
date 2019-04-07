@@ -20,14 +20,14 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Fundamental", modules: [
             "VCO-1",
 //            "VCO-2",
-//            "LFO",
+            "LFO",
 //            "VCA",
 //            "VCAb",
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
 //            "Delay",
-//            "Scope"
+            "Scope"
             ]),
 //        Pack.init(title: "Befaco", modules: [
 //            "Mixer",

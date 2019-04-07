@@ -106,30 +106,25 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCALE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Hm-BP1" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="20" y="258" width="100" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="oZe-5F-a6j"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLF-6j-EeU" customClass="SelectorWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="20" y="160" width="100" height="100"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCALE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Hm-BP1" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="100" width="100" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="oZe-5F-a6j"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="index">
-                                    <integer key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                    </subviews>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="7nM-Lx-aEA"/>
                         <constraint firstAttribute="width" secondItem="LLF-6j-EeU" secondAttribute="height" multiplier="1:1" id="83S-sz-TcS"/>
-                        <constraint firstAttribute="bottom" secondItem="ycS-Hm-BP1" secondAttribute="bottom" constant="-24" id="Q2X-tm-B5P"/>
-                        <constraint firstAttribute="trailing" secondItem="ycS-Hm-BP1" secondAttribute="trailing" id="WZT-QM-HIc"/>
-                        <constraint firstItem="ycS-Hm-BP1" firstAttribute="leading" secondItem="LLF-6j-EeU" secondAttribute="leading" id="jB7-RR-mE0"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value">
@@ -161,10 +156,13 @@
                 <constraint firstItem="LLF-6j-EeU" firstAttribute="top" secondItem="CCY-a8-FVI" secondAttribute="bottom" constant="40" id="LQR-el-Ljy"/>
                 <constraint firstItem="jal-9F-t9E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="VnN-2U-A9q"/>
                 <constraint firstItem="Egk-eZ-ydQ" firstAttribute="centerY" secondItem="jal-9F-t9E" secondAttribute="centerY" id="Wc1-RW-8X2"/>
+                <constraint firstItem="ycS-Hm-BP1" firstAttribute="centerY" secondItem="LLF-6j-EeU" secondAttribute="centerY" constant="60" id="ZVR-xM-dNH"/>
+                <constraint firstItem="ycS-Hm-BP1" firstAttribute="width" secondItem="LLF-6j-EeU" secondAttribute="width" id="Zln-Zf-B24"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
                 <constraint firstAttribute="trailing" secondItem="HqH-uR-kiU" secondAttribute="trailing" constant="10" id="dBW-Xm-8aB"/>
                 <constraint firstItem="l2A-nP-WjV" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="fqv-OI-daO"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="jal-9F-t9E" secondAttribute="bottom" constant="20" id="nEW-bn-SJV"/>
+                <constraint firstItem="ycS-Hm-BP1" firstAttribute="centerX" secondItem="LLF-6j-EeU" secondAttribute="centerX" id="pCC-Ci-xib"/>
                 <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
                 <constraint firstItem="l2A-nP-WjV" firstAttribute="width" secondItem="CCY-a8-FVI" secondAttribute="width" id="wW5-M3-NQZ"/>
                 <constraint firstAttribute="bottom" secondItem="HqH-uR-kiU" secondAttribute="bottom" constant="4" id="yMN-bG-5zh"/>
