@@ -46,40 +46,28 @@ class ModuleWidget : UIView, ModuleDelegate {
     // MARK: - Serialize/De
 
     static func create(with state: ModuleState) -> ModuleWidget? {
-        return nil
-//        guard
-//            let moduleId = data["id"] as? String,
-//            let pack = data["pack"] as? String,
-//            let slug = data["slug"] as? String,
-//            let widget = create(forPack: pack, andModuleSlug: slug)
-//            else {
-//                return nil
-//        }
-//
-//        // replace with saved id
-//        widget.moduleId = moduleId
-//
-//        // bind params / options from data
-//        if let params = data["params"] as? [String: Any] {
-//            for (key, val) in params {
-//                if let index = Int(key), let value = val as? Double {
-//                    // TODO: will need to set CV amount as well
-//                    widget.module.setValue(Float(value), forParamId: index)
-//                }
-//            }
-//        }
-//        if let options = data["options"] as? [String: Any] {
-//            for (key, val) in options {
-//                if let index = Int(key), let value = val as? Int {
-//                    widget.module.setValue(value, forOptionId: index)
-//                }
-//            }
-//        }
-//
-//        // rebind to update UI per engine values
-//        widget.bindToModule()
-//
-//        return widget
+        guard
+            let widget = create(forPack: state.pack, andSlug: state.slug)
+            else {
+                return nil
+        }
+
+        // replace with saved id
+        widget.moduleId = state.id
+
+        // bind params / options from data
+        for param in state.params {
+            widget.module.setValue(param.value, forParamId: param.idx)
+            widget.module.setCVAmount(param.cvAmount, forParamId: param.idx)
+        }
+        for option in state.options {
+            widget.module.setValue(option.index, forOptionId: option.idx)
+        }
+
+        // rebind to update UI per engine values
+        widget.bindToModule()
+
+        return widget
     }
 
     func moduleState() -> ModuleState {
@@ -87,13 +75,13 @@ class ModuleWidget : UIView, ModuleDelegate {
         for i in 0..<module.paramCount {
             let val = module.value(forParamId: i)
             let cvVal = module.cvAmount(forParamId: i)
-            paramStates.append(ParamState.init(value: val, cvAmount: cvVal))
+            paramStates.append(ParamState.init(idx: i, value: val, cvAmount: cvVal))
         }
 
         var optionStates = [OptionState]()
         for i in 0..<module.optionCount {
             let idx = module.value(forOptionId: i)
-            optionStates.append(OptionState.init(index: Int(idx)))
+            optionStates.append(OptionState.init(idx: i, index: Int(idx)))
         }
 
         return ModuleState(id: moduleId,

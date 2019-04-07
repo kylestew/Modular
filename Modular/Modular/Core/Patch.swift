@@ -20,6 +20,8 @@ class Patch: PatchDelegate {
     let masterContainerView = UIView()
     let widgetsView = UIView()
 
+    var deferredPatchLoader: PatchLoader?
+
     private static let size: CGSize = CGSize(width: 10_000, height: 10_000)
     private var center: CGPoint = {
         return CGPoint(x: Patch.size.width / 2.0, y: Patch.size.height / 2.0)
@@ -55,26 +57,39 @@ class Patch: PatchDelegate {
 
     // MARK: - Serialize/De
 
-//    func tempStorageUrl() -> URL {
-//
-//    }
+    static func tempStorageUrl() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory.appendingPathComponent("temp").appendingPathExtension("mod")
+    }
 
-    convenience init(with url: URL) {
-        self.init()
+    convenience init?(with url: URL) {
+        do {
+            let data = try Data.init(contentsOf: Patch.tempStorageUrl())
+            let jsonDecoder = JSONDecoder()
+            let patchState = try jsonDecoder.decode(PatchState.self, from: data)
 
-        // TODO: pull from disk and deserialize
+            self.init()
 
-//        // HACK: wait for engine to come alive
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-//            guard let self = self else { return }
-//
-//            let storage = PatchStorage(with: data, wireRegister: self.wireRegister)
-//            storage.loadModules(into: self.widgetsView)
-//            storage.loadWires()
-//        }
-//
-//        // TEMP
-//        togglePowerMetering()
+            // defer loading of patch
+            deferredPatchLoader = PatchLoader.init(with: patchState, wireRegister: wireRegister)
+        } catch {
+            return nil
+        }
+    }
+
+    func loadDeferredPatch(completion: @escaping () -> Void) {
+        guard let loader = deferredPatchLoader else { return }
+
+        loader.loadModules(into: widgetsView)
+        loader.loadWires()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { 
+            completion()
+        }
+
+        // TEMP
+        togglePowerMetering()
     }
 
     func saveToDisk() {
@@ -96,9 +111,13 @@ class Patch: PatchDelegate {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(state)
 
-            // TODO: save to disk
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            print(jsonString)
+            // TODO: remove for testing
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print(jsonString)
+            }
+
+            let url = Patch.tempStorageUrl()
+            try jsonData.write(to: url)
 
         } catch {
             assert(false, "Could not serialize patch")
