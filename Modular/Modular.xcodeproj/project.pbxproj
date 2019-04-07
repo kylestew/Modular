@@ -50,7 +50,7 @@
 		FF3FC95A2210F0F700496378 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9542210F0F700496378 /* engine.cpp */; };
 		FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC95B2210F4B500496378 /* DSPCore.mm */; };
 		FF3FC96A2210F5F800496378 /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC9642210F5F800496378 /* library.cpp */; };
-		FF4BEA6222164F53004E9D0B /* Fundamental_VCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */; };
+		FF4BEA6222164F53004E9D0B /* Fundamental_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Fundamental_VCO-1.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
 		FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Fundamental_ADSR.xib */; };
 		FF5DBD582244534F006B98FE /* Fundamental_VCAb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD572244534F006B98FE /* Fundamental_VCAb.xib */; };
@@ -71,6 +71,7 @@
 		FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460422480ACE004F9765 /* LightWidget.swift */; };
 		FF9BD92C224494F6008277EE /* Fundamental_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */; };
 		FFA02B6B2246B07E0022A182 /* JW-Modules_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* JW-Modules_Quantizer.xib */; };
+		FFAEEF572259A6B400DC005B /* Fundamental_VCO-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAEEF562259A6B400DC005B /* Fundamental_VCO-2.xib */; };
 		FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */; };
 		FFB178F8222D96B000DF019A /* Wireable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB178F7222D96B000DF019A /* Wireable.swift */; };
 		FFB9A72022292AFC003E0B06 /* Wire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9A71F22292AFC003E0B06 /* Wire.swift */; };
@@ -164,7 +165,7 @@
 		FF3FC9672210F5F800496378 /* Fundamental.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Fundamental.hpp; sourceTree = "<group>"; };
 		FF3FC9682210F5F800496378 /* VoltageControlledOscillator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoltageControlledOscillator.h; sourceTree = "<group>"; };
 		FF3FC96B2210F79300496378 /* momuaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = momuaudio.h; sourceTree = "<group>"; };
-		FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Fundamental_VCO.xib; sourceTree = "<group>"; };
+		FF4BEA6122164F53004E9D0B /* Fundamental_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Fundamental_VCO-1.xib"; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
 		FF513B4022483E7900C24F98 /* AudibleInstruments.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AudibleInstruments.hpp; sourceTree = "<group>"; };
 		FF513B4122483E7900C24F98 /* Branches.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Branches.hpp; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 		FF9A460422480ACE004F9765 /* LightWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
 		FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_Delay.xib; sourceTree = "<group>"; };
 		FFA02B6A2246B07E0022A182 /* JW-Modules_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JW-Modules_Quantizer.xib"; sourceTree = "<group>"; };
+		FFAEEF562259A6B400DC005B /* Fundamental_VCO-2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Fundamental_VCO-2.xib"; sourceTree = "<group>"; };
 		FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _ScopeWidget.swift; sourceTree = "<group>"; };
 		FFB178F7222D96B000DF019A /* Wireable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireable.swift; sourceTree = "<group>"; };
 		FFB9A71F22292AFC003E0B06 /* Wire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wire.swift; sourceTree = "<group>"; };
@@ -536,14 +538,15 @@
 		FF5DC85E221F4A310018AC42 /* Fundamental */ = {
 			isa = PBXGroup;
 			children = (
-				FF4BEA6122164F53004E9D0B /* Fundamental_VCO.xib */,
+				FF4BEA6122164F53004E9D0B /* Fundamental_VCO-1.xib */,
+				FFAEEF562259A6B400DC005B /* Fundamental_VCO-2.xib */,
 				FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */,
+				FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */,
 				FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */,
 				FF5DC85C221F4A2D0018AC42 /* Fundamental_Scope.xib */,
 				FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */,
 				FF5DBD572244534F006B98FE /* Fundamental_VCAb.xib */,
 				FF513B422248422300C24F98 /* Fundamental_ADSR.xib */,
-				FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */,
 				FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */,
 				FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */,
 			);
@@ -669,7 +672,7 @@
 				FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */,
 				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
-				FF4BEA6222164F53004E9D0B /* Fundamental_VCO.xib in Resources */,
+				FF4BEA6222164F53004E9D0B /* Fundamental_VCO-1.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FF5DC85D221F4A2D0018AC42 /* Fundamental_Scope.xib in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
@@ -692,6 +695,7 @@
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
 				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
 				FF5DBD582244534F006B98FE /* Fundamental_VCAb.xib in Resources */,
+				FFAEEF572259A6B400DC005B /* Fundamental_VCO-2.xib in Resources */,
 				FF374ADE2259598800E2EE8E /* install-sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

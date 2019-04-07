@@ -53,8 +53,8 @@ int main() {
 
 //    engineSetParam(vco1, library::EvenVCO::OCTAVE_PARAM, 0.4);
 //    library::Befaco::EvenVCO::OCTAVE_PARAM
-    engineSetParam(vco1, library::fundamental::VCO::AMP_PARAM, 0.6);
-    engineSetParam(vco1, library::fundamental::VCO::FREQ_PARAM, 0.425);
+//    engineSetParam(vco1, library::fundamental::VCO::AMP_PARAM, 0.6);
+//    engineSetParam(vco1, library::fundamental::VCO::FREQ_PARAM, 0.425);
     std::this_thread::sleep_for(std::chrono::seconds(12));
 
     // we own all modules and wires, need to free

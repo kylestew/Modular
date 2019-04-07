@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="VCNode" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="388" height="248"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-a8-FVI" customClass="ParamWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-a8-FVI" customClass="ParamWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="24" y="24" width="100" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-nP-WjV">
@@ -44,7 +44,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-XZ-aQc" userLabel="output" customClass="PortWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-XZ-aQc" userLabel="output" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="284" y="160" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="FKn-Uk-u7Z"/>
@@ -57,7 +57,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNN-sx-Zrq" customClass="ParamWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNN-sx-Zrq" customClass="ParamWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="144" y="24" width="100" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjC-dh-Wj8">
@@ -86,7 +86,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-wy-knC" customClass="ParamWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-wy-knC" customClass="ParamWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="264" y="24" width="100" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWZ-PR-uUV">
@@ -115,7 +115,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3r6-Ia-dSy" customClass="WaveformWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3r6-Ia-dSy" customClass="WaveformWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="144" y="164" width="100" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="ICs-Kq-x8r"/>
@@ -136,7 +136,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-gz-6Vm" customClass="ButtonWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-gz-6Vm" customClass="ButtonWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="144" y="164" width="130" height="70"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="index">
@@ -150,7 +150,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-t3-Esk" customClass="ToggleWidget" customModule="VCNode" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg8-t3-Esk" customClass="ToggleWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="34" y="164" width="80" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="invert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoi-Ua-AyQ">
@@ -188,6 +188,16 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-w4-aX0" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="298" y="230" width="80" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="77J-Bu-dvB"/>
+                        <constraint firstAttribute="height" constant="14" id="npI-yN-qBi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -195,6 +205,7 @@
                 <constraint firstItem="3r6-Ia-dSy" firstAttribute="top" secondItem="cNN-sx-Zrq" secondAttribute="bottom" constant="40" id="2y2-IE-2vK"/>
                 <constraint firstItem="ghM-wy-knC" firstAttribute="width" secondItem="ghM-wy-knC" secondAttribute="height" multiplier="1:1" id="4Mj-kc-Q4J"/>
                 <constraint firstItem="ghM-wy-knC" firstAttribute="centerY" secondItem="cNN-sx-Zrq" secondAttribute="centerY" id="7BK-Pm-dDO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5cl-w4-aX0" secondAttribute="bottom" constant="4" id="8Zc-MD-aci"/>
                 <constraint firstItem="Xg8-t3-Esk" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="Crp-KU-pvB"/>
                 <constraint firstItem="G8n-gz-6Vm" firstAttribute="bottom" secondItem="3r6-Ia-dSy" secondAttribute="bottom" constant="10" id="MwF-9W-cMM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ghM-wy-knC" secondAttribute="trailing" constant="24" id="NTw-Sd-V0D"/>
@@ -215,6 +226,7 @@
                 <constraint firstItem="3r6-Ia-dSy" firstAttribute="centerX" secondItem="cNN-sx-Zrq" secondAttribute="centerX" id="rAQ-kl-wrj"/>
                 <constraint firstItem="PKB-XZ-aQc" firstAttribute="top" secondItem="ghM-wy-knC" secondAttribute="bottom" constant="36" id="xEO-F2-afS"/>
                 <constraint firstItem="uET-Zh-NMw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xkF-Az-kYn"/>
+                <constraint firstAttribute="trailing" secondItem="5cl-w4-aX0" secondAttribute="trailing" constant="10" id="yyV-xG-uzX"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
