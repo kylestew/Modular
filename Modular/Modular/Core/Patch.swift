@@ -55,26 +55,27 @@ class Patch: PatchDelegate {
 
     // MARK: - Serialize/De
 
-//    func tempStorageUrl() -> URL {
-//
-//    }
+    static func tempStorageUrl() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory.appendingPathComponent("temp").appendingPathExtension("mod")
+    }
 
-    convenience init(with url: URL) {
-        self.init()
+    convenience init?(with url: URL) {
+        do {
+            let data = try Data.init(contentsOf: Patch.tempStorageUrl())
+            let jsonDecoder = JSONDecoder()
+            let patchState = try jsonDecoder.decode(PatchState.self, from: data)
 
-        // TODO: pull from disk and deserialize
+            self.init()
 
-//        // HACK: wait for engine to come alive
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-//            guard let self = self else { return }
-//
-//            let storage = PatchStorage(with: data, wireRegister: self.wireRegister)
-//            storage.loadModules(into: self.widgetsView)
-//            storage.loadWires()
-//        }
-//
-//        // TEMP
-//        togglePowerMetering()
+            // load patch into UI
+            let loader = PatchLoader.init(with: patchState, wireRegister: wireRegister, patchDelegate: self)
+            loader.loadModules(into: widgetsView)
+            loader.loadWires()
+        } catch {
+            return nil
+        }
     }
 
     func saveToDisk() {
@@ -96,10 +97,8 @@ class Patch: PatchDelegate {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(state)
 
-            // TODO: save to disk
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            print(jsonString)
-
+            let url = Patch.tempStorageUrl()
+            try jsonData.write(to: url)
         } catch {
             assert(false, "Could not serialize patch")
         }

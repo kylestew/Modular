@@ -21,7 +21,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        patch = Patch.init()
+        // load patch from disk
+        patch = Patch.init(with: Patch.tempStorageUrl())
+        assert(patch != nil)
+
+        // create new patch
+//        patch = Patch.init()
 
         scrollView.delegate = self
         scrollView.decelerationRate = .normal
@@ -41,17 +46,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        zoomCropping(animated: false)
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        zoomCropping(animated: true)
-
-
-        // TEMP: zoom in on debug items
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { [weak self] in
-            self?.zoomCropping(animated: true)
+        patch.togglePowerMetering()
+        DispatchQueue.main.async { [weak self] in
+            self?.zoomCropping(animated: false)
         }
     }
 
