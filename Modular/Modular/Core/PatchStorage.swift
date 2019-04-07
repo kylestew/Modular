@@ -46,10 +46,12 @@ struct PatchLoader {
 
     let state: PatchState
     let wireRegister: WireRegister
+    let patchDelegate: PatchDelegate
 
-    init(with state: PatchState, wireRegister: WireRegister) {
+    init(with state: PatchState, wireRegister: WireRegister, patchDelegate: PatchDelegate) {
         self.state = state
         self.wireRegister = wireRegister
+        self.patchDelegate = patchDelegate
     }
 
     func loadModules(into widgetsView: UIView) {
@@ -59,6 +61,8 @@ struct PatchLoader {
                     wireRegister.registerWireable(wireable, for: widget.moduleId)
                 }
                 widgetsView.addSubview(widget)
+
+                widget.patchDelegate = patchDelegate
 
                 // set position
                 let position = module.position

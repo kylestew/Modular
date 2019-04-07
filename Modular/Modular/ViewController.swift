@@ -47,21 +47,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        patch.loadDeferredPatch { [weak self] in
+        patch.togglePowerMetering()
+        DispatchQueue.main.async { [weak self] in
             self?.zoomCropping(animated: false)
         }
     }
-
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        zoomCropping(animated: true)
-//
-//
-////        // TEMP: zoom in on debug items
-////        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { [weak self] in
-////            self?.zoomCropping(animated: true)
-////        }
-//    }
 
     // MARK: - Actions
 

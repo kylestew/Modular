@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6MZ-iy-IbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6MZ-iy-IbI">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="okb-3c-KB0">
             <objects>
-                <viewController id="6MZ-iy-IbI" customClass="ViewController" customModule="VCNode" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6MZ-iy-IbI" customClass="ViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AVQ-Zm-3Hu">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,10 +111,10 @@
                                     <constraint firstItem="7rr-VK-Zx7" firstAttribute="width" secondItem="FCO-6n-q9m" secondAttribute="width" id="uv3-j6-zLU"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU 999%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dod-mX-aQ6">
-                                <rect key="frame" x="892" y="735" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU 999%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dod-mX-aQ6">
+                                <rect key="frame" x="12" y="740" width="120" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5Hm-F8-nuR"/>
+                                    <constraint firstAttribute="height" constant="20" id="5Hm-F8-nuR"/>
                                     <constraint firstAttribute="width" constant="120" id="Kyh-FA-lwP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -126,10 +126,10 @@
                         <constraints>
                             <constraint firstItem="xdB-Vv-clf" firstAttribute="trailing" secondItem="hw4-jM-X5m" secondAttribute="trailing" id="5de-i7-gA7"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="bottom" secondItem="xdB-Vv-clf" secondAttribute="bottom" id="BD7-ZV-RTx"/>
-                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="dod-mX-aQ6" secondAttribute="bottom" constant="12" id="CPL-FW-L65"/>
-                            <constraint firstItem="xdB-Vv-clf" firstAttribute="trailing" secondItem="dod-mX-aQ6" secondAttribute="trailing" constant="12" id="Mo9-KX-wTk"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="dod-mX-aQ6" secondAttribute="bottom" constant="8" id="CPL-FW-L65"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="Oss-wm-Wav"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="PNp-Z4-lmK"/>
+                            <constraint firstItem="dod-mX-aQ6" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" constant="12" id="k4H-fw-RyV"/>
                             <constraint firstItem="hw4-jM-X5m" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="qca-hu-lP3"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="trailing" secondItem="xdB-Vv-clf" secondAttribute="trailing" id="tR6-zz-OBO"/>
                             <constraint firstItem="hw4-jM-X5m" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="zcs-Lm-e1z"/>
@@ -148,7 +148,7 @@
         <!--Module Browser View Controller-->
         <scene sceneID="RTW-y9-yXT">
             <objects>
-                <tableViewController storyboardIdentifier="packBrowser" id="Kgy-G1-Fhs" customClass="ModuleBrowserViewController" customModule="VCNode" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="packBrowser" id="Kgy-G1-Fhs" customClass="ModuleBrowserViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O8U-7K-mNz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

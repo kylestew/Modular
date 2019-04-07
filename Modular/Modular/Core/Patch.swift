@@ -20,8 +20,6 @@ class Patch: PatchDelegate {
     let masterContainerView = UIView()
     let widgetsView = UIView()
 
-    var deferredPatchLoader: PatchLoader?
-
     private static let size: CGSize = CGSize(width: 10_000, height: 10_000)
     private var center: CGPoint = {
         return CGPoint(x: Patch.size.width / 2.0, y: Patch.size.height / 2.0)
@@ -71,25 +69,13 @@ class Patch: PatchDelegate {
 
             self.init()
 
-            // defer loading of patch
-            deferredPatchLoader = PatchLoader.init(with: patchState, wireRegister: wireRegister)
+            // load patch into UI
+            let loader = PatchLoader.init(with: patchState, wireRegister: wireRegister, patchDelegate: self)
+            loader.loadModules(into: widgetsView)
+            loader.loadWires()
         } catch {
             return nil
         }
-    }
-
-    func loadDeferredPatch(completion: @escaping () -> Void) {
-        guard let loader = deferredPatchLoader else { return }
-
-        loader.loadModules(into: widgetsView)
-        loader.loadWires()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { 
-            completion()
-        }
-
-        // TEMP
-        togglePowerMetering()
     }
 
     func saveToDisk() {
@@ -111,14 +97,8 @@ class Patch: PatchDelegate {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(state)
 
-            // TODO: remove for testing
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print(jsonString)
-            }
-
             let url = Patch.tempStorageUrl()
             try jsonData.write(to: url)
-
         } catch {
             assert(false, "Could not serialize patch")
         }
