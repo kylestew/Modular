@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		09CB0D42B969831F851557A6 /* Pods_Modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE504852102B129E569ED018 /* Pods_Modular.framework */; };
 		FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */; };
+		FF055A8B225A7B2B00FFCCD4 /* minblep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8A225A7B2A00FFCCD4 /* minblep.cpp */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
@@ -98,6 +99,7 @@
 		D28797FCE2B86211142172AE /* Pods-Modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modular.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Modular/Pods-Modular.debug.xcconfig"; sourceTree = "<group>"; };
 		FE504852102B129E569ED018 /* Pods_Modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFO.xib; sourceTree = "<group>"; };
+		FF055A8A225A7B2A00FFCCD4 /* minblep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = minblep.cpp; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 				5210A4D09BD6D132F9F84015 /* Pods-Modular.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF055A89225A7B2A00FFCCD4 /* dsp */ = {
+			isa = PBXGroup;
+			children = (
+				FF055A8A225A7B2A00FFCCD4 /* minblep.cpp */,
+			);
+			path = dsp;
 			sourceTree = "<group>";
 		};
 		FF2514D32246C3F900FD1D44 /* ML_Modules */ = {
@@ -465,6 +475,7 @@
 		FF3FC94E2210F0F700496378 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				FF055A89225A7B2A00FFCCD4 /* dsp */,
 				FF3FC94F2210F0F700496378 /* asset.cpp */,
 				FF3FC9502210F0F700496378 /* util */,
 				FF3FC9532210F0F700496378 /* audio.cpp */,
@@ -780,6 +791,7 @@
 				FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */,
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
 				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
+				FF055A8B225A7B2B00FFCCD4 /* minblep.cpp in Sources */,
 				FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */,
 				FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */,
 				FF9A460322480933004F9765 /* Light.swift in Sources */,
