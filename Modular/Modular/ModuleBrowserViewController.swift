@@ -23,17 +23,14 @@ class ModuleBrowserViewController : UITableViewController {
             "LFO",
             "VCA",
 //            "VCAb",
-
             "VCF",
-//            "ADSR",
-//            "SEQ3",
-            
+            "ADSR",
+            "SEQ3",
             "Delay",
-
             "Scope"
             ]),
         Pack.init(title: "Befaco", modules: [
-//            "Mixer",
+            "Mixer",
             "Attenuverter"
             ]),
         Pack.init(title: "JW-Modules", modules: [
@@ -43,9 +40,9 @@ class ModuleBrowserViewController : UITableViewController {
 //        Pack.init(title: "ML_Modules", modules: [
 //            "ShiftRegister",
 //            ]),
-//        Pack.init(title: "AudibleInstruments", modules: [
-//            "Branches",
-//            ]),
+        Pack.init(title: "AudibleInstruments", modules: [
+            "Branches",
+            ]),
     ]
 
     override func viewDidLoad() {

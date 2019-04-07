@@ -207,9 +207,9 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcW-JW-cxv" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="50" y="458" width="80" height="14"/>
+                    <rect key="frame" x="50" y="460" width="80" height="12"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="14" id="5nE-O4-1UD"/>
+                        <constraint firstAttribute="height" constant="12" id="5nE-O4-1UD"/>
                         <constraint firstAttribute="width" constant="80" id="Rft-cm-vwO"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>

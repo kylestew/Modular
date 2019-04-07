@@ -130,7 +130,6 @@ class Patch: PatchDelegate {
             pos.y -= frame.height / 2.0
             frame.origin = pos
             widget.frame = frame
-            print(center, frame)
 
             // serialization work
             widget.patchDelegate = self
