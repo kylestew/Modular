@@ -13,6 +13,7 @@ struct Pack {
 class ModuleBrowserViewController : UITableViewController {
 
     var patch: Patch!
+    var currentVisibleRect: CGRect = .zero
 
     let library: [Pack] = [
         Pack.init(title: "Core", modules: ["AudioInterface"]),
@@ -20,9 +21,9 @@ class ModuleBrowserViewController : UITableViewController {
             "VCO-1",
             "VCO-2",
             "LFO",
-//            "LFOb",
             "VCA",
-//            "VCAb",
+            "VCAb",
+            
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
@@ -70,7 +71,7 @@ class ModuleBrowserViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pack = library[indexPath.section].title
         let slug = library[indexPath.section].modules[indexPath.item]
-        _ = patch.addModule(pack: pack, slug: slug)
+        _ = patch.addModule(pack: pack, slug: slug, inRect: currentVisibleRect)
 
         dismiss(animated: true)
     }

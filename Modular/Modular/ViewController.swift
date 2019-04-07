@@ -60,6 +60,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let browserVC = storyboard.instantiateViewController(withIdentifier: "packBrowser") as? ModuleBrowserViewController {
             browserVC.patch = patch
+            browserVC.currentVisibleRect = scrollView.convert(scrollView.bounds, to: patch.masterContainerView)
 
             browserVC.modalPresentationStyle = .popover
             browserVC.popoverPresentationController?.sourceView = sender
@@ -189,6 +190,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         return patch.masterContainerView
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset)
+    }
+
     /**
      Crop to Encompass Views:
      Zoom to center on a specified view, or zoom to show all views if no view is specified.
@@ -208,7 +213,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
             }
         }
 
-        guard let optimalRect = rect else { return }
+        // give a default zoom to allow proper scroll offset on empty patch
+        let optimalRect = rect ?? CGRect(x: 5_000 - 500, y: 5_000 - 500, width: 1_000, height: 1_000)
 
         // TODO: decide on better zoom constraints
         scrollView.minimumZoomScale = 0.5

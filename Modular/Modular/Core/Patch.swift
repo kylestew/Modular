@@ -114,7 +114,7 @@ class Patch: PatchDelegate {
      it from its parent view.
      TODO: Attempt to place the new widget in an open area close to the center of the current zoomed view.
      */
-    func addModule(pack: String, slug: String, offset: CGPoint = .zero) -> Bool {
+    func addModule(pack: String, slug: String, inRect: CGRect) -> Bool {
         if let widget = ModuleWidget.create(forPack: pack, andSlug: slug) {
             for wireable in widget.getWireables() {
                 wireRegister.registerWireable(wireable, for: widget.moduleId)
@@ -125,13 +125,12 @@ class Patch: PatchDelegate {
             widgetsView.addSubview(widget)
 
             var frame = widget.frame
-            var pos = center
+            var pos = CGPoint(x: inRect.midX, y: inRect.midY)
             pos.x -= frame.width / 2.0
             pos.y -= frame.height / 2.0
-            pos.x += offset.x
-            pos.y += offset.y
             frame.origin = pos
             widget.frame = frame
+            print(center, frame)
 
             // serialization work
             widget.patchDelegate = self
