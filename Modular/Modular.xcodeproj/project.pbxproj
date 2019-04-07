@@ -10,6 +10,8 @@
 		09CB0D42B969831F851557A6 /* Pods_Modular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE504852102B129E569ED018 /* Pods_Modular.framework */; };
 		FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */; };
 		FF055A8D225A81C900FFCCD4 /* SelectorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */; };
+		FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8E225A8B5F00FFCCD4 /* Label.swift */; };
+		FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
@@ -101,6 +103,8 @@
 		FE504852102B129E569ED018 /* Pods_Modular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Modular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF02668C2225D9C400607BB1 /* Fundamental_LFO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFO.xib; sourceTree = "<group>"; };
 		FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorWidget.swift; sourceTree = "<group>"; };
+		FF055A8E225A8B5F00FFCCD4 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWidget.swift; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				FF2AE3602243ED840098091E /* ToggleWidget.swift */,
 				FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */,
 				FF9A460422480ACE004F9765 /* LightWidget.swift */,
+				FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */,
 				FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */,
 				FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */,
 				FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */,
@@ -580,6 +585,7 @@
 				FFBC6BCB22233F6A00B973D5 /* Option.swift */,
 				FF64DF8E221C922D0086DDA8 /* Port.swift */,
 				FF9A460222480933004F9765 /* Light.swift */,
+				FF055A8E225A8B5F00FFCCD4 /* Label.swift */,
 				FF0D8EC22249240400D9FBCC /* PowerMeter.swift */,
 				FFB9A71F22292AFC003E0B06 /* Wire.swift */,
 				FFBC6BC72221DED200B973D5 /* Buffer.swift */,
@@ -772,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */,
 				FF3FC9572210F0F700496378 /* string.cpp in Sources */,
 				FF3FC96A2210F5F800496378 /* library.cpp in Sources */,
 				FF374B192259598800E2EE8E /* src_sinc.c in Sources */,
@@ -801,6 +808,7 @@
 				FF9A460322480933004F9765 /* Light.swift in Sources */,
 				FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */,
 				FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */,
+				FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */,
 				FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */,
 				FF3FC9562210F0F700496378 /* asset.cpp in Sources */,
 				FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */,

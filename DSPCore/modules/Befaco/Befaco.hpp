@@ -17,9 +17,9 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "Befaco";
 
-                p->addModuleBuilder(ModuleBuilder::create<EvenVCO>("EvenVCO"));
-                p->addModuleBuilder(ModuleBuilder::create<Mixer>("Mixer"));
-                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
+//                p->addModuleBuilder(ModuleBuilder::create<EvenVCO>("EvenVCO"));
+//                p->addModuleBuilder(ModuleBuilder::create<Mixer>("Mixer"));
+//                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
 
                 return p;
             }

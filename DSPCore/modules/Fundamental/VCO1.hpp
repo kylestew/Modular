@@ -50,7 +50,7 @@ namespace library { namespace fundamental {
         float lastAmp = 0;
         float lastPW = 0;
 
-        VCO1() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        VCO1() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[FREQ_PARAM].cvIndex = FREQ_CV;
             params[AMP_PARAM].cvIndex = AMP_CV;

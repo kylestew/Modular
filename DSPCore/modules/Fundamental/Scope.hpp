@@ -30,7 +30,7 @@ namespace library { namespace fundamental {
 
         SchmittTrigger resetTrigger;
 
-        Scope() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        Scope() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             buffers[SAMPLE_BUFFER].setSize(SAMPLE_BUFFER_SIZE);
         }
 

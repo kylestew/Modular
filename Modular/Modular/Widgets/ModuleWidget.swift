@@ -117,6 +117,7 @@ class ModuleWidget : UIView, ModuleDelegate {
     private var params = [Param]()
     private var ports = [Port]()
     private var lights = [Light]()
+    private var labels = [Label]()
     private var buffers = [Buffer]()
     private var powerMeter: PowerMeter?
 
@@ -167,6 +168,11 @@ class ModuleWidget : UIView, ModuleDelegate {
         // update lights
         for light in lights {
             light.value = module.light(forLightId: light.index)
+        }
+
+        // update labels
+        for label in labels {
+            label.value = module.label(forLabelId: label.index)
         }
 
         // push samples to sample buffers
@@ -303,6 +309,18 @@ class ModuleWidget : UIView, ModuleDelegate {
     }
 
     /**
+     Bind Label:
+     Keep track of label widgets so we can send updates to them.
+     */
+    private func bind(_ label: Label) {
+        let labelCount = module.labelCount
+
+        if label.index > -1 && label.index < labelCount {
+            labels.append(label)
+        }
+    }
+
+    /**
      Bind Buffer:
      Keep track of buffer widgets so we can send updates to them.
      */
@@ -342,6 +360,9 @@ class ModuleWidget : UIView, ModuleDelegate {
 
             case let light as Light:
                 bind(light)
+
+            case let label as Label:
+                bind(label)
 
             case let buffer as Buffer:
                 bind(buffer)

@@ -20,11 +20,16 @@ namespace library { namespace jw_modules {
             OUTPUT,
             NUM_OUTPUTS
         };
+        enum LabelIds {
+            NOTE_LABEL,
+            SCALE_LABEL,
+            NUM_LABELS
+        };
         enum BufferIds {
             NUM_BUFFERS
         };
 
-        Quantizer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        Quantizer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_LABELS, NUM_BUFFERS) {
             options[ROOT_NOTE_PARAM].states = QuantizeUtils::NUM_NOTES;
             options[SCALE_PARAM].states = QuantizeUtils::NUM_SCALES;
         }
@@ -32,6 +37,9 @@ namespace library { namespace jw_modules {
         void reset() override {
             options[ROOT_NOTE_PARAM].value = QuantizeUtils::NOTE_C;
             options[SCALE_PARAM].value = QuantizeUtils::MINOR;
+
+            labels[NOTE_LABEL].value = "hello";
+            labels[SCALE_LABEL].value = "world";
         }
 
         void step() override {

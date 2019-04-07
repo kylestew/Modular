@@ -73,6 +73,10 @@ namespace dsp {
         Light lights[2];
     };
 
+    struct Label {
+        std::string value;
+    };
+
     struct SampleBuffer {
         int size;
         int version = 0; // increment when data changes
@@ -96,18 +100,19 @@ namespace dsp {
         std::vector<Output> outputs;
         // display
         std::vector<Light> lights;
+        std::vector<Label> labels;
         std::vector<SampleBuffer> buffers;
-//        std::vector<String> strings;
 
         float cpuTime = 0.f;
 
         Module() {}
-        Module(int numParams, int numOptions, int numInputs, int numOutputs, int numLights, int numBuffers) {
+        Module(int numParams, int numOptions, int numInputs, int numOutputs, int numLights, int numLabels, int numBuffers) {
             params.resize(numParams);
             options.resize(numOptions);
             inputs.resize(numInputs);
             outputs.resize(numOutputs);
             lights.resize(numLights);
+            labels.resize(numLabels);
             buffers.resize(numBuffers);
         }
         virtual ~Module() {}

@@ -14,25 +14,25 @@
             <rect key="frame" x="0.0" y="0.0" width="140" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-nP-WjV" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="20" y="118" width="100" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="P9D-1W-uZ3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-a8-FVI" customClass="SelectorWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="20" y="20" width="100" height="100"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-nP-WjV">
-                            <rect key="frame" x="0.0" y="100" width="100" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="P9D-1W-uZ3"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
                     <constraints>
-                        <constraint firstItem="l2A-nP-WjV" firstAttribute="leading" secondItem="CCY-a8-FVI" secondAttribute="leading" id="57i-MS-nkn"/>
-                        <constraint firstAttribute="trailing" secondItem="l2A-nP-WjV" secondAttribute="trailing" id="Rmz-05-2Tn"/>
                         <constraint firstAttribute="width" secondItem="CCY-a8-FVI" secondAttribute="height" multiplier="1:1" id="aMJ-pL-K2U"/>
                         <constraint firstAttribute="width" constant="100" id="g3Y-0y-CEQ"/>
-                        <constraint firstAttribute="bottom" secondItem="l2A-nP-WjV" secondAttribute="bottom" constant="-24" id="ukH-Uw-scl"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="value">
@@ -109,7 +109,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLF-6j-EeU" customClass="SelectorWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="20" y="160" width="100" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCALE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Hm-BP1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCALE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Hm-BP1" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="100" width="100" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="oZe-5F-a6j"/>
@@ -117,6 +117,11 @@
                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <constraints>
@@ -148,6 +153,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="l2A-nP-WjV" firstAttribute="centerY" secondItem="CCY-a8-FVI" secondAttribute="centerY" constant="60" id="BYi-6J-6VQ"/>
                 <constraint firstAttribute="trailing" secondItem="Egk-eZ-ydQ" secondAttribute="trailing" constant="10" id="EcX-A4-g5M"/>
                 <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="FlV-JU-9P2"/>
                 <constraint firstItem="LLF-6j-EeU" firstAttribute="width" secondItem="LLF-6j-EeU" secondAttribute="height" multiplier="1:1" id="KMX-nn-Uob"/>
@@ -157,8 +163,10 @@
                 <constraint firstItem="Egk-eZ-ydQ" firstAttribute="centerY" secondItem="jal-9F-t9E" secondAttribute="centerY" id="Wc1-RW-8X2"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
                 <constraint firstAttribute="trailing" secondItem="HqH-uR-kiU" secondAttribute="trailing" constant="10" id="dBW-Xm-8aB"/>
+                <constraint firstItem="l2A-nP-WjV" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="fqv-OI-daO"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="jal-9F-t9E" secondAttribute="bottom" constant="20" id="nEW-bn-SJV"/>
                 <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
+                <constraint firstItem="l2A-nP-WjV" firstAttribute="width" secondItem="CCY-a8-FVI" secondAttribute="width" id="wW5-M3-NQZ"/>
                 <constraint firstAttribute="bottom" secondItem="HqH-uR-kiU" secondAttribute="bottom" constant="4" id="yMN-bG-5zh"/>
                 <constraint firstItem="CCY-a8-FVI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z3g-me-hh0"/>
             </constraints>

@@ -35,7 +35,7 @@ namespace library { namespace audibleinstruments {
         bool mode;
         bool outcome;
 
-        Branches() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_BUFFERS) {
+        Branches() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, 0, NUM_BUFFERS) {
             params[THRESHOLD_PARAM].cvIndex = P_INPUT;
         }
 
