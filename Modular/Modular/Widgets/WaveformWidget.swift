@@ -56,16 +56,16 @@ class WaveformWidget : UIControl, Buffer {
         let yBase = plotLayer.bounds.height / 2.0
         let yScale = plotLayer.bounds.height / 2.0
 
-//        let path = UIBezierPath()
-//        for (idx, sample) in samples.enumerated() {
-//            let value = yBase + -yScale * CGFloat(sample)
-//            if idx == 0 {
-//                path.move(to: CGPoint(x: 0, y: value))
-//            } else {
-//                path.addLine(to: CGPoint(x: CGFloat(idx) * stride, y: value))
-//            }
-//        }
-//        plotLayer.path = path.cgPath
+        let path = UIBezierPath()
+        for (idx, sample) in samples.enumerated() {
+            let value = yBase + -yScale * CGFloat(sample)
+            if idx == 0 {
+                path.move(to: CGPoint(x: 0, y: value))
+            } else {
+                path.addLine(to: CGPoint(x: CGFloat(idx) * stride, y: value))
+            }
+        }
+        plotLayer.path = path.cgPath
     }
 
     override func layoutSubviews() {

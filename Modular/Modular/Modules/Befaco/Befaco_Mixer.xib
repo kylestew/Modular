@@ -108,7 +108,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIXER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
                     <rect key="frame" x="20" y="497" width="120" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="Tgc-2e-QVU"/>
@@ -162,7 +162,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHX-JO-cZJ" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="62" y="504" width="80" height="12"/>
+                    <rect key="frame" x="70" y="504" width="80" height="12"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="3nl-7T-M0O"/>
                         <constraint firstAttribute="width" constant="80" id="V8R-kJ-DvJ"/>
@@ -175,7 +175,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="dpd-Kq-1U3" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="18a-h5-mfw"/>
-                <constraint firstAttribute="trailing" secondItem="dHX-JO-cZJ" secondAttribute="trailing" constant="18" id="6yi-lu-L1r"/>
+                <constraint firstAttribute="trailing" secondItem="dHX-JO-cZJ" secondAttribute="trailing" constant="10" id="6yi-lu-L1r"/>
                 <constraint firstItem="eMd-oU-n2g" firstAttribute="centerY" secondItem="dpd-Kq-1U3" secondAttribute="centerY" constant="-32" id="7Mn-0H-XC4"/>
                 <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" constant="-64" id="8Gq-vI-T2z"/>
                 <constraint firstItem="z2F-xb-83x" firstAttribute="centerY" secondItem="KW9-mk-cCg" secondAttribute="centerY" constant="-32" id="8XA-qG-OdV"/>
