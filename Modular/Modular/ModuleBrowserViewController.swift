@@ -17,15 +17,16 @@ class ModuleBrowserViewController : UITableViewController {
     let library: [Pack] = [
         Pack.init(title: "Core", modules: ["AudioInterface"]),
         Pack.init(title: "Fundamental", modules: [
-            "VCO",
+            "VCO-1",
+            "VCO-2",
             "LFO",
 //            "LFOb",
-//            "VCA",
+            "VCA",
 //            "VCAb",
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
-            "Delay",
+//            "Delay",
             "Scope"
             ]),
 //        Pack.init(title: "Befaco", modules: [
