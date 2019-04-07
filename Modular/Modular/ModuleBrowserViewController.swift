@@ -36,7 +36,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "JW-Modules", modules: [
             "SimpleClock",
-////            "Quantizer"
+            "Quantizer",
             ]),
 //        Pack.init(title: "ML_Modules", modules: [
 //            "ShiftRegister",

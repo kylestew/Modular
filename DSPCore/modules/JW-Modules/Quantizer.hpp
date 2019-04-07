@@ -14,6 +14,8 @@ namespace library { namespace jw_modules {
         };
         enum InputIds {
             INPUT,
+            ROOT_CV,
+            SCALE_CV,
             NUM_INPUTS
         };
         enum OutputIds {
@@ -24,14 +26,14 @@ namespace library { namespace jw_modules {
             NUM_BUFFERS
         };
 
-        // TODO: add strings for root note and scale
-
         Quantizer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+            params[ROOT_NOTE_PARAM].cvIndex = ROOT_CV;
+            params[SCALE_PARAM].cvIndex = SCALE_CV;
         }
 
         void reset() override {
-//            params[ROOT_NOTE_PARAM].value = QuantizeUtils::NOTE_C;
-//            params[SCALE_PARAM].value = QuantizeUtils::MINOR;
+            params[ROOT_NOTE_PARAM].value = QuantizeUtils::NOTE_C;
+            params[SCALE_PARAM].value = QuantizeUtils::MINOR;
         }
 
         void step() override {
