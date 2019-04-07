@@ -111,6 +111,7 @@ class ParamWidget : UIControl, Param {
             }
 
         case .ended:
+            zoomUI(zoomed: false)
             sendActions(for: .editingDidEnd)
 
         default:

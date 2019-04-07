@@ -22,18 +22,20 @@ class ModuleBrowserViewController : UITableViewController {
             "VCO-2",
             "LFO",
             "VCA",
-            "VCAb",
-            
+//            "VCAb",
+
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
-//            "Delay",
+            
+            "Delay",
+
             "Scope"
             ]),
-//        Pack.init(title: "Befaco", modules: [
+        Pack.init(title: "Befaco", modules: [
 //            "Mixer",
-//            "Attenuverter"
-//            ]),
+            "Attenuverter"
+            ]),
 //        Pack.init(title: "JW-Modules", modules: [
 //            "SimpleClock",
 ////            "Quantizer"
