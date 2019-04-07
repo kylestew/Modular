@@ -22,11 +22,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         super.viewDidLoad()
 
         // load patch from disk
-//        patch = Patch.init(with: Patch.tempStorageUrl())
-//        assert(patch != nil)
+        patch = Patch.init(with: Patch.tempStorageUrl())
+        assert(patch != nil)
 
         // create new patch
-        patch = Patch.init()
+//        patch = Patch.init()
 
         scrollView.delegate = self
         scrollView.decelerationRate = .normal
@@ -188,10 +188,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return patch.masterContainerView
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
     }
 
     /**
