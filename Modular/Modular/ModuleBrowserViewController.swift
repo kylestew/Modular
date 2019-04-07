@@ -24,7 +24,7 @@ class ModuleBrowserViewController : UITableViewController {
             "VCA",
 //            "VCAb",
 
-//            "VCF",
+            "VCF",
 //            "ADSR",
 //            "SEQ3",
             
@@ -36,10 +36,10 @@ class ModuleBrowserViewController : UITableViewController {
 //            "Mixer",
             "Attenuverter"
             ]),
-//        Pack.init(title: "JW-Modules", modules: [
-//            "SimpleClock",
+        Pack.init(title: "JW-Modules", modules: [
+            "SimpleClock",
 ////            "Quantizer"
-//            ]),
+            ]),
 //        Pack.init(title: "ML_Modules", modules: [
 //            "ShiftRegister",
 //            ]),
