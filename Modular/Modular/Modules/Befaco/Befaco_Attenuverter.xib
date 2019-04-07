@@ -115,7 +115,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24O-ox-STG" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="116" y="182" width="80" height="14"/>
+                    <rect key="frame" x="120" y="182" width="80" height="14"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="hr2-ga-AHy"/>
                         <constraint firstAttribute="height" constant="14" id="zj0-JS-4f0"/>
@@ -128,7 +128,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="AHx-kQ-hay" firstAttribute="centerY" secondItem="PKB-XZ-aQc" secondAttribute="centerY" id="5mz-Mt-ZQv"/>
-                <constraint firstAttribute="trailing" secondItem="24O-ox-STG" secondAttribute="trailing" constant="14" id="E9V-D6-xrg"/>
+                <constraint firstAttribute="trailing" secondItem="24O-ox-STG" secondAttribute="trailing" constant="10" id="E9V-D6-xrg"/>
                 <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerX" secondItem="MKW-Iz-cjG" secondAttribute="centerX" id="RWk-kj-cyi"/>
                 <constraint firstItem="MKW-Iz-cjG" firstAttribute="centerY" secondItem="CCY-a8-FVI" secondAttribute="centerY" id="YgJ-3N-Dma"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>

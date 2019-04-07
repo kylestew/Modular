@@ -31,7 +31,8 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Befaco", modules: [
             "Mixer",
-            "Attenuverter"
+            "Attenuverter",
+            "EvenVCO",
             ]),
         Pack.init(title: "JW-Modules", modules: [
             "SimpleClock",
