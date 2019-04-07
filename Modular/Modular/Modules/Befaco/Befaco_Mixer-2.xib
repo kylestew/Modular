@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="687"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-XZ-aQc" userLabel="ch1" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="26" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FKn-Uk-u7Z"/>
+                        <constraint firstAttribute="width" constant="60" id="wXX-kE-OSa"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-a8-FVI" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="44" y="38" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="CCY-a8-FVI" secondAttribute="height" multiplier="1:1" id="aMJ-pL-K2U"/>
+                        <constraint firstAttribute="width" constant="100" id="g3Y-0y-CEQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMd-oU-n2g" userLabel="ch2" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="130" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="jdc-Ks-E0L"/>
+                        <constraint firstAttribute="width" constant="60" id="uvg-if-D8A"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpd-Kq-1U3" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="44" y="142" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dpd-Kq-1U3" secondAttribute="height" multiplier="1:1" id="7i2-8j-qy9"/>
+                        <constraint firstAttribute="width" constant="100" id="dnZ-9S-jvf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ZT-9E-PPA" userLabel="ch3" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="234" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="EFd-Zt-Hxr"/>
+                        <constraint firstAttribute="height" constant="60" id="SYA-3U-D1b"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfd-0t-dAC" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="44" y="246" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="GaB-NE-RXB"/>
+                        <constraint firstAttribute="width" secondItem="Yfd-0t-dAC" secondAttribute="height" multiplier="1:1" id="Vu6-Iq-gEO"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIXER-2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
+                    <rect key="frame" x="20" y="664" width="120" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="Tgc-2e-QVU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2F-xb-83x" userLabel="ch4" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="338" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="eQa-JP-Sr7"/>
+                        <constraint firstAttribute="width" constant="60" id="rnt-vD-Znn"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KW9-mk-cCg" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="44" y="350" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KW9-mk-cCg" secondAttribute="height" multiplier="1:1" id="CxO-6S-dU0"/>
+                        <constraint firstAttribute="width" constant="100" id="ppp-1G-jc4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-kQ-hay" userLabel="out" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="50" y="604" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="FUg-MZ-SMQ"/>
+                        <constraint firstAttribute="height" constant="60" id="bcf-rE-Ed9"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHX-JO-cZJ" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="70" y="671" width="80" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="3nl-7T-M0O"/>
+                        <constraint firstAttribute="width" constant="80" id="V8R-kJ-DvJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-oo-CJh" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="30" y="496" width="100" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-CK-YIc">
+                            <rect key="frame" x="0.0" y="100" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="xAj-2P-9Ry"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ih1-oo-CJh" secondAttribute="height" multiplier="1:1" id="6zg-ob-09v"/>
+                        <constraint firstItem="E8c-CK-YIc" firstAttribute="leading" secondItem="Ih1-oo-CJh" secondAttribute="leading" id="7ec-tQ-iZh"/>
+                        <constraint firstAttribute="bottom" secondItem="E8c-CK-YIc" secondAttribute="bottom" constant="-24" id="JyZ-Jh-mYH"/>
+                        <constraint firstAttribute="trailing" secondItem="E8c-CK-YIc" secondAttribute="trailing" id="bus-Xj-OO5"/>
+                        <constraint firstAttribute="width" constant="100" id="q0V-J1-Mg7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dpd-Kq-1U3" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="18a-h5-mfw"/>
+                <constraint firstAttribute="trailing" secondItem="dHX-JO-cZJ" secondAttribute="trailing" constant="10" id="6yi-lu-L1r"/>
+                <constraint firstItem="eMd-oU-n2g" firstAttribute="centerY" secondItem="dpd-Kq-1U3" secondAttribute="centerY" constant="-32" id="7Mn-0H-XC4"/>
+                <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" constant="-64" id="8Gq-vI-T2z"/>
+                <constraint firstItem="z2F-xb-83x" firstAttribute="centerY" secondItem="KW9-mk-cCg" secondAttribute="centerY" constant="-32" id="8XA-qG-OdV"/>
+                <constraint firstItem="dpd-Kq-1U3" firstAttribute="top" secondItem="CCY-a8-FVI" secondAttribute="bottom" constant="4" id="GZR-Fz-cPq"/>
+                <constraint firstItem="KW9-mk-cCg" firstAttribute="top" secondItem="Yfd-0t-dAC" secondAttribute="bottom" constant="4" id="Hgi-xp-Bm9"/>
+                <constraint firstItem="4ZT-9E-PPA" firstAttribute="centerY" secondItem="Yfd-0t-dAC" secondAttribute="centerY" constant="-32" id="ILI-hn-l0y"/>
+                <constraint firstItem="Yfd-0t-dAC" firstAttribute="width" secondItem="Yfd-0t-dAC" secondAttribute="height" multiplier="1:1" id="VBz-8b-fDL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CCY-a8-FVI" secondAttribute="trailing" constant="16" id="bD1-7v-CNI"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
+                <constraint firstItem="Ih1-oo-CJh" firstAttribute="width" secondItem="Ih1-oo-CJh" secondAttribute="height" multiplier="1:1" id="dJY-QH-CIV"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="AHx-kQ-hay" secondAttribute="bottom" id="dJx-oP-9ar"/>
+                <constraint firstItem="dpd-Kq-1U3" firstAttribute="width" secondItem="dpd-Kq-1U3" secondAttribute="height" multiplier="1:1" id="dYs-jc-gfJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dHX-JO-cZJ" secondAttribute="bottom" constant="4" id="eCv-bU-6ju"/>
+                <constraint firstItem="Yfd-0t-dAC" firstAttribute="centerX" secondItem="dpd-Kq-1U3" secondAttribute="centerX" id="f8f-S1-bid"/>
+                <constraint firstItem="KW9-mk-cCg" firstAttribute="width" secondItem="KW9-mk-cCg" secondAttribute="height" multiplier="1:1" id="icN-Bp-GI7"/>
+                <constraint firstItem="4ZT-9E-PPA" firstAttribute="centerX" secondItem="Yfd-0t-dAC" secondAttribute="centerX" constant="-64" id="jwl-Sy-UKs"/>
+                <constraint firstItem="eMd-oU-n2g" firstAttribute="centerX" secondItem="dpd-Kq-1U3" secondAttribute="centerX" constant="-64" id="pkR-yY-EWW"/>
+                <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="18" id="q8s-uK-OLC"/>
+                <constraint firstItem="Yfd-0t-dAC" firstAttribute="top" secondItem="dpd-Kq-1U3" secondAttribute="bottom" constant="4" id="s6k-gL-zHh"/>
+                <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerY" secondItem="CCY-a8-FVI" secondAttribute="centerY" constant="-32" id="sNC-Mu-lBo"/>
+                <constraint firstItem="AHx-kQ-hay" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="thx-CP-5BA"/>
+                <constraint firstItem="z2F-xb-83x" firstAttribute="centerX" secondItem="KW9-mk-cCg" secondAttribute="centerX" constant="-64" id="v2k-AQ-EP1"/>
+                <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
+                <constraint firstItem="KW9-mk-cCg" firstAttribute="centerX" secondItem="Yfd-0t-dAC" secondAttribute="centerX" id="wMe-KI-yya"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-440" y="-80.50974512743629"/>
+        </view>
+    </objects>
+</document>

@@ -3,13 +3,15 @@
 #include "dsp.hpp"
 
 //#include "EvenVCO.hpp"
-#include "Mixer.hpp"
+#include "Mixer1.hpp"
+#include "Mixer2.hpp"
 #include "Attenuverter.hpp"
 
 namespace library {
     namespace befaco {
         struct Attenuverter;
-        struct Mixer;
+        struct Mixer1;
+        struct Mixer2;
 
         struct Befaco {
             static Pack* init() {
@@ -17,7 +19,8 @@ namespace library {
                 p->slug = "Befaco";
 
 //                p->addModuleBuilder(ModuleBuilder::create<EvenVCO>("EvenVCO"));
-                p->addModuleBuilder(ModuleBuilder::create<Mixer>("Mixer"));
+                p->addModuleBuilder(ModuleBuilder::create<Mixer1>("Mixer-1"));
+                p->addModuleBuilder(ModuleBuilder::create<Mixer2>("Mixer-2"));
                 p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
 
                 return p;

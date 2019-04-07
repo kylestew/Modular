@@ -80,12 +80,13 @@
 		FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCB22233F6A00B973D5 /* Option.swift */; };
 		FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */; };
 		FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA57C9222912C600881D8B /* WireRegister.swift */; };
+		FFCE90E1225A76C900C6E7E9 /* Befaco_Mixer-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFCE90E0225A76C900C6E7E9 /* Befaco_Mixer-2.xib */; };
 		FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */; };
 		FFD313952246A9AF0057178C /* JW-Modules_SimpleClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD313942246A9AE0057178C /* JW-Modules_SimpleClock.xib */; };
 		FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */; };
 		FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */; };
 		FFE3A006221C689400960453 /* WireWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE3A005221C689400960453 /* WireWidget.swift */; };
-		FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */; };
+		FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer-1.xib */; };
 		FFF3B744222C606C0058B759 /* Fundamental_VCA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */; };
 /* End PBXBuildFile section */
 
@@ -200,12 +201,13 @@
 		FFBC6BCB22233F6A00B973D5 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lerp.swift"; sourceTree = "<group>"; };
 		FFCA57C9222912C600881D8B /* WireRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireRegister.swift; sourceTree = "<group>"; };
+		FFCE90E0225A76C900C6E7E9 /* Befaco_Mixer-2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Befaco_Mixer-2.xib"; sourceTree = "<group>"; };
 		FFD2BF752247ED4E009BC6A0 /* Fundamental_SEQ3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_SEQ3.xib; sourceTree = "<group>"; };
 		FFD313942246A9AE0057178C /* JW-Modules_SimpleClock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "JW-Modules_SimpleClock.xib"; sourceTree = "<group>"; };
 		FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Core_AudioInterface.xib; sourceTree = "<group>"; };
 		FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBrowserViewController.swift; sourceTree = "<group>"; };
 		FFE3A005221C689400960453 /* WireWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireWidget.swift; sourceTree = "<group>"; };
-		FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_Mixer.xib; sourceTree = "<group>"; };
+		FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer-1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Befaco_Mixer-1.xib"; sourceTree = "<group>"; };
 		FFF3B743222C606C0058B759 /* Fundamental_VCA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCA.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -582,7 +584,8 @@
 		FF959EFB22449BAA008F4FFC /* Befaco */ = {
 			isa = PBXGroup;
 			children = (
-				FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */,
+				FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer-1.xib */,
+				FFCE90E0225A76C900C6E7E9 /* Befaco_Mixer-2.xib */,
 				FF959EFC22449BD4008F4FFC /* Befaco_Attenuverter.xib */,
 			);
 			path = Befaco;
@@ -666,7 +669,7 @@
 			files = (
 				FF02668D2225D9C400607BB1 /* Fundamental_LFO.xib in Resources */,
 				FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */,
-				FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */,
+				FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer-1.xib in Resources */,
 				FFD313952246A9AF0057178C /* JW-Modules_SimpleClock.xib in Resources */,
 				FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */,
 				FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */,
@@ -686,6 +689,7 @@
 				FF374B1E2259598800E2EE8E /* Version_script.in in Resources */,
 				FF374B1C2259598800E2EE8E /* Makefile.am in Resources */,
 				FF374AE42259598800E2EE8E /* compile in Resources */,
+				FFCE90E1225A76C900C6E7E9 /* Befaco_Mixer-2.xib in Resources */,
 				FF374AE32259598800E2EE8E /* config.sub in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
 				FFA02B6B2246B07E0022A182 /* JW-Modules_Quantizer.xib in Resources */,

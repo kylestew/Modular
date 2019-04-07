@@ -30,7 +30,8 @@ class ModuleBrowserViewController : UITableViewController {
             "Scope"
             ]),
         Pack.init(title: "Befaco", modules: [
-            "Mixer",
+            "Mixer-1",
+            "Mixer-2",
             "Attenuverter"
             ]),
         Pack.init(title: "JW-Modules", modules: [

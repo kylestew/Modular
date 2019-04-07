@@ -4,7 +4,7 @@
 using namespace dsp;
 
 namespace library { namespace befaco {
-        struct Mixer: Module {
+        struct Mixer1: Module {
             enum ParamIds {
                 CH1_PARAM,
                 CH2_PARAM,
@@ -30,7 +30,7 @@ namespace library { namespace befaco {
                 NUM_BUFFERS
             };
 
-            Mixer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+            Mixer1() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
             }
 
             void reset() override {
