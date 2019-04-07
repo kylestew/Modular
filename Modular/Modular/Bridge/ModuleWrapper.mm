@@ -60,6 +60,11 @@ using namespace library;
     return _module->lights.size();
 }
 
+@synthesize labelCount;
+- (NSInteger)labelCount {
+    return _module->labels.size();
+}
+
 @synthesize bufferCount;
 - (NSInteger)bufferCount {
     return _module->buffers.size();
@@ -162,6 +167,11 @@ using namespace library;
 
 - (float)lightNumber:(NSInteger)idx forOutputId:(NSInteger)outputId {
     return _module->outputs[outputId].lights[idx].getBrightness();
+}
+
+- (NSString *)labelForLabelId:(NSInteger)labelId {
+    return [NSString stringWithCString:_module->labels[labelId].value.c_str()
+                              encoding:[NSString defaultCStringEncoding]];
 }
 
 @end

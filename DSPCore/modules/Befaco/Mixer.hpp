@@ -30,7 +30,7 @@ namespace library { namespace befaco {
                 NUM_BUFFERS
             };
 
-            Mixer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+            Mixer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             }
 
             void reset() override {

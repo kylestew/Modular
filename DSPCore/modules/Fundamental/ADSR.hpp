@@ -44,7 +44,7 @@ namespace library { namespace fundamental {
         float env = 0.f;
         SchmittTrigger trigger;
 
-        ADSR() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_BUFFERS) {
+        ADSR() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[ATTACK_PARAM].cvIndex = ATTACK_INPUT;
             params[DECAY_PARAM].cvIndex = DECAY_INPUT;

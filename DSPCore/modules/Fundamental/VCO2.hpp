@@ -47,7 +47,7 @@ namespace library { namespace fundamental {
         int lastWaveform = -1;
         float lastPW = 0;
 
-        VCO2() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        VCO2() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[FREQ_PARAM].cvIndex = FREQ_CV;
             params[PW_PARAM].cvIndex = PWM_CV;

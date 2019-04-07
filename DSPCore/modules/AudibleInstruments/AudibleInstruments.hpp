@@ -13,7 +13,7 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "AudibleInstruments";
 
-                p->addModuleBuilder(ModuleBuilder::create<Branches>("Branches"));
+//                p->addModuleBuilder(ModuleBuilder::create<Branches>("Branches"));
 
                 return p;
             }

@@ -27,7 +27,7 @@ namespace library { namespace fundamental {
             NUM_BUFFERS
         };
 
-        VCA() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        VCA() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             params[LEVEL_PARAM].cvIndex = LEVEL_CV;
         }
 

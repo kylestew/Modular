@@ -36,7 +36,7 @@ namespace library { namespace fundamental {
 //            float phase = 0.f;
             int index = 0;
 
-            SEQ3() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_BUFFERS) {
+            SEQ3() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, 0, NUM_BUFFERS) {
             }
 
             void reset() override {

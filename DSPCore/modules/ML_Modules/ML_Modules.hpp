@@ -12,7 +12,7 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "ML_Modules";
 
-                p->addModuleBuilder(ModuleBuilder::create<ShiftRegister>("ShiftRegister"));
+//                p->addModuleBuilder(ModuleBuilder::create<ShiftRegister>("ShiftRegister"));
 
                 return p;
             }

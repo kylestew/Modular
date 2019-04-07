@@ -43,7 +43,7 @@ namespace library { namespace fundamental {
 
         #define FILTER_DESIGN_BUFFER_SIZE 64
 
-        VCF() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        VCF() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[FREQ_PARAM].cvIndex = FREQ_CV;
             params[RES_PARAM].cvIndex = RES_CV;

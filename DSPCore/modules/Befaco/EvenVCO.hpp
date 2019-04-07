@@ -44,7 +44,7 @@ namespace library { namespace befaco {
 
         RCFilter triFilter;
 
-        EvenVCO() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        EvenVCO() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[FREQ_PARAM].cvIndex = FREQ_CV;
 //            params[PWM_PARAM].cvIndex = PWM_CV;

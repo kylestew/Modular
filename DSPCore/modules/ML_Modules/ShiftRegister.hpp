@@ -27,7 +27,7 @@ namespace library { namespace ml_modules {
 
         SchmittTrigger setTrigger;
 
-        ShiftRegister() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        ShiftRegister() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
         }
 
         void reset() override {

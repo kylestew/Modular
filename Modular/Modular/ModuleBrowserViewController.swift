@@ -19,31 +19,31 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Core", modules: ["AudioInterface"]),
         Pack.init(title: "Fundamental", modules: [
             "VCO-1",
-            "VCO-2",
+//            "VCO-2",
             "LFO",
-            "VCA",
+//            "VCA",
 //            "VCAb",
-            "VCF",
-            "ADSR",
-            "SEQ3",
-            "Delay",
+//            "VCF",
+//            "ADSR",
+//            "SEQ3",
+//            "Delay",
             "Scope"
             ]),
-        Pack.init(title: "Befaco", modules: [
-            "Mixer",
-            "Attenuverter",
-            "EvenVCO",
-            ]),
+//        Pack.init(title: "Befaco", modules: [
+//            "Mixer",
+//            "Attenuverter",
+//            "EvenVCO",
+//            ]),
         Pack.init(title: "JW-Modules", modules: [
-            "SimpleClock",
-////            "Quantizer"
+//            "SimpleClock",
+            "Quantizer",
             ]),
 //        Pack.init(title: "ML_Modules", modules: [
 //            "ShiftRegister",
 //            ]),
-        Pack.init(title: "AudibleInstruments", modules: [
-            "Branches",
-            ]),
+//        Pack.init(title: "AudibleInstruments", modules: [
+//            "Branches",
+//            ]),
     ]
 
     override func viewDidLoad() {

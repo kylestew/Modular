@@ -42,7 +42,7 @@ namespace library { namespace fundamental {
         SRC_STATE *src;
         float lastWet = 0.f;
 
-        Delay() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        Delay() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[TIME_PARAM].cvIndex = TIME_CV;
             params[FEEDBACK_PARAM].cvIndex = FEEDBACK_CV;

@@ -9,6 +9,7 @@
 @property(nonatomic,readonly) NSInteger inputCount;
 @property(nonatomic,readonly) NSInteger outputCount;
 @property(nonatomic,readonly) NSInteger lightCount;
+@property(nonatomic,readonly) NSInteger labelCount;
 @property(nonatomic,readonly) NSInteger bufferCount;
 
 - (instancetype)initForPack:(NSString*)packSlug andModuleSlug:(NSString*)moduleSlug;
@@ -43,5 +44,7 @@
 - (float)lightNumber:(NSInteger)idx forParamId:(NSInteger)paramId;
 - (float)lightNumber:(NSInteger)idx forInputId:(NSInteger)inputId;
 - (float)lightNumber:(NSInteger)idx forOutputId:(NSInteger)outputId;
+
+- (NSString*)labelForLabelId:(NSInteger)labelId;
 
 @end

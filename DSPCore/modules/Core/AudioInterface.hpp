@@ -27,7 +27,7 @@ namespace library { namespace core {
             NUM_FRAMES
         };
 
-        AudioInterface() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_FRAMES) {
+        AudioInterface() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_FRAMES) {
             gAudioIO->openStream();
         }
 

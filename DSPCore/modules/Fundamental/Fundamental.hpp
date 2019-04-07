@@ -31,15 +31,15 @@ namespace library {
                 p->slug = "Fundamental";
 
                 p->addModuleBuilder(ModuleBuilder::create<VCO1>("VCO-1"));
-                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
+//                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
                 p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
-                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
-                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
-                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCAb"));
-                p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
-                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
-                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
-                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
+//                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
+//                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
+//                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCAb"));
+//                p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
+//                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
+//                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
+//                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
                 p->addModuleBuilder(ModuleBuilder::create<Scope>("Scope"));
 
                 return p;

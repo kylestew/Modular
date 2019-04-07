@@ -33,7 +33,7 @@ namespace library { namespace jw_modules {
         PulseGenerator gatePulse;
         int stepCount = 0;
 
-        SimpleClock() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_BUFFERS) {
+        SimpleClock() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             options[RUN_OPTION].states = 2;
 
             gatePulse.triggerDuration = 10.f;
