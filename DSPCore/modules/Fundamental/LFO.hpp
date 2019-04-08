@@ -65,6 +65,12 @@ namespace library { namespace fundamental {
             previewOsc.freq = 1.0f;
         }
 
+        void reset() override {
+            params[FREQ_PARAM].setting = 0.f;
+            params[AMP_PARAM].setting = 0.0f;
+            params[PW_PARAM].setting = 0.f;
+        }
+
         void step() override {
             float freq = params[FREQ_PARAM].value;
             float amp = rescale(params[AMP_PARAM].value, -1.f, 1.f, 0.f, 1.f);

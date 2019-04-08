@@ -108,18 +108,13 @@ class ModuleWidget : UIView, ModuleDelegate {
     // MARK: - Wireable Registration
 
     func getWireables() -> [Wireable] {
-        return ports.filter { $0 is Wireable } as! [Wireable]
+        return updatables.filter { $0 is Wireable } as! [Wireable]
     }
 
     // MARK: - UI
 
-    // keep track of animated sub-widgets
-    private var params = [Param]()
-    private var ports = [Port]()
-    private var lights = [Light]()
-    private var labels = [Label]()
-    private var buffers = [Buffer]()
-    private var powerMeter: PowerMeter?
+    // keep track of bound sub-widgets for display updates
+    private var updatables = [Any]()
 
     private func setupUI() {
         backgroundColor = UIColor.black.withAlphaComponent(0.2)
@@ -130,64 +125,74 @@ class ModuleWidget : UIView, ModuleDelegate {
         setupDisplayLink()
     }
 
-    private var displayLink: CADisplayLink?
+    private func syncUItoEngineValues() {
+        // copy value from engine to sub-widgets
+        for updatable in updatables {
+            switch updatable {
+            case let param as Param:
+                param.value = module.value(forParamId: param.index)
+                param.cvAmount = module.cvAmount(forParamId: param.index)
 
-    private func setupDisplayLink() {
-        let displayLink = CADisplayLink(target: self, selector: #selector(displayUpdate))
-        displayLink.add(to: .current, forMode: RunLoop.Mode.default)
-//        displayLink.preferredFramesPerSecond = 10
-        self.displayLink = displayLink
+            case let option as Option:
+                option.states = module.states(forOptionId: option.index)
+                option.value = Int(module.value(forOptionId: option.index))
+
+            default: break
+            }
+        }
     }
 
     /**
      Display Update:
      Updates values for any animated widget subviews in this Module.
      */
+    private var displayLink: CADisplayLink?
+
+    private func setupDisplayLink() {
+        let displayLink = CADisplayLink(target: self, selector: #selector(displayUpdate))
+        displayLink.add(to: .current, forMode: RunLoop.Mode.default)
+        self.displayLink = displayLink
+    }
+
     @objc func displayUpdate(_ displayLink: CADisplayLink) {
 
         // TODO: PERFORMANCE: Instrument this update
 
-        // update param lights
-        for param in params {
-            // param needs combined lights as 0-1 value
-            param.lights = (module.lightNumber(0, forParamId: param.index),
-                            module.lightNumber(1, forParamId: param.index))
-        }
+        for updatable in updatables {
+            switch updatable {
+            case let param as Param:
+                // param needs combined lights as 0-1 value
+                param.lights = (module.lightNumber(0, forParamId: param.index),
+                                module.lightNumber(1, forParamId: param.index))
 
-        // update port lights
-        for port in ports {
-            if port.isOutput {
-                port.lights = (module.lightNumber(0, forOutputId: port.index),
-                               module.lightNumber(1, forOutputId: port.index))
-            } else {
-                port.lights = (module.lightNumber(0, forInputId: port.index),
-                               module.lightNumber(1, forInputId: port.index))
+            case let port as Port:
+                if port.isOutput {
+                    port.lights = (module.lightNumber(0, forOutputId: port.index),
+                                   module.lightNumber(1, forOutputId: port.index))
+                } else {
+                    port.lights = (module.lightNumber(0, forInputId: port.index),
+                                   module.lightNumber(1, forInputId: port.index))
+                }
+
+            case let light as Light:
+                light.value = module.light(forLightId: light.index)
+
+            case let label as Label:
+                label.value = module.label(forLabelId: label.index)
+
+            case let buffer as Buffer:
+                let version = module.version(forBufferId: buffer.index)
+                if buffer.version != version {
+                    let samples = UnsafeBufferPointer<Float>.init(start: module.samples(forBufferId: buffer.index),
+                                                                  count: Int(module.sampleCount(forBufferId: buffer.index)))
+                    buffer.updateSamples(samples, for: version)
+                }
+
+            case let pm as PowerMeter:
+                pm.timeMS = module.cpuTime()
+
+            default: break
             }
-        }
-
-        // update lights
-        for light in lights {
-            light.value = module.light(forLightId: light.index)
-        }
-
-        // update labels
-        for label in labels {
-            label.value = module.label(forLabelId: label.index)
-        }
-
-        // push samples to sample buffers
-        for buffer in buffers {
-            let version = module.version(forBufferId: buffer.index)
-            if buffer.version != version {
-                let samples = UnsafeBufferPointer<Float>.init(start: module.samples(forBufferId: buffer.index),
-                                                              count: Int(module.sampleCount(forBufferId: buffer.index)))
-                buffer.updateSamples(samples, for: version)
-            }
-        }
-
-        // TODO: make optional, hide if not running
-        if let pm = powerMeter {
-            pm.timeMS = module.cpuTime();
         }
     }
 
@@ -200,6 +205,19 @@ class ModuleWidget : UIView, ModuleDelegate {
             } else {
                 layer.borderColor = WidgetColors.LINE_COLOR.cgColor
             }
+        }
+    }
+
+    /*
+     * Resets modules at engine level then syncs to its updates values
+     */
+    func resetModule() {
+        // schedule reset on engine thread
+        module.reset()
+
+        // sync to new values after engine has a chance to change them
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(10)) { [weak self] in
+            self?.syncUItoEngineValues()
         }
     }
 
@@ -224,111 +242,24 @@ class ModuleWidget : UIView, ModuleDelegate {
      Bind Param:
      Params have both value adjustment UI + optional CV input.
      The DSP engine determine if the CV input is enabled.
-     Push xib set value to the DSP engine as the default.
      Add a value change target to the self so we can receive and pass on
      param value updates to the DSP engine.
      */
     private func bind(_ param: Param) {
-        let paramCount = module.paramCount
-
-        if param.index > -1 && param.index < paramCount {
-            params.append(param)
-
-            // set value from nib to engine
-            param.value = module.value(forParamId: param.index)
-            param.cvAmount = module.cvAmount(forParamId: param.index)
-
-            // bind for value updates
-            if let paramControl = param as? UIControl {
-                paramControl.addTarget(self, action: #selector(paramValueDidChange), for: .valueChanged)
-                paramControl.addTarget(self, action: #selector(valueWasChanged), for: .editingDidEnd)
-            }
-
-            // set the CV param enable status
-            let cvIndex = module.cvIndex(forParamId: param.index)
-            if (cvIndex > -1) {
-                let port = param.registerCVPort(forIndex: cvIndex)
-                ports.append(port)
-                if let wireable = port as? Wireable {
-                    wireable.moduleDelegate = self
-                }
-            }
+        // bind for value updates
+        if let paramControl = param as? UIControl {
+            paramControl.addTarget(self, action: #selector(paramValueDidChange), for: .valueChanged)
+            paramControl.addTarget(self, action: #selector(valueWasChanged), for: .editingDidEnd)
         }
-    }
 
-    /**
-     Bind Option:
-     Let the option widget know the number of valid states defined by the DSP engine.
-     Push xib set value to the DSP engine as the default.
-     Add a value change target to the self so we can receive and pass on
-     option updates to the DSP engine.
-     */
-    private func bind(_ option: Option) {
-        let optionCount = module.optionCount
-
-        if option.index > -1 && option.index < optionCount {
-            option.states = module.states(forOptionId: option.index)
-            option.value = Int(module.value(forOptionId: option.index))
-
-            if let optionControl = option as? UIControl {
-                optionControl.addTarget(self, action: #selector(optionValueDidChange), for: .valueChanged)
-                optionControl.addTarget(self, action: #selector(valueWasChanged), for: .valueChanged)
-            }
-        }
-    }
-
-    /**
-     Bind Port:
-     Keep track of ports so we can animate port lights as well as be queried for open ports.
-     */
-    private func bind(_ port: Port) {
-        let inputCount = module.inputCount
-        let outputCount = module.outputCount
-
-        // must be a valid port index
-        if port.index > -1 &&
-            !port.isOutput && port.index < inputCount ||
-            port.isOutput && port.index < outputCount {
-            ports.append(port)
+        // set the CV param enable status
+        let cvIndex = module.cvIndex(forParamId: param.index)
+        if (cvIndex > -1) {
+            let port = param.registerCVPort(forIndex: cvIndex)
             if let wireable = port as? Wireable {
                 wireable.moduleDelegate = self
             }
-        }
-    }
-
-    /**
-     Bind Light:
-     Keep track of light widgets so we can send updates to them.
-     */
-    private func bind(_ light: Light) {
-        let lightCount = module.lightCount
-
-        if light.index > -1 && light.index < lightCount {
-            lights.append(light)
-        }
-    }
-
-    /**
-     Bind Label:
-     Keep track of label widgets so we can send updates to them.
-     */
-    private func bind(_ label: Label) {
-        let labelCount = module.labelCount
-
-        if label.index > -1 && label.index < labelCount {
-            labels.append(label)
-        }
-    }
-
-    /**
-     Bind Buffer:
-     Keep track of buffer widgets so we can send updates to them.
-     */
-    private func bind(_ buffer: Buffer) {
-        let bufferCount = module.bufferCount
-
-        if buffer.index > -1 && buffer.index < bufferCount {
-            buffers.append(buffer)
+            updatables.append(port)
         }
     }
 
@@ -341,50 +272,70 @@ class ModuleWidget : UIView, ModuleDelegate {
      * - out of index sub-ui will not bind to anything
      */
     private func bindToModule() {
-        params = [Param]()
-        ports = [Port]()
-        lights = [Light]()
-        buffers = [Buffer]()
-        powerMeter = nil
-
         for view in subviews {
+
             switch view {
             case let param as Param:
-                bind(param)
+                if param.index > -1 && param.index < module.paramCount {
+                    bind(param)
+                    updatables.append(param)
+                }
 
             case let option as Option:
-                bind(option)
+                /**
+                 Bind Option:
+                 Let the option widget know the number of valid states defined by the DSP engine.
+                 Add a value change target to the self so we can receive and pass on
+                 option updates to the DSP engine.
+                 */
+                if option.index > -1 && option.index < module.optionCount {
+                    if let optionControl = option as? UIControl {
+                        optionControl.addTarget(self, action: #selector(optionValueDidChange), for: .valueChanged)
+                        optionControl.addTarget(self, action: #selector(valueWasChanged), for: .valueChanged)
+                    }
+                    updatables.append(option)
+                }
 
             case let port as Port:
-                bind(port)
+                /**
+                 Bind Port:
+                 Keep track of ports so we can animate port lights as well as be queried for open ports.
+                 */
+                // must be a valid port index
+                let inputCount = module.inputCount
+                let outputCount = module.outputCount
+                if port.index > -1 &&
+                    !port.isOutput && port.index < inputCount ||
+                    port.isOutput && port.index < outputCount {
+                    if let wireable = port as? Wireable {
+                        wireable.moduleDelegate = self
+                    }
+
+                    updatables.append(port)
+                }
 
             case let light as Light:
-                bind(light)
+                if light.index > -1 && light.index < module.lightCount {
+                    updatables.append(light)
+                }
 
             case let label as Label:
-                bind(label)
+                if label.index > -1 && label.index < module.labelCount {
+                    updatables.append(label)
+                }
 
             case let buffer as Buffer:
-                bind(buffer)
+                if buffer.index > -1 && buffer.index < module.bufferCount {
+                    updatables.append(buffer)
+                }
 
             case let powerMeter as PowerMeter:
-                self.powerMeter = powerMeter
+                updatables.append(powerMeter)
 
             default: break
             }
         }
-    }
 
-    /*
-     * Clears bindings and resets module to default values, then rebinds.
-     */
-    func resetModule() {
-        // schedule reset on engine thread
-        module.reset()
-
-        // sync to new values after engine has a chance to change them
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(10)) { [weak self] in
-            self?.bindToModule()
-        }
+        syncUItoEngineValues()
     }
 }
