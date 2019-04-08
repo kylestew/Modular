@@ -93,6 +93,20 @@
                                             <action selector="togglePowerMeter:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="fsy-e8-nvd"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57X-cR-pZr">
+                                        <rect key="frame" x="541" y="5" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Ppa-qN-kV9"/>
+                                            <constraint firstAttribute="width" constant="90" id="X3w-h4-thE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="rand">
+                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="randomizeModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="ORN-wF-pQC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -102,9 +116,11 @@
                                     <constraint firstItem="BqO-gk-Snf" firstAttribute="centerY" secondItem="7rr-VK-Zx7" secondAttribute="centerY" id="Ikg-qS-DZo"/>
                                     <constraint firstAttribute="height" constant="40" id="NpX-du-piv"/>
                                     <constraint firstItem="Lh3-e6-mS7" firstAttribute="centerY" secondItem="hw4-jM-X5m" secondAttribute="centerY" id="PO3-26-cwm"/>
+                                    <constraint firstItem="57X-cR-pZr" firstAttribute="centerY" secondItem="BqO-gk-Snf" secondAttribute="centerY" id="RSy-YT-Vkx"/>
                                     <constraint firstItem="FCO-6n-q9m" firstAttribute="leading" secondItem="7rr-VK-Zx7" secondAttribute="trailing" constant="12" id="ReL-KN-SQN"/>
                                     <constraint firstItem="7rr-VK-Zx7" firstAttribute="height" secondItem="FCO-6n-q9m" secondAttribute="height" id="RiB-AQ-Izx"/>
                                     <constraint firstItem="qmC-Pg-TmV" firstAttribute="leading" secondItem="FCO-6n-q9m" secondAttribute="trailing" constant="8" id="XRM-OY-JF2"/>
+                                    <constraint firstItem="BqO-gk-Snf" firstAttribute="leading" secondItem="57X-cR-pZr" secondAttribute="trailing" id="abe-F7-8fG"/>
                                     <constraint firstItem="7rr-VK-Zx7" firstAttribute="leading" secondItem="BqO-gk-Snf" secondAttribute="trailing" constant="8" id="bu5-pj-8tU"/>
                                     <constraint firstItem="7rr-VK-Zx7" firstAttribute="centerY" secondItem="FCO-6n-q9m" secondAttribute="centerY" id="lxc-QX-swI"/>
                                     <constraint firstItem="FCO-6n-q9m" firstAttribute="centerY" secondItem="qmC-Pg-TmV" secondAttribute="centerY" id="rZK-hT-7gq"/>

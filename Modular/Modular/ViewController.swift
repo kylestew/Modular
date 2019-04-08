@@ -81,6 +81,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         patch.resetSelectedModule()
     }
 
+    @IBAction func randomizeModule(_ sender: Any) {
+        patch.randomizeSelectedModule()
+    }
+
     @IBAction func togglePowerMeter(_ sender: Any) {
         patch.togglePowerMetering()
     }

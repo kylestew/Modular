@@ -44,14 +44,15 @@ static const int loggerColor[] = {
 static void loggerLogVa(LoggerLevel level, const char *file, int line, const char *format, va_list args) {
 	auto nowTime = std::chrono::high_resolution_clock::now();
 	int duration = std::chrono::duration_cast<std::chrono::milliseconds>(nowTime - startTime).count();
-	if (logFile == stderr)
-		fprintf(logFile, "\x1B[%dm", loggerColor[level]);
-	fprintf(logFile, "[%.03f %s %s:%d] ", duration / 1000.0, loggerText[level], file, line);
+    logFile = stderr; // TEMP - supposed to be disk file?
+    if (logFile == stderr)
+        fprintf(logFile, "\x1B[%dm", loggerColor[level]);
+    fprintf(logFile, "[%.03f %s %s:%d] ", duration / 1000.0, loggerText[level], file, line);
 	if (logFile == stderr)
 		fprintf(logFile, "\x1B[0m");
-	vfprintf(logFile, format, args);
-	fprintf(logFile, "\n");
-	fflush(logFile);
+    vfprintf(logFile, format, args);
+    fprintf(logFile, "\n");
+    fflush(logFile);
 }
 
 void loggerLog(LoggerLevel level, const char *file, int line, const char *format, ...) {

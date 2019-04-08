@@ -200,6 +200,14 @@ class Patch: PatchDelegate {
         }
     }
 
+    func randomizeSelectedModule() {
+        if let selected = currentSelectedWidget {
+            selected.randomizeModule()
+
+            saveToDisk()
+        }
+    }
+
     // MARK: - Extras
 
     func getEngineCPUTimeMS() -> Float {

@@ -12,6 +12,7 @@
 		FF055A8D225A81C900FFCCD4 /* SelectorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */; };
 		FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8E225A8B5F00FFCCD4 /* Label.swift */; };
 		FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */; };
+		FF067E79225B9F6C00394B19 /* Core_DC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF067E78225B9F6C00394B19 /* Core_DC.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
@@ -105,6 +106,7 @@
 		FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorWidget.swift; sourceTree = "<group>"; };
 		FF055A8E225A8B5F00FFCCD4 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWidget.swift; sourceTree = "<group>"; };
+		FF067E78225B9F6C00394B19 /* Core_DC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Core_DC.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
@@ -533,8 +535,8 @@
 				FF2514D32246C3F900FD1D44 /* ML_Modules */,
 				FFD313932246A9700057178C /* JW-Modules */,
 				FF959EFB22449BAA008F4FFC /* Befaco */,
-				FF5DC85F221F4A3A0018AC42 /* Core */,
 				FF5DC85E221F4A310018AC42 /* Fundamental */,
+				FF5DC85F221F4A3A0018AC42 /* Core */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -569,6 +571,7 @@
 		FF5DC85F221F4A3A0018AC42 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FF067E78225B9F6C00394B19 /* Core_DC.xib */,
 				FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */,
 			);
 			path = Core;
@@ -717,6 +720,7 @@
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
+				FF067E79225B9F6C00394B19 /* Core_DC.xib in Resources */,
 				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
 				FF5DBD582244534F006B98FE /* Fundamental_VCAb.xib in Resources */,
 				FFAEEF572259A6B400DC005B /* Fundamental_VCO-2.xib in Resources */,

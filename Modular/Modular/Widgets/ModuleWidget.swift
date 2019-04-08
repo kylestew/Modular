@@ -221,6 +221,19 @@ class ModuleWidget : UIView, ModuleDelegate {
         }
     }
 
+    /*
+     * Randomizes modules at engine level then syncs to its updates values
+     */
+    func randomizeModule() {
+        // schedule reset on engine thread
+        module.randomize()
+
+        // sync to new values after engine has a chance to change them
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(10)) { [weak self] in
+            self?.syncUItoEngineValues()
+        }
+    }
+
     // MARK: Subwidgets IX
 
     @objc func valueWasChanged(_ sender: Any) {

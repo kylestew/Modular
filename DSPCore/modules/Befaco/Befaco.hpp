@@ -9,7 +9,7 @@
 namespace library {
     namespace befaco {
         struct EvenVCO;
-        struct Attenuverter;
+//        struct Attenuverter;
         struct Mixer;
 
         struct Befaco {
@@ -18,8 +18,8 @@ namespace library {
                 p->slug = "Befaco";
 
 //                p->addModuleBuilder(ModuleBuilder::create<EvenVCO>("EvenVCO"));
+                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
 //                p->addModuleBuilder(ModuleBuilder::create<Mixer>("Mixer"));
-//                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
 
                 return p;
             }

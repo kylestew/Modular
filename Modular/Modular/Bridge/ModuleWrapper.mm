@@ -74,6 +74,10 @@ using namespace library;
     engineResetModule(_module);
 }
 
+- (void)randomize {
+    engineRandomizeModule(_module);
+}
+
 - (int)cpuTime {
     return (int)(_module->cpuTime * 1000.f);
 }

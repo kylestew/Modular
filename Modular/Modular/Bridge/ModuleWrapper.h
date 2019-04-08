@@ -15,6 +15,7 @@
 - (instancetype)initForPack:(NSString*)packSlug andModuleSlug:(NSString*)moduleSlug;
 
 - (void)reset;
+- (void)randomize;
 
 - (int)cpuTime;
 

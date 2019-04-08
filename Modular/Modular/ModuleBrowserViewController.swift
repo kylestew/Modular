@@ -16,12 +16,15 @@ class ModuleBrowserViewController : UITableViewController {
     var currentVisibleRect: CGRect = .zero
 
     let library: [Pack] = [
-        Pack.init(title: "Core", modules: ["AudioInterface"]),
+        Pack.init(title: "Core", modules: [
+            "AudioInterface",
+            "DC"
+            ]),
         Pack.init(title: "Fundamental", modules: [
             "VCO-1",
 //            "VCO-2",
             "LFO",
-//            "VCA",
+            "VCA",
 //            "VCAb",
 //            "VCF",
 //            "ADSR",
@@ -29,11 +32,11 @@ class ModuleBrowserViewController : UITableViewController {
 //            "Delay",
             "Scope"
             ]),
-//        Pack.init(title: "Befaco", modules: [
+        Pack.init(title: "Befaco", modules: [
 //            "Mixer",
-//            "Attenuverter",
+            "Attenuverter",
 //            "EvenVCO",
-//            ]),
+            ]),
         Pack.init(title: "JW-Modules", modules: [
 //            "SimpleClock",
             "Quantizer",
