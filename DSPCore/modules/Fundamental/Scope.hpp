@@ -36,6 +36,9 @@ namespace library { namespace fundamental {
 
         void reset() override {
             params[TIME_PARAM].setting = 0.f;
+
+            // clear out samples
+            std::fill_n(buffers[SAMPLE_BUFFER].samples, SAMPLE_BUFFER_SIZE, 0);
         }
 
         void step() override {
