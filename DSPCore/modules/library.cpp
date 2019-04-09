@@ -1,31 +1,31 @@
 #include "library.hpp"
 
+#include "util/random.hpp"
+
 /* include public + dev module libraries here */
 #include "Core/Core.hpp"
-#include "Fundamental/Fundamental.hpp"
-#include "Befaco/Befaco.hpp"
-#include "JW-Modules/JW-Modules.hpp"
-#include "ML_Modules/ML_Modules.hpp"
-#include "AudibleInstruments/AudibleInstruments.hpp"
+#include "Simples/Simples.hpp"
+
+//#include "Fundamental/Fundamental.hpp"
+//#include "Befaco/Befaco.hpp"
+//#include "JW-Modules/JW-Modules.hpp"
+//#include "ML_Modules/ML_Modules.hpp"
+//#include "AudibleInstruments/AudibleInstruments.hpp"
 
 namespace library {
 
     std::list<Pack*> gLibrary = {
             library::core::Core::init(),
-            library::fundamental::Fundamental::init(),
-            library::befaco::Befaco::init(),
-            library::jw_modules::JW_Modules::init(),
-            library::ml_modules::ML_Modules::init(),
-            library::audibleinstruments::AudibleInstruments::init(),
+            library::simples::Simples::init(),
+
+////            library::fundamental::Fundamental::init(),
+////            library::befaco::Befaco::init(),
+////            library::jw_modules::JW_Modules::init(),
+////            library::ml_modules::ML_Modules::init(),
+////            library::audibleinstruments::AudibleInstruments::init(),
     };
 
     void libraryInit() {
-//        gLibrary.insert({
-//
-//        });
-//        gLibrary.insert([
-//                ])
-//        gLibrary.push_back(library::Fundamental::init());
     }
 
     void libraryDestroy() {

@@ -2,7 +2,6 @@
 #include "library.hpp"
 
 #include "AudioInterface.hpp"
-#include "DC.hpp"
 
 namespace library {
     namespace core {
@@ -12,7 +11,6 @@ namespace library {
                 p->slug = "Core";
 
                 p->addModuleBuilder(ModuleBuilder::create<AudioInterface>("AudioInterface"));
-                p->addModuleBuilder(ModuleBuilder::create<DC>("DC"));
 
                 return p;
             }

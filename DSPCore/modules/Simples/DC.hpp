@@ -1,16 +1,13 @@
 #pragma once
-#include "Core.hpp"
-#include "audio.hpp"
+#include "Simples.hpp"
 
 #include <iomanip> // setprecision
 #include <sstream> // stringstream
 
 using namespace dsp;
 
-
 namespace library {
-    namespace core {
-
+    namespace simples {
         struct DC: Module {
             enum ParamIds {
                 DC_PARAM,

@@ -18,29 +18,31 @@ class ModuleBrowserViewController : UITableViewController {
     let library: [Pack] = [
         Pack.init(title: "Core", modules: [
             "AudioInterface",
+            ]),
+        Pack.init(title: "Simples", modules: [
             "DC"
             ]),
-        Pack.init(title: "Fundamental", modules: [
-            "VCO-1",
-//            "VCO-2",
-            "LFO",
-            "VCA",
-//            "VCAb",
-//            "VCF",
-//            "ADSR",
-//            "SEQ3",
-//            "Delay",
-            "Scope"
-            ]),
-        Pack.init(title: "Befaco", modules: [
-//            "Mixer",
-            "Attenuverter",
-//            "EvenVCO",
-            ]),
-        Pack.init(title: "JW-Modules", modules: [
-//            "SimpleClock",
-            "Quantizer",
-            ]),
+//        Pack.init(title: "Fundamental", modules: [
+//            "VCO-1",
+////            "VCO-2",
+//            "LFO",
+//            "VCA",
+////            "VCAb",
+////            "VCF",
+////            "ADSR",
+////            "SEQ3",
+////            "Delay",
+//            "Scope"
+//            ]),
+//        Pack.init(title: "Befaco", modules: [
+////            "Mixer",
+//            "Attenuverter",
+////            "EvenVCO",
+//            ]),
+//        Pack.init(title: "JW-Modules", modules: [
+////            "SimpleClock",
+//            "Quantizer",
+//            ]),
 //        Pack.init(title: "ML_Modules", modules: [
 //            "ShiftRegister",
 //            ]),
