@@ -4,4 +4,4 @@
 
 /* include public module libraries here */
 #include "Core/Core.hpp"
-#include "Prime/Prime.hpp"
+#include "Primes/Primes.hpp"

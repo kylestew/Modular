@@ -73,6 +73,7 @@ namespace dsp {
             // apply CV values
             for (Param &param : module->params) {
                 if (param.cvIndex > -1 && module->inputs[param.cvIndex].active) {
+                    // TODO: should clamp CV value before mult?
                     param.value = param.setting + module->inputs[param.cvIndex].value * param.cvAmount;
                 } else {
                     param.value = param.setting;

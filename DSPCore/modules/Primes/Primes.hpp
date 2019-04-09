@@ -3,9 +3,9 @@
 #include "dsp.hpp"
 
 #include "VCO1.hpp"
-//#include "VCO2.hpp"
-//#include "LFO.hpp"
-//#include "VCA.hpp"
+#include "VCO2.hpp"
+#include "LFO.hpp"
+#include "VCA.hpp"
 //#include "VCF.hpp"
 //#include "ADSR.hpp"
 //#include "Seq3.hpp"
@@ -13,11 +13,11 @@
 #include "SimpleClock.hpp"
 
 namespace library {
-    namespace prime {
+    namespace primes {
         struct VCO1;
-//        struct VCO2;
-//        struct LFO;
-//        struct VCA;
+        struct VCO2;
+        struct LFO;
+        struct VCA;
 //        struct VCF;
 //        struct ADSR;
 //        struct SEQ3;
@@ -26,22 +26,23 @@ namespace library {
 
         struct SimpleClock;
 
-        struct Prime {
+        struct Primes {
             static Pack* init() {
                 Pack* p = new Pack();
-                p->slug = "Prime";
+                p->slug = "Primes";
 
                 p->addModuleBuilder(ModuleBuilder::create<VCO1>("VCO-1"));
-//                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
-//                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
+                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
+                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
 //                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
-//                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
-//                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCAb"));
+                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
+
 //                p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
 //                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
 //                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
 //                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
-                p->addModuleBuilder(ModuleBuilder::create<SimpleClock>("SimpleClock"));
+
+//                p->addModuleBuilder(ModuleBuilder::create<SimpleClock>("SimpleClock"));
 
                 return p;
             }

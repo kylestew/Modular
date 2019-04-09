@@ -1,10 +1,10 @@
 #pragma once
-#include "Prime.hpp"
+#include "Primes.hpp"
 #include "VoltageControlledOscillator.h"
 
 using namespace dsp;
 
-namespace library { namespace prime {
+namespace library { namespace primes {
 
     struct VCO1: Module {
         enum ParamIds {

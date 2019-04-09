@@ -21,9 +21,9 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Simples", modules: [
             "DC",
-            "Attenuverter",
+//            "Attenuverter",
 //            "Offset",
-//            "VertOff",
+            "VertOff",
 //            "Mute",
 
 //            "Trigger",
@@ -32,8 +32,10 @@ class ModuleBrowserViewController : UITableViewController {
 //            "Multiply",
 //            "Unity",
             ]),
-
-
+        Pack.init(title: "Utilities", modules: [
+            ]),
+        Pack.init(title: "Mixers", modules: [
+            ]),
         Pack.init(title: "Notes", modules: [
 //            "SEQ",
 //            "Quantizer",
@@ -43,17 +45,15 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Scopes", modules: [
             "Waveform",
             ]),
-        Pack.init(title: "Fundamental", modules: [
+        Pack.init(title: "Primes", modules: [
             "VCO-1",
-//            "VCO-2",
-//            "LFO",
-//            "VCA",
-//            "VCAb",
+            "VCO-2",
+            "LFO",
+            "VCA",
 //            "VCF",
 //            "ADSR",
 //            "SEQ3",
 //            "Delay",
-//            "SimpleClock"
             ]),
     ]
 

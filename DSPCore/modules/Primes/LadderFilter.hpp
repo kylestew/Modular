@@ -1,5 +1,5 @@
 #pragma once
-#include "Prime.hpp"
+#include "Primes.hpp"
 #include "dsp/functions.hpp"
 #include "dsp/ode.hpp"
 

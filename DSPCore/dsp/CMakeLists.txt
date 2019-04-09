@@ -8,7 +8,11 @@ set(SOURCES
         src/asset.cpp
         src/util/string.cpp
         src/util/logger.cpp
+
         src/dsp/minblep.cpp
+        src/dsp/signal.cpp
+        src/dsp/table.cpp
+        src/dsp/math.cpp
 
         dep/libsamplerate-0.1.9/src/samplerate.c
         dep/libsamplerate-0.1.9/src/src_linear.c

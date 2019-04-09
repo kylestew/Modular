@@ -8,7 +8,7 @@
 
 #include "Scopes/Scopes.hpp"
 
-#include "Prime/Prime.hpp"
+#include "Primes/Primes.hpp"
 
 
 namespace library {
@@ -19,7 +19,7 @@ namespace library {
 
             library::scopes::Scopes::init(),
 
-            library::prime::Prime::init(),
+            library::primes::Primes::init(),
     };
 
     void libraryInit() {

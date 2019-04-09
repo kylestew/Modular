@@ -1,5 +1,5 @@
 #pragma once
-#include "Prime.hpp"
+#include "Primes.hpp"
 #include "dsp/resampler.hpp"
 #include "dsp/filter.hpp"
 #include "util/random.hpp"

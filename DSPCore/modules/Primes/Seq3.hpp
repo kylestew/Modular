@@ -1,5 +1,5 @@
 #pragma once
-#include "Prime.hpp"
+#include "Primes.hpp"
 
 using namespace dsp;
 
