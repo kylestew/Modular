@@ -20,8 +20,13 @@ class ModuleBrowserViewController : UITableViewController {
             "AudioInterface",
             ]),
         Pack.init(title: "Simples", modules: [
-            "DC"
+            "Attenuverter",
+
+            "DC",
             ]),
+
+
+
 //        Pack.init(title: "Fundamental", modules: [
 //            "VCO-1",
 ////            "VCO-2",
