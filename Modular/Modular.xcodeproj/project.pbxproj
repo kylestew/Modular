@@ -17,6 +17,9 @@
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
 		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
+		FF28A7DC225D1FAE006AEEE6 /* signal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DA225D1FAD006AEEE6 /* signal.cpp */; };
+		FF28A7DD225D1FAE006AEEE6 /* table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DB225D1FAE006AEEE6 /* table.cpp */; };
+		FF28A7DF225D1FB3006AEEE6 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DE225D1FB3006AEEE6 /* math.cpp */; };
 		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
 		FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C65A2215D976004F4991 /* UIColor+Hex.swift */; };
 		FF2AE3612243ED840098091E /* ToggleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AE3602243ED840098091E /* ToggleWidget.swift */; };
@@ -114,6 +117,12 @@
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
 		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
+		FF28A7D7225D1F93006AEEE6 /* table.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = table.hpp; sourceTree = "<group>"; };
+		FF28A7D8225D1F94006AEEE6 /* signal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = signal.hpp; sourceTree = "<group>"; };
+		FF28A7D9225D1F9E006AEEE6 /* math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
+		FF28A7DA225D1FAD006AEEE6 /* signal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = signal.cpp; sourceTree = "<group>"; };
+		FF28A7DB225D1FAE006AEEE6 /* table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = table.cpp; sourceTree = "<group>"; };
+		FF28A7DE225D1FB3006AEEE6 /* math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = math.cpp; sourceTree = "<group>"; };
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
 		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FF2AE3602243ED840098091E /* ToggleWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleWidget.swift; sourceTree = "<group>"; };
@@ -507,10 +516,13 @@
 			children = (
 				FFBF3B87225C39E400F2C8F3 /* digital.hpp */,
 				FFBF3B85225C39E400F2C8F3 /* filter.hpp */,
+				FF28A7D9225D1F9E006AEEE6 /* math.hpp */,
 				FFBF3B83225C39E400F2C8F3 /* fir.hpp */,
 				FFBF3B84225C39E400F2C8F3 /* functions.hpp */,
 				FFBF3B86225C39E400F2C8F3 /* minblep.hpp */,
 				FFBF3B88225C39E400F2C8F3 /* ode.hpp */,
+				FF28A7D8225D1F94006AEEE6 /* signal.hpp */,
+				FF28A7D7225D1F93006AEEE6 /* table.hpp */,
 				FFBF3B82225C39E400F2C8F3 /* resampler.hpp */,
 				FF3FC94C2210F0F700496378 /* ringbuffer.hpp */,
 			);
@@ -740,6 +752,9 @@
 		FFCE90DD225A726F00C6E7E9 /* dsp */ = {
 			isa = PBXGroup;
 			children = (
+				FF28A7DE225D1FB3006AEEE6 /* math.cpp */,
+				FF28A7DA225D1FAD006AEEE6 /* signal.cpp */,
+				FF28A7DB225D1FAE006AEEE6 /* table.cpp */,
 				FFCE90DE225A726F00C6E7E9 /* minblep.cpp */,
 			);
 			path = dsp;
@@ -902,6 +917,7 @@
 			files = (
 				FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */,
 				FFBF3BB1225C3A1B00F2C8F3 /* library.cpp in Sources */,
+				FF28A7DD225D1FAE006AEEE6 /* table.cpp in Sources */,
 				FF3FC9572210F0F700496378 /* string.cpp in Sources */,
 				FF374B192259598800E2EE8E /* src_sinc.c in Sources */,
 				FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */,
@@ -925,11 +941,13 @@
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
 				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
 				FFCE90DF225A726F00C6E7E9 /* minblep.cpp in Sources */,
+				FF28A7DF225D1FB3006AEEE6 /* math.cpp in Sources */,
 				FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */,
 				FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */,
 				FF9A460322480933004F9765 /* Light.swift in Sources */,
 				FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */,
 				FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */,
+				FF28A7DC225D1FAE006AEEE6 /* signal.cpp in Sources */,
 				FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */,
 				FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */,
 				FF3FC9562210F0F700496378 /* asset.cpp in Sources */,

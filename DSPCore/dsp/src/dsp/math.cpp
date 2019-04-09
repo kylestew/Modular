@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "math.hpp"
+#include "dsp/math.hpp"
 
 using namespace dsp;
 

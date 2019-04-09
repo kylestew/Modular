@@ -36,8 +36,9 @@ namespace library { namespace primes {
         }
 
         void reset() override {
-            params[LEVEL_PARAM].setting = 0.f;
+            params[LEVEL_PARAM].setting = 0.5f;
             params[LEVEL_PARAM].cvAmount = 1.f;
+            options[LINEAR_OPTION].value = 0;
         }
 
         void step() override {
