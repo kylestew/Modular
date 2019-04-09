@@ -4,7 +4,6 @@
 
 #include "EvenVCO.hpp"
 #include "Mixer.hpp"
-#include "Attenuverter.hpp"
 
 namespace library {
     namespace befaco {
@@ -18,7 +17,6 @@ namespace library {
                 p->slug = "Befaco";
 
 //                p->addModuleBuilder(ModuleBuilder::create<EvenVCO>("EvenVCO"));
-                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
 //                p->addModuleBuilder(ModuleBuilder::create<Mixer>("Mixer"));
 
                 return p;

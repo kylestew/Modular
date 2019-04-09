@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="180" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-kQ-hay" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="15" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="FUg-MZ-SMQ"/>
+                        <constraint firstAttribute="height" constant="60" id="bcf-rE-Ed9"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24O-ox-STG" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="90" y="72" width="80" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="hr2-ga-AHy"/>
+                        <constraint firstAttribute="height" constant="14" id="zj0-JS-4f0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-XZ-aQc" userLabel="output" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="120" y="15" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FKn-Uk-u7Z"/>
+                        <constraint firstAttribute="width" constant="60" id="wXX-kE-OSa"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lb-XK-g0T" customClass="ButtonWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="60" y="15" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="7k5-JM-ia7"/>
+                        <constraint firstAttribute="height" constant="60" id="96o-gb-8oC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                            <real key="value" value="40"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MUTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yn-fB-uyx">
+                    <rect key="frame" x="60" y="63" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="fBI-BT-Vgl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="24O-ox-STG" secondAttribute="trailing" constant="10" id="E9V-D6-xrg"/>
+                <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerY" secondItem="AHx-kQ-hay" secondAttribute="centerY" id="Fli-P3-qQl"/>
+                <constraint firstItem="7lb-XK-g0T" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Gnh-pc-QzO"/>
+                <constraint firstItem="7lb-XK-g0T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HNU-M1-ng6"/>
+                <constraint firstItem="6yn-fB-uyx" firstAttribute="centerY" secondItem="7lb-XK-g0T" secondAttribute="centerY" constant="30" id="Lp3-Cr-hu5"/>
+                <constraint firstItem="PKB-XZ-aQc" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Rrj-vk-d2n"/>
+                <constraint firstItem="AHx-kQ-hay" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SGO-fi-fkk"/>
+                <constraint firstItem="AHx-kQ-hay" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sp4-aX-K3U"/>
+                <constraint firstItem="6yn-fB-uyx" firstAttribute="centerX" secondItem="7lb-XK-g0T" secondAttribute="centerX" id="Z87-LI-k5t"/>
+                <constraint firstItem="6yn-fB-uyx" firstAttribute="width" secondItem="7lb-XK-g0T" secondAttribute="width" id="fnL-T5-Z7K"/>
+                <constraint firstAttribute="bottom" secondItem="24O-ox-STG" secondAttribute="bottom" constant="4" id="lFR-lN-nlg"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-716.79999999999995" y="-294.60269865067471"/>
+        </view>
+    </objects>
+</document>

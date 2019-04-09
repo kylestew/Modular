@@ -21,11 +21,18 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Simples", modules: [
             "Attenuverter",
-
+            "Offset",
+            "VertOff",
             "DC",
+            "Mute",
+//            "Trigger",
+//            "Toggle",
+//            "Add",
+//            "Multiply",
+//            "Unity",
             ]),
 
-        
+
         Pack.init(title: "Scopes", modules: [
             "Waveform",
             ]),
