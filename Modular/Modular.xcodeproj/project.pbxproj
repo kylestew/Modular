@@ -20,6 +20,7 @@
 		FF28A7DC225D1FAE006AEEE6 /* signal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DA225D1FAD006AEEE6 /* signal.cpp */; };
 		FF28A7DD225D1FAE006AEEE6 /* table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DB225D1FAE006AEEE6 /* table.cpp */; };
 		FF28A7DF225D1FB3006AEEE6 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF28A7DE225D1FB3006AEEE6 /* math.cpp */; };
+		FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */; };
 		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
 		FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C65A2215D976004F4991 /* UIColor+Hex.swift */; };
 		FF2AE3612243ED840098091E /* ToggleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AE3602243ED840098091E /* ToggleWidget.swift */; };
@@ -123,6 +124,7 @@
 		FF28A7DA225D1FAD006AEEE6 /* signal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = signal.cpp; sourceTree = "<group>"; };
 		FF28A7DB225D1FAE006AEEE6 /* table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = table.cpp; sourceTree = "<group>"; };
 		FF28A7DE225D1FB3006AEEE6 /* math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = math.cpp; sourceTree = "<group>"; };
+		FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_S&H.xib"; sourceTree = "<group>"; };
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
 		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FF2AE3602243ED840098091E /* ToggleWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleWidget.swift; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
 			);
 			path = ML_Modules;
+			sourceTree = "<group>";
+		};
+		FF28A7E0225D2444006AEEE6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FF29C6552215C1D2004F4991 /* Widgets */ = {
@@ -586,6 +596,7 @@
 				FF39D9DC22483A2600BE830C /* AudibleInstruments */,
 				FF2514D32246C3F900FD1D44 /* ML_Modules */,
 				FF959EFB22449BAA008F4FFC /* Befaco */,
+				FF28A7E0225D2444006AEEE6 /* Utilities */,
 				FF5DC85E221F4A310018AC42 /* Primes */,
 				FF5DC85F221F4A3A0018AC42 /* Core */,
 			);
@@ -732,10 +743,10 @@
 		FFBF3BB2225C3CBD00F2C8F3 /* Simples */ = {
 			isa = PBXGroup;
 			children = (
+				FF067E78225B9F6C00394B19 /* Simples_DC.xib */,
 				FFBF3BB3225C3D9D00F2C8F3 /* Simples_Attenuverter.xib */,
 				FFBF3BB8225CE42F00F2C8F3 /* Simples_Offset.xib */,
 				FFBF3BBA225CE45100F2C8F3 /* Simples_VertOff.xib */,
-				FF067E78225B9F6C00394B19 /* Simples_DC.xib */,
 				FFBF3BBC225CE5DF00F2C8F3 /* Simples_Mute.xib */,
 			);
 			path = Simples;
@@ -845,6 +856,7 @@
 				FFBF3BB7225C429100F2C8F3 /* Scopes_Waveform.xib in Resources */,
 				FF374B1C2259598800E2EE8E /* Makefile.am in Resources */,
 				FF374AE42259598800E2EE8E /* compile in Resources */,
+				FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */,
 				FF374AE32259598800E2EE8E /* config.sub in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
 				FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */,

@@ -5,9 +5,10 @@
 /* include public + dev module libraries here */
 #include "Core/Core.hpp"
 #include "Simples/Simples.hpp"
-
+#include "Utilities/Utilities.hpp"
+//#include "Notes/Notes.hpp"
+//#include "Mixers/Mixers.hpp"
 #include "Scopes/Scopes.hpp"
-
 #include "Primes/Primes.hpp"
 
 
@@ -16,9 +17,10 @@ namespace library {
     std::list<Pack*> gLibrary = {
             library::core::Core::init(),
             library::simples::Simples::init(),
-
+            library::utilities::Utilities::init(),
+//            library::notes::Notes::init(),
+//            library::mixers::Mixers::init(),
             library::scopes::Scopes::init(),
-
             library::primes::Primes::init(),
     };
 

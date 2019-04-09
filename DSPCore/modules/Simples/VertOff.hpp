@@ -35,7 +35,7 @@ namespace library {
             VertOff() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
-                params[ATTEN_PARAM].setting = 0.f;
+                params[ATTEN_PARAM].setting = 0.316f;
                 params[OFFSET_PARAM].setting = 0.f;
             }
 
@@ -46,8 +46,14 @@ namespace library {
 
             void step() override {
                 float atten = params[ATTEN_PARAM].value;
-                float offset = rescale(params[OFFSET_PARAM].value, -1.f, 1.f, -0.5f, 0.5f);
+                float offset = params[OFFSET_PARAM].value;
+
+                // make non-linear
+                atten = atten < 0.f ? -pow(atten, 2.0f) : pow(atten, 2.f);
+
                 float out = inputs[INPUT].value * atten + offset;
+
+                // TODO: clamped or not?
                 outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
             }
         };

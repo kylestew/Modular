@@ -21,10 +21,10 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Simples", modules: [
             "DC",
-//            "Attenuverter",
-//            "Offset",
+            "Attenuverter",
+            "Offset",
             "VertOff",
-//            "Mute",
+            "Mute",
 
 //            "Trigger",
 //            "Toggle",
@@ -33,6 +33,7 @@ class ModuleBrowserViewController : UITableViewController {
 //            "Unity",
             ]),
         Pack.init(title: "Utilities", modules: [
+            "S&H",
             ]),
         Pack.init(title: "Mixers", modules: [
             ]),
