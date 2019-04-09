@@ -3,35 +3,37 @@
 #include "dsp.hpp"
 
 #include "VCO1.hpp"
-#include "VCO2.hpp"
-#include "LFO.hpp"
-#include "VCA.hpp"
-#include "VCF.hpp"
-#include "ADSR.hpp"
-#include "Seq3.hpp"
-#include "Delay.hpp"
+//#include "VCO2.hpp"
+//#include "LFO.hpp"
+//#include "VCA.hpp"
+//#include "VCF.hpp"
+//#include "ADSR.hpp"
+//#include "Seq3.hpp"
+//#include "Delay.hpp"
+#include "SimpleClock.hpp"
 
 namespace library {
-    namespace fundamental {
+    namespace prime {
         struct VCO1;
-        struct VCO2;
-        struct LFO;
-        struct VCA;
+//        struct VCO2;
+//        struct LFO;
+//        struct VCA;
+//        struct VCF;
+//        struct ADSR;
+//        struct SEQ3;
+//        struct Delay;
+//        struct Scope;
 
-        struct VCF;
-        struct ADSR;
-        struct SEQ3;
-        struct Delay;
-        struct Scope;
+        struct SimpleClock;
 
-        struct Fundamental {
+        struct Prime {
             static Pack* init() {
                 Pack* p = new Pack();
-                p->slug = "Fundamental";
+                p->slug = "Prime";
 
                 p->addModuleBuilder(ModuleBuilder::create<VCO1>("VCO-1"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCO2>("VCO-2"));
-                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
+//                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
 //                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
 //                p->addModuleBuilder(ModuleBuilder::create<VCA>("VCAb"));
@@ -39,6 +41,7 @@ namespace library {
 //                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
 //                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
 //                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
+                p->addModuleBuilder(ModuleBuilder::create<SimpleClock>("SimpleClock"));
 
                 return p;
             }

@@ -8,11 +8,8 @@
 
 #include "Scopes/Scopes.hpp"
 
-//#include "Fundamental/Fundamental.hpp"
-//#include "Befaco/Befaco.hpp"
-//#include "JW-Modules/JW-Modules.hpp"
-//#include "ML_Modules/ML_Modules.hpp"
-//#include "AudibleInstruments/AudibleInstruments.hpp"
+#include "Prime/Prime.hpp"
+
 
 namespace library {
 
@@ -22,11 +19,7 @@ namespace library {
 
             library::scopes::Scopes::init(),
 
-////            library::fundamental::Fundamental::init(),
-////            library::befaco::Befaco::init(),
-////            library::jw_modules::JW_Modules::init(),
-////            library::ml_modules::ML_Modules::init(),
-////            library::audibleinstruments::AudibleInstruments::init(),
+            library::prime::Prime::init(),
     };
 
     void libraryInit() {

@@ -20,11 +20,12 @@ class ModuleBrowserViewController : UITableViewController {
             "AudioInterface",
             ]),
         Pack.init(title: "Simples", modules: [
-            "Attenuverter",
-            "Offset",
-            "VertOff",
             "DC",
-            "Mute",
+            "Attenuverter",
+//            "Offset",
+//            "VertOff",
+//            "Mute",
+
 //            "Trigger",
 //            "Toggle",
 //            "Add",
@@ -33,39 +34,27 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
 
 
+        Pack.init(title: "Notes", modules: [
+//            "SEQ",
+//            "Quantizer",
+//            "Chromatic",
+//            "Octaves",
+            ]),
         Pack.init(title: "Scopes", modules: [
             "Waveform",
             ]),
-
-
-
-//        Pack.init(title: "Fundamental", modules: [
-//            "VCO-1",
-////            "VCO-2",
+        Pack.init(title: "Fundamental", modules: [
+            "VCO-1",
+//            "VCO-2",
 //            "LFO",
 //            "VCA",
-////            "VCAb",
-////            "VCF",
-////            "ADSR",
-////            "SEQ3",
-////            "Delay",
-//            "Scope"
-//            ]),
-//        Pack.init(title: "Befaco", modules: [
-////            "Mixer",
-//            "Attenuverter",
-////            "EvenVCO",
-//            ]),
-//        Pack.init(title: "JW-Modules", modules: [
-////            "SimpleClock",
-//            "Quantizer",
-//            ]),
-//        Pack.init(title: "ML_Modules", modules: [
-//            "ShiftRegister",
-//            ]),
-//        Pack.init(title: "AudibleInstruments", modules: [
-//            "Branches",
-//            ]),
+//            "VCAb",
+//            "VCF",
+//            "ADSR",
+//            "SEQ3",
+//            "Delay",
+//            "SimpleClock"
+            ]),
     ]
 
     override func viewDidLoad() {

@@ -25,7 +25,7 @@ namespace library { namespace ml_modules {
         int position = 0;
         float values[8] = {};
 
-        SchmittTrigger setTrigger;
+//        SchmittTrigger setTrigger;
 
         ShiftRegister() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
         }
@@ -40,17 +40,17 @@ namespace library { namespace ml_modules {
         void step() override {
             if( inputs[TRIGGER_INPUT].active ) {
 
-                if( setTrigger.process(inputs[TRIGGER_INPUT].value) ) {
-
-                    // cascade INTERNAL values and set top
-                    for(int i=7; i>0; i--) values[i] = values[i-1];
-                    values[0] = inputs[INPUT].value;
-
-                    // set outputs to values
-                    for(int i=0; i<8; i++) {
-                        outputs[i].value = values[i];
-                    }
-                };
+//                if( setTrigger.process(inputs[TRIGGER_INPUT].value) ) {
+//
+//                    // cascade INTERNAL values and set top
+//                    for(int i=7; i>0; i--) values[i] = values[i-1];
+//                    values[0] = inputs[INPUT].value;
+//
+//                    // set outputs to values
+//                    for(int i=0; i<8; i++) {
+//                        outputs[i].value = values[i];
+//                    }
+//                };
 
             };
         }

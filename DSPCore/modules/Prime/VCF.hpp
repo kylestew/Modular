@@ -1,5 +1,5 @@
 #pragma once
-#include "Fundamental.hpp"
+#include "Prime.hpp"
 #include "LadderFilter.hpp"
 
 using namespace dsp;

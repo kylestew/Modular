@@ -23,7 +23,7 @@ int main() {
 
     // build a VCO
 //    builder = libraryGetModuleBuilder("Befaco", "EvenVCO");
-    builder = libraryGetModuleBuilder("Fundamental", "VCO");
+    builder = libraryGetModuleBuilder("Prime", "VCO");
     Module* vco1 = builder->createModule();
     delete builder;
     engineAddModule(vco1); // does not transfer pointer ownership
@@ -35,7 +35,7 @@ int main() {
     engineAddModule(audioInterface);
 
 //    // build a scope
-//    builder = libraryGetModuleBuilder("Fundamental", "Scope");
+//    builder = libraryGetModuleBuilder("Prime", "Scope");
 //    Module* scope = builder->createModule();
 //    delete builder;
 //    engineAddModule(scope);

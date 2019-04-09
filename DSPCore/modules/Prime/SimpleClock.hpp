@@ -1,7 +1,7 @@
 #pragma once
-#include "JW-Modules.hpp"
+#include "Prime.hpp"
 
-namespace library { namespace jw_modules {
+namespace library { namespace prime {
 
     struct SimpleClock: Module {
         enum ParamIds {
@@ -30,13 +30,13 @@ namespace library { namespace jw_modules {
         // TODO: add string output for BPM label
 
         float phase = 0.0;
-        PulseGenerator gatePulse;
+//        PulseGenerator gatePulse;
         int stepCount = 0;
 
         SimpleClock() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             options[RUN_OPTION].states = 2;
 
-            gatePulse.triggerDuration = 10.f;
+//            gatePulse.triggerDuration = 10.f;
         }
 
         void reset() override {
@@ -56,16 +56,16 @@ namespace library { namespace jw_modules {
             }
             if (nextStep) {
                 stepCount = (stepCount + 1) % 256;
-                gatePulse.trigger(1e-3);
+//                gatePulse.trigger(1e-3);
             }
 
-            bool gpulse = running && gatePulse.process(1.0 / engineGetSampleRate());
+//            bool gpulse = running && gatePulse.process(1.0 / engineGetSampleRate());
 
-            outputs[CLOCK_OUTPUT].value = gpulse ? 1.f : 0.f;
-            outputs[DIV_4_OUTPUT].value = gpulse && (stepCount % 4 == 0) ? 1.f : 0.f;
-            outputs[DIV_8_OUTPUT].value = gpulse && (stepCount % 8 == 0) ? 1.f : 0.f;
-            outputs[DIV_16_OUTPUT].value = gpulse && (stepCount % 16 == 0) ? 1.f : 0.f;
-            outputs[DIV_32_OUTPUT].value = gpulse && (stepCount % 32 == 0) ? 1.f : 0.f;
+//            outputs[CLOCK_OUTPUT].value = gpulse ? 1.f : 0.f;
+//            outputs[DIV_4_OUTPUT].value = gpulse && (stepCount % 4 == 0) ? 1.f : 0.f;
+//            outputs[DIV_8_OUTPUT].value = gpulse && (stepCount % 8 == 0) ? 1.f : 0.f;
+//            outputs[DIV_16_OUTPUT].value = gpulse && (stepCount % 16 == 0) ? 1.f : 0.f;
+//            outputs[DIV_32_OUTPUT].value = gpulse && (stepCount % 32 == 0) ? 1.f : 0.f;
         }
     };
 }}
