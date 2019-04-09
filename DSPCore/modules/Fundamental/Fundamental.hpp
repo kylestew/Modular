@@ -10,7 +10,6 @@
 #include "ADSR.hpp"
 #include "Seq3.hpp"
 #include "Delay.hpp"
-#include "Scope.hpp"
 
 namespace library {
     namespace fundamental {
@@ -40,7 +39,6 @@ namespace library {
 //                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
 //                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
 //                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
-                p->addModuleBuilder(ModuleBuilder::create<Scope>("Scope"));
 
                 return p;
             }

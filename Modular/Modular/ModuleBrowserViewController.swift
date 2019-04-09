@@ -25,6 +25,11 @@ class ModuleBrowserViewController : UITableViewController {
             "DC",
             ]),
 
+        
+        Pack.init(title: "Scopes", modules: [
+            "Waveform",
+            ]),
+
 
 
 //        Pack.init(title: "Fundamental", modules: [

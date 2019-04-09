@@ -6,6 +6,8 @@
 #include "Core/Core.hpp"
 #include "Simples/Simples.hpp"
 
+#include "Scopes/Scopes.hpp"
+
 //#include "Fundamental/Fundamental.hpp"
 //#include "Befaco/Befaco.hpp"
 //#include "JW-Modules/JW-Modules.hpp"
@@ -17,6 +19,8 @@ namespace library {
     std::list<Pack*> gLibrary = {
             library::core::Core::init(),
             library::simples::Simples::init(),
+
+            library::scopes::Scopes::init(),
 
 ////            library::fundamental::Fundamental::init(),
 ////            library::befaco::Befaco::init(),
