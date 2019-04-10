@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-LO-8TA" userLabel="outB" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="70" y="149" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="aeU-dg-4S3"/>
+                        <constraint firstAttribute="height" constant="60" id="uuB-td-J5e"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-5v-INI" userLabel="outA" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="10" y="149" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trig" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsc-T5-iLP">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="94f-Rq-SnD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Tsc-T5-iLP" secondAttribute="trailing" constant="-20" id="I6L-IR-EyV"/>
+                        <constraint firstAttribute="bottom" secondItem="Tsc-T5-iLP" secondAttribute="bottom" constant="-14" id="Nnu-fS-J3f"/>
+                        <constraint firstAttribute="height" constant="60" id="SS7-Hb-MNf"/>
+                        <constraint firstAttribute="width" constant="60" id="fPN-7w-oQ9"/>
+                        <constraint firstItem="Tsc-T5-iLP" firstAttribute="leading" secondItem="gZm-5v-INI" secondAttribute="leading" constant="-20" id="iWS-og-vY1"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRIG -&gt; GATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
+                    <rect key="frame" x="10" y="227" width="120" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="Tgc-2e-QVU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7s-Nj-aCf" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="50" y="234" width="80" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="bq3-we-9Wu"/>
+                        <constraint firstAttribute="width" constant="80" id="s3h-8j-QAt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-a8-FVI" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="20" y="20" width="100" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-nP-WjV">
+                            <rect key="frame" x="0.0" y="100" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="P9D-1W-uZ3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l2A-nP-WjV" firstAttribute="leading" secondItem="CCY-a8-FVI" secondAttribute="leading" id="57i-MS-nkn"/>
+                        <constraint firstAttribute="trailing" secondItem="l2A-nP-WjV" secondAttribute="trailing" id="Rmz-05-2Tn"/>
+                        <constraint firstAttribute="width" secondItem="CCY-a8-FVI" secondAttribute="height" multiplier="1:1" id="aMJ-pL-K2U"/>
+                        <constraint firstAttribute="width" constant="100" id="g3Y-0y-CEQ"/>
+                        <constraint firstAttribute="bottom" secondItem="l2A-nP-WjV" secondAttribute="bottom" constant="-24" id="ukH-Uw-scl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cvAmount">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="gZm-5v-INI" secondAttribute="bottom" constant="18" id="2lX-m5-gWc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NGg-LO-8TA" secondAttribute="trailing" constant="10" id="42j-BC-3Ej"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="NGg-LO-8TA" secondAttribute="bottom" constant="18" id="Dds-dP-psm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q7s-Nj-aCf" secondAttribute="trailing" constant="10" id="DlF-eu-yEp"/>
+                <constraint firstAttribute="bottom" secondItem="q7s-Nj-aCf" secondAttribute="bottom" constant="4" id="QXT-Sb-1yF"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
+                <constraint firstItem="gZm-5v-INI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="lAj-uw-45t"/>
+                <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="s6b-GI-UyH"/>
+                <constraint firstItem="CCY-a8-FVI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sBx-Em-jLp"/>
+                <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-680" y="-266.71664167916043"/>
+        </view>
+    </objects>
+</document>

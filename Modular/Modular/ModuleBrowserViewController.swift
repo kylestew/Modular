@@ -21,18 +21,15 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Simples", modules: [
             "DC",
-            "Attenuverter",
             "Offset",
-            "VertOff",
+            "Atten-1",
+            "Atten-2",
             "Mute",
-
-//            "Trigger",
-//            "Toggle",
-//            "Add",
-//            "Multiply",
-//            "Unity",
+            "Manual",
+            "Switch",
             ]),
         Pack.init(title: "Utilities", modules: [
+            "Trig->Gate",
             "S&H",
             ]),
         Pack.init(title: "Times", modules: [

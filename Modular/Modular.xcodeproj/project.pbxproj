@@ -71,6 +71,9 @@
 		FF977086221CCD52002283E2 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* Patch.swift */; };
 		FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF977C63225D7F90001F31BA /* CMakeLists.txt */; };
 		FF977C78225D7F90001F31BA /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF977C6B225D7F90001F31BA /* library.cpp */; };
+		FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */; };
+		FF977C7C225D8D0C001F31BA /* Simples_Switch.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */; };
+		FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C7D225D8D12001F31BA /* Simples_Manual.xib */; };
 		FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE12221244C60028740B /* ModuleWrapper.mm */; };
 		FF98BE1722124B070028740B /* WireWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE1622124B070028740B /* WireWrapper.mm */; };
 		FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */; };
@@ -86,10 +89,10 @@
 		FFBC6BCA22233F3500B973D5 /* ButtonWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BC922233F3500B973D5 /* ButtonWidget.swift */; };
 		FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCB22233F6A00B973D5 /* Option.swift */; };
 		FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBC6BCD222351F800B973D5 /* UIColor+Lerp.swift */; };
-		FFBF3BB4225C3D9D00F2C8F3 /* Simples_Attenuverter.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BB3225C3D9D00F2C8F3 /* Simples_Attenuverter.xib */; };
+		FFBF3BB4225C3D9D00F2C8F3 /* Simples_Atten-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BB3225C3D9D00F2C8F3 /* Simples_Atten-1.xib */; };
 		FFBF3BB7225C429100F2C8F3 /* Scopes_Waveform.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BB6225C429100F2C8F3 /* Scopes_Waveform.xib */; };
 		FFBF3BB9225CE43000F2C8F3 /* Simples_Offset.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BB8225CE42F00F2C8F3 /* Simples_Offset.xib */; };
-		FFBF3BBB225CE45100F2C8F3 /* Simples_VertOff.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BBA225CE45100F2C8F3 /* Simples_VertOff.xib */; };
+		FFBF3BBB225CE45100F2C8F3 /* Simples_Atten-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BBA225CE45100F2C8F3 /* Simples_Atten-2.xib */; };
 		FFBF3BBD225CE5E000F2C8F3 /* Simples_Mute.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFBF3BBC225CE5DF00F2C8F3 /* Simples_Mute.xib */; };
 		FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCA57C9222912C600881D8B /* WireRegister.swift */; };
 		FFCE90DF225A726F00C6E7E9 /* minblep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFCE90DE225A726F00C6E7E9 /* minblep.cpp */; };
@@ -240,6 +243,9 @@
 		FF977C73225D7F90001F31BA /* Octaves.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Octaves.hpp; sourceTree = "<group>"; };
 		FF977C75225D7F90001F31BA /* Scopes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scopes.hpp; sourceTree = "<group>"; };
 		FF977C76225D7F90001F31BA /* Waveform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Waveform.hpp; sourceTree = "<group>"; };
+		FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_Trig->Gate.xib"; sourceTree = "<group>"; };
+		FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Switch.xib; sourceTree = "<group>"; };
+		FF977C7D225D8D12001F31BA /* Simples_Manual.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Manual.xib; sourceTree = "<group>"; };
 		FF98BE12221244C60028740B /* ModuleWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModuleWrapper.mm; sourceTree = "<group>"; };
 		FF98BE14221244FA0028740B /* ModuleWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleWrapper.h; sourceTree = "<group>"; };
 		FF98BE1522124B070028740B /* WireWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireWrapper.h; sourceTree = "<group>"; };
@@ -265,10 +271,10 @@
 		FFBF3B86225C39E400F2C8F3 /* minblep.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = minblep.hpp; sourceTree = "<group>"; };
 		FFBF3B87225C39E400F2C8F3 /* digital.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = digital.hpp; sourceTree = "<group>"; };
 		FFBF3B88225C39E400F2C8F3 /* ode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ode.hpp; sourceTree = "<group>"; };
-		FFBF3BB3225C3D9D00F2C8F3 /* Simples_Attenuverter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Attenuverter.xib; sourceTree = "<group>"; };
+		FFBF3BB3225C3D9D00F2C8F3 /* Simples_Atten-1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Simples_Atten-1.xib"; sourceTree = "<group>"; };
 		FFBF3BB6225C429100F2C8F3 /* Scopes_Waveform.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_Waveform.xib; sourceTree = "<group>"; };
 		FFBF3BB8225CE42F00F2C8F3 /* Simples_Offset.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Offset.xib; sourceTree = "<group>"; };
-		FFBF3BBA225CE45100F2C8F3 /* Simples_VertOff.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_VertOff.xib; sourceTree = "<group>"; };
+		FFBF3BBA225CE45100F2C8F3 /* Simples_Atten-2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Simples_Atten-2.xib"; sourceTree = "<group>"; };
 		FFBF3BBC225CE5DF00F2C8F3 /* Simples_Mute.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Mute.xib; sourceTree = "<group>"; };
 		FFCA57C9222912C600881D8B /* WireRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireRegister.swift; sourceTree = "<group>"; };
 		FFCE90DE225A726F00C6E7E9 /* minblep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = minblep.cpp; sourceTree = "<group>"; };
@@ -309,6 +315,7 @@
 		FF28A7E0225D2444006AEEE6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */,
 				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
 				FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */,
 				FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */,
@@ -780,10 +787,12 @@
 			isa = PBXGroup;
 			children = (
 				FF067E78225B9F6C00394B19 /* Simples_DC.xib */,
-				FFBF3BB3225C3D9D00F2C8F3 /* Simples_Attenuverter.xib */,
 				FFBF3BB8225CE42F00F2C8F3 /* Simples_Offset.xib */,
-				FFBF3BBA225CE45100F2C8F3 /* Simples_VertOff.xib */,
+				FFBF3BB3225C3D9D00F2C8F3 /* Simples_Atten-1.xib */,
+				FFBF3BBA225CE45100F2C8F3 /* Simples_Atten-2.xib */,
 				FFBF3BBC225CE5DF00F2C8F3 /* Simples_Mute.xib */,
+				FF977C7D225D8D12001F31BA /* Simples_Manual.xib */,
+				FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */,
 			);
 			path = Simples;
 			sourceTree = "<group>";
@@ -874,13 +883,15 @@
 				FFD313952246A9AF0057178C /* Times_Clock-2.xib in Resources */,
 				FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */,
 				FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */,
-				FFBF3BBB225CE45100F2C8F3 /* Simples_VertOff.xib in Resources */,
+				FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */,
+				FFBF3BBB225CE45100F2C8F3 /* Simples_Atten-2.xib in Resources */,
 				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
 				FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
 				FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */,
+				FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */,
@@ -899,11 +910,12 @@
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
-				FFBF3BB4225C3D9D00F2C8F3 /* Simples_Attenuverter.xib in Resources */,
+				FFBF3BB4225C3D9D00F2C8F3 /* Simples_Atten-1.xib in Resources */,
 				FF067E79225B9F6C00394B19 /* Simples_DC.xib in Resources */,
 				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
 				FFBF3BB9225CE43000F2C8F3 /* Simples_Offset.xib in Resources */,
 				FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */,
+				FF977C7C225D8D0C001F31BA /* Simples_Switch.xib in Resources */,
 				FF374ADE2259598800E2EE8E /* install-sh in Resources */,
 				FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */,
 			);
