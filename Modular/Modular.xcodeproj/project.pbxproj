@@ -74,6 +74,7 @@
 		FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */; };
 		FF977C7C225D8D0C001F31BA /* Simples_Switch.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */; };
 		FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C7D225D8D12001F31BA /* Simples_Manual.xib */; };
+		FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C7F225D91F8001F31BA /* Scopes_Value.xib */; };
 		FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE12221244C60028740B /* ModuleWrapper.mm */; };
 		FF98BE1722124B070028740B /* WireWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE1622124B070028740B /* WireWrapper.mm */; };
 		FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */; };
@@ -246,6 +247,7 @@
 		FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_Trig->Gate.xib"; sourceTree = "<group>"; };
 		FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Switch.xib; sourceTree = "<group>"; };
 		FF977C7D225D8D12001F31BA /* Simples_Manual.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Manual.xib; sourceTree = "<group>"; };
+		FF977C7F225D91F8001F31BA /* Scopes_Value.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_Value.xib; sourceTree = "<group>"; };
 		FF98BE12221244C60028740B /* ModuleWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ModuleWrapper.mm; sourceTree = "<group>"; };
 		FF98BE14221244FA0028740B /* ModuleWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleWrapper.h; sourceTree = "<group>"; };
 		FF98BE1522124B070028740B /* WireWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireWrapper.h; sourceTree = "<group>"; };
@@ -801,6 +803,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBF3BB6225C429100F2C8F3 /* Scopes_Waveform.xib */,
+				FF977C7F225D91F8001F31BA /* Scopes_Value.xib */,
 			);
 			path = Scopes;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */,
+				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
 				FF374B1F2259598800E2EE8E /* Makefile.in in Resources */,
 				FF9BD92C224494F6008277EE /* Fundamental_Delay.xib in Resources */,
 				FF39CC31220F8A2C00C9AF52 /* Assets.xcassets in Resources */,

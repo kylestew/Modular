@@ -43,11 +43,12 @@ namespace library {
 
             void step() override {
                 float atten = params[ATTEN_PARAM].value;
-                float out = inputs[INPUT].value * atten;
 
-                // TODO: clamped or not?
-                outputs[OUTPUT].value = out;
-//                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
+                // make non-linear
+                atten = atten < 0.f ? -pow(atten, 2.0f) : pow(atten, 2.f);
+
+                float out = inputs[INPUT].value * atten;
+                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
             }
         };
     }

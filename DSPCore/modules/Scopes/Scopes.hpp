@@ -2,6 +2,7 @@
 #include "library.hpp"
 
 #include "Waveform.hpp"
+#include "Value.hpp"
 
 namespace library {
     namespace scopes {
@@ -11,6 +12,7 @@ namespace library {
                 p->slug = "Scopes";
 
                 p->addModuleBuilder(ModuleBuilder::create<Waveform>("Waveform"));
+                p->addModuleBuilder(ModuleBuilder::create<Value>("Value"));
 
                 return p;
             }

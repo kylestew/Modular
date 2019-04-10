@@ -20,13 +20,12 @@ class ModuleBrowserViewController : UITableViewController {
             "AudioInterface",
             ]),
         Pack.init(title: "Simples", modules: [
-            "DC",
             "Offset",
             "Atten-1",
             "Atten-2",
             "Mute",
-            "Manual",
-            "Switch",
+//            "Manual",
+//            "Switch",
             ]),
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",
@@ -45,6 +44,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Scopes", modules: [
             "Waveform",
+            "Value",
             ]),
         Pack.init(title: "Primes", modules: [
             "VCO-1",

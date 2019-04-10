@@ -52,8 +52,6 @@ namespace library {
                 atten = atten < 0.f ? -pow(atten, 2.0f) : pow(atten, 2.f);
 
                 float out = inputs[INPUT].value * atten + offset;
-
-                // TODO: clamped or not?
                 outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
             }
         };

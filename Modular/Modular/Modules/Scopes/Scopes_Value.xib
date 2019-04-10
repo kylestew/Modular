@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAf-h0-Khr" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="-10" y="82" width="80" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="ENc-v1-tDI"/>
+                        <constraint firstAttribute="height" constant="14" id="Pqc-ys-gkv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rj7-RQ-FyS" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="10" y="28" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="5xQ-a8-boR"/>
+                        <constraint firstAttribute="height" constant="60" id="YL9-h3-60Q"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-Zf-xUA" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="4" y="10" width="72" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="c9Y-Ho-LSh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6GU-Zf-xUA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="5bv-At-BS0"/>
+                <constraint firstAttribute="bottom" secondItem="hAf-h0-Khr" secondAttribute="bottom" constant="4" id="Cyf-Kd-Pcm"/>
+                <constraint firstItem="6GU-Zf-xUA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="IYp-KU-xpK"/>
+                <constraint firstItem="rj7-RQ-FyS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OhO-wS-P5j"/>
+                <constraint firstItem="rj7-RQ-FyS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="8" id="Qv4-m7-JUA"/>
+                <constraint firstAttribute="trailing" secondItem="hAf-h0-Khr" secondAttribute="trailing" constant="10" id="sZK-QF-kxH"/>
+                <constraint firstAttribute="trailing" secondItem="6GU-Zf-xUA" secondAttribute="trailing" constant="4" id="ttz-f9-Jj6"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-1.6000000000000001" y="-80.059970014992516"/>
+        </view>
+    </objects>
+</document>

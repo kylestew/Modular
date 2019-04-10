@@ -18,8 +18,8 @@ namespace library {
 
                 p->addModuleBuilder(ModuleBuilder::create<DC>("DC"));
                 p->addModuleBuilder(ModuleBuilder::create<Offset>("Offset"));
-                p->addModuleBuilder(ModuleBuilder::create<Atten1>("Atten1"));
-                p->addModuleBuilder(ModuleBuilder::create<Atten2>("Atten2"));
+                p->addModuleBuilder(ModuleBuilder::create<Atten1>("Atten-1"));
+                p->addModuleBuilder(ModuleBuilder::create<Atten2>("Atten-2"));
                 p->addModuleBuilder(ModuleBuilder::create<Mute>("Mute"));
                 p->addModuleBuilder(ModuleBuilder::create<Manual>("Manual"));
                 p->addModuleBuilder(ModuleBuilder::create<Switch>("Switch"));
