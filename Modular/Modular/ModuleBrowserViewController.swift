@@ -35,13 +35,16 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Utilities", modules: [
             "S&H",
             ]),
-        Pack.init(title: "Mixers", modules: [
+        Pack.init(title: "Times", modules: [
+            "Clock-2",
             ]),
         Pack.init(title: "Notes", modules: [
-//            "SEQ",
-//            "Quantizer",
-//            "Chromatic",
-//            "Octaves",
+            //            "SEQ",
+            //            "Quantizer",
+            //            "Chromatic",
+            //            "Octaves",
+            ]),
+        Pack.init(title: "Mixers", modules: [
             ]),
         Pack.init(title: "Scopes", modules: [
             "Waveform",
