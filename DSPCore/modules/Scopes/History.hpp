@@ -26,10 +26,7 @@ namespace library {
 
             #define SAMPLE_BUFFER_SIZE 512
 
-            int sampleIndex = 0;
             int frameIndex = 0;
-
-            SchmittTrigger resetTrigger;
 
             History() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
                 buffers[SAMPLE_BUFFER].setSize(SAMPLE_BUFFER_SIZE);
@@ -40,6 +37,8 @@ namespace library {
 
                 // clear out samples
                 std::fill_n(buffers[SAMPLE_BUFFER].samples, SAMPLE_BUFFER_SIZE, 0);
+                buffers[SAMPLE_BUFFER].circularIndex = 0;
+                frameIndex = 0;
             }
 
             void step() override {
@@ -51,42 +50,20 @@ namespace library {
                 float deltaTime = powf(2.0f, time);
                 int frameCount = (int) ceilf(deltaTime * engineGetSampleRate());
 
-                // add sample to block
-                if (sampleIndex < SAMPLE_BUFFER_SIZE) {
-                    // only when we are on a new frame
-                    if (++frameIndex > frameCount) {
-                        frameIndex = 0;
-                        buffers[SAMPLE_BUFFER].samples[sampleIndex] = inputs[SAMPLE_INPUT].value;
-                        sampleIndex++;
+                // only when we are on a new frame
+                if (++frameIndex > frameCount) {
+                    frameIndex = 0;
 
-                        // increment version for UI updates
-                        buffers[SAMPLE_BUFFER].version++;
-                    }
-                } else {
-                    // wait on next trigger
-                    float holdTime = 0.1f; // will auto trigger if no triggered in 100ms
+                    // add sample to block
+                    int idx = buffers[SAMPLE_BUFFER].circularIndex;
+                    if (idx >= SAMPLE_BUFFER_SIZE)
+                        idx = 0;
 
-                    // reset the Schmitt trigger so we don't trigger immediately if the input is high
-                    if (frameIndex == 0) {
-                        resetTrigger.reset();
-                    }
-                    frameIndex++;
+                    buffers[SAMPLE_BUFFER].samples[idx] = inputs[SAMPLE_INPUT].value;
+                    buffers[SAMPLE_BUFFER].circularIndex = idx + 1;
 
-                    float gate = inputs[SAMPLE_INPUT].value;
-
-                    // reset if triggered
-                    if (resetTrigger.process(gate)) {
-                        sampleIndex = 0;
-                        frameIndex = 0;
-                        return;
-                    }
-
-                    // reset if we've waited too long
-                    if (frameIndex >= engineGetSampleRate() * holdTime) {
-                        sampleIndex = 0;
-                        frameIndex = 0;
-                        return;
-                    }
+                    // increment version for UI updates
+                    buffers[SAMPLE_BUFFER].version++;
                 }
             }
         };

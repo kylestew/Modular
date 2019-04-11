@@ -29,7 +29,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",
-            "S&H",
+//            "S&H",
             ]),
         Pack.init(title: "Times", modules: [
             "Clock-2",

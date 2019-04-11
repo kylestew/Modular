@@ -157,6 +157,10 @@ using namespace library;
     return _module->buffers[bufferId].version;
 }
 
+- (NSInteger)circularIndexForBufferId:(NSInteger)bufferId {
+    return _module->buffers[bufferId].circularIndex;
+}
+
 - (float)lightForLightId:(NSInteger)lightId {
     return _module->lights[lightId].value;
 }

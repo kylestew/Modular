@@ -23,6 +23,7 @@ class WaveformWidget : UIControl, Buffer {
         self.samples = samples
         updateWaveform()
     }
+    var circularIndex: NSInteger = -1
 
     // MARK: - UI
 
@@ -57,12 +58,19 @@ class WaveformWidget : UIControl, Buffer {
         let yScale = plotLayer.bounds.height / 2.0
 
         let path = UIBezierPath()
-        for (idx, sample) in samples.enumerated() {
+        var idx = circularIndex > -0 ? circularIndex : 0
+        for i in 0..<samples.count {
+            if idx >= samples.count {
+                idx = 0
+            }
+            let sample = samples[idx]
+            idx += 1
+
             let value = yBase + -yScale * CGFloat(sample)
-            if idx == 0 {
+            if i == 0 {
                 path.move(to: CGPoint(x: 0, y: value))
             } else {
-                path.addLine(to: CGPoint(x: CGFloat(idx) * stride, y: value))
+                path.addLine(to: CGPoint(x: CGFloat(i) * stride, y: value))
             }
         }
         plotLayer.path = path.cgPath

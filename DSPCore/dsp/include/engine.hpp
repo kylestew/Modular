@@ -81,6 +81,7 @@ namespace dsp {
         int size;
         int version = 0; // increment when data changes
         float* samples;
+        int circularIndex = -1; // optional for ring buffers, -1 means off
 
         void setSize(int size) {
             this->size = size;

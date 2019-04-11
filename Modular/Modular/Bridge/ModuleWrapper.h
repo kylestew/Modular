@@ -40,6 +40,7 @@
 - (float*)samplesForBufferId:(NSInteger)bufferId;
 - (int)sampleCountForBufferId:(NSInteger)bufferId;
 - (int)versionForBufferId:(NSInteger)bufferId;
+- (NSInteger)circularIndexForBufferId:(NSInteger)bufferId;
 
 - (float)lightForLightId:(NSInteger)lightId;
 - (float)lightNumber:(NSInteger)idx forParamId:(NSInteger)paramId;
