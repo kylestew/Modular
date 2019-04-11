@@ -44,6 +44,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Scopes", modules: [
             "Waveform",
+            "History",
             "Value",
             ]),
         Pack.init(title: "Primes", modules: [

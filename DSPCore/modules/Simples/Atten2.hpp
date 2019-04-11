@@ -49,7 +49,7 @@ namespace library {
                 float offset = params[OFFSET_PARAM].value;
 
                 // make non-linear
-                atten = atten < 0.f ? -pow(atten, 2.0f) : pow(atten, 2.f);
+                atten = atten < 0.f ? -pow(atten, 2.f) : pow(atten, 2.f);
 
                 float out = inputs[INPUT].value * atten + offset;
                 outputs[OUTPUT].value = clamp(out, -1.f, 1.f);

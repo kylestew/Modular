@@ -104,6 +104,7 @@
 		FFE3A006221C689400960453 /* WireWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE3A005221C689400960453 /* WireWidget.swift */; };
 		FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */; };
 		FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF3B743222C606C0058B759 /* Primes_VCA.xib */; };
+		FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF5163A225FB490003CFD43 /* Scopes_History.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -287,6 +288,7 @@
 		FFE3A005221C689400960453 /* WireWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireWidget.swift; sourceTree = "<group>"; };
 		FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_Mixer.xib; sourceTree = "<group>"; };
 		FFF3B743222C606C0058B759 /* Primes_VCA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_VCA.xib; sourceTree = "<group>"; };
+		FFF5163A225FB490003CFD43 /* Scopes_History.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_History.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -802,6 +804,7 @@
 		FFBF3BB5225C429100F2C8F3 /* Scopes */ = {
 			isa = PBXGroup;
 			children = (
+				FFF5163A225FB490003CFD43 /* Scopes_History.xib */,
 				FFBF3BB6225C429100F2C8F3 /* Scopes_Waveform.xib */,
 				FF977C7F225D91F8001F31BA /* Scopes_Value.xib */,
 			);
@@ -896,6 +899,7 @@
 				FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */,
 				FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
+				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
 				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */,
 				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
