@@ -240,6 +240,9 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
             patch.selectWidget(widgetView)
         } else {
             patch.deselectWidgets()
+
+            // close module list if open
+            closeModuleList()
         }
     }
 
