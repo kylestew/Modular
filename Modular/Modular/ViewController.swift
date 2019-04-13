@@ -161,6 +161,8 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
     }
 
     func moduleBrowserDidSelect(pack: String, slug: String) {
+        let rect = scrollView.convert(scrollView.bounds, to: patch.masterContainerView)
+        _ = patch.addModule(pack: pack, slug: slug, inRect: rect)
     }
 
     func moduleBrowserWantsToClose() {
