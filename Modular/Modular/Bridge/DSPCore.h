@@ -5,7 +5,9 @@
 - (void)prepare;
 - (void)destroy;
 
-- (void)togglePowerMetering;
+@property(nonatomic,readonly) BOOL isPowerMetering;
+- (void)startPowerMetering;
+- (void)stopPowerMetering;
 - (float)engineCPUTimeMS;
 
 @end

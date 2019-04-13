@@ -103,6 +103,7 @@ class ModuleWidget : UIView, ModuleDelegate {
     func destroy() {
         displayLink?.invalidate()
         removeFromSuperview()
+        module = nil
     }
 
     // MARK: - Wireable Registration

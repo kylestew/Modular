@@ -46,7 +46,7 @@ namespace library {
 
                 // compute time: add new sample every _frameCount_
                 // deltaTime value range: 2^-6 - 2^-16
-                float time = rescale(params[TIME_PARAM].value, -1.f, 1.f, -6.0, -16.0);
+                float time = rescale(params[TIME_PARAM].value, -1.f, 1.f, -3.0, -9.0);
                 float deltaTime = powf(2.0f, time);
                 int frameCount = (int) ceilf(deltaTime * engineGetSampleRate());
 

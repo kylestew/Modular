@@ -7,12 +7,11 @@ import UIKit
  + Top level gestures for module widgets (move, zoom)
  + Menu based actions
  */
-class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var cpuUsageLabel: UILabel!
+class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     var patch: Patch!
+
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,31 +22,23 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
 
         // load patch from disk
         patch = Patch.init(with: Patch.tempStorageUrl())
-        assert(patch != nil)
-
-        // create new patch
 //        patch = Patch.init()
+        assert(patch != nil)
 
         scrollView.delegate = self
         scrollView.decelerationRate = .normal
         scrollView.addSubview(patch.masterContainerView)
         scrollView.contentSize = patch.masterContainerView.bounds.size
 
+        setupObservers()
         setupGestures()
-
-        // CPU usage estimation
-        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
-            if let cpuTime = self?.patch.getEngineCPUTimeMS() {
-                self?.cpuUsageLabel.text = String(format: "%dms %.0f%%", Int(cpuTime), Double(cpuTime) / 10.0)
-            }
-        }
-        cpuUsageLabel.isHidden = false
+        prepareModuleList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        patch.togglePowerMetering()
+        togglePowerMetering()
         DispatchQueue.main.async { [weak self] in
             self?.zoomCropping(animated: false)
         }
@@ -55,18 +46,46 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
 
     // MARK: - Actions
 
-    @IBAction func addModule(_ sender: UIButton) {
-        // Load and configure your view controller.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let browserVC = storyboard.instantiateViewController(withIdentifier: "packBrowser") as? ModuleBrowserViewController {
-            browserVC.patch = patch
-            browserVC.currentVisibleRect = scrollView.convert(scrollView.bounds, to: patch.masterContainerView)
+    @IBOutlet weak var actionsView: UIView!
 
-            browserVC.modalPresentationStyle = .popover
-            browserVC.popoverPresentationController?.sourceView = sender
+    private var powerMeteringObservation: Observation<Bool>?
+    private var selectedWidgetObservation: Observation<ModuleWidget?>?
 
-            self.present(browserVC, animated: true)
-        }
+    private func setupObservers() {
+        powerMeteringObservation = patch.isPowerMetering.observeHot(notificationBlock: { [weak self] isPowerMetering in
+            if isPowerMetering {
+                self?.startPowerMeter()
+                self?.powerMeteringButton.isSelected = true
+            } else {
+                self?.stopPowerMeter()
+                self?.powerMeteringButton.isSelected = false
+            }
+        })
+
+        selectedWidgetObservation = patch.selectedWidget.observeHot(notificationBlock: { [weak self] widget in
+            self?.actionsView.isHidden = widget == nil
+        })
+    }
+
+    private func teardownObservers() {
+        powerMeteringObservation = nil
+        selectedWidgetObservation = nil
+    }
+
+    @IBAction func resetPatch(_ sender: Any) {
+        teardownObservers()
+
+        // HACK: recycle DSP engine
+        patch.destroy()
+        patch = nil
+
+        patch = Patch.init()
+        scrollView.addSubview(patch.masterContainerView)
+        setupObservers()
+    }
+
+    @IBAction func displayModuleList(_ sender: UIButton) {
+        openModuleList()
     }
 
     @IBAction func deleteModule(_ sender: Any) {
@@ -85,11 +104,88 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognize
         patch.randomizeSelectedModule()
     }
 
-    @IBAction func togglePowerMeter(_ sender: Any) {
+    @IBAction func togglePowerMeter(_ sender: UIButton) {
+        togglePowerMetering()
+    }
+
+    // MARK: - Module List
+
+    @IBOutlet weak var modulesListView: UIView!
+    @IBOutlet weak var modulesListViewTrailingConstraint: NSLayoutConstraint!
+
+    private func prepareModuleList() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let packBrowserVC = storyboard.instantiateViewController(withIdentifier: "packBrowser") as! ModuleBrowserViewController
+        packBrowserVC.delegate = self
+
+        let vc = UINavigationController.init(rootViewController: packBrowserVC)
+
+        addChild(vc)
+        modulesListView.addSubview(vc.view)
+
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let constraints = [
+            modulesListView.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor),
+            modulesListView.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor),
+            modulesListView.topAnchor.constraint(equalTo: vc.view.topAnchor),
+            modulesListView.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor)
+        ]
+
+        NSLayoutConstraint.activate(constraints)
+
+        vc.didMove(toParent: self)
+    }
+
+    private func openModuleList() {
+        UIView.animate(withDuration: 0.333) {
+            self.modulesListViewTrailingConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func closeModuleList() {
+        let width = modulesListView.frame.width
+        UIView.animate(withDuration: 0.333) {
+            self.modulesListViewTrailingConstraint.constant = -width
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    func moduleBrowserDidSelect(pack: String, slug: String) {
+    }
+
+    func moduleBrowserWantsToClose() {
+        closeModuleList()
+    }
+
+    // MARK: - Power Meter
+
+    @IBOutlet weak var powerMeteringButton: UIButton!
+    @IBOutlet weak var cpuUsageLabel: UILabel!
+
+    private func togglePowerMetering() {
         patch.togglePowerMetering()
     }
 
-    // MARK: - Gesture Recognizers
+    var cpuTimer: Timer?
+    private func startPowerMeter() {
+        cpuTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
+            guard let patch = self?.patch else { return }
+            let cpuTime = patch.getEngineCPUTimeMS()
+            self?.cpuUsageLabel.text = String(format: "%.0f%%", Double(cpuTime) / 10.0)
+//            self?.cpuUsageLabel.text = String(format: "%dms %.0f%%", Int(cpuTime), Double(cpuTime) / 10.0)
+        }
+        cpuUsageLabel.isHidden = false
+    }
+
+    private func stopPowerMeter() {
+        cpuTimer?.invalidate()
+        cpuTimer = nil
+        cpuUsageLabel.isHidden = true
+    }
+
+    // MARK: - Gestures
 
     private func setupGestures() {
         // tap to select/deselect widgets

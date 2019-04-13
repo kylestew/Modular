@@ -10,10 +10,14 @@ struct Pack {
 //    }
 }
 
+protocol ModuleBrowserDelegate: class {
+    func moduleBrowserDidSelect(pack: String, slug: String)
+    func moduleBrowserWantsToClose()
+}
+
 class ModuleBrowserViewController : UITableViewController {
 
-    var patch: Patch!
-    var currentVisibleRect: CGRect = .zero
+    weak var delegate: ModuleBrowserDelegate?
 
     let library: [Pack] = [
         Pack.init(title: "Core", modules: [
@@ -43,9 +47,9 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Mixers", modules: [
             ]),
         Pack.init(title: "Scopes", modules: [
-            "Waveform",
-            "History",
             "Value",
+            "History",
+            "Waveform",
             ]),
         Pack.init(title: "Primes", modules: [
             "VCO-1",
@@ -61,6 +65,10 @@ class ModuleBrowserViewController : UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func done(_ sender: Any) {
+        delegate?.moduleBrowserWantsToClose()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,8 +92,6 @@ class ModuleBrowserViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let pack = library[indexPath.section].title
         let slug = library[indexPath.section].modules[indexPath.item]
-        _ = patch.addModule(pack: pack, slug: slug, inRect: currentVisibleRect)
-
-        dismiss(animated: true)
+        delegate?.moduleBrowserDidSelect(pack: pack, slug: slug)
     }
 }

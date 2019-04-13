@@ -24,6 +24,7 @@ class WireWidget: UIView, Wire {
         startWireable.didReceiveWire(isWired: false)
         endWireable?.didReceiveWire(isWired: false)
         removeFromSuperview()
+        wire = nil
     }
 
     func wireState() -> WireState? {

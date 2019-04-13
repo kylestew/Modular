@@ -61,6 +61,8 @@
 		FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
 		FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Fundamental_ADSR.xib */; };
+		FF52301E2261537A003ECB43 /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CEDE42261522B00396DBC /* fa.otf */; };
+		FF52302022616679003ECB43 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52301F22616679003ECB43 /* Observable.swift */; };
 		FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */; };
 		FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF8E221C922D0086DDA8 /* Port.swift */; };
 		FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */; };
@@ -133,6 +135,7 @@
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
 		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FF2AE3602243ED840098091E /* ToggleWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleWidget.swift; sourceTree = "<group>"; };
+		FF2CEDE42261522B00396DBC /* fa.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fa.otf; sourceTree = "<group>"; };
 		FF359954222B4DD60053FDB9 /* Fundamental_VCF.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_VCF.xib; sourceTree = "<group>"; };
 		FF35D4E9221B37050024D5CA /* PortWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortWidget.swift; sourceTree = "<group>"; };
 		FF374A732259598800E2EE8E /* install-sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "install-sh"; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 		FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Primes_VCO-1.xib"; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
 		FF513B422248422300C24F98 /* Fundamental_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_ADSR.xib; sourceTree = "<group>"; };
+		FF52301F22616679003ECB43 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFOb.xib; sourceTree = "<group>"; };
 		FF64DF8E221C922D0086DDA8 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Geometry.swift"; sourceTree = "<group>"; };
@@ -464,6 +468,7 @@
 				FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */,
 				FF39CC35220F8A2C00C9AF52 /* Info.plist */,
 				FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */,
+				FF2CEDE42261522B00396DBC /* fa.otf */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -650,6 +655,7 @@
 		FF977087221CD21B002283E2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FF52301F22616679003ECB43 /* Observable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -887,6 +893,7 @@
 				FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */,
 				FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */,
 				FFD313952246A9AF0057178C /* Times_Clock-2.xib in Resources */,
+				FF52301E2261537A003ECB43 /* fa.otf in Resources */,
 				FFD2BF762247ED4E009BC6A0 /* Fundamental_SEQ3.xib in Resources */,
 				FF359955222B4DD60053FDB9 /* Fundamental_VCF.xib in Resources */,
 				FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */,
@@ -983,6 +990,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF52302022616679003ECB43 /* Observable.swift in Sources */,
 				FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */,
 				FF28A7DD225D1FAE006AEEE6 /* table.cpp in Sources */,
 				FF3FC9572210F0F700496378 /* string.cpp in Sources */,
