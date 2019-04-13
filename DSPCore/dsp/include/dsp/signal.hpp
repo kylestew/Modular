@@ -135,7 +135,7 @@
 //        };
 
         struct ShapedSlewLimiter {
-            const float range = 10.0f;
+            const float range = 1.0f;
             const float minShape = 0.1f;
             const float maxShape = 5.0f;
             float _sampleTime;

@@ -80,21 +80,21 @@ namespace library {
                     float fallTime = time(params[FALL_PARAM].valueNormalized());
                     float fallShape = shape(params[FALL_SHAPE_PARAM].value);
 
-                    _rise.setParams(engineGetSampleTime(), riseTime, riseShape);
-                    _fall.setParams(engineGetSampleTime(), fallTime, fallShape);
+                    _rise.setParams(engineGetSampleRate(), riseTime, riseShape);
+                    _fall.setParams(engineGetSampleRate(), fallTime, fallShape);
                 }
 
                 float sample = inputs[INPUT].value;
                 if (sample > _last) {
                     if (!_rising) {
                         _rising = true;
-//                        _rise._last = _last;
+                        _rise._last = _last;
                     }
                     outputs[OUTPUT].value = _last = _rise.next(sample);
                 } else {
                     if (_rising) {
                         _rising = false;
-//                        _fall._last = _last;
+                        _fall._last = _last;
                     }
                     outputs[OUTPUT].value = _last = _fall.next(sample);
                 }
