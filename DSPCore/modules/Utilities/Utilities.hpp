@@ -3,6 +3,7 @@
 
 #include "TriggerToGate.hpp"
 #include "SampleHold.hpp"
+#include "Slew.hpp"
 
 namespace library {
     namespace utilities {
@@ -13,6 +14,7 @@ namespace library {
 
                 p->addModuleBuilder(ModuleBuilder::create<TriggerToGate>("Trig->Gate"));
                 p->addModuleBuilder(ModuleBuilder::create<SampleHold>("S&H"));
+                p->addModuleBuilder(ModuleBuilder::create<Slew>("Slew"));
 
                 return p;
             }
