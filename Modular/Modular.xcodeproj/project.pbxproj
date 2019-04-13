@@ -69,6 +69,7 @@
 		FF7059792228D4A300C6268E /* IXWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7059782228D4A300C6268E /* IXWidget.swift */; };
 		FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597A2228DB3D00C6268E /* WidgetThemes.swift */; };
 		FF70597D222904BC00C6268E /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597C222904BB00C6268E /* Param.swift */; };
+		FF75694922624FD2000DD22B /* Mixers_XFade.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF75694822624FD2000DD22B /* Mixers_XFade.xib */; };
 		FF90CBD7222C62A400263593 /* ParamWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90CBD6222C62A400263593 /* ParamWidget.swift */; };
 		FF977086221CCD52002283E2 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* Patch.swift */; };
 		FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF977C63225D7F90001F31BA /* CMakeLists.txt */; };
@@ -201,6 +202,7 @@
 		FF7059782228D4A300C6268E /* IXWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IXWidget.swift; sourceTree = "<group>"; };
 		FF70597A2228DB3D00C6268E /* WidgetThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetThemes.swift; sourceTree = "<group>"; };
 		FF70597C222904BB00C6268E /* Param.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
+		FF75694822624FD2000DD22B /* Mixers_XFade.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Mixers_XFade.xib; sourceTree = "<group>"; };
 		FF90CBD6222C62A400263593 /* ParamWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamWidget.swift; sourceTree = "<group>"; };
 		FF977085221CCD52002283E2 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		FF977C42225D7F8F001F31BA /* VCO1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO1.hpp; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 		FF977C3F225D7E92001F31BA /* Mixers */ = {
 			isa = PBXGroup;
 			children = (
+				FF75694822624FD2000DD22B /* Mixers_XFade.xib */,
 			);
 			path = Mixers;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
 				FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */,
+				FF75694922624FD2000DD22B /* Mixers_XFade.xib in Resources */,
 				FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,

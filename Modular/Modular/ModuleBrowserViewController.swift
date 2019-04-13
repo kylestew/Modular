@@ -45,6 +45,7 @@ class ModuleBrowserViewController : UITableViewController {
             //            "Octaves",
             ]),
         Pack.init(title: "Mixers", modules: [
+            "XFade",
             ]),
         Pack.init(title: "Scopes", modules: [
             "Value",
