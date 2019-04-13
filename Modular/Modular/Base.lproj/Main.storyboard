@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="fa.otf">
+            <string>FontAwesome5Free-Solid</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="okb-3c-KB0">
@@ -20,115 +25,44 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlU-U0-kIa">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-jM-X5m">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmC-Pg-TmV">
-                                        <rect key="frame" x="929" y="5" width="71" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Gye-3p-u1m"/>
-                                            <constraint firstAttribute="width" constant="71" id="tef-Cf-clb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="+">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="Euc-AA-hTw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCO-6n-q9m">
-                                        <rect key="frame" x="831" y="5" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Jld-Et-l4p"/>
-                                            <constraint firstAttribute="width" constant="90" id="egX-r1-XtW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="delete">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="9s0-h7-cVJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rr-VK-Zx7">
-                                        <rect key="frame" x="729" y="5" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="6BG-Vi-2Ra"/>
-                                            <constraint firstAttribute="width" constant="90" id="WFy-yx-Kjb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="duplicate">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="duplicateModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="3iy-UU-ZVe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqO-gk-Snf">
-                                        <rect key="frame" x="631" y="5" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="5aZ-BY-mxe"/>
-                                            <constraint firstAttribute="height" constant="30" id="RVE-AG-ff1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="reset">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="resetModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="HFY-eA-mxq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh3-e6-mS7">
-                                        <rect key="frame" x="12" y="5" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="CSl-Oc-ZBn"/>
-                                            <constraint firstAttribute="width" constant="90" id="s8A-23-AAA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="power">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="togglePowerMeter:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="fsy-e8-nvd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57X-cR-pZr">
-                                        <rect key="frame" x="541" y="5" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ppa-qN-kV9"/>
-                                            <constraint firstAttribute="width" constant="90" id="X3w-h4-thE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="rand">
-                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="randomizeModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="ORN-wF-pQC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcH-HF-1pd">
+                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstItem="qmC-Pg-TmV" firstAttribute="centerY" secondItem="hw4-jM-X5m" secondAttribute="centerY" id="2Ts-d0-cBp"/>
-                                    <constraint firstAttribute="trailing" secondItem="qmC-Pg-TmV" secondAttribute="trailing" constant="24" id="80U-Em-BJ0"/>
-                                    <constraint firstItem="Lh3-e6-mS7" firstAttribute="leading" secondItem="hw4-jM-X5m" secondAttribute="leading" constant="12" id="I76-xe-gxe"/>
-                                    <constraint firstItem="BqO-gk-Snf" firstAttribute="centerY" secondItem="7rr-VK-Zx7" secondAttribute="centerY" id="Ikg-qS-DZo"/>
-                                    <constraint firstAttribute="height" constant="40" id="NpX-du-piv"/>
-                                    <constraint firstItem="Lh3-e6-mS7" firstAttribute="centerY" secondItem="hw4-jM-X5m" secondAttribute="centerY" id="PO3-26-cwm"/>
-                                    <constraint firstItem="57X-cR-pZr" firstAttribute="centerY" secondItem="BqO-gk-Snf" secondAttribute="centerY" id="RSy-YT-Vkx"/>
-                                    <constraint firstItem="FCO-6n-q9m" firstAttribute="leading" secondItem="7rr-VK-Zx7" secondAttribute="trailing" constant="12" id="ReL-KN-SQN"/>
-                                    <constraint firstItem="7rr-VK-Zx7" firstAttribute="height" secondItem="FCO-6n-q9m" secondAttribute="height" id="RiB-AQ-Izx"/>
-                                    <constraint firstItem="qmC-Pg-TmV" firstAttribute="leading" secondItem="FCO-6n-q9m" secondAttribute="trailing" constant="8" id="XRM-OY-JF2"/>
-                                    <constraint firstItem="BqO-gk-Snf" firstAttribute="leading" secondItem="57X-cR-pZr" secondAttribute="trailing" id="abe-F7-8fG"/>
-                                    <constraint firstItem="7rr-VK-Zx7" firstAttribute="leading" secondItem="BqO-gk-Snf" secondAttribute="trailing" constant="8" id="bu5-pj-8tU"/>
-                                    <constraint firstItem="7rr-VK-Zx7" firstAttribute="centerY" secondItem="FCO-6n-q9m" secondAttribute="centerY" id="lxc-QX-swI"/>
-                                    <constraint firstItem="FCO-6n-q9m" firstAttribute="centerY" secondItem="qmC-Pg-TmV" secondAttribute="centerY" id="rZK-hT-7gq"/>
-                                    <constraint firstItem="7rr-VK-Zx7" firstAttribute="width" secondItem="FCO-6n-q9m" secondAttribute="width" id="uv3-j6-zLU"/>
+                                    <constraint firstAttribute="width" constant="50" id="HjA-CE-2Fl"/>
+                                    <constraint firstAttribute="height" constant="50" id="udG-iy-umT"/>
                                 </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU 999%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dod-mX-aQ6">
-                                <rect key="frame" x="12" y="740" width="120" height="20"/>
+                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                <state key="normal" title="snowplow"/>
+                                <connections>
+                                    <action selector="resetPatch:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="S3v-38-XTb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVI-XT-S9E">
+                                <rect key="frame" x="974" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Oki-Q2-tqV"/>
+                                    <constraint firstAttribute="height" constant="50" id="mCg-7P-J8C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                <state key="normal" title="plus"/>
+                                <connections>
+                                    <action selector="displayModuleList:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="lwc-Ke-yM7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByH-hL-ViJ">
+                                <rect key="frame" x="0.0" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VmE-li-0YG"/>
+                                    <constraint firstAttribute="width" constant="50" id="WCZ-uY-OhT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                <state key="normal" title=""/>
+                                <connections>
+                                    <action selector="togglePowerMeter:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="UO0-HY-2fu"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU 999%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dod-mX-aQ6">
+                                <rect key="frame" x="46" y="733" width="120" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="5Hm-F8-nuR"/>
                                     <constraint firstAttribute="width" constant="120" id="Kyh-FA-lwP"/>
@@ -137,29 +71,116 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-Il-14s">
+                                <rect key="frame" x="974" y="568" width="50" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Smw-TC-gav">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciR-n2-PtJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                                <state key="normal" title="random"/>
+                                                <connections>
+                                                    <action selector="randomizeModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="mxw-uy-kIK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ3-59-3fW">
+                                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                                <state key="normal" title="undo"/>
+                                                <connections>
+                                                    <action selector="resetModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="Vli-Q1-BU2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCd-8b-uBb">
+                                                <rect key="frame" x="0.0" y="100" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                                <state key="normal" title="clone"/>
+                                                <connections>
+                                                    <action selector="duplicateModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="BHk-vO-0w4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3C-fd-Eol">
+                                                <rect key="frame" x="0.0" y="150" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
+                                                <state key="normal" title="trash"/>
+                                                <connections>
+                                                    <action selector="deleteModule:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="DCy-d7-1V9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Smw-TC-gav" secondAttribute="trailing" id="2cG-0l-Yci"/>
+                                    <constraint firstAttribute="height" constant="200" id="Rs2-Da-ZRL"/>
+                                    <constraint firstAttribute="bottom" secondItem="Smw-TC-gav" secondAttribute="bottom" id="fWm-p6-woI"/>
+                                    <constraint firstItem="Smw-TC-gav" firstAttribute="top" secondItem="C3o-Il-14s" secondAttribute="top" id="rYa-Jf-ORL"/>
+                                    <constraint firstItem="Smw-TC-gav" firstAttribute="leading" secondItem="C3o-Il-14s" secondAttribute="leading" id="twW-PK-1jc"/>
+                                    <constraint firstAttribute="width" constant="50" id="wSH-s1-ZnX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-yV-19r" userLabel="Module List View">
+                                <rect key="frame" x="1024" y="20" width="300" height="748"/>
+                                <color key="backgroundColor" red="1" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="J8E-Xs-6xg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xdB-Vv-clf" firstAttribute="trailing" secondItem="hw4-jM-X5m" secondAttribute="trailing" id="5de-i7-gA7"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="C3o-Il-14s" secondAttribute="bottom" id="2m4-yt-Jay"/>
+                            <constraint firstItem="aYv-yV-19r" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="61L-Iq-gwF"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="bottom" secondItem="xdB-Vv-clf" secondAttribute="bottom" id="BD7-ZV-RTx"/>
-                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="dod-mX-aQ6" secondAttribute="bottom" constant="8" id="CPL-FW-L65"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="Oss-wm-Wav"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="PNp-Z4-lmK"/>
-                            <constraint firstItem="dod-mX-aQ6" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" constant="12" id="k4H-fw-RyV"/>
-                            <constraint firstItem="hw4-jM-X5m" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="qca-hu-lP3"/>
+                            <constraint firstItem="ByH-hL-ViJ" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="Pvr-dc-m9B"/>
+                            <constraint firstItem="dod-mX-aQ6" firstAttribute="leading" secondItem="ByH-hL-ViJ" secondAttribute="trailing" constant="-4" id="Tvk-pX-xnf"/>
+                            <constraint firstItem="wcH-HF-1pd" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="WEQ-eA-EHB"/>
+                            <constraint firstItem="dod-mX-aQ6" firstAttribute="centerY" secondItem="ByH-hL-ViJ" secondAttribute="centerY" id="acA-68-ltz"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="trailing" secondItem="cVI-XT-S9E" secondAttribute="trailing" id="bgt-PY-zBy"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="aYv-yV-19r" secondAttribute="bottom" id="evk-8U-rg6"/>
+                            <constraint firstItem="wcH-HF-1pd" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="mNY-6R-skG"/>
+                            <constraint firstItem="cVI-XT-S9E" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="ouu-A8-5bG"/>
+                            <constraint firstItem="aYv-yV-19r" firstAttribute="leading" secondItem="C3o-Il-14s" secondAttribute="trailing" id="r31-ST-l27"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="bottom" secondItem="ByH-hL-ViJ" secondAttribute="bottom" id="rmy-XJ-vZs"/>
+                            <constraint firstItem="xdB-Vv-clf" firstAttribute="trailing" secondItem="aYv-yV-19r" secondAttribute="trailing" constant="-300" id="t4V-XV-ann"/>
                             <constraint firstItem="LlU-U0-kIa" firstAttribute="trailing" secondItem="xdB-Vv-clf" secondAttribute="trailing" id="tR6-zz-OBO"/>
-                            <constraint firstItem="hw4-jM-X5m" firstAttribute="top" secondItem="xdB-Vv-clf" secondAttribute="top" id="zcs-Lm-e1z"/>
+                            <constraint firstItem="ByH-hL-ViJ" firstAttribute="leading" secondItem="xdB-Vv-clf" secondAttribute="leading" id="yfH-4E-F4k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xdB-Vv-clf"/>
                     </view>
                     <connections>
+                        <outlet property="actionsView" destination="C3o-Il-14s" id="BOY-Yf-8ji"/>
                         <outlet property="cpuUsageLabel" destination="dod-mX-aQ6" id="euF-8m-wvk"/>
+                        <outlet property="modulesListView" destination="aYv-yV-19r" id="Reb-7k-oST"/>
+                        <outlet property="modulesListViewTrailingConstraint" destination="t4V-XV-ann" id="hTX-iv-TLX"/>
+                        <outlet property="powerMeteringButton" destination="ByH-hL-ViJ" id="V7X-ck-vOU"/>
                         <outlet property="scrollView" destination="LlU-U0-kIa" id="R2d-Uv-bJD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQc-WY-Dxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.5" y="-676.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ajX-BJ-Gbq">
+            <objects>
+                <navigationController id="BYA-MA-pAA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xUB-Ns-l3V">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kgy-G1-Fhs" kind="relationship" relationship="rootViewController" id="rsk-2b-b72"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eee-Xd-cmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="-1564"/>
         </scene>
         <!--Module Browser View Controller-->
         <scene sceneID="RTW-y9-yXT">
@@ -193,12 +214,19 @@
                             <outlet property="delegate" destination="Kgy-G1-Fhs" id="tv3-IR-yvC"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="hTu-A5-Zf5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="cZ0-h7-C7C">
+                            <connections>
+                                <action selector="done:" destination="Kgy-G1-Fhs" id="u7Y-a0-Z3G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="500"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Au-6H-sso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-677"/>
+            <point key="canvasLocation" x="589" y="-781"/>
         </scene>
     </scenes>
 </document>

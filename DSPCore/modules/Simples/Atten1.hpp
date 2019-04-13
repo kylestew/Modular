@@ -5,7 +5,7 @@ using namespace dsp;
 
 namespace library {
     namespace simples {
-        struct Add: Module {
+        struct Atten1: Module {
             enum ParamIds {
                 ATTEN_PARAM,
                 NUM_PARAMS
@@ -31,7 +31,7 @@ namespace library {
                 NUM_BUFFERS
             };
 
-            Add() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
+            Atten1() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
                 params[ATTEN_PARAM].setting = 0.f;
@@ -43,11 +43,12 @@ namespace library {
 
             void step() override {
                 float atten = params[ATTEN_PARAM].value;
-                float out = inputs[INPUT].value * atten;
 
-                // TODO: clamped or not?
-                outputs[OUTPUT].value = out;
-//                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
+                // make non-linear
+                atten = atten < 0.f ? -pow(atten, 2.0f) : pow(atten, 2.f);
+
+                float out = inputs[INPUT].value * atten;
+                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
             }
         };
     }

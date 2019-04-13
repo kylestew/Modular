@@ -1,13 +1,15 @@
 #pragma once
-#include "Simples.hpp"
+#include "Scopes.hpp"
+
+#include <iomanip> // setprecision
+#include <sstream> // stringstream
 
 using namespace dsp;
 
 namespace library {
-    namespace simples {
-        struct Toggle: Module {
+    namespace scopes {
+        struct Value: Module {
             enum ParamIds {
-                ATTEN_PARAM,
                 NUM_PARAMS
             };
             enum OptionIds {
@@ -18,38 +20,33 @@ namespace library {
                 NUM_INPUTS
             };
             enum OutputIds {
-                OUTPUT,
                 NUM_OUTPUTS
             };
             enum LightIds {
                 NUM_LIGHTS
             };
             enum LabelIds {
+                VALUE_LABEL,
                 NUM_LABELS
             };
             enum BufferIds {
                 NUM_BUFFERS
             };
 
-            Toggle() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
+            Value() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
+            }
 
             void reset() override {
-                params[ATTEN_PARAM].setting = 0.f;
             }
 
             void randomize() override {
-                params[ATTEN_PARAM].setting = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
-                float atten = params[ATTEN_PARAM].value;
-                float out = inputs[INPUT].value * atten;
-
-                // TODO: clamped or not?
-                outputs[OUTPUT].value = out;
-//                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
+                std::stringstream stream;
+                stream << std::fixed << std::setprecision(2) << inputs[INPUT].value;
+                labels[VALUE_LABEL].value = stream.str();
             }
         };
     }
 }
-

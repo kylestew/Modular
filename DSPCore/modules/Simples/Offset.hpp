@@ -44,10 +44,7 @@ namespace library {
             void step() override {
                 float offset = params[OFFSET_PARAM].value;
                 float out = inputs[INPUT].value + offset;
-
-                // TODO: clamped or not?
-                outputs[OUTPUT].value = out;
-//                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
+                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
             }
         };
     }

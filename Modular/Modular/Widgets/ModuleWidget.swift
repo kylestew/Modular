@@ -103,6 +103,7 @@ class ModuleWidget : UIView, ModuleDelegate {
     func destroy() {
         displayLink?.invalidate()
         removeFromSuperview()
+        module = nil
     }
 
     // MARK: - Wireable Registration
@@ -180,11 +181,12 @@ class ModuleWidget : UIView, ModuleDelegate {
             case let label as Label:
                 label.value = module.label(forLabelId: label.index)
 
-            case let buffer as Buffer:
+            case var buffer as Buffer:
                 let version = module.version(forBufferId: buffer.index)
                 if buffer.version != version {
                     let samples = UnsafeBufferPointer<Float>.init(start: module.samples(forBufferId: buffer.index),
                                                                   count: Int(module.sampleCount(forBufferId: buffer.index)))
+                    buffer.circularIndex = module.circularIndex(forBufferId: buffer.index)
                     buffer.updateSamples(samples, for: version)
                 }
 

@@ -17,7 +17,11 @@ Wire* wire1;
     bool devMode = false;
 
     loggerInit(devMode);
-    randomInit();
+
+    static dispatch_once_t once;
+    dispatch_once(&once, ^ {
+        randomInit();
+    });
 
     libraryInit();
     engineInit();
@@ -32,8 +36,18 @@ Wire* wire1;
     loggerDestroy();
 }
 
-- (void)togglePowerMetering {
-    gPowerMeter = !gPowerMeter;
+#pragma mark - Power Metering
+
+@synthesize isPowerMetering;
+- (BOOL)isPowerMetering {
+    return gPowerMeter;
+}
+- (void)startPowerMetering {
+    gPowerMeter = true;
+}
+
+- (void)stopPowerMetering {
+    gPowerMeter = false;
 }
 
 - (float)engineCPUTimeMS {

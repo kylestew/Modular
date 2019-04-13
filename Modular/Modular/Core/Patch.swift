@@ -25,7 +25,6 @@ class Patch: PatchDelegate {
         return CGPoint(x: Patch.size.width / 2.0, y: Patch.size.height / 2.0)
     }()
 
-
     /**
      Sets up new patch
      + Canvas with static bounds (larger than needed).
@@ -43,6 +42,23 @@ class Patch: PatchDelegate {
         widgetsView.frame = rect
         masterContainerView.addSubview(wiresView)
         masterContainerView.addSubview(widgetsView)
+
+        isPowerMetering.value = core.isPowerMetering
+    }
+
+    func destroy() {
+        // shut down all widgets (they still have display link to destroy)
+        for widget in widgetsView.subviews {
+            if let widget = widget as? ModuleWidget {
+                // remove external references to ports (otherwise they won't get released)
+                for wireable in widget.getWireables() {
+                    wireRegister.unregisterWireable(wireable, for: widget.moduleId)
+                }
+                widget.destroy()
+            }
+            widget.removeFromSuperview()
+        }
+        masterContainerView.removeFromSuperview()
     }
 
     deinit {
@@ -143,21 +159,22 @@ class Patch: PatchDelegate {
 
     // MARK: - Widget Selection
 
-    private var currentSelectedWidget: ModuleWidget?
+    let selectedWidget: Observable<ModuleWidget?> = Observable(nil)
 
     func selectWidget(_ widget: ModuleWidget) {
         // deselect current
-        if let current = currentSelectedWidget {
+        if let current = selectedWidget.value {
             current.isSelected = false
         }
         widget.isSelected = true
-        currentSelectedWidget = widget
+        selectedWidget.value = widget
     }
 
     func deselectWidgets() {
-        if let current = currentSelectedWidget {
+        if let current = selectedWidget.value {
             current.isSelected = false
         }
+        selectedWidget.value = nil
     }
 
     // MARK: - Module Actions
@@ -167,13 +184,13 @@ class Patch: PatchDelegate {
      If no module is selected, does nothing.
      */
     func removeSelectedModule() {
-        if let selected = currentSelectedWidget {
+        if let selected = selectedWidget.value {
             // remove external references to ports (otherwise they won't get released)
             for wireable in selected.getWireables() {
                 wireRegister.unregisterWireable(wireable, for: selected.moduleId)
             }
             selected.destroy()
-            currentSelectedWidget = nil
+            selectedWidget.value = nil
 
             saveToDisk()
         }
@@ -193,7 +210,7 @@ class Patch: PatchDelegate {
     }
 
     func resetSelectedModule() {
-        if let selected = currentSelectedWidget {
+        if let selected = selectedWidget.value {
             selected.resetModule()
 
             saveToDisk()
@@ -201,21 +218,28 @@ class Patch: PatchDelegate {
     }
 
     func randomizeSelectedModule() {
-        if let selected = currentSelectedWidget {
+        if let selected = selectedWidget.value {
             selected.randomizeModule()
 
             saveToDisk()
         }
     }
 
-    // MARK: - Extras
+    // MARK: - Power Metering
+
+    let isPowerMetering: Observable<Bool> = Observable(false)
+
+    func togglePowerMetering() {
+        if core.isPowerMetering {
+            core.stopPowerMetering()
+            isPowerMetering.value = false
+        } else {
+            core.startPowerMetering()
+            isPowerMetering.value = true
+        }
+    }
 
     func getEngineCPUTimeMS() -> Float {
         return core.engineCPUTimeMS()
-    }
-
-
-    func togglePowerMetering() {
-        core.togglePowerMetering()
     }
 }

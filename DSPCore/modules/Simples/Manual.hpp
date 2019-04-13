@@ -5,7 +5,7 @@ using namespace dsp;
 
 namespace library {
     namespace simples {
-        struct Attenuverter: Module {
+        struct Manual: Module {
             enum ParamIds {
                 ATTEN_PARAM,
                 NUM_PARAMS
@@ -31,7 +31,7 @@ namespace library {
                 NUM_BUFFERS
             };
 
-            Attenuverter() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
+            Manual() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
                 params[ATTEN_PARAM].setting = 0.f;
