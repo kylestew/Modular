@@ -82,6 +82,7 @@
 		FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE12221244C60028740B /* ModuleWrapper.mm */; };
 		FF98BE1722124B070028740B /* WireWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF98BE1622124B070028740B /* WireWrapper.mm */; };
 		FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */; };
+		FF9A22C8226296F300881039 /* Times_ClockDivider.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9A22C7226296F300881039 /* Times_ClockDivider.xib */; };
 		FF9A460322480933004F9765 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460222480933004F9765 /* Light.swift */; };
 		FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460422480ACE004F9765 /* LightWidget.swift */; };
 		FF9BD92C224494F6008277EE /* Fundamental_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */; };
@@ -262,6 +263,7 @@
 		FF98BE1522124B070028740B /* WireWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WireWrapper.h; sourceTree = "<group>"; };
 		FF98BE1622124B070028740B /* WireWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WireWrapper.mm; sourceTree = "<group>"; };
 		FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformWidget.swift; sourceTree = "<group>"; };
+		FF9A22C7226296F300881039 /* Times_ClockDivider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Times_ClockDivider.xib; sourceTree = "<group>"; };
 		FF9A460222480933004F9765 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		FF9A460422480ACE004F9765 /* LightWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
 		FF9BD92B224494F6008277EE /* Fundamental_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_Delay.xib; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				FFD313942246A9AE0057178C /* Times_Clock.xib */,
+				FF9A22C7226296F300881039 /* Times_ClockDivider.xib */,
 			);
 			path = Times;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				FF067E79225B9F6C00394B19 /* Simples_DC.xib in Resources */,
 				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
 				FFBF3BB9225CE43000F2C8F3 /* Simples_Offset.xib in Resources */,
+				FF9A22C8226296F300881039 /* Times_ClockDivider.xib in Resources */,
 				FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */,
 				FF977C7C225D8D0C001F31BA /* Simples_Switch.xib in Resources */,
 				FF374ADE2259598800E2EE8E /* install-sh in Resources */,

@@ -31,9 +31,32 @@ class ButtonWidget : UIControl, Option {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let newValue = value + 1
-        value = newValue >= states ? 0 : newValue
-        sendActions(for: .valueChanged)
+        if (states == 0) {
+            // momentary
+            value = 1
+            sendActions(for: .valueChanged)
+        } else {
+            // incremental
+            let newValue = value + 1
+            value = newValue >= states ? 0 : newValue
+            sendActions(for: .valueChanged)
+        }
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (states == 0) {
+            // momentary
+            value = 0
+            sendActions(for: .valueChanged)
+        }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (states == 0) {
+            // momentary
+            value = 0
+            sendActions(for: .valueChanged)
+        }
     }
 
 //    @objc func tapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
@@ -45,7 +68,6 @@ class ButtonWidget : UIControl, Option {
     // MARK: UI
 
     @IBInspectable var padding: CGFloat = 12.0
-    let BUTTON_RADIUS: CGFloat = 9.0
     let BUTTON_OUTLINE_STROKE: CGFloat = 2.0
 
     private let buttonLayer = CAShapeLayer()
@@ -74,9 +96,9 @@ class ButtonWidget : UIControl, Option {
 
         buttonLayer.frame = bounds
 
-        let center = CGPoint(x: bounds.width - BUTTON_RADIUS - padding, y: bounds.height - BUTTON_RADIUS - padding)
+        let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
         let circle = UIBezierPath.init(arcCenter: center,
-                                       radius: BUTTON_RADIUS,
+                                       radius: (bounds.width / 2.0) - (padding * 2.0),
                                        startAngle: 0,
                                        endAngle: 2.0 * CGFloat.pi,
                                        clockwise: true)

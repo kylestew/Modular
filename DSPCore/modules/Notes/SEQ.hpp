@@ -8,16 +8,14 @@ namespace library {
     namespace notes {
         struct SEQ: Module {
             enum ParamIds {
-
                 ENUMS(STEP_PARAMS, 8),
+
+                STEPS_PARAM,
 
                 NUM_PARAMS
             };
             enum OptionIds {
-                STEPS, // TODO: number of steps to loop
-
-                RESET_BUTTON, // TODO
-
+                RESET_BUTTON,
                 NUM_OPTIONS,
             };
             enum InputIds {
@@ -51,7 +49,10 @@ namespace library {
 //            int index = 0;
 
             SEQ() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
+//                options.
+
 //                params[DC_PARAM].cvIndex = DC_CV_INPUT;
+
             }
 
             void reset() override {
