@@ -4,9 +4,9 @@
 
 namespace library {
     namespace times {
-        struct Clock2: Module {
+        struct Clock: Module {
             enum ParamIds {
-                CLOCK_PARAM, // -2.0, 6.0, 1.0
+                CLOCK_PARAM,
                 NUM_PARAMS
             };
             enum OptionIds {
@@ -14,28 +14,33 @@ namespace library {
                 NUM_OPTIONS,
             };
             enum InputIds {
+                BPM_CV,
                 NUM_INPUTS
             };
             enum OutputIds {
-                CLOCK_OUTPUT,
+                OUTPUT,
                 DIV_4_OUTPUT,
                 DIV_8_OUTPUT,
                 DIV_16_OUTPUT,
                 DIV_32_OUTPUT,
                 NUM_OUTPUTS
             };
+            enum LabelIds {
+                BPM_LABEL,
+                NUM_LABELS
+            };
             enum BufferIds {
                 NUM_BUFFERS
             };
-
-            // TODO: add string output for BPM label
 
             float phase = 0.0;
             PulseGenerator gatePulse;
             int stepCount = 0;
 
-            Clock2() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
+            Clock() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_LABELS, NUM_BUFFERS) {
                 options[RUN_OPTION].states = 2;
+
+                params[CLOCK_PARAM].cvIndex = BPM_CV;
 
                 gatePulse.triggerDuration = 10.f;
             }
@@ -43,9 +48,12 @@ namespace library {
             void reset() override {
                 params[CLOCK_PARAM].setting = -0.2f;
                 options[RUN_OPTION].value = 1;
+
+                gatePulse.reset();
             }
 
             void randomize() override {
+                params[CLOCK_PARAM].setting = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
@@ -65,11 +73,17 @@ namespace library {
 
                 bool gpulse = running && gatePulse.process(1.0 / engineGetSampleRate());
 
-                outputs[CLOCK_OUTPUT].value = gpulse ? 1.f : 0.f;
+                outputs[OUTPUT].value = gpulse ? 1.f : 0.f;
                 outputs[DIV_4_OUTPUT].value = gpulse && (stepCount % 4 == 0) ? 1.f : 0.f;
                 outputs[DIV_8_OUTPUT].value = gpulse && (stepCount % 8 == 0) ? 1.f : 0.f;
                 outputs[DIV_16_OUTPUT].value = gpulse && (stepCount % 16 == 0) ? 1.f : 0.f;
                 outputs[DIV_32_OUTPUT].value = gpulse && (stepCount % 32 == 0) ? 1.f : 0.f;
+
+                // display BPM
+                std::stringstream stream;
+                int bpm = clockTime * 60.f;
+                stream << bpm << " BPM";
+                labels[BPM_LABEL].value = stream.str();
             }
         };
     }

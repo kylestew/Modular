@@ -1,6 +1,7 @@
 #pragma once
 #include "library.hpp"
 
+#include "SEQ.hpp"
 #include "Quantizer.hpp"
 
 namespace library {
@@ -10,6 +11,7 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "Notes";
 
+                p->addModuleBuilder(ModuleBuilder::create<SEQ>("SEQ"));
                 p->addModuleBuilder(ModuleBuilder::create<Quantizer>("Quantizer"));
 
                 return p;

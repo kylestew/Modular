@@ -23,6 +23,33 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Core", modules: [
             "AudioInterface",
             ]),
+
+        Pack.init(title: "Primes", modules: [
+            "VCO-1",
+            "VCO-2",
+            "LFO",
+            "VCA",
+            //            "VCF",
+            //            "ADSR",
+            //            "SEQ3",
+            //            "Delay",
+            ]),
+
+        Pack.init(title: "Notes", modules: [
+            "SEQ",
+            "Quantizer",
+            //            "Chromatic",
+            //            "Octaves",
+            ]),
+
+        Pack.init(title: "Times", modules: [
+            "Clock",
+            ]),
+
+        Pack.init(title: "Mixers", modules: [
+            "XFade",
+            ]),
+
         Pack.init(title: "Simples", modules: [
             "Offset",
             "Atten-1",
@@ -35,32 +62,10 @@ class ModuleBrowserViewController : UITableViewController {
             "Trig->Gate",
             "Slew",
             ]),
-        Pack.init(title: "Times", modules: [
-            "Clock-2",
-            ]),
-        Pack.init(title: "Notes", modules: [
-            //            "SEQ",
-            "Quantizer",
-            //            "Chromatic",
-            //            "Octaves",
-            ]),
-        Pack.init(title: "Mixers", modules: [
-            "XFade",
-            ]),
         Pack.init(title: "Scopes", modules: [
             "Value",
             "History",
             "Waveform",
-            ]),
-        Pack.init(title: "Primes", modules: [
-            "VCO-1",
-            "VCO-2",
-            "LFO",
-            "VCA",
-//            "VCF",
-//            "ADSR",
-//            "SEQ3",
-//            "Delay",
             ]),
     ]
 
