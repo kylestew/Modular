@@ -1,5 +1,5 @@
 #pragma once
-#include "JW-Modules.hpp"
+#include "Notes.hpp"
 
 struct QuantizeUtils {
 
@@ -162,7 +162,7 @@ struct QuantizeUtils {
     }
 };
 
-namespace library { namespace jw_modules {
+namespace library { namespace notes {
 
     struct Quantizer: Module {
         enum ParamIds {

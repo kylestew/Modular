@@ -40,7 +40,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Notes", modules: [
             //            "SEQ",
-            //            "Quantizer",
+            "Quantizer",
             //            "Chromatic",
             //            "Octaves",
             ]),

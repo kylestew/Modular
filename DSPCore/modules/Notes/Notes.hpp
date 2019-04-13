@@ -1,7 +1,7 @@
 #pragma once
 #include "library.hpp"
 
-//#include "Quantizer.hpp"
+#include "Quantizer.hpp"
 
 namespace library {
     namespace notes {
@@ -10,7 +10,7 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "Notes";
 
-//                p->addModuleBuilder(ModuleBuilder::create<Attenuverter>("Attenuverter"));
+                p->addModuleBuilder(ModuleBuilder::create<Quantizer>("Quantizer"));
 
                 return p;
             }
