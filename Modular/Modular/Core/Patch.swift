@@ -128,7 +128,6 @@ class Patch: PatchDelegate {
      added to the patch.
      Adding the widget as a subview keeps it from being released. To release the widget later, remove
      it from its parent view.
-     TODO: Attempt to place the new widget in an open area close to the center of the current zoomed view.
      */
     func addModule(pack: String, slug: String, inRect: CGRect) -> Bool {
         if let widget = ModuleWidget.create(forPack: pack, andSlug: slug) {
@@ -137,7 +136,6 @@ class Patch: PatchDelegate {
             }
 
             // position centered by default
-            // TODO: find another position if something is already there
             widgetsView.addSubview(widget)
 
             var frame = widget.frame
@@ -204,9 +202,31 @@ class Patch: PatchDelegate {
     }
 
     func duplicateSelectedModule() {
-        assert(false) // TODO: serialize and deserialize?
+        if let selected = selectedWidget.value {
+            let dupState = selected.moduleState()
+            if let widget = ModuleWidget.create(with: dupState) {
+                for wireable in widget.getWireables() {
+                    wireRegister.registerWireable(wireable, for: widget.moduleId)
+                }
 
-        saveToDisk()
+                // position centered by default
+                widgetsView.addSubview(widget)
+
+                // offset a bit from original widget
+                var frame = widget.frame
+                var pos = selected.center
+                pos.x += frame.width * 0.2
+                pos.y += frame.height * 1.1
+                pos.x -= frame.width / 2.0
+                pos.y -= frame.height / 2.0
+                frame.origin = pos
+                widget.frame = frame
+
+                // serialization work
+                widget.patchDelegate = self
+                saveToDisk()
+            }
+        }
     }
 
     func resetSelectedModule() {
