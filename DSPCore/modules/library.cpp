@@ -7,8 +7,8 @@
 #include "Simples/Simples.hpp"
 #include "Utilities/Utilities.hpp"
 #include "Times/Times.hpp"
-//#include "Notes/Notes.hpp"
-//#include "Mixers/Mixers.hpp"
+#include "Notes/Notes.hpp"
+#include "Mixers/Mixers.hpp"
 #include "Scopes/Scopes.hpp"
 #include "Primes/Primes.hpp"
 
@@ -20,8 +20,8 @@ namespace library {
             library::simples::Simples::init(),
             library::utilities::Utilities::init(),
             library::times::Times::init(),
-//            library::notes::Notes::init(),
-//            library::mixers::Mixers::init(),
+            library::notes::Notes::init(),
+            library::mixers::Mixers::init(),
             library::scopes::Scopes::init(),
             library::primes::Primes::init(),
     };
