@@ -79,7 +79,10 @@ using namespace library;
 }
 
 - (int)cpuTime {
-    return (int)(_module->cpuTime * 1000.f);
+    if (gPowerMeter) {
+        return (int)(_module->cpuTime * 1000.f);
+    }
+    return -1;
 }
 
 - (BOOL)attachWire:(void*)wire toInputId:(NSInteger)inputId {

@@ -12,7 +12,11 @@ class PowerMeterWidget : UILabel, PowerMeter {
 
     var timeMS: Int32 = 0 {
         didSet {
-            text = String(format: "%dms %.0f%%", timeMS, Double(timeMS) / 10.0)
+            if timeMS < 0 {
+                text = ""
+            } else {
+                text = String(format: "%.0f%%", Double(timeMS) / 10.0)
+            }
         }
     }
 

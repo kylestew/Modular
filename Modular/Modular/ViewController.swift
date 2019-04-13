@@ -88,6 +88,10 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
             }
             self?.setupObservers()
             self?.patch.saveToDisk()
+
+            DispatchQueue.main.async { [weak self] in
+                self?.zoomCropping(animated: false)
+            }
         })
         self.present(alert, animated: true, completion: nil)
     }
