@@ -205,6 +205,9 @@ class Patch: PatchDelegate {
         if let selected = selectedWidget.value {
             let dupState = selected.moduleState()
             if let widget = ModuleWidget.create(with: dupState) {
+                // assign a new UUID
+                widget.moduleId = UUID().uuidString
+
                 for wireable in widget.getWireables() {
                     wireRegister.registerWireable(wireable, for: widget.moduleId)
                 }

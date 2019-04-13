@@ -33,7 +33,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",
-//            "S&H",
+            "Slew",
             ]),
         Pack.init(title: "Times", modules: [
             "Clock-2",

@@ -63,6 +63,7 @@
 		FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Fundamental_ADSR.xib */; };
 		FF52301E2261537A003ECB43 /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CEDE42261522B00396DBC /* fa.otf */; };
 		FF52302022616679003ECB43 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52301F22616679003ECB43 /* Observable.swift */; };
+		FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF52302122617B58003ECB43 /* Utilities_Slew.xib */; };
 		FF5DBD5A224455D0006B98FE /* Fundamental_LFOb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */; };
 		FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF8E221C922D0086DDA8 /* Port.swift */; };
 		FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */; };
@@ -195,6 +196,7 @@
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
 		FF513B422248422300C24F98 /* Fundamental_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_ADSR.xib; sourceTree = "<group>"; };
 		FF52301F22616679003ECB43 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FF52302122617B58003ECB43 /* Utilities_Slew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Slew.xib; sourceTree = "<group>"; };
 		FF5DBD59224455D0006B98FE /* Fundamental_LFOb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fundamental_LFOb.xib; sourceTree = "<group>"; };
 		FF64DF8E221C922D0086DDA8 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Geometry.swift"; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		FF28A7E0225D2444006AEEE6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FF52302122617B58003ECB43 /* Utilities_Slew.xib */,
 				FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */,
 				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
 				FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */,
@@ -906,6 +909,7 @@
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
 				FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */,
 				FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */,
+				FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
 				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
