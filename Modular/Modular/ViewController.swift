@@ -73,15 +73,23 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
     }
 
     @IBAction func resetPatch(_ sender: Any) {
-        teardownObservers()
+        let alert = UIAlertController(title: "Clear Patch?", message: "Clear patch and start over?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive) { [weak self] _ in
+            self?.teardownObservers()
 
-        // HACK: recycle DSP engine
-        patch.destroy()
-        patch = nil
+            // HACK: recycle DSP engine
+            self?.patch.destroy()
+            self?.patch = nil
 
-        patch = Patch.init()
-        scrollView.addSubview(patch.masterContainerView)
-        setupObservers()
+            self?.patch = Patch.init()
+            if let view = self?.patch.masterContainerView {
+                self?.scrollView.addSubview(view)
+            }
+            self?.setupObservers()
+            self?.patch.saveToDisk()
+        })
+        self.present(alert, animated: true, completion: nil)
     }
 
     @IBAction func displayModuleList(_ sender: UIButton) {
