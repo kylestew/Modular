@@ -182,19 +182,19 @@ void PositiveZeroCrossing::reset() {
 }
 
 
-//void SlewLimiter::setParams(float sampleRate, float milliseconds, float range) {
-//    assert(sampleRate > 0.0f);
-//    assert(milliseconds >= 0.0f);
-//    assert(range > 0.0f);
-//    _delta = range / ((milliseconds / 1000.0f) * sampleRate);
-//}
+void SlewLimiter::setParams(float sampleRate, float milliseconds, float range) {
+    assert(sampleRate > 0.0f);
+    assert(milliseconds >= 0.0f);
+    assert(range > 0.0f);
+    _delta = range / ((milliseconds / 1000.0f) * sampleRate);
+}
 
-//float SlewLimiter::next(float sample, float last) {
-//    if (sample > last) {
-//        return std::min(last + _delta, sample);
-//    }
-//    return std::max(last - _delta, sample);
-//}
+float SlewLimiter::next(float sample, float last) {
+    if (sample > last) {
+        return std::min(last + _delta, sample);
+    }
+    return std::max(last - _delta, sample);
+}
 
 
 void ShapedSlewLimiter::setParams(float sampleRate, float milliseconds, float shape) {

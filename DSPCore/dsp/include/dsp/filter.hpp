@@ -52,21 +52,21 @@ namespace dsp {
 	};
 
 
-	struct SlewLimiter {
-		float rise = 1.f;
-		float fall = 1.f;
-		float out = 0.f;
-
-		void setRiseFall(float rise, float fall) {
-			this->rise = rise;
-			this->fall = fall;
-		}
-
-		float process(float in) {
-			out = clamp(in, out - fall, out + rise);
-			return out;
-		}
-	};
+//	struct SlewLimiter {
+//		float rise = 1.f;
+//		float fall = 1.f;
+//		float out = 0.f;
+//
+//		void setRiseFall(float rise, float fall) {
+//			this->rise = rise;
+//			this->fall = fall;
+//		}
+//
+//		float process(float in) {
+//			out = clamp(in, out - fall, out + rise);
+//			return out;
+//		}
+//	};
 
 
 /** Applies exponential smoothing to a signal with the ODE

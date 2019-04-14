@@ -1,5 +1,6 @@
 #pragma once
 #include "Simples.hpp"
+#include "dsp/signal.hpp"
 
 using namespace dsp;
 
@@ -31,8 +32,17 @@ namespace library {
                 NUM_BUFFERS
             };
 
+            const float maxDecibels = 0.f;
+            const float minDecibels = Amplifier::minDecibels;
+            const float slewTimeMS = 5.f;
+
+            SlewLimiter slew;
+            Amplifier amp;
+
             Mute() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
                 options[MUTE_OPTION].states = 2;
+
+                slew.setParams(engineGetSampleRate(), slewTimeMS, maxDecibels - minDecibels);
             }
 
             void reset() override {
@@ -44,9 +54,15 @@ namespace library {
             }
 
             void step() override {
-                float out = inputs[INPUT].value;
-                // mute ON state mutes output
-                outputs[OUTPUT].value = options[MUTE_OPTION].value ? 0.f : out;
+                bool muted = options[MUTE_OPTION].value;
+                if (muted) {
+                    amp.setLevel(slew.next(minDecibels));
+                } else {
+                    amp.setLevel(slew.next(maxDecibels));
+                }
+
+                float in = inputs[INPUT].value;
+                outputs[OUTPUT].value = amp.next(in);
             }
         };
     }
