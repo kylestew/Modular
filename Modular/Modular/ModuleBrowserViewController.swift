@@ -52,8 +52,8 @@ class ModuleBrowserViewController : UITableViewController {
 
         Pack.init(title: "Simples", modules: [
             "Offset",
-            "Atten-1",
-            "Atten-2",
+            "Atten",
+            "AttenOff",
             "Mute",
             "Manual",
             "Switch",

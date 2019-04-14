@@ -81,7 +81,11 @@ class ButtonWidget : UIControl, Option {
     private func updateButtonColor() {
         if states <= 1 {
             // momentary
-            buttonLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+            if value == 1 {
+                buttonLayer.fillColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
+            } else {
+                buttonLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+            }
         } else if states == 2 {
             // 2 states
             if value == 1 {

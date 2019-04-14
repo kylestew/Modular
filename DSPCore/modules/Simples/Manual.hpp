@@ -7,14 +7,13 @@ namespace library {
     namespace simples {
         struct Manual: Module {
             enum ParamIds {
-                ATTEN_PARAM,
                 NUM_PARAMS
             };
             enum OptionIds {
+                BUTTON_OPTION,
                 NUM_OPTIONS,
             };
             enum InputIds {
-                INPUT,
                 NUM_INPUTS
             };
             enum OutputIds {
@@ -31,23 +30,21 @@ namespace library {
                 NUM_BUFFERS
             };
 
+            const float slewTimeMS = 5.f;
+            SlewLimiter slew;
+
             Manual() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
-                params[ATTEN_PARAM].setting = 0.f;
+                slew.setParams(engineGetSampleRate(), slewTimeMS, 1.f);
             }
 
             void randomize() override {
-                params[ATTEN_PARAM].setting = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
-                float atten = params[ATTEN_PARAM].value;
-                float out = inputs[INPUT].value * atten;
-
-                // TODO: clamped or not?
-                outputs[OUTPUT].value = out;
-//                outputs[OUTPUT].value = clamp(out, -1.f, 1.f);
+                bool pressed = options[BUTTON_OPTION].value;
+                outputs[OUTPUT].value = slew.next(pressed);
             }
         };
     }
