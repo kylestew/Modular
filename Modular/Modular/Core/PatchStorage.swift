@@ -65,9 +65,11 @@ struct PatchLoader {
                 widget.patchDelegate = patchDelegate
 
                 // set position
-                let position = module.position
+                var pos = module.position
+                pos.x -= widget.frame.width / 2.0
+                pos.y -= widget.frame.height / 2.0
                 var frame = widget.frame
-                frame.origin = position
+                frame.origin = pos
                 widget.frame = frame
             } else {
                 assert(false, "could not load module: \(module)")
