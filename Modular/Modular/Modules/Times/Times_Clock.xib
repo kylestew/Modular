@@ -30,7 +30,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilQ-zE-atr" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="20" y="62" width="100" height="100"/>
+                    <rect key="frame" x="20" y="58" width="100" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJs-hG-lqd">
                             <rect key="frame" x="0.0" y="100" width="100" height="24"/>
@@ -62,7 +62,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2A-nP-WjV" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="20" y="162" width="100" height="24"/>
+                    <rect key="frame" x="20" y="154" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="P9D-1W-uZ3"/>
                     </constraints>
@@ -121,7 +121,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-Bl-sTN" userLabel="Reset Button" customClass="ButtonWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="132" y="82" width="60" height="60"/>
+                    <rect key="frame" x="132" y="78" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ5-Zr-Xpf">
                             <rect key="frame" x="0.0" y="44" width="60" height="24"/>
@@ -174,7 +174,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="l2A-nP-WjV" firstAttribute="width" secondItem="ilQ-zE-atr" secondAttribute="width" id="3ho-yd-p0v"/>
-                <constraint firstItem="ilQ-zE-atr" firstAttribute="top" secondItem="Jrf-bN-6h8" secondAttribute="bottom" constant="4" id="7KA-E9-4wp"/>
+                <constraint firstItem="ilQ-zE-atr" firstAttribute="top" secondItem="Jrf-bN-6h8" secondAttribute="bottom" id="7KA-E9-4wp"/>
                 <constraint firstItem="AHx-kQ-hay" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="8ua-I7-hRd"/>
                 <constraint firstItem="Jrf-bN-6h8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="9r1-SZ-Z22"/>
                 <constraint firstItem="S02-m6-jkK" firstAttribute="centerY" secondItem="VdY-1F-yFV" secondAttribute="centerY" constant="34" id="HxJ-1P-IwF"/>
@@ -196,7 +196,7 @@
                 <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
                 <constraint firstItem="7pK-L6-xhC" firstAttribute="centerY" secondItem="AHx-kQ-hay" secondAttribute="centerY" constant="34" id="x5u-6u-gbJ"/>
                 <constraint firstItem="ilQ-zE-atr" firstAttribute="width" secondItem="ilQ-zE-atr" secondAttribute="height" multiplier="1:1" id="yMa-gR-GHC"/>
-                <constraint firstItem="l2A-nP-WjV" firstAttribute="top" secondItem="ilQ-zE-atr" secondAttribute="bottom" id="z2u-G6-Zgl"/>
+                <constraint firstItem="l2A-nP-WjV" firstAttribute="top" secondItem="ilQ-zE-atr" secondAttribute="bottom" constant="-4" id="z2u-G6-Zgl"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

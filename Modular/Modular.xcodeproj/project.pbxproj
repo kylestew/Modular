@@ -107,7 +107,7 @@
 		FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */; };
 		FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */; };
 		FFE3A006221C689400960453 /* WireWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE3A005221C689400960453 /* WireWidget.swift */; };
-		FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */; };
+		FFEF83BC2246CC8100FCB3BF /* Mixers_4to1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Mixers_4to1.xib */; };
 		FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF3B743222C606C0058B759 /* Primes_VCA.xib */; };
 		FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF5163A225FB490003CFD43 /* Scopes_History.xib */; };
 /* End PBXBuildFile section */
@@ -296,7 +296,7 @@
 		FFD5B909221B4B7A0064917A /* Core_AudioInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Core_AudioInterface.xib; sourceTree = "<group>"; };
 		FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBrowserViewController.swift; sourceTree = "<group>"; };
 		FFE3A005221C689400960453 /* WireWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireWidget.swift; sourceTree = "<group>"; };
-		FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_Mixer.xib; sourceTree = "<group>"; };
+		FFEF83BB2246CC8100FCB3BF /* Mixers_4to1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Mixers_4to1.xib; sourceTree = "<group>"; };
 		FFF3B743222C606C0058B759 /* Primes_VCA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_VCA.xib; sourceTree = "<group>"; };
 		FFF5163A225FB490003CFD43 /* Scopes_History.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_History.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -654,7 +654,6 @@
 			isa = PBXGroup;
 			children = (
 				FF48F811225A6637004AD3C6 /* Befaco_EvenVCO.xib */,
-				FFEF83BB2246CC8100FCB3BF /* Befaco_Mixer.xib */,
 			);
 			path = Experimental;
 			sourceTree = "<group>";
@@ -679,6 +678,7 @@
 		FF977C3F225D7E92001F31BA /* Mixers */ = {
 			isa = PBXGroup;
 			children = (
+				FFEF83BB2246CC8100FCB3BF /* Mixers_4to1.xib */,
 				FF75694822624FD2000DD22B /* Mixers_XFade.xib */,
 			);
 			path = Mixers;
@@ -901,7 +901,7 @@
 				FFBF3BBD225CE5E000F2C8F3 /* Simples_Mute.xib in Resources */,
 				FF02668D2225D9C400607BB1 /* Primes_LFO.xib in Resources */,
 				FF513B432248422400C24F98 /* Fundamental_ADSR.xib in Resources */,
-				FFEF83BC2246CC8100FCB3BF /* Befaco_Mixer.xib in Resources */,
+				FFEF83BC2246CC8100FCB3BF /* Mixers_4to1.xib in Resources */,
 				FFD313952246A9AF0057178C /* Times_Clock.xib in Resources */,
 				FF52301E2261537A003ECB43 /* fa.otf in Resources */,
 				FFD2BF762247ED4E009BC6A0 /* Notes_SEQ.xib in Resources */,

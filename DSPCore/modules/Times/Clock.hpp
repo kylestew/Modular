@@ -48,7 +48,7 @@ namespace library {
             }
 
             void reset() override {
-                params[TIME_PARAM].setting = -0.2f;
+                params[TIME_PARAM].setting = -0.198f;
                 options[RUN_OPTION].value = 1;
 
                 gatePulse.reset();

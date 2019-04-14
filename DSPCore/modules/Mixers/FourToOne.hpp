@@ -1,10 +1,11 @@
 #pragma once
-#include "Befaco.hpp"
+#include "Mixers.hpp"
 
 using namespace dsp;
 
-namespace library { namespace befaco {
-        struct Mixer: Module {
+namespace library {
+    namespace mixers {
+        struct FourToOne: Module {
             enum ParamIds {
                 CH1_PARAM,
                 CH2_PARAM,
@@ -30,7 +31,7 @@ namespace library { namespace befaco {
                 NUM_BUFFERS
             };
 
-            Mixer() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
+            FourToOne() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             }
 
             void reset() override {
@@ -48,6 +49,7 @@ namespace library { namespace befaco {
                 outputs[OUTPUT].value = in1 + in2 + in3 + in4;
             }
         };
-    }}
+    }
+}
 
 

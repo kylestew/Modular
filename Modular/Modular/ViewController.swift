@@ -236,7 +236,8 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
      */
     @objc func tapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
         let loc = recognizer.location(in: recognizer.view)
-        if let widgetView = recognizer.view?.hitTest(loc, with: nil) as? ModuleWidget {
+
+        if let widgetView = draggableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
             patch.selectWidget(widgetView)
         } else {
             patch.deselectWidgets()

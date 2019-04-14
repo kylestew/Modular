@@ -47,6 +47,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
 
         Pack.init(title: "Mixers", modules: [
+            "4to1",
             "XFade",
             ]),
 

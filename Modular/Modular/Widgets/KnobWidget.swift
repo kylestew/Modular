@@ -141,9 +141,13 @@ class KnobWidget : UIControl, Param {
 
         // re-position layers
         let squareFrame = CGRect(x: dx, y: dy, width: knobSize, height: knobSize)
-        outlineLayer.frame = squareFrame
-        trackLayer.frame = squareFrame
-        valueLayer.frame = squareFrame
+        let pos = CGPoint(x: frame.width / 2.0, y: frame.height / 2.0)
+        outlineLayer.bounds = squareFrame
+        outlineLayer.position = pos
+        trackLayer.bounds = squareFrame
+        trackLayer.position = pos
+        valueLayer.bounds = squareFrame
+        valueLayer.position = pos
 
         // inset rect for port position
         let inset = (knobSize / 2.0) * (1.0 - PORT_SIZE_PERC)
