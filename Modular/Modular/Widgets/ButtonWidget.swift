@@ -78,16 +78,24 @@ class ButtonWidget : UIControl, Option {
     }
 
     private func updateButtonColor() {
-        guard states > 1 else {
+        if states <= 1 {
+            // momentary
             buttonLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
-            return
-        }
-
-        let step = CGFloat(value) / CGFloat(states - 1)
-        if let color = WidgetColors.VALUE_NEGATIVE_COLOR.lerpToColor(WidgetColors.VALUE_POSITIVE_COLOR, fraction: step) {
-            buttonLayer.fillColor = color.cgColor
+        } else if states == 2 {
+            // 2 states
+            if value == 1 {
+                buttonLayer.fillColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
+            } else {
+                buttonLayer.fillColor = WidgetColors.EMPTY_COLOR.cgColor
+            }
         } else {
-            buttonLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+            // 3+ states
+            let step = CGFloat(value) / CGFloat(states - 1)
+            if let color = WidgetColors.VALUE_NEGATIVE_COLOR.lerpToColor(WidgetColors.VALUE_POSITIVE_COLOR, fraction: step) {
+                buttonLayer.fillColor = color.cgColor
+            } else {
+                buttonLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+            }
         }
     }
 

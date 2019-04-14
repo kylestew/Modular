@@ -55,8 +55,8 @@ class ModuleBrowserViewController : UITableViewController {
             "Atten-1",
             "Atten-2",
             "Mute",
-//            "Manual",
-//            "Switch",
+            "Manual",
+            "Switch",
             ]),
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",

@@ -276,7 +276,7 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
         switch recognizer.state {
         case .began:
             let loc = recognizer.location(in: recognizer.view)
-            if let widgetView = recognizer.view?.hitTest(loc, with: nil) as? ModuleWidget {
+            if let widgetView = draggableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
                 draggingWidget = widgetView
                 originalWidgetCenter = widgetView.center
             }
@@ -300,6 +300,27 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
             break
         }
     }
+
+    /**
+     * Draggable Rules:
+     * Pass through hit test on certain views so gestures work correctly
+     * i.e. can drag entire widget view when dragging an input port but not when dragging an output port
+     */
+    private func draggableWidget(from view: UIView?) -> ModuleWidget? {
+        guard let view = view else { return nil }
+
+        if let widgetView = view as? ModuleWidget {
+            return widgetView
+        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
+            // input port widget
+            return portWidget.superview as? ModuleWidget
+        } else if let waveformWidget = view as? WaveformWidget {
+            return waveformWidget.superview as? ModuleWidget
+        }
+
+        return nil
+    }
+
 
     // MARK: - ScrollView
 

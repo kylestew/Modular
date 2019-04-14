@@ -45,7 +45,8 @@ namespace library {
 
             void step() override {
                 float out = inputs[INPUT].value;
-                outputs[OUTPUT].value = options[MUTE_OPTION].value ? out : 0.f;
+                // mute ON state mutes output
+                outputs[OUTPUT].value = options[MUTE_OPTION].value ? 0.f : out;
             }
         };
     }
