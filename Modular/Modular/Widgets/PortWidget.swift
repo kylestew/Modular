@@ -27,8 +27,10 @@ class PortWidget : UIControl, Port, Wireable {
         didSet {
             if isOutput {
                 setupIX(forOutput: true)
+                style(asOutput: true)
             } else {
                 setupIX(forOutput: false)
+                style(asOutput: false)
             }
         }
     }
@@ -139,6 +141,14 @@ class PortWidget : UIControl, Port, Wireable {
         layer.addSublayer(portNegLightLayer)
     }
 
+    private func style(asOutput: Bool) {
+        if isOutput {
+            portBackgroundLayer.backgroundColor = UIColor.black.cgColor
+        } else {
+            portBackgroundLayer.backgroundColor = UIColor.clear.cgColor
+        }
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -156,12 +166,15 @@ class PortWidget : UIControl, Port, Wireable {
         }
 
         // re-position layers
-        let squareFrame = CGRect(x: dx, y: dy, width: size, height: size)
+        var squareFrame = CGRect(x: dx, y: dy, width: size, height: size)
+        let sizeDiff = (size - PORT_RADIUS * 2) / 2
+        squareFrame = squareFrame.insetBy(dx: sizeDiff, dy: sizeDiff)
+
         portBackgroundLayer.frame = squareFrame
         portPosLightLayer.frame = squareFrame
         portNegLightLayer.frame = squareFrame
 
-        let center = CGPoint(x: size / 2.0, y: size / 2.0)
+        let center = CGPoint(x: squareFrame.width / 2.0, y: squareFrame.width / 2.0)
         let portLineWidth = PORT_STROKE
         let portRad = PORT_RADIUS - portLineWidth / 2.0
         let circle = UIBezierPath.init(arcCenter: center,
@@ -174,6 +187,7 @@ class PortWidget : UIControl, Port, Wireable {
         portBackgroundLayer.lineWidth = portLineWidth
         portBackgroundLayer.strokeColor = WidgetColors.LINE_COLOR.cgColor
         portBackgroundLayer.fillColor = WidgetColors.EMPTY_COLOR.cgColor
+        portBackgroundLayer.cornerRadius = 6.0
 
         portPosLightLayer.path = circle.cgPath
         portPosLightLayer.lineWidth = portLineWidth
