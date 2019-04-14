@@ -316,6 +316,8 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
             return portWidget.superview as? ModuleWidget
         } else if let waveformWidget = view as? WaveformWidget {
             return waveformWidget.superview as? ModuleWidget
+        } else if let buttonWidget = view as? ButtonWidget {
+            return buttonWidget.superview as? ModuleWidget
         }
 
         return nil
