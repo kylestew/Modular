@@ -68,6 +68,7 @@ class ButtonWidget : UIControl, Option {
     // MARK: UI
 
     @IBInspectable var padding: CGFloat = 12.0
+    @IBInspectable var offset: CGPoint = .zero
     let BUTTON_OUTLINE_STROKE: CGFloat = 2.0
 
     private let buttonLayer = CAShapeLayer()
@@ -104,7 +105,9 @@ class ButtonWidget : UIControl, Option {
 
         buttonLayer.frame = bounds
 
-        let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
+        var center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
+        center.x += offset.x
+        center.y += offset.y
         let circle = UIBezierPath.init(arcCenter: center,
                                        radius: (bounds.width / 2.0) - (padding * 2.0),
                                        startAngle: 0,
