@@ -237,7 +237,7 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
     @objc func tapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
         let loc = recognizer.location(in: recognizer.view)
 
-        if let widgetView = draggableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
+        if let widgetView = selectableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
             patch.selectWidget(widgetView)
         } else {
             patch.deselectWidgets()
@@ -245,6 +245,24 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
             // close module list if open
             closeModuleList()
         }
+    }
+
+    /**
+     * Selectable Rules:
+     */
+    private func selectableWidget(from view: UIView?) -> ModuleWidget? {
+        guard let view = view else { return nil }
+
+        if let widgetView = view as? ModuleWidget {
+            return widgetView
+        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
+            // input port widget
+            return portWidget.superview as? ModuleWidget
+        } else if let waveformWidget = view as? WaveformWidget {
+            return waveformWidget.superview as? ModuleWidget
+        }
+
+        return nil
     }
 
     /**
