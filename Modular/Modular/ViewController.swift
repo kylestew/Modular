@@ -255,6 +255,8 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
 
         if let widgetView = view as? ModuleWidget {
             return widgetView
+        } else if let knobWidget = view as? KnobWidget {
+            return knobWidget.superview as? ModuleWidget
         } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
             // input port widget
             return portWidget.superview as? ModuleWidget
@@ -272,13 +274,7 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
     @objc func doubleTapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
         let loc = recognizer.location(in: recognizer.view)
 
-        // don't zoom if double tapping in IXWidget
-        let view = recognizer.view?.hitTest(loc, with: nil)
-        if view is IXWidget {
-            return
-        }
-
-        if let widgetView = view as? ModuleWidget {
+        if let widgetView = selectableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
             zoomCropping(view: widgetView)
         } else {
             zoomCropping()
