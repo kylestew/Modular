@@ -1,5 +1,8 @@
 #pragma once
+
+#include <dsp/digital.hpp>
 #include "Utilities.hpp"
+#include "dsp/signal.hpp"
 
 using namespace dsp;
 
@@ -7,15 +10,13 @@ namespace library {
     namespace utilities {
         struct TriggerToGate: Module {
             enum ParamIds {
+                GATE_PARAM,
                 NUM_PARAMS
             };
             enum OptionIds {
-                TRIGGER_OPTION,
-                TRACK_OPTION,
                 NUM_OPTIONS,
             };
             enum InputIds {
-                IN_INPUT,
                 TRIGGER_INPUT,
                 NUM_INPUTS
             };
@@ -33,25 +34,45 @@ namespace library {
                 NUM_BUFFERS
             };
 
-            TriggerToGate() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
-//                params[DC_PARAM].cvIndex = DC_CV_INPUT;
-            }
+            SchmittTrigger trigger;
+            bool gateOn = false;
+            float gateProgress;
+
+            TriggerToGate() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
-//                params[DC_PARAM].setting = 0.f;
+                params[GATE_PARAM].setting = -0.36;
+
+                gateOn = false;
+                trigger.reset();
             }
 
             void randomize() override {
-//                params[DC_PARAM].setting = randomUniform() * 2.f - 1.0f;
+                params[GATE_PARAM].setting = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
-//                float dc = params[DC_PARAM].value;
-//                outputs[OUTPUT].value = dc;
+                float gateOut = 0.0;
+                if (trigger.process(inputs[TRIGGER_INPUT].value)) {
+                    gateOn = true;
+                    gateProgress = 0.0;
+                } else {
+                    if (gateOn) {
+                        // step gate time
+                        float t = params[GATE_PARAM].valueNormalized();
+                        t = pow(t, 2);
+                        t = fmax(t, 0.001);
+                        t *= 10.0;
+                        gateProgress += engineGetSampleTime() / t;
+                        if (gateProgress > 1.0) {
+                            gateOn = false;
+                        } else {
+                            gateOut = 1.0;
+                        }
+                    }
+                }
 
-//                std::stringstream stream;
-//                stream << std::fixed << std::setprecision(2) << dc;
-//                labels[DC_VALUE_LABEL].value = stream.str();
+                outputs[OUTPUT].value = gateOut;
             }
         };
     }

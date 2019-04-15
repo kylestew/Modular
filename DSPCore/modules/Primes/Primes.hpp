@@ -6,8 +6,8 @@
 #include "VCO2.hpp"
 #include "LFO.hpp"
 #include "VCA.hpp"
-//#include "VCF.hpp"
-//#include "ADSR.hpp"
+#include "VCF.hpp"
+#include "ADSR.hpp"
 //#include "Seq3.hpp"
 //#include "Delay.hpp"
 
@@ -17,13 +17,9 @@ namespace library {
         struct VCO2;
         struct LFO;
         struct VCA;
-//        struct VCF;
-//        struct ADSR;
-//        struct SEQ3;
+        struct VCF;
+        struct ADSR;
 //        struct Delay;
-//        struct Scope;
-
-        struct SimpleClock;
 
         struct Primes {
             static Pack* init() {
@@ -35,10 +31,8 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<LFO>("LFO"));
 //                p->addModuleBuilder(ModuleBuilder::create<LFO>("LFOb"));
                 p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
-
-//                p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
-//                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
-//                p->addModuleBuilder(ModuleBuilder::create<SEQ3>("SEQ3"));
+                p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
+                p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
 //                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
 
                 return p;

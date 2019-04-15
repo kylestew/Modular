@@ -3,7 +3,7 @@
 
 using namespace dsp;
 
-namespace library { namespace fundamental {
+namespace library { namespace primes {
 
     struct ADSR: Module {
         enum ParamIds {

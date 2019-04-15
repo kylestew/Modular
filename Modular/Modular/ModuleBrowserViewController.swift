@@ -29,9 +29,8 @@ class ModuleBrowserViewController : UITableViewController {
             "VCO-2",
             "LFO",
             "VCA",
-            //            "VCF",
-            //            "ADSR",
-            //            "SEQ3",
+            "VCF",
+            "ADSR",
             //            "Delay",
             ]),
 
