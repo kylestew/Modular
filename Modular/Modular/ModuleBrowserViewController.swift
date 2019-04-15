@@ -60,6 +60,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",
+            "FlipFlop",
             "Slew",
             ]),
         Pack.init(title: "Scopes", modules: [

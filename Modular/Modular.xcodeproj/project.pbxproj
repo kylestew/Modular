@@ -13,6 +13,7 @@
 		FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A8E225A8B5F00FFCCD4 /* Label.swift */; };
 		FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */; };
 		FF067E79225B9F6C00394B19 /* Simples_DC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF067E78225B9F6C00394B19 /* Simples_DC.xib */; };
+		FF074E6722653F00006B269C /* Utilities_FlipFlop.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF074E6622653EFF006B269C /* Utilities_FlipFlop.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
@@ -124,6 +125,7 @@
 		FF055A8E225A8B5F00FFCCD4 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FF055A90225A8C1400FFCCD4 /* LabelWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWidget.swift; sourceTree = "<group>"; };
 		FF067E78225B9F6C00394B19 /* Simples_DC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_DC.xib; sourceTree = "<group>"; };
+		FF074E6622653EFF006B269C /* Utilities_FlipFlop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_FlipFlop.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				FF52302122617B58003ECB43 /* Utilities_Slew.xib */,
+				FF074E6622653EFF006B269C /* Utilities_FlipFlop.xib */,
 				FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */,
 				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
 				FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */,
@@ -899,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBF3BBD225CE5E000F2C8F3 /* Simples_Mute.xib in Resources */,
+				FF074E6722653F00006B269C /* Utilities_FlipFlop.xib in Resources */,
 				FF02668D2225D9C400607BB1 /* Primes_LFO.xib in Resources */,
 				FF513B432248422400C24F98 /* Primes_ADSR.xib in Resources */,
 				FFEF83BC2246CC8100FCB3BF /* Mixers_4to1.xib in Resources */,

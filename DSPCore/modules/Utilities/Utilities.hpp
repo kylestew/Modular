@@ -2,6 +2,8 @@
 #include "library.hpp"
 
 #include "TriggerToGate.hpp"
+#include "FlipFlop.hpp"
+
 #include "SampleHold.hpp"
 #include "Slew.hpp"
 
@@ -13,6 +15,8 @@ namespace library {
                 p->slug = "Utilities";
 
                 p->addModuleBuilder(ModuleBuilder::create<TriggerToGate>("Trig->Gate"));
+                p->addModuleBuilder(ModuleBuilder::create<FlipFlop>("FlipFlop"));
+
                 p->addModuleBuilder(ModuleBuilder::create<SampleHold>("S&H"));
                 p->addModuleBuilder(ModuleBuilder::create<Slew>("Slew"));
 
