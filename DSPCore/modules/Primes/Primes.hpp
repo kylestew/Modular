@@ -8,8 +8,7 @@
 #include "VCA.hpp"
 #include "VCF.hpp"
 #include "ADSR.hpp"
-//#include "Seq3.hpp"
-//#include "Delay.hpp"
+#include "Delay.hpp"
 
 namespace library {
     namespace primes {
@@ -19,7 +18,7 @@ namespace library {
         struct VCA;
         struct VCF;
         struct ADSR;
-//        struct Delay;
+        struct Delay;
 
         struct Primes {
             static Pack* init() {
@@ -33,7 +32,7 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<VCA>("VCA"));
                 p->addModuleBuilder(ModuleBuilder::create<VCF>("VCF"));
                 p->addModuleBuilder(ModuleBuilder::create<ADSR>("ADSR"));
-//                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
+                p->addModuleBuilder(ModuleBuilder::create<Delay>("Delay"));
 
                 return p;
             }

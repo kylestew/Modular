@@ -31,7 +31,7 @@ class ModuleBrowserViewController : UITableViewController {
             "VCA",
             "VCF",
             "ADSR",
-            //            "Delay",
+            "Delay",
             ]),
 
         Pack.init(title: "Notes", modules: [
