@@ -1,5 +1,6 @@
 #pragma once
 #include "Utilities.hpp"
+#include "dsp/noise.hpp"
 
 using namespace dsp;
 
@@ -11,12 +12,11 @@ namespace library {
             };
             enum OptionIds {
                 TRIGGER_OPTION,
-                TRACK_OPTION,
                 NUM_OPTIONS,
             };
             enum InputIds {
                 IN_INPUT,
-                TRIGGER_INPUT,
+                GATE_INPUT,
                 NUM_INPUTS
             };
             enum OutputIds {
@@ -33,25 +33,29 @@ namespace library {
                 NUM_BUFFERS
             };
 
-            SampleHold() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
-//                params[DC_PARAM].cvIndex = DC_CV_INPUT;
-            }
+            SchmittTrigger trigger;
+            float value;
+            WhiteNoiseGenerator noise;
+
+            SampleHold() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {}
 
             void reset() override {
-//                params[DC_PARAM].setting = 0.f;
+                trigger.reset();
+                value = 0.f;
             }
 
             void randomize() override {
-//                params[DC_PARAM].setting = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
-//                float dc = params[DC_PARAM].value;
-//                outputs[OUTPUT].value = dc;
-
-//                std::stringstream stream;
-//                stream << std::fixed << std::setprecision(2) << dc;
-//                labels[DC_VALUE_LABEL].value = stream.str();
+                if (trigger.process(inputs[GATE_INPUT].value + options[TRIGGER_OPTION].value)) {
+                    if (inputs[IN_INPUT].active) {
+                        value = inputs[IN_INPUT].value;
+                    } else {
+                        value = fabsf(noise.next());
+                    }
+                }
+                outputs[OUTPUT].value = value;
             }
         };
     }

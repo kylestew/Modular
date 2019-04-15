@@ -9,10 +9,12 @@ set(SOURCES
         src/util/string.cpp
         src/util/logger.cpp
 
+        src/dsp/filter.cpp
+        src/dsp/math.cpp
         src/dsp/minblep.cpp
+        src/dsp/noise.cpp
         src/dsp/signal.cpp
         src/dsp/table.cpp
-        src/dsp/math.cpp
 
         dep/libsamplerate-0.1.9/src/samplerate.c
         dep/libsamplerate-0.1.9/src/src_linear.c
