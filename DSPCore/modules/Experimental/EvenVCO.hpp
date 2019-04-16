@@ -2,27 +2,24 @@
 #include "Experimental.hpp"
 
 #include "dsp/minblep.hpp"
-#include "dsp/filter.hpp"
 
 using namespace dsp;
 
 namespace library {
     namespace experimental {
-
         struct EvenVCO: Module {
             enum ParamIds {
-                FREQ_PARAM,
-//            PWM_PARAM,
-                        NUM_PARAMS
+                TUNE_PARAM,
+                NUM_PARAMS
             };
             enum OptionIds {
+                OCTAVE_OPTION,
                 NUM_OPTIONS,
             };
             enum InputIds {
                 NOTE_INPUT,
-                FREQ_CV,
-//            PWM_CV,
-                        NUM_INPUTS
+                TUNE_CV,
+                NUM_INPUTS
             };
             enum OutputIds {
                 OUTPUT,
@@ -33,7 +30,6 @@ namespace library {
             };
 
             float phase = 0.0;
-//        float sync = 0.0;
             float tri = 0.0;
             float halfPhase = false;
 
@@ -41,49 +37,43 @@ namespace library {
             MinBLEP<16> triMinBLEP;
             MinBLEP<16> sineMinBLEP;
             MinBLEP<16> doubleSawMinBLEP;
-//        MinBLEP<16> sawMinBLEP;
-//        MinBLEP<16> squareMinBLEP;
-
-            RCFilter triFilter;
 
             EvenVCO() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
                 // map CVs to Params
-                params[FREQ_PARAM].cvIndex = FREQ_CV;
-//            params[PWM_PARAM].cvIndex = PWM_CV;
+                params[TUNE_PARAM].cvIndex = TUNE_CV;
+
+                options[OCTAVE_OPTION].states = 10;
 
                 triSquareMinBLEP.minblep = minblep_16_32;
                 triSquareMinBLEP.oversample = 32;
-
                 triMinBLEP.minblep = minblep_16_32;
                 triMinBLEP.oversample = 32;
-
                 sineMinBLEP.minblep = minblep_16_32;
                 sineMinBLEP.oversample = 32;
-
                 doubleSawMinBLEP.minblep = minblep_16_32;
                 doubleSawMinBLEP.oversample = 32;
-
-//            sawMinBLEP.minblep = minblep_16_32;
-//            sawMinBLEP.oversample = 32;
-//
-//            squareMinBLEP.minblep = minblep_16_32;
-//            squareMinBLEP.oversample = 32;
             }
 
             void reset() override {
-                params[FREQ_PARAM].setting = 0.f;
-//            params[PWM_PARAM].setting = 0.f;
+                options[OCTAVE_OPTION].value = 5;
+                params[TUNE_PARAM].setting = 0.f;
+            }
+
+            void randomize() override {
+                options[OCTAVE_OPTION].value = (int)(randomUniform() * options[OCTAVE_OPTION].states);
+                params[TUNE_PARAM].value = randomUniform() * 2.f - 1.0f;
             }
 
             void step() override {
-                float pitch = rescale(params[FREQ_PARAM].value, -1.f, 1.f, -5.f, 5.f);
-                float note = rescale(inputs[NOTE_INPUT].value, -1.f, 1.f, -5.f, 5.f);
-                pitch += note;
-                // Note C4
-                float freq = 261.626f * powf(2.0f, pitch);
+                // take inputs in V/OCT
+                int octave = options[OCTAVE_OPTION].value - 4; // 32' - 1/16'
+                float tune = rescale(params[TUNE_PARAM].value, -1, 1, -7, 7) / 12.f; // -1 to 1 will allow ranging up/down an octave
+                float pitchVpOCT = octave + tune;
+                // convert to internal pitch
+                float pitch = inputs[NOTE_INPUT].value + (pitchVpOCT * 0.2f);
+                float freq = pitchToFreq(pitch);
 
-                // pulse width
-//            float pw = params[PWM_PARAM].value;
+                outputs[OUTPUT].value = freq;
 
                 // advance phase
                 float deltaPhase = clamp(freq * engineGetSampleTime(), 1e-6f, 0.5f);
@@ -97,8 +87,6 @@ namespace library {
                 }
 
                 if (!halfPhase && phase >= 0.5) {
-//                float crossing = -(phase - pw) / deltaPhase;
-//                squareMinBLEP.jump(crossing, 2.0);
                     halfPhase = true;
                 }
 
@@ -108,8 +96,6 @@ namespace library {
                     float crossing = -phase / deltaPhase;
                     triSquareMinBLEP.jump(crossing, -2.0);
                     doubleSawMinBLEP.jump(crossing, -2.0);
-//                squareMinBLEP.jump(crossing, -2.0);
-//                sawMinBLEP.jump(crossing, -2.0);
                     halfPhase = false;
                 }
 
@@ -125,10 +111,6 @@ namespace library {
                 float doubleSaw = (phase < 0.5) ? (-1.0 + 4.0*phase) : (-1.0 + 4.0*(phase - 0.5));
                 doubleSaw += doubleSawMinBLEP.shift();
                 float even = 0.55 * (doubleSaw + 1.27 * sine);
-//            float saw = -1.0 + 2.0*phase;
-//            saw += sawMinBLEP.shift();
-//            float square = (phase < pw) ? -1.0 : 1.0;
-//            square += squareMinBLEP.shift();
 
                 outputs[OUTPUT].value = even;
             }

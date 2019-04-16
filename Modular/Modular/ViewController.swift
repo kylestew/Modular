@@ -21,8 +21,8 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
         super.viewDidLoad()
 
         // load patch from disk
-//        patch = Patch.init(with: Patch.tempStorageUrl())
-        patch = Patch.init()
+        patch = Patch.init(with: Patch.tempStorageUrl())
+//        patch = Patch.init()
         assert(patch != nil)
 
         scrollView.delegate = self

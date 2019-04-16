@@ -12,6 +12,8 @@
 #include <condition_variable>
 #include <mutex>
 
+#include "notes.hpp"
+
 ////////////////////
 // Handy macros
 ////////////////////
