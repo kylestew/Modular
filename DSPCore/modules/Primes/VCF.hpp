@@ -57,27 +57,31 @@ namespace library {
                 params[FREQ_PARAM].setting = 0.f;
                 params[RES_PARAM].setting = -1.f;
                 params[DRIVE_PARAM].setting = -1.f;
+
+                filter.reset();
             }
 
             void step() override {
+                if (!outputs[OUTPUT].active) {
+                    outputs[OUTPUT].value = 0.f;
+                    return;
+                }
+
                 // drive amps the input
                 float input = inputs[INPUT].value;
-                float drive = clamp(rescale(params[DRIVE_PARAM].value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
+                float drive = params[DRIVE_PARAM].valueNormalized();
                 float gain = powf(1.f + drive, 5);
                 input *= gain;
 
-                // TODO: not compiling XCODE
-//            // Add -60dB noise to bootstrap self-oscillation
-//            input += 1e-6f * (2.f * randomUniform() - 1.f);
+                // add -60dB noise to bootstrap self-oscillation
+                input += 1e-6f * (2.f * randomUniform() - 1.f);
 
-                // Set resonance
-                float res = clamp(rescale(params[RES_PARAM].value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
+                // set resonance
+                float res = params[RES_PARAM].valueNormalized();
                 filter.resonance = powf(res, 2) * 10.f;
 
                 // Set cutoff frequency
-                float pitch = 0.f;
-                pitch += params[FREQ_PARAM].value * 10.f;
-                float cutoff = 261.626f * powf(2.f, pitch);
+                float cutoff = pitchToFreq(params[FREQ_PARAM].value);
                 cutoff = clamp(cutoff, 1.f, 8000.f);
                 filter.setCutoff(cutoff);
 
