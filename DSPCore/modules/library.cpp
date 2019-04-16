@@ -11,6 +11,7 @@
 #include "Mixers/Mixers.hpp"
 #include "Scopes/Scopes.hpp"
 #include "Primes/Primes.hpp"
+#include "Experimental/Experimental.hpp"
 
 
 namespace library {
@@ -24,6 +25,7 @@ namespace library {
             library::mixers::Mixers::init(),
             library::scopes::Scopes::init(),
             library::primes::Primes::init(),
+            library::experimental::Experimental::init(),
     };
 
     void libraryInit() {

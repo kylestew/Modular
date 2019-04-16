@@ -71,6 +71,10 @@ class ModuleBrowserViewController : UITableViewController {
             "History",
             "Waveform",
             ]),
+        Pack.init(title: "Experimental", modules: [
+            "EvenVCO",
+            "Branches",
+            ]),
     ]
 
     override func viewDidLoad() {

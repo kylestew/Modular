@@ -60,9 +60,9 @@
 		FF39CC74220F8EC900C9AF52 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */; };
 		FF39CC75220F8F2F00C9AF52 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC3D220F8C7500C9AF52 /* mo_audio.mm */; };
 		FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */; };
-		FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */; };
+		FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */; };
 		FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC95B2210F4B500496378 /* DSPCore.mm */; };
-		FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF48F811225A6637004AD3C6 /* Befaco_EvenVCO.xib */; };
+		FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */; };
 		FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
 		FF513B432248422400C24F98 /* Primes_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Primes_ADSR.xib */; };
@@ -202,7 +202,7 @@
 		FF39CC73220F8EC900C9AF52 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modular-Bridging-Header.h"; sourceTree = "<group>"; };
-		FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudibleInstruments_Branches.xib; sourceTree = "<group>"; };
+		FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Branches.xib; sourceTree = "<group>"; };
 		FF3FC9452210F0F700496378 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
 		FF3FC9472210F0F700496378 /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
 		FF3FC9482210F0F700496378 /* common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		FF3FC95B2210F4B500496378 /* DSPCore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPCore.mm; sourceTree = "<group>"; };
 		FF3FC95D2210F4C300496378 /* DSPCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPCore.h; sourceTree = "<group>"; };
 		FF3FC96B2210F79300496378 /* momuaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = momuaudio.h; sourceTree = "<group>"; };
-		FF48F811225A6637004AD3C6 /* Befaco_EvenVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Befaco_EvenVCO.xib; sourceTree = "<group>"; };
+		FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_EvenVCO.xib; sourceTree = "<group>"; };
 		FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Primes_VCO-1.xib"; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
 		FF513B422248422300C24F98 /* Primes_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_ADSR.xib; sourceTree = "<group>"; };
@@ -681,8 +681,8 @@
 		FF959EFB22449BAA008F4FFC /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
-				FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */,
-				FF48F811225A6637004AD3C6 /* Befaco_EvenVCO.xib */,
+				FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */,
+				FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */,
 			);
 			path = Experimental;
 			sourceTree = "<group>";
@@ -932,14 +932,14 @@
 				FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
-				FF48F812225A6638004AD3C6 /* Befaco_EvenVCO.xib in Resources */,
+				FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */,
 				FF75694922624FD2000DD22B /* Mixers_XFade.xib in Resources */,
 				FF977C7E225D8D12001F31BA /* Simples_Manual.xib in Resources */,
 				FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
 				FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */,
-				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
+				FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Primes_LFOb.xib in Resources */,
 				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
 				FF374B1F2259598800E2EE8E /* Makefile.in in Resources */,
