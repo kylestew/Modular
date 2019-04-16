@@ -1,7 +1,7 @@
 #pragma once
 #include "library.hpp"
 
-#include "ShiftRegister.hpp"
+#include "Utilities/ShiftRegister.hpp"
 
 namespace library {
     namespace ml_modules {

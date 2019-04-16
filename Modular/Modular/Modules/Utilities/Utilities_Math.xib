@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ModuleWidget" customModule="Modular" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-o0-5Ol" userLabel="outA" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHz-q6-WUZ">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="urh-Te-a8b"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="DCI-9E-7Kc"/>
+                        <constraint firstAttribute="trailing" secondItem="oHz-q6-WUZ" secondAttribute="trailing" constant="-20" id="QOW-Dv-7Gk"/>
+                        <constraint firstItem="oHz-q6-WUZ" firstAttribute="leading" secondItem="3bb-o0-5Ol" secondAttribute="leading" constant="-20" id="SDb-Ra-j0t"/>
+                        <constraint firstAttribute="height" constant="60" id="eR5-F3-iJC"/>
+                        <constraint firstAttribute="bottom" secondItem="oHz-q6-WUZ" secondAttribute="bottom" constant="-14" id="oc4-GQ-Yzy"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-5v-INI" userLabel="outA" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="80" y="10" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsc-T5-iLP">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="94f-Rq-SnD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Tsc-T5-iLP" secondAttribute="trailing" constant="-20" id="I6L-IR-EyV"/>
+                        <constraint firstAttribute="bottom" secondItem="Tsc-T5-iLP" secondAttribute="bottom" constant="-14" id="Nnu-fS-J3f"/>
+                        <constraint firstAttribute="height" constant="60" id="SS7-Hb-MNf"/>
+                        <constraint firstAttribute="width" constant="60" id="fPN-7w-oQ9"/>
+                        <constraint firstItem="Tsc-T5-iLP" firstAttribute="leading" secondItem="gZm-5v-INI" secondAttribute="leading" constant="-20" id="iWS-og-vY1"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYb-Yg-IZh">
+                    <rect key="frame" x="10" y="221" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="wyg-Xq-i9p"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ona-dl-aYa" userLabel="outB" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="10" y="87" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="8OH-rW-4w5"/>
+                        <constraint firstAttribute="height" constant="60" id="pkD-bH-jkP"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-6F-YDe">
+                    <rect key="frame" x="10" y="141" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="kcy-wX-kba"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bm-gZ-18z" userLabel="outB" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="80" y="87" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="D1o-Ns-Aem"/>
+                        <constraint firstAttribute="height" constant="60" id="ejZ-HD-vyx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukd-YW-Vba">
+                    <rect key="frame" x="80" y="141" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="LZo-CT-53q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-LO-8TA" userLabel="outB" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="80" y="167" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="aeU-dg-4S3"/>
+                        <constraint firstAttribute="height" constant="60" id="uuB-td-J5e"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXZ-W3-9X7" userLabel="outB" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="10" y="167" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="GVA-CX-RO6"/>
+                        <constraint firstAttribute="height" constant="60" id="SFG-Vg-b3e"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MATH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-f8-GHu">
+                    <rect key="frame" x="15" y="247" width="120" height="19"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="Tgc-2e-QVU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999 ms" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7s-Nj-aCf" customClass="PowerMeterWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="60" y="254" width="80" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="bq3-we-9Wu"/>
+                        <constraint firstAttribute="width" constant="80" id="s3h-8j-QAt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-pk-fqD">
+                    <rect key="frame" x="80" y="221" width="60" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="QSS-eR-feL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="NGg-LO-8TA" firstAttribute="centerY" secondItem="gXZ-W3-9X7" secondAttribute="centerY" id="4RW-Nl-xbz"/>
+                <constraint firstAttribute="trailing" secondItem="NGg-LO-8TA" secondAttribute="trailing" constant="10" id="53r-bx-ib6"/>
+                <constraint firstItem="tYb-Yg-IZh" firstAttribute="centerY" secondItem="gXZ-W3-9X7" secondAttribute="centerY" constant="36" id="5A4-DH-fSY"/>
+                <constraint firstItem="gXZ-W3-9X7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="7R1-yX-S8E"/>
+                <constraint firstItem="5bY-6F-YDe" firstAttribute="centerY" secondItem="ona-dl-aYa" secondAttribute="centerY" constant="36" id="9Mp-AM-ERA"/>
+                <constraint firstItem="tYb-Yg-IZh" firstAttribute="centerX" secondItem="gXZ-W3-9X7" secondAttribute="centerX" id="A0x-2s-BXX"/>
+                <constraint firstItem="3bb-o0-5Ol" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Amk-BL-6UY"/>
+                <constraint firstItem="IkV-pk-fqD" firstAttribute="width" secondItem="NGg-LO-8TA" secondAttribute="width" id="Bv2-j2-nEL"/>
+                <constraint firstItem="5bY-6F-YDe" firstAttribute="width" secondItem="ona-dl-aYa" secondAttribute="width" id="Dgp-Cs-RWF"/>
+                <constraint firstAttribute="trailing" secondItem="q7s-Nj-aCf" secondAttribute="trailing" constant="10" id="DlF-eu-yEp"/>
+                <constraint firstItem="IkV-pk-fqD" firstAttribute="centerY" secondItem="NGg-LO-8TA" secondAttribute="centerY" constant="36" id="GAY-Af-R56"/>
+                <constraint firstItem="IkV-pk-fqD" firstAttribute="centerX" secondItem="NGg-LO-8TA" secondAttribute="centerX" id="Ged-DD-qvt"/>
+                <constraint firstItem="3bb-o0-5Ol" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Jlz-Ve-geG"/>
+                <constraint firstAttribute="bottom" secondItem="q7s-Nj-aCf" secondAttribute="bottom" constant="4" id="QXT-Sb-1yF"/>
+                <constraint firstItem="Ukd-YW-Vba" firstAttribute="centerX" secondItem="7Bm-gZ-18z" secondAttribute="centerX" id="UkC-Cj-Ucg"/>
+                <constraint firstItem="tYb-Yg-IZh" firstAttribute="width" secondItem="gXZ-W3-9X7" secondAttribute="width" id="Vmp-0y-XP0"/>
+                <constraint firstItem="ona-dl-aYa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="afe-Q7-ohE"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
+                <constraint firstItem="Ukd-YW-Vba" firstAttribute="width" secondItem="7Bm-gZ-18z" secondAttribute="width" id="cla-Pq-lOJ"/>
+                <constraint firstItem="5bY-6F-YDe" firstAttribute="centerX" secondItem="ona-dl-aYa" secondAttribute="centerX" id="e9h-7J-3Fi"/>
+                <constraint firstItem="gXZ-W3-9X7" firstAttribute="top" secondItem="ona-dl-aYa" secondAttribute="bottom" constant="20" id="fLq-OK-KvZ"/>
+                <constraint firstItem="gq8-f8-GHu" firstAttribute="top" secondItem="gXZ-W3-9X7" secondAttribute="bottom" constant="20" id="gmq-hl-n8p"/>
+                <constraint firstItem="gZm-5v-INI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="kbQ-A2-UGp"/>
+                <constraint firstAttribute="trailing" secondItem="gZm-5v-INI" secondAttribute="trailing" constant="10" id="oRV-FP-pxg"/>
+                <constraint firstAttribute="trailing" secondItem="7Bm-gZ-18z" secondAttribute="trailing" constant="10" id="pRp-ZP-mDf"/>
+                <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
+                <constraint firstItem="Ukd-YW-Vba" firstAttribute="centerY" secondItem="7Bm-gZ-18z" secondAttribute="centerY" constant="36" id="yBj-VG-9ey"/>
+                <constraint firstItem="NGg-LO-8TA" firstAttribute="top" secondItem="7Bm-gZ-18z" secondAttribute="bottom" constant="20" id="ysw-X8-uDd"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-736" y="-414.24287856071965"/>
+        </view>
+    </objects>
+</document>

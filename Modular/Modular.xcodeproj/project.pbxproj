@@ -25,9 +25,10 @@
 		FF074E8C22654CBE006B269C /* filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF074E8122654CBE006B269C /* filter.cpp */; };
 		FF074E8D22654CBE006B269C /* signal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF074E8222654CBE006B269C /* signal.cpp */; };
 		FF074E8E22654CBE006B269C /* minblep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF074E8322654CBE006B269C /* minblep.cpp */; };
+		FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF074E8F22654F0C006B269C /* Utilities_Math.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
-		FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */; };
+		FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */; };
 		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
 		FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */; };
 		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
@@ -153,9 +154,10 @@
 		FF074E8122654CBE006B269C /* filter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter.cpp; sourceTree = "<group>"; };
 		FF074E8222654CBE006B269C /* signal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = signal.cpp; sourceTree = "<group>"; };
 		FF074E8322654CBE006B269C /* minblep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = minblep.cpp; sourceTree = "<group>"; };
+		FF074E8F22654F0C006B269C /* Utilities_Math.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Math.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
-		FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ML_Modules_ShiftRegister.xib; sourceTree = "<group>"; };
+		FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_ShiftRegister.xib; sourceTree = "<group>"; };
 		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
 		FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_S&H.xib"; sourceTree = "<group>"; };
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
@@ -374,10 +376,10 @@
 			children = (
 				FF52302122617B58003ECB43 /* Utilities_Slew.xib */,
 				FF074E6622653EFF006B269C /* Utilities_FlipFlop.xib */,
+				FF074E8F22654F0C006B269C /* Utilities_Math.xib */,
 				FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */,
 				FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */,
-				FF2514D42246C43900FD1D44 /* ML_Modules_ShiftRegister.xib */,
-				FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */,
+				FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -679,6 +681,7 @@
 		FF959EFB22449BAA008F4FFC /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
+				FF39D9DD22483A4E00BE830C /* AudibleInstruments_Branches.xib */,
 				FF48F811225A6637004AD3C6 /* Befaco_EvenVCO.xib */,
 			);
 			path = Experimental;
@@ -935,6 +938,7 @@
 				FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
+				FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */,
 				FF39D9DE22483A4E00BE830C /* AudibleInstruments_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Primes_LFOb.xib in Resources */,
 				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
@@ -955,7 +959,7 @@
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
 				FFBF3BB4225C3D9D00F2C8F3 /* Simples_Atten.xib in Resources */,
 				FF067E79225B9F6C00394B19 /* Simples_DC.xib in Resources */,
-				FF2514D52246C43900FD1D44 /* ML_Modules_ShiftRegister.xib in Resources */,
+				FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */,
 				FFBF3BB9225CE43000F2C8F3 /* Simples_Offset.xib in Resources */,
 				FF9A22C8226296F300881039 /* Times_ClockDivider.xib in Resources */,
 				FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */,
