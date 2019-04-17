@@ -37,12 +37,14 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Notes", modules: [
             "SEQ",
             "Quantizer",
-            //            "Chromatic",
-            //            "Octaves",
+            "Octave",
+            "Semitones",
+//            "Detune",
             ]),
 
         Pack.init(title: "Times", modules: [
             "Clock",
+//            "ClockDivider",
             ]),
 
         Pack.init(title: "Mixers", modules: [
@@ -58,19 +60,23 @@ class ModuleBrowserViewController : UITableViewController {
             "Manual",
             "Switch",
             ]),
+
         Pack.init(title: "Utilities", modules: [
             "Trig->Gate",
             "FlipFlop",
             "S&H",
             "Math",
             "Slew",
+//            "SequentialSwitch",
             "ShiftRegister",
             ]),
+
         Pack.init(title: "Scopes", modules: [
             "Value",
             "History",
             "Waveform",
             ]),
+
         Pack.init(title: "Experimental", modules: [
             "EvenVCO",
             "Branches",

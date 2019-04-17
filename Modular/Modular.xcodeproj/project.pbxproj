@@ -120,6 +120,8 @@
 		FFEF83BC2246CC8100FCB3BF /* Mixers_4to1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEF83BB2246CC8100FCB3BF /* Mixers_4to1.xib */; };
 		FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF3B743222C606C0058B759 /* Primes_VCA.xib */; };
 		FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF5163A225FB490003CFD43 /* Scopes_History.xib */; };
+		FFFAAA0F226785E200DBE862 /* Notes_Octave.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFAAA0E226785E200DBE862 /* Notes_Octave.xib */; };
+		FFFAAA11226785FE00DBE862 /* Notes_Semitones.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFAAA10226785FE00DBE862 /* Notes_Semitones.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -333,6 +335,8 @@
 		FFEF83BB2246CC8100FCB3BF /* Mixers_4to1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Mixers_4to1.xib; sourceTree = "<group>"; };
 		FFF3B743222C606C0058B759 /* Primes_VCA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_VCA.xib; sourceTree = "<group>"; };
 		FFF5163A225FB490003CFD43 /* Scopes_History.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_History.xib; sourceTree = "<group>"; };
+		FFFAAA0E226785E200DBE862 /* Notes_Octave.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Octave.xib; sourceTree = "<group>"; };
+		FFFAAA10226785FE00DBE862 /* Notes_Semitones.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Semitones.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +681,8 @@
 			children = (
 				FFD2BF752247ED4E009BC6A0 /* Notes_SEQ.xib */,
 				FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */,
+				FFFAAA10226785FE00DBE862 /* Notes_Semitones.xib */,
+				FFFAAA0E226785E200DBE862 /* Notes_Octave.xib */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -992,6 +998,7 @@
 				FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Primes_LFOb.xib in Resources */,
 				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
+				FFFAAA0F226785E200DBE862 /* Notes_Octave.xib in Resources */,
 				FF374B1F2259598800E2EE8E /* Makefile.in in Resources */,
 				FF9BD92C224494F6008277EE /* Primes_Delay.xib in Resources */,
 				FF39CC31220F8A2C00C9AF52 /* Assets.xcassets in Resources */,
@@ -1014,6 +1021,7 @@
 				FF9A22C8226296F300881039 /* Times_ClockDivider.xib in Resources */,
 				FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */,
 				FF977C7C225D8D0C001F31BA /* Simples_Switch.xib in Resources */,
+				FFFAAA11226785FE00DBE862 /* Notes_Semitones.xib in Resources */,
 				FF374ADE2259598800E2EE8E /* install-sh in Resources */,
 				FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */,
 			);
