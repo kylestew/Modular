@@ -30,6 +30,8 @@
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
 		FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */; };
 		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
+		FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F162266A17B009073EE /* Experimental_Slop.xib */; };
+		FF288F192266D452009073EE /* Experimental_Plateau.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F182266D452009073EE /* Experimental_Plateau.xib */; };
 		FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */; };
 		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
 		FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C65A2215D976004F4991 /* UIColor+Hex.swift */; };
@@ -62,6 +64,10 @@
 		FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */; };
 		FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */; };
 		FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC95B2210F4B500496378 /* DSPCore.mm */; };
+		FF3FD7D22266DB9800AEEFC9 /* Dattorro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C22266DB9800AEEFC9 /* Dattorro.cpp */; };
+		FF3FD7D32266DB9800AEEFC9 /* OnePoleFilters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C42266DB9800AEEFC9 /* OnePoleFilters.cpp */; };
+		FF3FD7D42266DB9800AEEFC9 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C82266DB9800AEEFC9 /* Utilities.cpp */; };
+		FF3FD7D52266DB9800AEEFC9 /* OTAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C92266DB9800AEEFC9 /* OTAFilter.cpp */; };
 		FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */; };
 		FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
@@ -159,6 +165,8 @@
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_ShiftRegister.xib; sourceTree = "<group>"; };
 		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
+		FF288F162266A17B009073EE /* Experimental_Slop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Slop.xib; sourceTree = "<group>"; };
+		FF288F182266D452009073EE /* Experimental_Plateau.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Plateau.xib; sourceTree = "<group>"; };
 		FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_S&H.xib"; sourceTree = "<group>"; };
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
 		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -212,6 +220,29 @@
 		FF3FC95B2210F4B500496378 /* DSPCore.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPCore.mm; sourceTree = "<group>"; };
 		FF3FC95D2210F4C300496378 /* DSPCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPCore.h; sourceTree = "<group>"; };
 		FF3FC96B2210F79300496378 /* momuaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = momuaudio.h; sourceTree = "<group>"; };
+		FF3FD7BA2266DB9800AEEFC9 /* SpringReverb.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpringReverb.hpp; sourceTree = "<group>"; };
+		FF3FD7BB2266DB9800AEEFC9 /* Experimental.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Experimental.hpp; sourceTree = "<group>"; };
+		FF3FD7BC2266DB9800AEEFC9 /* FreeVerb.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FreeVerb.hpp; sourceTree = "<group>"; };
+		FF3FD7BD2266DB9800AEEFC9 /* Slop.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Slop.hpp; sourceTree = "<group>"; };
+		FF3FD7BE2266DB9800AEEFC9 /* EvenVCO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EvenVCO.hpp; sourceTree = "<group>"; };
+		FF3FD7BF2266DB9800AEEFC9 /* Plateau.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Plateau.hpp; sourceTree = "<group>"; };
+		FF3FD7C02266DB9800AEEFC9 /* Branches.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Branches.hpp; sourceTree = "<group>"; };
+		FF3FD7C22266DB9800AEEFC9 /* Dattorro.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dattorro.cpp; sourceTree = "<group>"; };
+		FF3FD7C32266DB9800AEEFC9 /* DOsc.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DOsc.hpp; sourceTree = "<group>"; };
+		FF3FD7C42266DB9800AEEFC9 /* OnePoleFilters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OnePoleFilters.cpp; sourceTree = "<group>"; };
+		FF3FD7C52266DB9800AEEFC9 /* NonLinear.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NonLinear.hpp; sourceTree = "<group>"; };
+		FF3FD7C62266DB9800AEEFC9 /* OTAFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OTAFilter.hpp; sourceTree = "<group>"; };
+		FF3FD7C72266DB9800AEEFC9 /* DADSR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DADSR.hpp; sourceTree = "<group>"; };
+		FF3FD7C82266DB9800AEEFC9 /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
+		FF3FD7C92266DB9800AEEFC9 /* OTAFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OTAFilter.cpp; sourceTree = "<group>"; };
+		FF3FD7CA2266DB9800AEEFC9 /* DLFO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DLFO.hpp; sourceTree = "<group>"; };
+		FF3FD7CB2266DB9800AEEFC9 /* LFO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LFO.hpp; sourceTree = "<group>"; };
+		FF3FD7CC2266DB9800AEEFC9 /* InterpDelay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = InterpDelay.hpp; sourceTree = "<group>"; };
+		FF3FD7CD2266DB9800AEEFC9 /* Noise.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Noise.hpp; sourceTree = "<group>"; };
+		FF3FD7CE2266DB9800AEEFC9 /* Utilities.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Utilities.hpp; sourceTree = "<group>"; };
+		FF3FD7CF2266DB9800AEEFC9 /* AllpassFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AllpassFilter.hpp; sourceTree = "<group>"; };
+		FF3FD7D02266DB9800AEEFC9 /* Dattorro.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dattorro.hpp; sourceTree = "<group>"; };
+		FF3FD7D12266DB9800AEEFC9 /* OnePoleFilters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OnePoleFilters.hpp; sourceTree = "<group>"; };
 		FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_EvenVCO.xib; sourceTree = "<group>"; };
 		FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Primes_VCO-1.xib"; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
@@ -250,14 +281,6 @@
 		FF977C57225D7F90001F31BA /* Offset.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Offset.hpp; sourceTree = "<group>"; };
 		FF977C58225D7F90001F31BA /* Mute.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mute.hpp; sourceTree = "<group>"; };
 		FF977C59225D7F90001F31BA /* Toggle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Toggle.hpp; sourceTree = "<group>"; };
-		FF977C5B225D7F90001F31BA /* ShiftRegister.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShiftRegister.hpp; sourceTree = "<group>"; };
-		FF977C5C225D7F90001F31BA /* EvenVCO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EvenVCO.hpp; sourceTree = "<group>"; };
-		FF977C5D225D7F90001F31BA /* AudibleInstruments.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AudibleInstruments.hpp; sourceTree = "<group>"; };
-		FF977C5E225D7F90001F31BA /* JW-Modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "JW-Modules.hpp"; sourceTree = "<group>"; };
-		FF977C5F225D7F90001F31BA /* Mixer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mixer.hpp; sourceTree = "<group>"; };
-		FF977C60225D7F90001F31BA /* Befaco.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Befaco.hpp; sourceTree = "<group>"; };
-		FF977C61225D7F90001F31BA /* Branches.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Branches.hpp; sourceTree = "<group>"; };
-		FF977C62225D7F90001F31BA /* ML_Modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ML_Modules.hpp; sourceTree = "<group>"; };
 		FF977C63225D7F90001F31BA /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		FF977C65225D7F90001F31BA /* AudioInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AudioInterface.hpp; sourceTree = "<group>"; };
 		FF977C66225D7F90001F31BA /* Core.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Core.hpp; sourceTree = "<group>"; };
@@ -611,6 +634,44 @@
 			path = dsp;
 			sourceTree = "<group>";
 		};
+		FF3FD7B92266DB9800AEEFC9 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FD7BA2266DB9800AEEFC9 /* SpringReverb.hpp */,
+				FF3FD7BB2266DB9800AEEFC9 /* Experimental.hpp */,
+				FF3FD7BC2266DB9800AEEFC9 /* FreeVerb.hpp */,
+				FF3FD7BD2266DB9800AEEFC9 /* Slop.hpp */,
+				FF3FD7BE2266DB9800AEEFC9 /* EvenVCO.hpp */,
+				FF3FD7BF2266DB9800AEEFC9 /* Plateau.hpp */,
+				FF3FD7C02266DB9800AEEFC9 /* Branches.hpp */,
+				FF3FD7C12266DB9800AEEFC9 /* dsp */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		FF3FD7C12266DB9800AEEFC9 /* dsp */ = {
+			isa = PBXGroup;
+			children = (
+				FF3FD7C22266DB9800AEEFC9 /* Dattorro.cpp */,
+				FF3FD7C32266DB9800AEEFC9 /* DOsc.hpp */,
+				FF3FD7C42266DB9800AEEFC9 /* OnePoleFilters.cpp */,
+				FF3FD7C52266DB9800AEEFC9 /* NonLinear.hpp */,
+				FF3FD7C62266DB9800AEEFC9 /* OTAFilter.hpp */,
+				FF3FD7C72266DB9800AEEFC9 /* DADSR.hpp */,
+				FF3FD7C82266DB9800AEEFC9 /* Utilities.cpp */,
+				FF3FD7C92266DB9800AEEFC9 /* OTAFilter.cpp */,
+				FF3FD7CA2266DB9800AEEFC9 /* DLFO.hpp */,
+				FF3FD7CB2266DB9800AEEFC9 /* LFO.hpp */,
+				FF3FD7CC2266DB9800AEEFC9 /* InterpDelay.hpp */,
+				FF3FD7CD2266DB9800AEEFC9 /* Noise.hpp */,
+				FF3FD7CE2266DB9800AEEFC9 /* Utilities.hpp */,
+				FF3FD7CF2266DB9800AEEFC9 /* AllpassFilter.hpp */,
+				FF3FD7D02266DB9800AEEFC9 /* Dattorro.hpp */,
+				FF3FD7D12266DB9800AEEFC9 /* OnePoleFilters.hpp */,
+			);
+			path = dsp;
+			sourceTree = "<group>";
+		};
 		FF499530225CF0EC002B0D6F /* Notes */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +743,8 @@
 			isa = PBXGroup;
 			children = (
 				FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */,
+				FF288F162266A17B009073EE /* Experimental_Slop.xib */,
+				FF288F182266D452009073EE /* Experimental_Plateau.xib */,
 				FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */,
 			);
 			path = Experimental;
@@ -716,9 +779,9 @@
 		FF977C40225D7F8F001F31BA /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				FF3FD7B92266DB9800AEEFC9 /* Experimental */,
 				FF977C41225D7F8F001F31BA /* Primes */,
 				FF977C4E225D7F8F001F31BA /* Simples */,
-				FF977C5A225D7F90001F31BA /* Experimental */,
 				FF977C63225D7F90001F31BA /* CMakeLists.txt */,
 				FF977C64225D7F90001F31BA /* Core */,
 				FF977C67225D7F90001F31BA /* library.hpp */,
@@ -768,21 +831,6 @@
 				FF977C59225D7F90001F31BA /* Toggle.hpp */,
 			);
 			path = Simples;
-			sourceTree = "<group>";
-		};
-		FF977C5A225D7F90001F31BA /* Experimental */ = {
-			isa = PBXGroup;
-			children = (
-				FF977C5B225D7F90001F31BA /* ShiftRegister.hpp */,
-				FF977C5C225D7F90001F31BA /* EvenVCO.hpp */,
-				FF977C5D225D7F90001F31BA /* AudibleInstruments.hpp */,
-				FF977C5E225D7F90001F31BA /* JW-Modules.hpp */,
-				FF977C5F225D7F90001F31BA /* Mixer.hpp */,
-				FF977C60225D7F90001F31BA /* Befaco.hpp */,
-				FF977C61225D7F90001F31BA /* Branches.hpp */,
-				FF977C62225D7F90001F31BA /* ML_Modules.hpp */,
-			);
-			path = Experimental;
 			sourceTree = "<group>";
 		};
 		FF977C64225D7F90001F31BA /* Core */ = {
@@ -938,7 +986,9 @@
 				FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
+				FF288F192266D452009073EE /* Experimental_Plateau.xib in Resources */,
 				FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */,
+				FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */,
 				FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */,
 				FF5DBD5A224455D0006B98FE /* Primes_LFOb.xib in Resources */,
 				FF977C80225D91F8001F31BA /* Scopes_Value.xib in Resources */,
@@ -1034,12 +1084,14 @@
 				FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */,
 				FF98BE1722124B070028740B /* WireWrapper.mm in Sources */,
 				FF074E8622654CBE006B269C /* logger.cpp in Sources */,
+				FF3FD7D22266DB9800AEEFC9 /* Dattorro.cpp in Sources */,
 				FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */,
 				FF055A8D225A81C900FFCCD4 /* SelectorWidget.swift in Sources */,
 				FFBC6BCA22233F3500B973D5 /* ButtonWidget.swift in Sources */,
 				FF39CC75220F8F2F00C9AF52 /* mo_audio.mm in Sources */,
 				FF374B182259598800E2EE8E /* samplerate.c in Sources */,
 				FFBC6BC82221DED200B973D5 /* Buffer.swift in Sources */,
+				FF3FD7D52266DB9800AEEFC9 /* OTAFilter.cpp in Sources */,
 				FF074E8C22654CBE006B269C /* filter.cpp in Sources */,
 				FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */,
 				FF977086221CCD52002283E2 /* Patch.swift in Sources */,
@@ -1052,6 +1104,7 @@
 				FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */,
 				FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */,
 				FF074E8B22654CBE006B269C /* noise.cpp in Sources */,
+				FF3FD7D32266DB9800AEEFC9 /* OnePoleFilters.cpp in Sources */,
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
 				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
 				FF074E8E22654CBE006B269C /* minblep.cpp in Sources */,
@@ -1074,6 +1127,7 @@
 				FF074E8422654CBE006B269C /* asset.cpp in Sources */,
 				FFB178F8222D96B000DF019A /* Wireable.swift in Sources */,
 				FF977C78225D7F90001F31BA /* library.cpp in Sources */,
+				FF3FD7D42266DB9800AEEFC9 /* Utilities.cpp in Sources */,
 				FFB9A72022292AFC003E0B06 /* Wire.swift in Sources */,
 				FF99C37122244E8F00C65FE1 /* WaveformWidget.swift in Sources */,
 				FF374B1D2259598800E2EE8E /* src_linear.c in Sources */,

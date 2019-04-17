@@ -12,19 +12,19 @@ namespace library {
         struct Plateau: Module {
             enum ParamIds {
                 WET_PARAM,
-                LEVEL1_PARAM,
-                LEVEL2_PARAM,
                 NUM_PARAMS
             };
             enum OptionIds {
                 NUM_OPTIONS,
             };
             enum InputIds {
-//                DC_CV_INPUT,
+                LEFT_INPUT,
+                RIGHT_INPUT,
                 NUM_INPUTS
             };
             enum OutputIds {
-                OUTPUT,
+                LEFT_OUTPUT,
+                RIGHT_OUTPUT,
                 NUM_OUTPUTS
             };
             enum LightIds {
@@ -45,6 +45,8 @@ namespace library {
 
             void reset() override {
 //                params[DC_PARAM].setting = 0.f;
+
+                reverb.setSampleRate(engineGetSampleRate());
             }
 
             void randomize() override {
@@ -52,12 +54,33 @@ namespace library {
             }
 
             void step() override {
-//                float dc = params[DC_PARAM].value;
-//                outputs[OUTPUT].value = dc;
-//
-//                std::stringstream stream;
-//                stream << std::fixed << std::setprecision(2) << dc;
-//                labels[DC_VALUE_LABEL].value = stream.str();
+
+                float preDelay = 0.5f;
+                reverb.setPreDelay(clamp(preDelay, 0.f, 1.f));
+
+                float size = 1.0f;
+                reverb.setTimeScale(size);
+
+                float diffusion = 5.f;
+                reverb.plateDiffusion1 = rescale(diffusion, 0.f, 10.f, 0.f, 0.7f);
+                reverb.plateDiffusion2 = rescale(diffusion, 0.f, 10.f, 0.f, 0.5f);
+
+                float leftInput = inputs[LEFT_INPUT].value;
+                float rightInput = inputs[LEFT_INPUT].value;
+
+                reverb.process(leftInput, rightInput);
+
+                reverb.diffuseInput = 0.f;
+
+                reverb.decay = 0.90;
+
+                float dry = 0.5f;
+                float wet = 0.5f;
+                outputs[LEFT_OUTPUT].value = leftInput * dry;
+                outputs[RIGHT_OUTPUT].value = rightInput * dry;
+                outputs[LEFT_OUTPUT].value += reverb.leftOut * wet;
+                outputs[RIGHT_OUTPUT].value += reverb.rightOut * wet;
+
             }
         };
     }

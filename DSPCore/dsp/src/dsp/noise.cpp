@@ -4,7 +4,7 @@
  */
 #include <algorithm>
 
-#include "noise.hpp"
+#include "../../include/dsp/noise.hpp"
 
 using namespace dsp;
 

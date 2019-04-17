@@ -43,7 +43,7 @@ namespace dsp {
 
         /** internal value is value with CV applied per engine step **/
         float value = 0.f;
-        float const valueNormalized() {
+        inline float const valueNormalized() {
             return clamp(rescale(value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
         }
 
