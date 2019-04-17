@@ -74,6 +74,7 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Experimental", modules: [
             "EvenVCO",
             "Branches",
+            "Slop",
             ]),
     ]
 
