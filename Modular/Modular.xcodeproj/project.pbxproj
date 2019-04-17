@@ -31,6 +31,7 @@
 		FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */; };
 		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
 		FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F162266A17B009073EE /* Experimental_Slop.xib */; };
+		FF288F192266D452009073EE /* Experimental_Plateau.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F182266D452009073EE /* Experimental_Plateau.xib */; };
 		FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */; };
 		FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C6572215C282004F4991 /* KnobWidget.swift */; };
 		FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29C65A2215D976004F4991 /* UIColor+Hex.swift */; };
@@ -161,6 +162,7 @@
 		FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_ShiftRegister.xib; sourceTree = "<group>"; };
 		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
 		FF288F162266A17B009073EE /* Experimental_Slop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Slop.xib; sourceTree = "<group>"; };
+		FF288F182266D452009073EE /* Experimental_Plateau.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Plateau.xib; sourceTree = "<group>"; };
 		FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_S&H.xib"; sourceTree = "<group>"; };
 		FF29C6572215C282004F4991 /* KnobWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnobWidget.swift; sourceTree = "<group>"; };
 		FF29C65A2215D976004F4991 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			children = (
 				FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */,
 				FF288F162266A17B009073EE /* Experimental_Slop.xib */,
+				FF288F182266D452009073EE /* Experimental_Plateau.xib */,
 				FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */,
 			);
 			path = Experimental;
@@ -941,6 +944,7 @@
 				FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */,
 				FF374B202259598800E2EE8E /* check_asm.sh in Resources */,
 				FFF5163B225FB490003CFD43 /* Scopes_History.xib in Resources */,
+				FF288F192266D452009073EE /* Experimental_Plateau.xib in Resources */,
 				FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */,
 				FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */,
 				FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */,
