@@ -126,6 +126,37 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7c4-gN-VCe" customClass="ToggleWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="98" y="117" width="80" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="IKf-HM-dpW"/>
+                        <constraint firstAttribute="height" constant="50" id="nre-1W-0Vl"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG4-XY-XEu">
+                    <rect key="frame" x="70" y="132" width="40" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="CfQ-J0-xxM"/>
+                        <constraint firstAttribute="width" constant="40" id="RKs-ME-sIV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cents" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-2x-kGL">
+                    <rect key="frame" x="166" y="132" width="40" height="20"/>
+                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUo-Tk-fH2" customClass="KnobWidget" customModule="Modular" customModuleProvider="target">
                     <rect key="frame" x="10" y="10" width="80" height="80"/>
                     <subviews>
@@ -160,15 +191,23 @@
             <constraints>
                 <constraint firstItem="5PH-1T-BzC" firstAttribute="leading" secondItem="lUo-Tk-fH2" secondAttribute="trailing" constant="8" id="6IX-so-Xcp"/>
                 <constraint firstItem="5PH-1T-BzC" firstAttribute="width" secondItem="5PH-1T-BzC" secondAttribute="height" multiplier="1:1" id="Ci3-nU-Hfo"/>
+                <constraint firstItem="0yx-2x-kGL" firstAttribute="centerX" secondItem="7c4-gN-VCe" secondAttribute="centerX" constant="48" id="E6v-Zf-XcC"/>
                 <constraint firstAttribute="trailing" secondItem="24O-ox-STG" secondAttribute="trailing" constant="10" id="E9V-D6-xrg"/>
                 <constraint firstItem="lUo-Tk-fH2" firstAttribute="centerY" secondItem="5PH-1T-BzC" secondAttribute="centerY" id="Gvm-5H-d2p"/>
+                <constraint firstItem="cG4-XY-XEu" firstAttribute="centerY" secondItem="7c4-gN-VCe" secondAttribute="centerY" id="HjA-mb-nJh"/>
                 <constraint firstAttribute="trailing" secondItem="PKB-XZ-aQc" secondAttribute="trailing" constant="20" id="HpS-QA-MZ9"/>
                 <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="LwY-Bh-nZR"/>
+                <constraint firstItem="7c4-gN-VCe" firstAttribute="centerY" secondItem="PKB-XZ-aQc" secondAttribute="centerY" id="N5D-0j-pZf"/>
+                <constraint firstItem="0yx-2x-kGL" firstAttribute="centerY" secondItem="7c4-gN-VCe" secondAttribute="centerY" id="RCB-1P-B0R"/>
                 <constraint firstItem="24O-ox-STG" firstAttribute="top" secondItem="PKB-XZ-aQc" secondAttribute="bottom" constant="10" id="UYy-lF-4Gu"/>
                 <constraint firstItem="CCY-a8-FVI" firstAttribute="leading" secondItem="5PH-1T-BzC" secondAttribute="trailing" constant="8" id="aWM-wP-nhV"/>
+                <constraint firstItem="7c4-gN-VCe" firstAttribute="centerX" secondItem="5PH-1T-BzC" secondAttribute="centerX" id="asn-0x-ZTN"/>
+                <constraint firstItem="0yx-2x-kGL" firstAttribute="height" secondItem="cG4-XY-XEu" secondAttribute="height" id="b0y-Uz-ABG"/>
+                <constraint firstItem="cG4-XY-XEu" firstAttribute="centerX" secondItem="7c4-gN-VCe" secondAttribute="centerX" constant="-48" id="bHY-Ow-fox"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
                 <constraint firstItem="DjE-kz-nyX" firstAttribute="width" secondItem="AHx-kQ-hay" secondAttribute="width" id="gzC-kW-lgW"/>
                 <constraint firstAttribute="bottom" secondItem="24O-ox-STG" secondAttribute="bottom" constant="4" id="lFR-lN-nlg"/>
+                <constraint firstItem="0yx-2x-kGL" firstAttribute="width" secondItem="cG4-XY-XEu" secondAttribute="width" id="lbk-Us-Ukq"/>
                 <constraint firstItem="DjE-kz-nyX" firstAttribute="centerY" secondItem="AHx-kQ-hay" secondAttribute="centerY" constant="30" id="mE4-LZ-w6a"/>
                 <constraint firstItem="DjE-kz-nyX" firstAttribute="centerX" secondItem="AHx-kQ-hay" secondAttribute="centerX" id="mJi-RX-zzd"/>
                 <constraint firstAttribute="trailing" secondItem="CCY-a8-FVI" secondAttribute="trailing" constant="10" id="msX-f5-wtr"/>
@@ -179,7 +218,7 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-455.19999999999999" y="-267.16641679160421"/>
+            <point key="canvasLocation" x="-456" y="-267.16641679160421"/>
         </view>
     </objects>
 </document>

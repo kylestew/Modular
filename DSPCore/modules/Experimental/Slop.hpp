@@ -19,6 +19,8 @@ namespace library {
             };
             enum InputIds {
                 INPUT,
+                HUM_CV,
+                TRACK_CV,
                 NUM_INPUTS
             };
             enum OutputIds {
@@ -33,7 +35,7 @@ namespace library {
             std::minstd_rand rng;
             std::normal_distribution<double> gaussian{};
 
-            static constexpr float maxHum{1.0e-2f};
+            static constexpr float maxHum{0.1f};
             static constexpr float humFreq{60.0f};
 
             float humPhaseIncrement{};
@@ -48,6 +50,8 @@ namespace library {
             int prevDetuneMode{};
 
             Slop() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS), rng(seed()) {
+                params[HUM_PARAM].cvIndex = HUM_CV;
+                params[TRACK_PARAM].cvIndex = TRACK_CV;
             }
 
             void reset() override {
@@ -58,7 +62,9 @@ namespace library {
 
                 params[HUM_PARAM].setting = -0.5;
                 params[DRIFT_PARAM].setting = -0.5;
-                params[TRACK_PARAM].setting = 1.0;
+                params[TRACK_PARAM].setting = 0.f;
+
+                options[DETUNE_OPTION].value = 1;
             }
 
             void randomize() override {
@@ -73,9 +79,8 @@ namespace library {
                     prevDetuneMode = options[DETUNE_OPTION].value;
                 }
 
-                float track = rescale(params[TRACK_PARAM].valueNormalized(), 0.0, 1.0, 1.0 - (.2/12), 1.f);
-                float voct = inputs[INPUT].value * 10.f;
-                voct *= track;
+                float track = rescale(params[TRACK_PARAM].valueNormalized(), 0.0, 1.0, 0.98f, 1.02f);
+                float pitch = inputs[INPUT].value * track;
 
                 humPhase += humPhaseIncrement;
                 if(humPhase >= 1.0)
@@ -83,19 +88,15 @@ namespace library {
 
                 float hum = maxHum * params[HUM_PARAM].valueNormalized() * std::sin(2 * M_PI * humPhase);
 
-//                double sigma =  params[DETUNE_OPTION].value == 0 ? sigmaHz : sigmaCents;
-//
-//                ou = phi * ou + sigma * gaussian(rng);
-//                float drift = params[DRIFT_PARAM].valueNormalized() * ou;
+                double sigma =  params[DETUNE_OPTION].value == 0 ? sigmaHz : sigmaCents;
 
-                voct = voct + hum;
+                ou = phi * ou + sigma * gaussian(rng);
+                float drift = params[DRIFT_PARAM].valueNormalized() * ou;
 
-//                if(options[DETUNE_OPTION].value == 0 ) //Hz i.e linear detune mode
-//                    outputs[OUTPUT].value = dsp::detune::linear(voct, drift) / 10.f;
-//                else //Cents i.e proportional detune mode
-//                    outputs[OUTPUT].value = (voct + drift) / 10.f;
-
-outputs[OUTPUT].value = voct;
+                if(options[DETUNE_OPTION].value == 0 ) //Hz i.e linear detune mode
+                    outputs[OUTPUT].value = dsp::detune::linear(pitch, drift);
+                else //Cents i.e proportional detune mode
+                    outputs[OUTPUT].value = pitch + drift;
             }
         };
     }

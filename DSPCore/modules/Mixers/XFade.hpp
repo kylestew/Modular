@@ -56,7 +56,7 @@ namespace library {
                 }
 
                 float mix = clamp(params[MIX_PARAM].value, -1.f, 1.f);
-                _mixer.setParams(mix, 0.2f, false);
+                _mixer.setParams(mix, 0.6f, false);
 
                 outputs[OUTPUT].value = _mixer.next(inputs[A_INPUT].value, inputs[B_INPUT].value);
             }
