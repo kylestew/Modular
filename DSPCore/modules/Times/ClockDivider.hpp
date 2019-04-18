@@ -24,6 +24,7 @@ namespace library {
                 OUT_8,
                 OUT_16,
                 OUT_32,
+                OUT_64,
                 NUM_OUTPUTS
             };
             enum LightIds {
@@ -57,9 +58,12 @@ namespace library {
                     stepCount = 0;
                 }
 
-                outputs[OUT_2].value = stepCount;
-//                outputs[OUT_2].value = (stepCount % 2 == 0) ? 1.0 : 0.0;
-//                outputs[OUT_4].value = (stepCount % 4 == 0) ? 1.0 : 0.0;
+                outputs[OUT_2].value = (stepCount % 2 == 0) ? 1.0 : 0.0;
+                outputs[OUT_4].value = ((stepCount / 2) % 2 == 0) ? 1.0 : 0.0;
+                outputs[OUT_8].value = ((stepCount / 4) % 2 == 0) ? 1.0 : 0.0;
+                outputs[OUT_16].value = ((stepCount / 8) % 2 == 0) ? 1.0 : 0.0;
+                outputs[OUT_32].value = ((stepCount / 16) % 2 == 0) ? 1.0 : 0.0;
+                outputs[OUT_64].value = ((stepCount / 32) % 2 == 0) ? 1.0 : 0.0;
             }
         };
     }
