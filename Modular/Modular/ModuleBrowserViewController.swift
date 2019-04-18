@@ -83,6 +83,7 @@ class ModuleBrowserViewController : UITableViewController {
             "Branches",
             "Slop",
             "Plateau",
+            "LRTVCO",
             ]),
     ]
 

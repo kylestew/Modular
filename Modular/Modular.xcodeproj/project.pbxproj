@@ -82,6 +82,10 @@
 		FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597A2228DB3D00C6268E /* WidgetThemes.swift */; };
 		FF70597D222904BC00C6268E /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70597C222904BB00C6268E /* Param.swift */; };
 		FF75694922624FD2000DD22B /* Mixers_XFade.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF75694822624FD2000DD22B /* Mixers_XFade.xib */; };
+		FF78C9C0226836F300D8751C /* RateConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C997226836F300D8751C /* RateConverter.cpp */; };
+		FF78C9C1226836F300D8751C /* LadderFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C999226836F300D8751C /* LadderFilter.cpp */; };
+		FF78C9CC226836F300D8751C /* DSPMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C9B2226836F300D8751C /* DSPMath.cpp */; };
+		FF78C9D1226836F300D8751C /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C9BA226836F300D8751C /* Oscillator.cpp */; };
 		FF90CBD7222C62A400263593 /* ParamWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90CBD6222C62A400263593 /* ParamWidget.swift */; };
 		FF977086221CCD52002283E2 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* Patch.swift */; };
 		FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF977C63225D7F90001F31BA /* CMakeLists.txt */; };
@@ -100,6 +104,7 @@
 		FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */; };
 		FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CB2267E442003002CD /* Utilities_Demux.xib */; };
 		FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CD22682A41003002CD /* Utilities_Mux.xib */; };
+		FFADB1D022683420003002CD /* Experimental_LRTVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */; };
 		FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAEEF562259A6B400DC005B /* Primes_VCO-2.xib */; };
 		FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */; };
 		FFB178F8222D96B000DF019A /* Wireable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB178F7222D96B000DF019A /* Wireable.swift */; };
@@ -260,6 +265,17 @@
 		FF70597A2228DB3D00C6268E /* WidgetThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetThemes.swift; sourceTree = "<group>"; };
 		FF70597C222904BB00C6268E /* Param.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
 		FF75694822624FD2000DD22B /* Mixers_XFade.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Mixers_XFade.xib; sourceTree = "<group>"; };
+		FF78C992226836F300D8751C /* DiodeLadder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DiodeLadder.hpp; sourceTree = "<group>"; };
+		FF78C994226836F300D8751C /* Oscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Oscillator.hpp; sourceTree = "<group>"; };
+		FF78C997226836F300D8751C /* RateConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RateConverter.cpp; sourceTree = "<group>"; };
+		FF78C999226836F300D8751C /* LadderFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LadderFilter.cpp; sourceTree = "<group>"; };
+		FF78C9A0226836F300D8751C /* DSPMath.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPMath.hpp; sourceTree = "<group>"; };
+		FF78C9A1226836F300D8751C /* HQTrig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HQTrig.hpp; sourceTree = "<group>"; };
+		FF78C9A2226836F300D8751C /* LadderFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LadderFilter.hpp; sourceTree = "<group>"; };
+		FF78C9A3226836F300D8751C /* DSPSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPSystem.hpp; sourceTree = "<group>"; };
+		FF78C9B2226836F300D8751C /* DSPMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DSPMath.cpp; sourceTree = "<group>"; };
+		FF78C9B3226836F300D8751C /* DSPEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPEffect.hpp; sourceTree = "<group>"; };
+		FF78C9BA226836F300D8751C /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
 		FF90CBD6222C62A400263593 /* ParamWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamWidget.swift; sourceTree = "<group>"; };
 		FF977085221CCD52002283E2 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		FF977C42225D7F8F001F31BA /* VCO1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO1.hpp; sourceTree = "<group>"; };
@@ -316,6 +332,7 @@
 		FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Quantizer.xib; sourceTree = "<group>"; };
 		FFADB1CB2267E442003002CD /* Utilities_Demux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Demux.xib; sourceTree = "<group>"; };
 		FFADB1CD22682A41003002CD /* Utilities_Mux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Mux.xib; sourceTree = "<group>"; };
+		FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_LRTVCO.xib; sourceTree = "<group>"; };
 		FFAEEF562259A6B400DC005B /* Primes_VCO-2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Primes_VCO-2.xib"; sourceTree = "<group>"; };
 		FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _ScopeWidget.swift; sourceTree = "<group>"; };
 		FFB178F7222D96B000DF019A /* Wireable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireable.swift; sourceTree = "<group>"; };
@@ -647,6 +664,7 @@
 		FF3FD7B92266DB9800AEEFC9 /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
+				FF78C98F226836F300D8751C /* LRTdsp */,
 				FF3FD7BA2266DB9800AEEFC9 /* SpringReverb.hpp */,
 				FF3FD7BB2266DB9800AEEFC9 /* Experimental.hpp */,
 				FF3FD7BC2266DB9800AEEFC9 /* FreeVerb.hpp */,
@@ -751,12 +769,31 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		FF78C98F226836F300D8751C /* LRTdsp */ = {
+			isa = PBXGroup;
+			children = (
+				FF78C992226836F300D8751C /* DiodeLadder.hpp */,
+				FF78C994226836F300D8751C /* Oscillator.hpp */,
+				FF78C997226836F300D8751C /* RateConverter.cpp */,
+				FF78C999226836F300D8751C /* LadderFilter.cpp */,
+				FF78C9A0226836F300D8751C /* DSPMath.hpp */,
+				FF78C9A1226836F300D8751C /* HQTrig.hpp */,
+				FF78C9A2226836F300D8751C /* LadderFilter.hpp */,
+				FF78C9A3226836F300D8751C /* DSPSystem.hpp */,
+				FF78C9B2226836F300D8751C /* DSPMath.cpp */,
+				FF78C9B3226836F300D8751C /* DSPEffect.hpp */,
+				FF78C9BA226836F300D8751C /* Oscillator.cpp */,
+			);
+			path = LRTdsp;
+			sourceTree = "<group>";
+		};
 		FF959EFB22449BAA008F4FFC /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
 				FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */,
 				FF288F162266A17B009073EE /* Experimental_Slop.xib */,
 				FF288F182266D452009073EE /* Experimental_Plateau.xib */,
+				FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */,
 				FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */,
 			);
 			path = Experimental;
@@ -986,6 +1023,7 @@
 				FFD2BF762247ED4E009BC6A0 /* Notes_SEQ.xib in Resources */,
 				FF359955222B4DD60053FDB9 /* Primes_VCF.xib in Resources */,
 				FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */,
+				FFADB1D022683420003002CD /* Experimental_LRTVCO.xib in Resources */,
 				FFBF3BBB225CE45100F2C8F3 /* Simples_AttenOff.xib in Resources */,
 				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
@@ -1114,11 +1152,13 @@
 				FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */,
 				FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */,
 				FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */,
+				FF78C9CC226836F300D8751C /* DSPMath.cpp in Sources */,
 				FF074E8522654CBE006B269C /* string.cpp in Sources */,
 				FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */,
 				FF074E8722654CBE006B269C /* audio.cpp in Sources */,
 				FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */,
 				FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */,
+				FF78C9C1226836F300D8751C /* LadderFilter.cpp in Sources */,
 				FF074E8B22654CBE006B269C /* noise.cpp in Sources */,
 				FF3FD7D32266DB9800AEEFC9 /* OnePoleFilters.cpp in Sources */,
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
@@ -1126,12 +1166,14 @@
 				FF074E8E22654CBE006B269C /* minblep.cpp in Sources */,
 				FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */,
 				FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */,
+				FF78C9D1226836F300D8751C /* Oscillator.cpp in Sources */,
 				FF9A460322480933004F9765 /* Light.swift in Sources */,
 				FFBC6BCC22233F6A00B973D5 /* Option.swift in Sources */,
 				FFBC6BCE222351F800B973D5 /* UIColor+Lerp.swift in Sources */,
 				FF074E8D22654CBE006B269C /* signal.cpp in Sources */,
 				FF055A8F225A8B5F00FFCCD4 /* Label.swift in Sources */,
 				FF70597B2228DB3D00C6268E /* WidgetThemes.swift in Sources */,
+				FF78C9C0226836F300D8751C /* RateConverter.cpp in Sources */,
 				FF29C65B2215D976004F4991 /* UIColor+Hex.swift in Sources */,
 				FF70597D222904BC00C6268E /* Param.swift in Sources */,
 				FF2AE3612243ED840098091E /* ToggleWidget.swift in Sources */,

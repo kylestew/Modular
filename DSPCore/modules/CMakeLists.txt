@@ -9,6 +9,9 @@ set(SOURCES
         Experimental/dsp/OnePoleFilters.cpp
         Experimental/dsp/OTAFilter.cpp
         Experimental/dsp/Utilities.cpp
+
+        Experimental/LRTdsp/Oscillator.cpp
+        Experimental/LRTdsp/DSPMath.cpp
         )
 add_library(${PROJECT_NAME} ${SOURCES})
 
