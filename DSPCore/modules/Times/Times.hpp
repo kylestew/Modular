@@ -2,6 +2,7 @@
 #include "library.hpp"
 
 #include "Clock.hpp"
+#include "ClockDivider.hpp"
 
 namespace library {
     namespace times {
@@ -13,6 +14,7 @@ namespace library {
                 p->slug = "Times";
 
                 p->addModuleBuilder(ModuleBuilder::create<Clock>("Clock"));
+                p->addModuleBuilder(ModuleBuilder::create<ClockDivider>("ClockDivider"));
 
                 return p;
             }

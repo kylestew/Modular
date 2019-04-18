@@ -6,6 +6,8 @@
 #include "SampleHold.hpp"
 #include "Math.hpp"
 #include "Slew.hpp"
+#include "Mux.hpp"
+#include "Demux.hpp"
 #include "ShiftRegister.hpp"
 
 namespace library {
@@ -20,6 +22,8 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<SampleHold>("S&H"));
                 p->addModuleBuilder(ModuleBuilder::create<Math>("Math"));
                 p->addModuleBuilder(ModuleBuilder::create<Slew>("Slew"));
+                p->addModuleBuilder(ModuleBuilder::create<Mux>("Mux"));
+                p->addModuleBuilder(ModuleBuilder::create<Demux>("Demux"));
                 p->addModuleBuilder(ModuleBuilder::create<ShiftRegister>("ShiftRegister"));
 
                 return p;

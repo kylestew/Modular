@@ -98,6 +98,8 @@
 		FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460422480ACE004F9765 /* LightWidget.swift */; };
 		FF9BD92C224494F6008277EE /* Primes_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Primes_Delay.xib */; };
 		FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */; };
+		FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CB2267E442003002CD /* Utilities_Demux.xib */; };
+		FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CD22682A41003002CD /* Utilities_Mux.xib */; };
 		FFAEEF572259A6B400DC005B /* Primes_VCO-2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAEEF562259A6B400DC005B /* Primes_VCO-2.xib */; };
 		FFAF29D3221FAEA100FC3CBC /* _ScopeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */; };
 		FFB178F8222D96B000DF019A /* Wireable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB178F7222D96B000DF019A /* Wireable.swift */; };
@@ -312,6 +314,8 @@
 		FF9A460422480ACE004F9765 /* LightWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
 		FF9BD92B224494F6008277EE /* Primes_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_Delay.xib; sourceTree = "<group>"; };
 		FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Quantizer.xib; sourceTree = "<group>"; };
+		FFADB1CB2267E442003002CD /* Utilities_Demux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Demux.xib; sourceTree = "<group>"; };
+		FFADB1CD22682A41003002CD /* Utilities_Mux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Mux.xib; sourceTree = "<group>"; };
 		FFAEEF562259A6B400DC005B /* Primes_VCO-2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Primes_VCO-2.xib"; sourceTree = "<group>"; };
 		FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _ScopeWidget.swift; sourceTree = "<group>"; };
 		FFB178F7222D96B000DF019A /* Wireable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireable.swift; sourceTree = "<group>"; };
@@ -401,6 +405,8 @@
 		FF28A7E0225D2444006AEEE6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FFADB1CB2267E442003002CD /* Utilities_Demux.xib */,
+				FFADB1CD22682A41003002CD /* Utilities_Mux.xib */,
 				FF52302122617B58003ECB43 /* Utilities_Slew.xib */,
 				FF074E6622653EFF006B269C /* Utilities_FlipFlop.xib */,
 				FF074E8F22654F0C006B269C /* Utilities_Math.xib */,
@@ -1005,9 +1011,11 @@
 				FF374B1E2259598800E2EE8E /* Version_script.in in Resources */,
 				FFBF3BB7225C429100F2C8F3 /* Scopes_Waveform.xib in Resources */,
 				FF374B1C2259598800E2EE8E /* Makefile.am in Resources */,
+				FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */,
 				FF374AE42259598800E2EE8E /* compile in Resources */,
 				FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */,
 				FF374AE32259598800E2EE8E /* config.sub in Resources */,
+				FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
 				FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */,
 				FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */,

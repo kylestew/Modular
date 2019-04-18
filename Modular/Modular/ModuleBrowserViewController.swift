@@ -44,7 +44,7 @@ class ModuleBrowserViewController : UITableViewController {
 
         Pack.init(title: "Times", modules: [
             "Clock",
-//            "ClockDivider",
+            "ClockDivider",
             ]),
 
         Pack.init(title: "Mixers", modules: [
@@ -67,7 +67,8 @@ class ModuleBrowserViewController : UITableViewController {
             "S&H",
             "Math",
             "Slew",
-//            "SequentialSwitch",
+            "Mux",
+            "Demux",
             "ShiftRegister",
             ]),
 
