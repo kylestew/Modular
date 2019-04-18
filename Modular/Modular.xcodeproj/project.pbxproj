@@ -63,6 +63,7 @@
 		FF39CC75220F8F2F00C9AF52 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC3D220F8C7500C9AF52 /* mo_audio.mm */; };
 		FF39CC77220F8F3F00C9AF52 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */; };
 		FF39D9DE22483A4E00BE830C /* Experimental_Branches.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */; };
+		FF3FB0AB2268C2A800F2F00A /* Notes_Detune.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3FB0AA2268C2A800F2F00A /* Notes_Detune.xib */; };
 		FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC95B2210F4B500496378 /* DSPCore.mm */; };
 		FF3FD7D22266DB9800AEEFC9 /* Dattorro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C22266DB9800AEEFC9 /* Dattorro.cpp */; };
 		FF3FD7D32266DB9800AEEFC9 /* OnePoleFilters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C42266DB9800AEEFC9 /* OnePoleFilters.cpp */; };
@@ -220,6 +221,7 @@
 		FF39CC76220F8F3F00C9AF52 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modular-Bridging-Header.h"; sourceTree = "<group>"; };
 		FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Branches.xib; sourceTree = "<group>"; };
+		FF3FB0AA2268C2A800F2F00A /* Notes_Detune.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Detune.xib; sourceTree = "<group>"; };
 		FF3FC9452210F0F700496378 /* engine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = engine.hpp; sourceTree = "<group>"; };
 		FF3FC9472210F0F700496378 /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = math.hpp; sourceTree = "<group>"; };
 		FF3FC9482210F0F700496378 /* common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = common.hpp; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 				FFD2BF752247ED4E009BC6A0 /* Notes_SEQ.xib */,
 				FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */,
 				FFFAAA10226785FE00DBE862 /* Notes_Semitones.xib */,
+				FF3FB0AA2268C2A800F2F00A /* Notes_Detune.xib */,
 				FFFAAA0E226785E200DBE862 /* Notes_Octave.xib */,
 			);
 			path = Notes;
@@ -1015,6 +1018,7 @@
 			files = (
 				FFBF3BBD225CE5E000F2C8F3 /* Simples_Mute.xib in Resources */,
 				FF074E6722653F00006B269C /* Utilities_FlipFlop.xib in Resources */,
+				FF3FB0AB2268C2A800F2F00A /* Notes_Detune.xib in Resources */,
 				FF02668D2225D9C400607BB1 /* Primes_LFO.xib in Resources */,
 				FF513B432248422400C24F98 /* Primes_ADSR.xib in Resources */,
 				FFEF83BC2246CC8100FCB3BF /* Mixers_4to1.xib in Resources */,

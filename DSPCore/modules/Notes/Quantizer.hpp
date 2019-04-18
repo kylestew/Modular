@@ -202,6 +202,11 @@ namespace library { namespace notes {
             options[SCALE_PARAM].value = QuantizeUtils::MINOR;
         }
 
+        void randomize() override {
+            options[ROOT_NOTE_PARAM].value = (randomu32() % (QuantizeUtils::NUM_NOTES - 1));
+            options[SCALE_PARAM].value = (randomu32() % (QuantizeUtils::NUM_SCALES - 1));
+        }
+
         void step() override {
             int rootNote = options[ROOT_NOTE_PARAM].value;
             int scale = options[SCALE_PARAM].value;

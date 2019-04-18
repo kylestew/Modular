@@ -5,6 +5,7 @@
 #include "Quantizer.hpp"
 #include "Octave.hpp"
 #include "Semitones.hpp"
+#include "Detune.hpp"
 
 namespace library {
     namespace notes {
@@ -17,6 +18,7 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<Quantizer>("Quantizer"));
                 p->addModuleBuilder(ModuleBuilder::create<Octave>("Octave"));
                 p->addModuleBuilder(ModuleBuilder::create<Semitones>("Semitones"));
+                p->addModuleBuilder(ModuleBuilder::create<Detune>("Detune"));
 
                 return p;
             }

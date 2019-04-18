@@ -39,7 +39,7 @@ class ModuleBrowserViewController : UITableViewController {
             "Quantizer",
             "Octave",
             "Semitones",
-//            "Detune",
+            "Detune",
             ]),
 
         Pack.init(title: "Times", modules: [
