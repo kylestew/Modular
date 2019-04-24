@@ -144,7 +144,7 @@
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="index">
-                            <integer key="value" value="3"/>
+                            <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
                     </userDefinedRuntimeAttributes>

@@ -73,7 +73,7 @@ class ModuleBrowserViewController : UITableViewController {
             ]),
 
         Pack.init(title: "Scopes", modules: [
-            "Value",
+            "VoltMeter",
             "History",
             "Waveform",
             ]),

@@ -8,7 +8,7 @@ using namespace dsp;
 
 namespace library {
     namespace scopes {
-        struct Value: Module {
+        struct VoltMeter: Module {
             enum ParamIds {
                 NUM_PARAMS
             };
@@ -33,7 +33,7 @@ namespace library {
                 NUM_BUFFERS
             };
 
-            Value() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
+            VoltMeter() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS, NUM_LABELS, NUM_BUFFERS) {
             }
 
             void reset() override {
