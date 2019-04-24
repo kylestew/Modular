@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-kQ-hay" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="10" y="90" width="60" height="60"/>
+                    <rect key="frame" x="80" y="90" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skg-L0-C8H">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -42,7 +42,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-A9-W9b" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="80" y="10" width="60" height="60"/>
+                    <rect key="frame" x="10" y="10" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDR-mV-jm4">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -69,7 +69,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwA-Dt-abm" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="80" y="90" width="60" height="60"/>
+                    <rect key="frame" x="10" y="90" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX9-8h-MCs">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -96,7 +96,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-ax-bVx" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="80" y="170" width="60" height="60"/>
+                    <rect key="frame" x="10" y="170" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scP-pJ-pIx">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -123,7 +123,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egk-eZ-ydQ" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="80" y="250" width="60" height="60"/>
+                    <rect key="frame" x="10" y="250" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhh-hn-liG">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -168,35 +168,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpy-C8-2Z9" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="10" y="10" width="60" height="60"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-z1-Bzt">
-                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="Z55-gg-DMz"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="U8g-z1-Bzt" firstAttribute="leading" secondItem="Jpy-C8-2Z9" secondAttribute="leading" constant="-20" id="1YO-l3-FFf"/>
-                        <constraint firstAttribute="height" constant="60" id="3FX-Bg-Dve"/>
-                        <constraint firstAttribute="bottom" secondItem="U8g-z1-Bzt" secondAttribute="bottom" constant="-14" id="4v2-Nv-VoT"/>
-                        <constraint firstAttribute="trailing" secondItem="U8g-z1-Bzt" secondAttribute="trailing" constant="-20" id="8YX-vn-AaU"/>
-                        <constraint firstAttribute="width" constant="60" id="zJQ-gL-ecc"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="index">
-                            <integer key="value" value="0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrx-kp-Emg" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="10" y="250" width="60" height="60"/>
+                    <rect key="frame" x="80" y="250" width="60" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-62-xy4">
                             <rect key="frame" x="-20" y="50" width="100" height="24"/>
@@ -223,7 +196,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6F-98-dQ9" userLabel="Reset Button" customClass="ButtonWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="10" y="170" width="60" height="60"/>
+                    <rect key="frame" x="80" y="170" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="Mlq-vH-rBe"/>
                         <constraint firstAttribute="height" constant="60" id="gvB-fS-7aq"/>
@@ -241,7 +214,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(steps)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ico-Sa-X62" customClass="LabelWidget" customModule="Modular" customModuleProvider="target">
-                    <rect key="frame" x="10" y="214" width="60" height="24"/>
+                    <rect key="frame" x="80" y="214" width="60" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="IHU-6J-bbm"/>
                     </constraints>
@@ -254,15 +227,41 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpy-C8-2Z9" userLabel="input" customClass="PortWidget" customModule="Modular" customModuleProvider="target">
+                    <rect key="frame" x="80" y="10" width="60" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-z1-Bzt">
+                            <rect key="frame" x="-20" y="50" width="100" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="Z55-gg-DMz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="U8g-z1-Bzt" firstAttribute="leading" secondItem="Jpy-C8-2Z9" secondAttribute="leading" constant="-20" id="1YO-l3-FFf"/>
+                        <constraint firstAttribute="height" constant="60" id="3FX-Bg-Dve"/>
+                        <constraint firstAttribute="bottom" secondItem="U8g-z1-Bzt" secondAttribute="bottom" constant="-14" id="4v2-Nv-VoT"/>
+                        <constraint firstAttribute="trailing" secondItem="U8g-z1-Bzt" secondAttribute="trailing" constant="-20" id="8YX-vn-AaU"/>
+                        <constraint firstAttribute="width" constant="60" id="zJQ-gL-ecc"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="index">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutput" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.097736515410958902" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Wrx-kp-Emg" firstAttribute="centerY" secondItem="Egk-eZ-ydQ" secondAttribute="centerY" id="1EB-1O-k4A"/>
                 <constraint firstItem="Qom-A9-W9b" firstAttribute="centerX" secondItem="rwA-Dt-abm" secondAttribute="centerX" id="2fi-hG-BkS"/>
-                <constraint firstItem="Jpy-C8-2Z9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="5mL-iI-2z7"/>
-                <constraint firstItem="Wrx-kp-Emg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="80P-s8-gyK"/>
+                <constraint firstItem="Wrx-kp-Emg" firstAttribute="centerX" secondItem="Jpy-C8-2Z9" secondAttribute="centerX" id="32Y-Rx-CGW"/>
+                <constraint firstItem="Qom-A9-W9b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="5K2-Pv-DDX"/>
                 <constraint firstItem="hYh-ax-bVx" firstAttribute="top" secondItem="rwA-Dt-abm" secondAttribute="bottom" constant="20" id="AQG-BK-gyu"/>
-                <constraint firstAttribute="trailing" secondItem="Qom-A9-W9b" secondAttribute="trailing" constant="10" id="BDH-dC-u0H"/>
                 <constraint firstItem="u6F-98-dQ9" firstAttribute="centerX" secondItem="AHx-kQ-hay" secondAttribute="centerX" id="C1V-YR-9SK"/>
                 <constraint firstItem="ico-Sa-X62" firstAttribute="centerX" secondItem="u6F-98-dQ9" secondAttribute="centerX" id="I32-Aa-EYe"/>
                 <constraint firstAttribute="trailing" secondItem="xcW-JW-cxv" secondAttribute="trailing" constant="10" id="KVa-zE-K3P"/>
@@ -275,17 +274,16 @@
                 <constraint firstItem="rwA-Dt-abm" firstAttribute="centerX" secondItem="hYh-ax-bVx" secondAttribute="centerX" id="UzK-uF-Kyv"/>
                 <constraint firstItem="Egk-eZ-ydQ" firstAttribute="top" secondItem="hYh-ax-bVx" secondAttribute="bottom" constant="20" id="Zgs-NQ-NT9"/>
                 <constraint firstItem="gq8-f8-GHu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bIj-HN-OWI"/>
-                <constraint firstAttribute="trailing" secondItem="hYh-ax-bVx" secondAttribute="trailing" constant="10" id="bSL-Ff-0g3"/>
+                <constraint firstAttribute="trailing" secondItem="Jpy-C8-2Z9" secondAttribute="trailing" constant="10" id="deq-uA-UGO"/>
                 <constraint firstItem="rwA-Dt-abm" firstAttribute="top" secondItem="Qom-A9-W9b" secondAttribute="bottom" constant="20" id="kPx-eG-mAe"/>
                 <constraint firstItem="AHx-kQ-hay" firstAttribute="top" secondItem="Jpy-C8-2Z9" secondAttribute="bottom" constant="20" id="kYI-WG-3qq"/>
                 <constraint firstItem="ico-Sa-X62" firstAttribute="centerY" secondItem="u6F-98-dQ9" secondAttribute="centerY" constant="26" id="n3i-Q0-ddh"/>
-                <constraint firstAttribute="trailing" secondItem="Egk-eZ-ydQ" secondAttribute="trailing" constant="10" id="pbe-KX-hpL"/>
                 <constraint firstItem="Jpy-C8-2Z9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="s2f-aT-sv2"/>
                 <constraint firstAttribute="bottom" secondItem="gq8-f8-GHu" secondAttribute="bottom" constant="4" id="v8s-98-WXG"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-531.20000000000005" y="-227.58620689655174"/>
+            <point key="canvasLocation" x="-536.79999999999995" y="-227.58620689655174"/>
         </view>
     </objects>
 </document>
