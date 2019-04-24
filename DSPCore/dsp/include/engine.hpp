@@ -83,6 +83,10 @@ namespace dsp {
         float* samples;
         int circularIndex = -1; // optional for ring buffers, -1 means off
 
+        // display helpers
+        float scale = 1.0;
+        float offset = 0.0;
+
         void setSize(int size) {
             this->size = size;
             samples = new float[size];

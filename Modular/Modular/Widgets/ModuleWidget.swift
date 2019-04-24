@@ -184,6 +184,9 @@ class ModuleWidget : UIView, ModuleDelegate {
             case var buffer as Buffer:
                 let version = module.version(forBufferId: buffer.index)
                 if buffer.version != version {
+                    buffer.scale = module.scale(forBufferId: buffer.index)
+                    buffer.offset = module.offset(forBufferId: buffer.index)
+
                     let samples = UnsafeBufferPointer<Float>.init(start: module.samples(forBufferId: buffer.index),
                                                                   count: Int(module.sampleCount(forBufferId: buffer.index)))
                     buffer.circularIndex = module.circularIndex(forBufferId: buffer.index)

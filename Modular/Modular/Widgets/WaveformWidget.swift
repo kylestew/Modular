@@ -18,6 +18,8 @@ class WaveformWidget : UIControl, Buffer {
     @IBInspectable var index: Int = -1
     private var samples: UnsafeBufferPointer<Float>?
     var version: Int32 = -1
+    var scale: Float = 1.0
+    var offset: Float = 0.0
     func updateSamples(_ samples: UnsafeBufferPointer<Float>, for version: Int32) {
         self.version = version
         self.samples = samples
@@ -29,6 +31,16 @@ class WaveformWidget : UIControl, Buffer {
 
     let BORDER_STROKE_WIDTH: CGFloat = 3.0
 
+    @IBInspectable var primary: Bool = true {
+        didSet {
+            backgroundColor = primary ? WidgetColors.EMPTY_COLOR : UIColor.clear
+            if primary {
+                layer.cornerRadius = 8.0
+                layer.borderColor = WidgetColors.LINE_COLOR.cgColor
+                layer.borderWidth = BORDER_STROKE_WIDTH
+            }
+        }
+    }
     @IBInspectable var plotLineWidth: CGFloat = 1.0
     @IBInspectable var xInset: CGFloat = 0.0
     @IBInspectable var yInset: CGFloat = 0.0
@@ -37,10 +49,6 @@ class WaveformWidget : UIControl, Buffer {
     private let plotLayer = CAShapeLayer()
 
     private func setupUI() {
-        backgroundColor = WidgetColors.EMPTY_COLOR
-        layer.cornerRadius = 8.0
-        layer.borderColor = WidgetColors.LINE_COLOR.cgColor
-        layer.borderWidth = BORDER_STROKE_WIDTH
         clipsToBounds = true
 
         layer.addSublayer(gridLayer)
@@ -54,8 +62,9 @@ class WaveformWidget : UIControl, Buffer {
 
         let count = samples.count
         let stride = plotLayer.bounds.width / CGFloat(count - 1)
-        let yBase = plotLayer.bounds.height / 2.0
-        let yScale = plotLayer.bounds.height / 2.0
+        var yBase = plotLayer.bounds.height / 2.0
+        yBase = yBase + yBase * -CGFloat(offset);
+        let yScale = CGFloat(scale) * plotLayer.bounds.height / 2.0
 
         let path = UIBezierPath()
         var idx = circularIndex > -0 ? circularIndex : 0

@@ -134,6 +134,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="yInset">
                             <real key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="primary" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8n-gz-6Vm" customClass="ButtonWidget" customModule="Modular" customModuleProvider="target">

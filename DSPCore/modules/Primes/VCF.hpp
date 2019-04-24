@@ -81,7 +81,7 @@ namespace library {
                 filter.resonance = powf(res, 2) * 10.f;
 
                 // Set cutoff frequency
-                float cutoff = pitchToFreq(params[FREQ_PARAM].value);
+                float cutoff = cvToFreq(params[FREQ_PARAM].value);
                 cutoff = clamp(cutoff, 1.f, 8000.f);
                 filter.setCutoff(cutoff);
 
