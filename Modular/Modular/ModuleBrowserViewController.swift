@@ -37,9 +37,11 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Notes", modules: [
             "SEQ",
             "Quantizer",
+            "Scale",
             "Octave",
             "Semitones",
             "Detune",
+            "Reftone",
             ]),
 
         Pack.init(title: "Times", modules: [
@@ -76,6 +78,7 @@ class ModuleBrowserViewController : UITableViewController {
             "VoltMeter",
             "History",
             "Waveform",
+            "Tuner",
             ]),
 
         Pack.init(title: "Experimental", modules: [

@@ -28,6 +28,9 @@
 		FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF074E8F22654F0C006B269C /* Utilities_Math.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
+		FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */; };
+		FF108F202270BC4800D1CD48 /* Notes_Reftone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */; };
+		FF108F222270CA2800D1CD48 /* Scopes_Tuner.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */; };
 		FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */; };
 		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
 		FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F162266A17B009073EE /* Experimental_Slop.xib */; };
@@ -173,6 +176,9 @@
 		FF074E8F22654F0C006B269C /* Utilities_Math.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Math.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
+		FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Scale.xib; sourceTree = "<group>"; };
+		FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Reftone.xib; sourceTree = "<group>"; };
+		FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_Tuner.xib; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_ShiftRegister.xib; sourceTree = "<group>"; };
 		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
 		FF288F162266A17B009073EE /* Experimental_Slop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Slop.xib; sourceTree = "<group>"; };
@@ -707,9 +713,11 @@
 			children = (
 				FFD2BF752247ED4E009BC6A0 /* Notes_SEQ.xib */,
 				FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */,
+				FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */,
 				FFFAAA10226785FE00DBE862 /* Notes_Semitones.xib */,
 				FF3FB0AA2268C2A800F2F00A /* Notes_Detune.xib */,
 				FFFAAA0E226785E200DBE862 /* Notes_Octave.xib */,
+				FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -948,6 +956,7 @@
 		FFBF3BB5225C429100F2C8F3 /* Scopes */ = {
 			isa = PBXGroup;
 			children = (
+				FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */,
 				FFF5163A225FB490003CFD43 /* Scopes_History.xib */,
 				FFBF3BB6225C429100F2C8F3 /* Scopes_Waveform.xib */,
 				FF977C7F225D91F8001F31BA /* Scopes_VoltMeter.xib */,
@@ -1030,6 +1039,7 @@
 				FFADB1D022683420003002CD /* Experimental_LRTVCO.xib in Resources */,
 				FFBF3BBB225CE45100F2C8F3 /* Simples_AttenOff.xib in Resources */,
 				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
+				FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
 				FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
@@ -1056,6 +1066,7 @@
 				FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */,
 				FF374AE42259598800E2EE8E /* compile in Resources */,
 				FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */,
+				FF108F202270BC4800D1CD48 /* Notes_Reftone.xib in Resources */,
 				FF374AE32259598800E2EE8E /* config.sub in Resources */,
 				FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
@@ -1064,6 +1075,7 @@
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
+				FF108F222270CA2800D1CD48 /* Scopes_Tuner.xib in Resources */,
 				FFBF3BB4225C3D9D00F2C8F3 /* Simples_Atten.xib in Resources */,
 				FF067E79225B9F6C00394B19 /* Simples_DC.xib in Resources */,
 				FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */,

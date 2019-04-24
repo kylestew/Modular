@@ -164,6 +164,14 @@ using namespace library;
     return _module->buffers[bufferId].circularIndex;
 }
 
+- (float)scaleForBufferId:(NSInteger)bufferId {
+    return _module->buffers[bufferId].scale;
+}
+
+- (float)offsetForBufferId:(NSInteger)bufferId {
+    return _module->buffers[bufferId].offset;
+}
+
 - (float)lightForLightId:(NSInteger)lightId {
     return _module->lights[lightId].value;
 }
