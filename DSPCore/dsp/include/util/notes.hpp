@@ -5,17 +5,45 @@
 
 namespace dsp {
 
+    const float referenceFrequency = 261.626; // C4; frequency at which Rack 1v/octave CVs are zero.
+    const float referenceSemitone = 60.0; // C4; value of C4 in semitones is arbitrary here, so have it match midi note numbers when rounded to integer.
+    const int referenceOctave = 4;
+    const float twelfthRootTwo = 1.0594630943592953;
+    const float logTwelfthRootTwo = logf(1.0594630943592953);
+
     ////////////////////
     // note to signal conversions
     ////////////////////
 
     /**
-     * Converts [-1 1] signal to note value
+     * Converts [-1 1] cv signal to note value
      */
-    inline float pitchToFreq(float pitch) {
-        return 261.626f * powf(2.0f, 5 * pitch);
+    inline float cvToFreq(float pitch) {
+        return referenceFrequency * powf(2.0f, 5 * pitch);
+    }
+    inline float freqToCV(float frequency) {
+        return log2f(frequency / referenceFrequency) / 5.f;
     }
 
+
+    inline float freqToSemitone(float frequency) {
+        return logf(frequency / referenceFrequency) / logTwelfthRootTwo + referenceSemitone;
+    }
+
+    inline float semitoneToFreq(float semitone) {
+        return powf(twelfthRootTwo, semitone - referenceSemitone) * referenceFrequency;
+    }
+
+
+    /*
+    inline float cvToSemitone(float cv) {
+        return freqToSemitone(cvToFrequency(cv));
+    }
+
+   inline float semitoneToCV(float semitone) {
+       return frequencyToCV(semitoneToFrequency(semitone));
+   }
+*/
 
 
     class detune {

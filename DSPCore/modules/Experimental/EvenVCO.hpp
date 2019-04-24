@@ -71,7 +71,7 @@ namespace library {
                 float pitchVpOCT = octave + tune;
                 // convert to internal pitch
                 float pitch = inputs[NOTE_INPUT].value + (pitchVpOCT * 0.2f);
-                float freq = pitchToFreq(pitch);
+                float freq = cvToFreq(pitch);
 
                 outputs[OUTPUT].value = freq;
 
