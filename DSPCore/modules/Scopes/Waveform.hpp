@@ -41,8 +41,8 @@ namespace library {
             SchmittTrigger resetTrigger;
 
             Waveform() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
-                options[X_SCALE_OPTION].states = 10;
-                options[Y_SCALE_OPTION].states = 10;
+                options[X_SCALE_OPTION].states = 12;
+                options[Y_SCALE_OPTION].states = 12;
 
                 buffers[X_BUFFER].setSize(SAMPLE_BUFFER_SIZE);
                 buffers[Y_BUFFER].setSize(SAMPLE_BUFFER_SIZE);
@@ -50,8 +50,8 @@ namespace library {
 
             void reset() override {
                 params[TIME_PARAM].setting = -0.333f;
-                options[X_SCALE_OPTION].value = 4;
-                options[Y_SCALE_OPTION].value = 4;
+                options[X_SCALE_OPTION].value = 3;
+                options[Y_SCALE_OPTION].value = 3;
                 params[X_OFFSET_PARAM].setting = 0.f;
                 params[Y_OFFSET_PARAM].setting = 0.f;
 
@@ -70,9 +70,9 @@ namespace library {
                 int frameCount = (int) ceilf(deltaTime * engineGetSampleRate());
 
                 // pass display helpers to buffer
-                buffers[X_INPUT].scale = rescale(options[X_SCALE_OPTION].value, 0, 9, 0.2, 2.0);
+                buffers[X_INPUT].scale = powf(1.2415, options[X_SCALE_OPTION].value) - 0.91;
                 buffers[X_INPUT].offset = params[X_OFFSET_PARAM].value;
-                buffers[Y_INPUT].scale = rescale(options[Y_SCALE_OPTION].value, 0, 9, 0.2, 2.0);
+                buffers[Y_INPUT].scale = powf(1.2415, options[Y_SCALE_OPTION].value) - 0.91;
                 buffers[Y_INPUT].offset = params[Y_OFFSET_PARAM].value;
 
                 // add sample to block

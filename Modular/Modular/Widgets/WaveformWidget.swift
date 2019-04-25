@@ -66,6 +66,8 @@ class WaveformWidget : UIControl, Buffer {
         yBase = yBase + yBase * -CGFloat(offset);
         let yScale = CGFloat(scale) * plotLayer.bounds.height / 2.0
 
+        print(scale)
+
         let path = UIBezierPath()
         var idx = circularIndex > -0 ? circularIndex : 0
         for i in 0..<samples.count {
