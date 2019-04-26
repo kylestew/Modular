@@ -24,6 +24,11 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
             fatalError("Patch must be assigned before showing view")
         }
 
+        self.scrollView.delegate = self
+        self.scrollView.decelerationRate = .normal
+        self.scrollView.addSubview(self.patch.masterContainerView)
+        self.scrollView.contentSize = self.patch.masterContainerView.bounds.size
+
         patch.open { [weak self] success in
             guard let self = self else { return }
             guard success == true else {
@@ -32,23 +37,11 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
                 return
             }
 
-            self.scrollView.delegate = self
-            self.scrollView.decelerationRate = .normal
-            self.scrollView.addSubview(self.patch.masterContainerView)
-            self.scrollView.contentSize = self.patch.masterContainerView.bounds.size
-
             self.setupObservers()
             self.setupGestures()
             self.prepareModuleList()
-        }
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-//        togglePowerMetering()
-        DispatchQueue.main.async { [weak self] in
-            self?.zoomCropping(animated: false)
+            self.zoomCropping(animated: false)
         }
     }
 

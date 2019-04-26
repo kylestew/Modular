@@ -66,8 +66,6 @@ class WaveformWidget : UIControl, Buffer {
         yBase = yBase + yBase * -CGFloat(offset);
         let yScale = CGFloat(scale) * plotLayer.bounds.height / 2.0
 
-        print(scale)
-
         let path = UIBezierPath()
         var idx = circularIndex > -0 ? circularIndex : 0
         for i in 0..<samples.count {
@@ -102,7 +100,7 @@ class WaveformWidget : UIControl, Buffer {
         gridLayer.strokeColor = WidgetColors.SUBLINE_COLOR.cgColor
 
         plotLayer.lineWidth = plotLineWidth
-        plotLayer.strokeColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
+        plotLayer.strokeColor = primary ? WidgetColors.VALUE_POSITIVE_COLOR.cgColor : WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
         plotLayer.fillColor = UIColor.clear.cgColor
         plotLayer.lineCap = .round
         plotLayer.lineJoin = .round

@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -220,24 +219,24 @@
                 <constraint firstItem="iab-xL-pU7" firstAttribute="width" secondItem="Xuk-YK-5Bz" secondAttribute="width" id="JwW-N7-7TO"/>
                 <constraint firstItem="Xg8-t3-Esk" firstAttribute="height" secondItem="3r6-Ia-dSy" secondAttribute="height" id="KY8-th-ncv"/>
                 <constraint firstItem="G8n-gz-6Vm" firstAttribute="bottom" secondItem="3r6-Ia-dSy" secondAttribute="bottom" constant="10" id="MwF-9W-cMM"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ghM-wy-knC" secondAttribute="trailing" constant="20" id="NTw-Sd-V0D"/>
+                <constraint firstAttribute="trailing" secondItem="ghM-wy-knC" secondAttribute="trailing" constant="20" id="NTw-Sd-V0D"/>
                 <constraint firstItem="cNN-sx-Zrq" firstAttribute="centerY" secondItem="CCY-a8-FVI" secondAttribute="centerY" id="Of2-AA-Kxn"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="S42-no-mg2" secondAttribute="bottom" constant="4" id="RHT-Vx-Qh5"/>
-                <constraint firstItem="CCY-a8-FVI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ZJa-2q-gDd"/>
+                <constraint firstAttribute="bottom" secondItem="S42-no-mg2" secondAttribute="bottom" constant="4" id="RHT-Vx-Qh5"/>
+                <constraint firstItem="CCY-a8-FVI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZJa-2q-gDd"/>
                 <constraint firstItem="G8n-gz-6Vm" firstAttribute="trailing" secondItem="3r6-Ia-dSy" secondAttribute="trailing" constant="20" id="aqz-Jc-5gs"/>
                 <constraint firstItem="iab-xL-pU7" firstAttribute="centerX" secondItem="Xuk-YK-5Bz" secondAttribute="centerX" id="b2x-Pf-Xlr"/>
                 <constraint firstItem="ghM-wy-knC" firstAttribute="width" secondItem="ghM-wy-knC" secondAttribute="height" multiplier="1:1" id="bPn-ZJ-TNL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="uET-Zh-NMw" secondAttribute="bottom" constant="4" id="dH4-QG-gbR"/>
+                <constraint firstAttribute="bottom" secondItem="uET-Zh-NMw" secondAttribute="bottom" constant="4" id="dH4-QG-gbR"/>
                 <constraint firstItem="G8n-gz-6Vm" firstAttribute="top" secondItem="3r6-Ia-dSy" secondAttribute="top" id="dej-82-Xtg"/>
                 <constraint firstItem="uET-Zh-NMw" firstAttribute="top" secondItem="3r6-Ia-dSy" secondAttribute="bottom" id="e7t-yi-Z5n"/>
                 <constraint firstItem="PKB-XZ-aQc" firstAttribute="centerX" secondItem="ghM-wy-knC" secondAttribute="centerX" id="eFJ-4l-j4O"/>
                 <constraint firstItem="3r6-Ia-dSy" firstAttribute="leading" secondItem="Xg8-t3-Esk" secondAttribute="trailing" constant="-6" id="eK5-AB-Veb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S42-no-mg2" secondAttribute="trailing" constant="10" id="fFN-1H-tIC"/>
+                <constraint firstAttribute="trailing" secondItem="S42-no-mg2" secondAttribute="trailing" constant="10" id="fFN-1H-tIC"/>
                 <constraint firstItem="cNN-sx-Zrq" firstAttribute="width" secondItem="cNN-sx-Zrq" secondAttribute="height" multiplier="1:1" id="g0K-p2-1Z3"/>
                 <constraint firstItem="cNN-sx-Zrq" firstAttribute="width" secondItem="cNN-sx-Zrq" secondAttribute="height" multiplier="1:1" id="g7V-We-gZt"/>
                 <constraint firstItem="Xg8-t3-Esk" firstAttribute="centerY" secondItem="3r6-Ia-dSy" secondAttribute="centerY" id="omw-9q-dyd"/>
                 <constraint firstItem="cNN-sx-Zrq" firstAttribute="leading" secondItem="CCY-a8-FVI" secondAttribute="trailing" constant="12" id="pmo-Yp-J5N"/>
-                <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="q8s-uK-OLC"/>
+                <constraint firstItem="CCY-a8-FVI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="q8s-uK-OLC"/>
                 <constraint firstItem="ghM-wy-knC" firstAttribute="width" secondItem="ghM-wy-knC" secondAttribute="height" multiplier="1:1" id="qss-Ay-oL1"/>
                 <constraint firstItem="3r6-Ia-dSy" firstAttribute="centerX" secondItem="cNN-sx-Zrq" secondAttribute="centerX" constant="5" id="rAQ-kl-wrj"/>
                 <constraint firstItem="Xuk-YK-5Bz" firstAttribute="centerX" secondItem="CCY-a8-FVI" secondAttribute="centerX" id="reC-FE-pGQ"/>
@@ -248,7 +247,6 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-566.39999999999998" y="-275.2623688155922"/>
         </view>
     </objects>
