@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6MZ-iy-IbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C16-8N-zHs">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Master Patch View Controller-->
         <scene sceneID="okb-3c-KB0">
             <objects>
-                <viewController id="6MZ-iy-IbI" customClass="ViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterPatchViewController" id="6MZ-iy-IbI" customClass="MasterPatchViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AVQ-Zm-3Hu">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,9 +33,9 @@
                                     <constraint firstAttribute="height" constant="50" id="udG-iy-umT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FontAwesome5Free-Solid" family="Font Awesome 5 Free" pointSize="20"/>
-                                <state key="normal" title="snowplow"/>
+                                <state key="normal" title="home"/>
                                 <connections>
-                                    <action selector="resetPatch:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="S3v-38-XTb"/>
+                                    <action selector="closePatch:" destination="6MZ-iy-IbI" eventType="touchUpInside" id="5Qb-P6-z0m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVI-XT-S9E">
@@ -228,6 +228,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Au-6H-sso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="-781"/>
+        </scene>
+        <!--Document Browser View Controller-->
+        <scene sceneID="kZJ-di-DaA">
+            <objects>
+                <viewController id="C16-8N-zHs" customClass="DocumentBrowserViewController" customModule="Modular" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jC4-jm-l1Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9z0-Op-CTM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D46-Kk-Efi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="37"/>
         </scene>
     </scenes>
 </document>

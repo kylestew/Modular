@@ -7,9 +7,9 @@ import UIKit
  + Top level gestures for module widgets (move, zoom)
  + Menu based actions
  */
-class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
+class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
-    var patch: Patch!
+    var patch: PatchViewModel!
 
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -20,19 +20,27 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // load patch from disk
-        patch = Patch.init(with: Patch.tempStorageUrl())
-//        patch = Patch.init()
-        assert(patch != nil)
+        guard patch != nil else {
+            fatalError("Patch must be assigned before showing view")
+        }
 
-        scrollView.delegate = self
-        scrollView.decelerationRate = .normal
-        scrollView.addSubview(patch.masterContainerView)
-        scrollView.contentSize = patch.masterContainerView.bounds.size
+        patch.open { [weak self] success in
+            guard let self = self else { return }
+            guard success == true else {
+                assert(false, "Could not prepare patch")
+                self.dismiss(animated: true)
+                return
+            }
 
-        setupObservers()
-        setupGestures()
-        prepareModuleList()
+            self.scrollView.delegate = self
+            self.scrollView.decelerationRate = .normal
+            self.scrollView.addSubview(self.patch.masterContainerView)
+            self.scrollView.contentSize = self.patch.masterContainerView.bounds.size
+
+            self.setupObservers()
+            self.setupGestures()
+            self.prepareModuleList()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -72,28 +80,12 @@ class ViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDeleg
         selectedWidgetObservation = nil
     }
 
-    @IBAction func resetPatch(_ sender: Any) {
-        let alert = UIAlertController(title: "Clear Patch?", message: "Clear patch and start over?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive) { [weak self] _ in
+    @IBAction func closePatch(_ sender: Any) {
+        patch.close { [weak self] success in
             self?.teardownObservers()
-
-            // HACK: recycle DSP engine
-            self?.patch.destroy()
             self?.patch = nil
-
-            self?.patch = Patch.init()
-            if let view = self?.patch.masterContainerView {
-                self?.scrollView.addSubview(view)
-            }
-            self?.setupObservers()
-            self?.patch.saveToDisk()
-
-            DispatchQueue.main.async { [weak self] in
-                self?.zoomCropping(animated: false)
-            }
-        })
-        self.present(alert, animated: true, completion: nil)
+            self?.dismiss(animated: true)
+        }
     }
 
     @IBAction func displayModuleList(_ sender: UIButton) {
