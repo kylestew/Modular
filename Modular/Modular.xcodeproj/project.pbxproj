@@ -28,6 +28,7 @@
 		FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF074E8F22654F0C006B269C /* Utilities_Math.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
+		FF105F202273973400A237E3 /* Untitled.modpatch in Resources */ = {isa = PBXBuildFile; fileRef = FF105F1F2273973400A237E3 /* Untitled.modpatch */; };
 		FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */; };
 		FF108F202270BC4800D1CD48 /* Notes_Reftone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */; };
 		FF108F222270CA2800D1CD48 /* Scopes_Tuner.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */; };
@@ -177,6 +178,7 @@
 		FF074E8F22654F0C006B269C /* Utilities_Math.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Math.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
+		FF105F1F2273973400A237E3 /* Untitled.modpatch */ = {isa = PBXFileReference; lastKnownFileType = text; path = Untitled.modpatch; sourceTree = "<group>"; };
 		FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Scale.xib; sourceTree = "<group>"; };
 		FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Reftone.xib; sourceTree = "<group>"; };
 		FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_Tuner.xib; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 				FF39CC35220F8A2C00C9AF52 /* Info.plist */,
 				FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */,
 				FF2CEDE42261522B00396DBC /* fa.otf */,
+				FF105F1F2273973400A237E3 /* Untitled.modpatch */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -1074,6 +1077,7 @@
 				FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
 				FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */,
+				FF105F202273973400A237E3 /* Untitled.modpatch in Resources */,
 				FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */,
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,

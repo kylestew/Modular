@@ -21,30 +21,11 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
 
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        // create a new empty document and save it to temp space, then copy it into place
-        let doc = PatchDocument()
-        let url = doc.fileURL
-        doc.save(to: url, for: .forCreating) { (saveSuccess) in
-            guard saveSuccess else {
-                os_log("*** Unable to create a new document. ***", log: OSLog.default, type: .error)
-
-                // Cancel document creation.
-                importHandler(nil, .none)
-                return
-            }
-
-            doc.close(completionHandler: { (closeSuccess) in
-                guard closeSuccess else {
-                    os_log("*** Unable to create a new document. ***", log: OSLog.default, type: .error)
-
-                    // Cancel document creation.
-                    importHandler(nil, .none)
-                    return
-                }
-
-                // Pass the document's temporary URL to the import handler.
-                importHandler(url, .move)
-            })
+        let newDocumentURL: URL? = Bundle.main.url(forResource: "Untitled", withExtension: "modpatch")
+        if newDocumentURL != nil {
+            importHandler(newDocumentURL, .copy)
+        } else {
+            importHandler(nil, .none)
         }
     }
 

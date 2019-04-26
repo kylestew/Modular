@@ -49,18 +49,7 @@ class PatchDocument: UIDocument {
 
     var wireRegister: WireRegister?
     var widgetsView: UIView?
-    var patchDelegate: PatchDelegate?
-
-    override init(fileURL url: URL) {
-        super.init(fileURL: url)
-    }
-
-    init() {
-        let tempDir = FileManager.default.temporaryDirectory
-        let url = tempDir.appendingPathComponent("Untitled.modpatch")
-
-        super.init(fileURL: url)
-    }
+    weak var patchDelegate: PatchDelegate?
 
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         guard let data = contents as? Data else {

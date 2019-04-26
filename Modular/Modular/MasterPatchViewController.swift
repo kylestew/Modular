@@ -46,7 +46,7 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        togglePowerMetering()
+//        togglePowerMetering()
         DispatchQueue.main.async { [weak self] in
             self?.zoomCropping(animated: false)
         }
@@ -83,7 +83,6 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
     @IBAction func closePatch(_ sender: Any) {
         patch.close { [weak self] success in
             self?.teardownObservers()
-            self?.patch = nil
             self?.dismiss(animated: true)
         }
     }
@@ -180,7 +179,6 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
             guard let patch = self?.patch else { return }
             let cpuTime = patch.getEngineCPUTimeMS()
             self?.cpuUsageLabel.text = String(format: "%.0f%%", Double(cpuTime) / 10.0)
-//            self?.cpuUsageLabel.text = String(format: "%dms %.0f%%", Int(cpuTime), Double(cpuTime) / 10.0)
         }
         cpuUsageLabel.isHidden = false
     }
