@@ -16,7 +16,7 @@ namespace library {
             };
             enum InputIds {
                 IN_INPUT,
-                GATE_INPUT,
+                TRIGGER_INPUT,
                 NUM_INPUTS
             };
             enum OutputIds {
@@ -48,7 +48,7 @@ namespace library {
             }
 
             void step() override {
-                if (trigger.process(inputs[GATE_INPUT].value + options[TRIGGER_OPTION].value)) {
+                if (trigger.process(inputs[TRIGGER_INPUT].value + options[TRIGGER_OPTION].value)) {
                     if (inputs[IN_INPUT].active) {
                         value = inputs[IN_INPUT].value;
                     } else {
