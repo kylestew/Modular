@@ -5,13 +5,11 @@ class ToggleWidget : UIControl, Option {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        setupIX()
         setupUI()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        setupIX()
         setupUI()
     }
 
@@ -20,6 +18,11 @@ class ToggleWidget : UIControl, Option {
     @IBInspectable var value: Int = 0 {
         didSet {
             updateToggle()
+        }
+    }
+    @IBInspectable var vertical: Bool = false {
+        didSet {
+            setNeedsLayout()
         }
     }
 
@@ -51,25 +54,49 @@ class ToggleWidget : UIControl, Option {
     }
 
     private func updateToggle() {
-        var xPos: CGFloat
-        if value == 0 {
-            toggleLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
-            xPos = TRACK_HEIGHT / 2.0
+        if vertical {
+            var yPos: CGFloat
+            if value == 0 {
+                toggleLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+                yPos = trackLayer.bounds.height - TRACK_HEIGHT / 2.0
+            } else {
+                toggleLayer.fillColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
+                yPos = TRACK_HEIGHT / 2.0
+            }
+            toggleLayer.position = CGPoint(x: trackLayer.bounds.width / 2.0, y: yPos)
         } else {
-            toggleLayer.fillColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
-            xPos = trackLayer.bounds.width - TRACK_HEIGHT / 2.0
+            var xPos: CGFloat
+            if value == 0 {
+                toggleLayer.fillColor = WidgetColors.VALUE_NEGATIVE_COLOR.cgColor
+                xPos = TRACK_HEIGHT / 2.0
+            } else {
+                toggleLayer.fillColor = WidgetColors.VALUE_POSITIVE_COLOR.cgColor
+                xPos = trackLayer.bounds.width - TRACK_HEIGHT / 2.0
+            }
+            toggleLayer.position = CGPoint(x: xPos, y: trackLayer.bounds.height / 2.0)
         }
-
-        toggleLayer.position = CGPoint(x: xPos, y: trackLayer.bounds.height / 2.0)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        var rect = CGRect(x: bounds.width / 2 - TRACK_WIDTH / 2,
-                          y: bounds.height / 2 - TRACK_HEIGHT / 2,
-                          width: TRACK_WIDTH,
-                          height: TRACK_HEIGHT)
+        var rect: CGRect
+        if vertical {
+
+            rect = CGRect(x: bounds.width / 2 - TRACK_HEIGHT / 2,
+                              y: bounds.height / 2 - TRACK_WIDTH / 2,
+                              width: TRACK_HEIGHT,
+                              height: TRACK_WIDTH)
+
+        } else {
+
+            rect = CGRect(x: bounds.width / 2 - TRACK_WIDTH / 2,
+                              y: bounds.height / 2 - TRACK_HEIGHT / 2,
+                              width: TRACK_WIDTH,
+                              height: TRACK_HEIGHT)
+
+        }
+
         trackLayer.frame = rect
         rect.origin = CGPoint.zero
         let cornerRad = TRACK_HEIGHT / 2.0

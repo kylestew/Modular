@@ -22,6 +22,7 @@ namespace library { namespace primes {
             FREQ_CV,
             AMP_CV,
             PWM_CV,
+            SYNC_INPUT,
             NUM_INPUTS
         };
         enum OutputIds {
@@ -86,6 +87,7 @@ namespace library { namespace primes {
             oscillator.setPulseWidth(pw);
             oscillator.invert = invert == 1 ? true : false;
             oscillator.process(engineGetSampleTime());
+            oscillator.setReset(inputs[SYNC_INPUT].value);
 
             float output = 0.f;
             switch (waveform) {

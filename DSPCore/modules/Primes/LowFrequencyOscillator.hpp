@@ -8,6 +8,7 @@ struct LowFrequencyOscillator {
     float pw = 0.5f;
     float freq = 1.0f;
     bool invert = false;
+    SchmittTrigger resetTrigger;
 
     LowFrequencyOscillator() {}
 
@@ -21,6 +22,11 @@ struct LowFrequencyOscillator {
     void setPulseWidth(float pw_) {
         const float pwMin = 0.01f;
         pw = clamp(rescale(pw_, -1.f, 1.f, 0.f, 1.f), pwMin, 1.0f - pwMin);
+    }
+    void setReset(float reset) {
+        if (resetTrigger.process(reset / 0.01f)) {
+            phase = 0.f;
+        }
     }
 
     void process(float dt) {
