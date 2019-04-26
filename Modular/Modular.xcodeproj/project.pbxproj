@@ -28,11 +28,11 @@
 		FF074E9022654F0D006B269C /* Utilities_Math.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF074E8F22654F0C006B269C /* Utilities_Math.xib */; };
 		FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC22249240400D9FBCC /* PowerMeter.swift */; };
 		FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */; };
+		FF105F202273973400A237E3 /* Untitled.modpatch in Resources */ = {isa = PBXBuildFile; fileRef = FF105F1F2273973400A237E3 /* Untitled.modpatch */; };
 		FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */; };
 		FF108F202270BC4800D1CD48 /* Notes_Reftone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */; };
 		FF108F222270CA2800D1CD48 /* Scopes_Tuner.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */; };
 		FF2514D52246C43900FD1D44 /* Utilities_ShiftRegister.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */; };
-		FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2780E02249895500B300F8 /* PatchStorage.swift */; };
 		FF288F172266A17B009073EE /* Experimental_Slop.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F162266A17B009073EE /* Experimental_Slop.xib */; };
 		FF288F192266D452009073EE /* Experimental_Plateau.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF288F182266D452009073EE /* Experimental_Plateau.xib */; };
 		FF28A7E2225D2464006AEEE6 /* Utilities_S&H.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */; };
@@ -58,7 +58,7 @@
 		FF374B1F2259598800E2EE8E /* Makefile.in in Resources */ = {isa = PBXBuildFile; fileRef = FF374AC22259598800E2EE8E /* Makefile.in */; };
 		FF374B202259598800E2EE8E /* check_asm.sh in Resources */ = {isa = PBXBuildFile; fileRef = FF374AC42259598800E2EE8E /* check_asm.sh */; };
 		FF39CC2A220F8A2B00C9AF52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */; };
-		FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */; };
+		FF39CC2C220F8A2B00C9AF52 /* MasterPatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39CC2B220F8A2B00C9AF52 /* MasterPatchViewController.swift */; };
 		FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC2D220F8A2B00C9AF52 /* Main.storyboard */; };
 		FF39CC31220F8A2C00C9AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */; };
 		FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF39CC32220F8A2C00C9AF52 /* LaunchScreen.storyboard */; };
@@ -75,6 +75,7 @@
 		FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */; };
 		FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
+		FF4E6AB4227214ED006FCEEB /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E6AB3227214ED006FCEEB /* DocumentBrowserViewController.swift */; };
 		FF513B432248422400C24F98 /* Primes_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Primes_ADSR.xib */; };
 		FF52301E2261537A003ECB43 /* fa.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF2CEDE42261522B00396DBC /* fa.otf */; };
 		FF52302022616679003ECB43 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52301F22616679003ECB43 /* Observable.swift */; };
@@ -91,7 +92,7 @@
 		FF78C9CC226836F300D8751C /* DSPMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C9B2226836F300D8751C /* DSPMath.cpp */; };
 		FF78C9D1226836F300D8751C /* Oscillator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF78C9BA226836F300D8751C /* Oscillator.cpp */; };
 		FF90CBD7222C62A400263593 /* ParamWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90CBD6222C62A400263593 /* ParamWidget.swift */; };
-		FF977086221CCD52002283E2 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* Patch.swift */; };
+		FF977086221CCD52002283E2 /* PatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF977085221CCD52002283E2 /* PatchViewModel.swift */; };
 		FF977C77225D7F90001F31BA /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF977C63225D7F90001F31BA /* CMakeLists.txt */; };
 		FF977C78225D7F90001F31BA /* library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF977C6B225D7F90001F31BA /* library.cpp */; };
 		FF977C7A225D821B001F31BA /* Utilities_Trig->Gate.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF977C79225D821B001F31BA /* Utilities_Trig->Gate.xib */; };
@@ -106,6 +107,7 @@
 		FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A460422480ACE004F9765 /* LightWidget.swift */; };
 		FF9BD92C224494F6008277EE /* Primes_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Primes_Delay.xib */; };
 		FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */; };
+		FFAB6DE7227274F70044B7EA /* PatchDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB6DE6227274F70044B7EA /* PatchDocument.swift */; };
 		FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CB2267E442003002CD /* Utilities_Demux.xib */; };
 		FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CD22682A41003002CD /* Utilities_Mux.xib */; };
 		FFADB1D022683420003002CD /* Experimental_LRTVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */; };
@@ -176,11 +178,11 @@
 		FF074E8F22654F0C006B269C /* Utilities_Math.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Math.xib; sourceTree = "<group>"; };
 		FF0D8EC22249240400D9FBCC /* PowerMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerMeter.swift; sourceTree = "<group>"; };
 		FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMeterWidget.swift; sourceTree = "<group>"; };
+		FF105F1F2273973400A237E3 /* Untitled.modpatch */ = {isa = PBXFileReference; lastKnownFileType = text; path = Untitled.modpatch; sourceTree = "<group>"; };
 		FF108F1D227023CD00D1CD48 /* Notes_Scale.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Scale.xib; sourceTree = "<group>"; };
 		FF108F1F2270BC4800D1CD48 /* Notes_Reftone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Reftone.xib; sourceTree = "<group>"; };
 		FF108F212270CA2800D1CD48 /* Scopes_Tuner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Scopes_Tuner.xib; sourceTree = "<group>"; };
 		FF2514D42246C43900FD1D44 /* Utilities_ShiftRegister.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_ShiftRegister.xib; sourceTree = "<group>"; };
-		FF2780E02249895500B300F8 /* PatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStorage.swift; sourceTree = "<group>"; };
 		FF288F162266A17B009073EE /* Experimental_Slop.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Slop.xib; sourceTree = "<group>"; };
 		FF288F182266D452009073EE /* Experimental_Plateau.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Plateau.xib; sourceTree = "<group>"; };
 		FF28A7E1225D2464006AEEE6 /* Utilities_S&H.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Utilities_S&H.xib"; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		FF374AC42259598800E2EE8E /* check_asm.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = check_asm.sh; sourceTree = "<group>"; };
 		FF39CC26220F8A2B00C9AF52 /* Modular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF39CC2B220F8A2B00C9AF52 /* MasterPatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPatchViewController.swift; sourceTree = "<group>"; };
 		FF39CC2E220F8A2B00C9AF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF39CC33220F8A2C00C9AF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_EvenVCO.xib; sourceTree = "<group>"; };
 		FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Primes_VCO-1.xib"; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
+		FF4E6AB3227214ED006FCEEB /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		FF513B422248422300C24F98 /* Primes_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_ADSR.xib; sourceTree = "<group>"; };
 		FF52301F22616679003ECB43 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FF52302122617B58003ECB43 /* Utilities_Slew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Slew.xib; sourceTree = "<group>"; };
@@ -285,7 +288,7 @@
 		FF78C9B3226836F300D8751C /* DSPEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DSPEffect.hpp; sourceTree = "<group>"; };
 		FF78C9BA226836F300D8751C /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
 		FF90CBD6222C62A400263593 /* ParamWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamWidget.swift; sourceTree = "<group>"; };
-		FF977085221CCD52002283E2 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
+		FF977085221CCD52002283E2 /* PatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchViewModel.swift; sourceTree = "<group>"; };
 		FF977C42225D7F8F001F31BA /* VCO1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO1.hpp; sourceTree = "<group>"; };
 		FF977C43225D7F8F001F31BA /* VCO2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO2.hpp; sourceTree = "<group>"; };
 		FF977C44225D7F8F001F31BA /* Primes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Primes.hpp; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 		FF9A460422480ACE004F9765 /* LightWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
 		FF9BD92B224494F6008277EE /* Primes_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_Delay.xib; sourceTree = "<group>"; };
 		FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Quantizer.xib; sourceTree = "<group>"; };
+		FFAB6DE6227274F70044B7EA /* PatchDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchDocument.swift; sourceTree = "<group>"; };
 		FFADB1CB2267E442003002CD /* Utilities_Demux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Demux.xib; sourceTree = "<group>"; };
 		FFADB1CD22682A41003002CD /* Utilities_Mux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Mux.xib; sourceTree = "<group>"; };
 		FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_LRTVCO.xib; sourceTree = "<group>"; };
@@ -572,7 +576,8 @@
 				FF4BEA6022164F35004E9D0B /* Modules */,
 				FF5DC860221F64AC0018AC42 /* Core */,
 				FFDE9AA7222A3CFF00F061B1 /* ModuleBrowserViewController.swift */,
-				FF39CC2B220F8A2B00C9AF52 /* ViewController.swift */,
+				FF39CC2B220F8A2B00C9AF52 /* MasterPatchViewController.swift */,
+				FF4E6AB3227214ED006FCEEB /* DocumentBrowserViewController.swift */,
 				FF39CC2D220F8A2B00C9AF52 /* Main.storyboard */,
 				FF39CC29220F8A2B00C9AF52 /* AppDelegate.swift */,
 				FF39CC30220F8A2C00C9AF52 /* Assets.xcassets */,
@@ -580,6 +585,7 @@
 				FF39CC35220F8A2C00C9AF52 /* Info.plist */,
 				FF39CC7B220F925A00C9AF52 /* Modular-Bridging-Header.h */,
 				FF2CEDE42261522B00396DBC /* fa.otf */,
+				FF105F1F2273973400A237E3 /* Untitled.modpatch */,
 			);
 			path = Modular;
 			sourceTree = "<group>";
@@ -764,8 +770,8 @@
 		FF5DC860221F64AC0018AC42 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FF977085221CCD52002283E2 /* Patch.swift */,
-				FF2780E02249895500B300F8 /* PatchStorage.swift */,
+				FF977085221CCD52002283E2 /* PatchViewModel.swift */,
+				FFAB6DE6227274F70044B7EA /* PatchDocument.swift */,
 				FFCA57C9222912C600881D8B /* WireRegister.swift */,
 				FF70597C222904BB00C6268E /* Param.swift */,
 				FFB178F7222D96B000DF019A /* Wireable.swift */,
@@ -1071,6 +1077,7 @@
 				FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */,
 				FF374AE02259598800E2EE8E /* config.guess in Resources */,
 				FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */,
+				FF105F202273973400A237E3 /* Untitled.modpatch in Resources */,
 				FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */,
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,
@@ -1149,7 +1156,6 @@
 				FF074E8A22654CBE006B269C /* math.cpp in Sources */,
 				FF074E8922654CBE006B269C /* table.cpp in Sources */,
 				FF374B192259598800E2EE8E /* src_sinc.c in Sources */,
-				FF2780E12249895500B300F8 /* PatchStorage.swift in Sources */,
 				FF7059792228D4A300C6268E /* IXWidget.swift in Sources */,
 				FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */,
 				FF98BE1722124B070028740B /* WireWrapper.mm in Sources */,
@@ -1164,7 +1170,7 @@
 				FF3FD7D52266DB9800AEEFC9 /* OTAFilter.cpp in Sources */,
 				FF074E8C22654CBE006B269C /* filter.cpp in Sources */,
 				FF98BE13221244C60028740B /* ModuleWrapper.mm in Sources */,
-				FF977086221CCD52002283E2 /* Patch.swift in Sources */,
+				FF977086221CCD52002283E2 /* PatchViewModel.swift in Sources */,
 				FFCA57CA222912C600881D8B /* WireRegister.swift in Sources */,
 				FF29C6582215C282004F4991 /* KnobWidget.swift in Sources */,
 				FF0D8EC32249240400D9FBCC /* PowerMeter.swift in Sources */,
@@ -1172,6 +1178,7 @@
 				FF074E8522654CBE006B269C /* string.cpp in Sources */,
 				FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */,
 				FF074E8722654CBE006B269C /* audio.cpp in Sources */,
+				FFAB6DE7227274F70044B7EA /* PatchDocument.swift in Sources */,
 				FF0D8EC52249248E00D9FBCC /* PowerMeterWidget.swift in Sources */,
 				FF35D4EA221B37050024D5CA /* PortWidget.swift in Sources */,
 				FF78C9C1226836F300D8751C /* LadderFilter.cpp in Sources */,
@@ -1180,7 +1187,7 @@
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
 				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
 				FF074E8E22654CBE006B269C /* minblep.cpp in Sources */,
-				FF39CC2C220F8A2B00C9AF52 /* ViewController.swift in Sources */,
+				FF39CC2C220F8A2B00C9AF52 /* MasterPatchViewController.swift in Sources */,
 				FF9A460522480ACE004F9765 /* LightWidget.swift in Sources */,
 				FF78C9D1226836F300D8751C /* Oscillator.cpp in Sources */,
 				FF9A460322480933004F9765 /* Light.swift in Sources */,
@@ -1198,6 +1205,7 @@
 				FFE3A006221C689400960453 /* WireWidget.swift in Sources */,
 				FF39CC2A220F8A2B00C9AF52 /* AppDelegate.swift in Sources */,
 				FF3FC95C2210F4B500496378 /* DSPCore.mm in Sources */,
+				FF4E6AB4227214ED006FCEEB /* DocumentBrowserViewController.swift in Sources */,
 				FF074E8422654CBE006B269C /* asset.cpp in Sources */,
 				FFB178F8222D96B000DF019A /* Wireable.swift in Sources */,
 				FF977C78225D7F90001F31BA /* library.cpp in Sources */,

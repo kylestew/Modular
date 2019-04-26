@@ -11,7 +11,7 @@ protocol PatchDelegate: class {
     func patchDidChange()
 }
 
-class Patch: PatchDelegate {
+class PatchViewModel: PatchDelegate {
 
     private let core = DSPCore()
 
@@ -22,7 +22,7 @@ class Patch: PatchDelegate {
 
     private static let size: CGSize = CGSize(width: 10_000, height: 10_000)
     private var center: CGPoint = {
-        return CGPoint(x: Patch.size.width / 2.0, y: Patch.size.height / 2.0)
+        return CGPoint(x: PatchViewModel.size.width / 2.0, y: PatchViewModel.size.height / 2.0)
     }()
 
     /**
@@ -36,7 +36,7 @@ class Patch: PatchDelegate {
         let wiresView = wireRegister.view
         wireRegister.patchDelegate = self
 
-        let rect = CGRect(origin: .zero, size: Patch.size)
+        let rect = CGRect(origin: .zero, size: PatchViewModel.size)
         masterContainerView.frame = rect
         wiresView.frame = rect
         widgetsView.frame = rect
@@ -46,7 +46,7 @@ class Patch: PatchDelegate {
         isPowerMetering.value = core.isPowerMetering
     }
 
-    func destroy() {
+    private func destroy() {
         // shut down all widgets (they still have display link to destroy)
         for widget in widgetsView.subviews {
             if let widget = widget as? ModuleWidget {
@@ -65,59 +65,46 @@ class Patch: PatchDelegate {
         core.destroy()
     }
 
+    // MARK: - Serialize/De
+
+    var document: PatchDocument?
+
+    func open(completion: @escaping (Bool) -> (Void)) {
+        guard let doc = document else {
+            completion(true)
+            return
+        }
+
+        // document needs to handles to data storage in the patch
+        doc.wireRegister = wireRegister
+        doc.patchDelegate = self
+        doc.widgetsView = widgetsView
+
+        doc.open { success in
+            assert(success, "Could not open document")
+            completion(success)
+        }
+    }
+
+    func close(completion: @escaping (Bool) -> (Void)) {
+        guard let doc = document else {
+            destroy()
+            completion(true)
+            return
+        }
+
+        doc.close { [weak self] success in
+            self?.destroy()
+            completion(success)
+        }
+    }
+
     func patchDidChange() {
         saveToDisk()
     }
 
-    // MARK: - Serialize/De
-
-    static func tempStorageUrl() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory.appendingPathComponent("temp").appendingPathExtension("mod")
-    }
-
-    convenience init?(with url: URL) {
-        do {
-            let data = try Data.init(contentsOf: Patch.tempStorageUrl())
-            let jsonDecoder = JSONDecoder()
-            let patchState = try jsonDecoder.decode(PatchState.self, from: data)
-
-            self.init()
-
-            // load patch into UI
-            let loader = PatchLoader.init(with: patchState, wireRegister: wireRegister, patchDelegate: self)
-            loader.loadModules(into: widgetsView)
-            loader.loadWires()
-        } catch {
-            return nil
-        }
-    }
-
     func saveToDisk() {
-        let moduleStates: [ModuleState] = widgetsView.subviews.compactMap { view in
-            if let widgetView = view as? ModuleWidget {
-                return widgetView.moduleState()
-            }
-            return nil
-        }
-        let wireStates: [WireState] = wireRegister.view.subviews.compactMap { view in
-            if let wireView = view as? WireWidget {
-                return wireView.wireState()
-            }
-            return nil
-        }
-
-        let state = PatchState.init(modules: moduleStates, wires: wireStates)
-        do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(state)
-
-            let url = Patch.tempStorageUrl()
-            try jsonData.write(to: url)
-        } catch {
-            assert(false, "Could not serialize patch")
-        }
+        document?.updateChangeCount(.done)
     }
 
     // MARK: - Module Add/Remove
