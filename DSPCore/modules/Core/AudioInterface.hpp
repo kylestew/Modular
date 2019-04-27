@@ -29,6 +29,9 @@ namespace library { namespace core {
 
         AudioInterface() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_FRAMES) {
             gAudioIO->openStream();
+
+            // don't record time on this module since it pauses the CPU to wait for ring buffer ops
+            hasPowerMeter = false;
         }
 
         void step() override {

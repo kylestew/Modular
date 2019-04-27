@@ -39,7 +39,6 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
 
             self.setupObservers()
             self.setupGestures()
-            self.prepareModuleList()
 
             self.zoomCropping(animated: false)
         }
@@ -106,51 +105,73 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
 
     // MARK: - Module List
 
-    @IBOutlet weak var modulesListView: UIView!
+    @IBOutlet weak var modulesListViewContainer: UIView!
     @IBOutlet weak var modulesListViewTrailingConstraint: NSLayoutConstraint!
 
-    private func prepareModuleList() {
+    lazy private var moduleBrowserVC: ModuleBrowserViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let packBrowserVC = storyboard.instantiateViewController(withIdentifier: "packBrowser") as! ModuleBrowserViewController
         packBrowserVC.delegate = self
-
-        let vc = UINavigationController.init(rootViewController: packBrowserVC)
-
-        addChild(vc)
-        modulesListView.addSubview(vc.view)
-
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-
-        let constraints = [
-            modulesListView.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor),
-            modulesListView.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor),
-            modulesListView.topAnchor.constraint(equalTo: vc.view.topAnchor),
-            modulesListView.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor)
-        ]
-
-        NSLayoutConstraint.activate(constraints)
-
-        vc.didMove(toParent: self)
-    }
+        return packBrowserVC
+    }()
 
     private func openModuleList() {
-        UIView.animate(withDuration: 0.333) {
-            self.modulesListViewTrailingConstraint.constant = 0
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact {
+            let navC = UINavigationController.init(rootViewController: moduleBrowserVC)
+            present(navC, animated: true)
+        } else {
+            if modulesListViewContainer.subviews.count == 0 {
+                // embed module list VC before displaying
+                let vc = UINavigationController.init(rootViewController: moduleBrowserVC)
+                addChild(vc)
+                modulesListViewContainer.addSubview(vc.view)
+
+                vc.view.translatesAutoresizingMaskIntoConstraints = false
+
+                let constraints = [
+                    modulesListViewContainer.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor),
+                    modulesListViewContainer.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor),
+                    modulesListViewContainer.topAnchor.constraint(equalTo: vc.view.topAnchor),
+                    modulesListViewContainer.bottomAnchor.constraint(equalTo: vc.view.bottomAnchor)
+                ]
+
+                NSLayoutConstraint.activate(constraints)
+
+                vc.didMove(toParent: self)
+            }
+
             self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.333) {
+                self.modulesListViewTrailingConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
         }
     }
 
     private func closeModuleList() {
-        let width = modulesListView.frame.width
-        UIView.animate(withDuration: 0.333) {
-            self.modulesListViewTrailingConstraint.constant = -width
-            self.view.layoutIfNeeded()
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact {
+            dismiss(animated: true)
+        } else {
+            let width = modulesListViewContainer.frame.width
+            UIView.animate(withDuration: 0.333) {
+                self.modulesListViewTrailingConstraint.constant = -width
+                self.view.layoutIfNeeded()
+
+            }
+
+            // close keyboard if search is up
+            moduleBrowserVC.searchController.searchBar.resignFirstResponder()
         }
     }
 
     func moduleBrowserDidSelect(pack: String, slug: String) {
         let rect = scrollView.convert(scrollView.bounds, to: patch.masterContainerView)
         _ = patch.addModule(pack: pack, slug: slug, inRect: rect)
+
+        if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact {
+            // iPhone - dismiss after selection since it takes up entire view
+            dismiss(animated: true)
+        }
     }
 
     func moduleBrowserWantsToClose() {
@@ -225,8 +246,10 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
         } else {
             patch.deselectWidgets()
 
-            // close module list if open
-            closeModuleList()
+            if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular {
+                // close module list if open
+                closeModuleList()
+            }
         }
     }
 

@@ -36,7 +36,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>test</string>
+	<string>Modular needs access to audio inputs if you want to send sound to it</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fa.otf</string>

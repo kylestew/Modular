@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="actionsView" destination="C3o-Il-14s" id="BOY-Yf-8ji"/>
                         <outlet property="cpuUsageLabel" destination="dod-mX-aQ6" id="euF-8m-wvk"/>
-                        <outlet property="modulesListView" destination="aYv-yV-19r" id="Reb-7k-oST"/>
+                        <outlet property="modulesListViewContainer" destination="aYv-yV-19r" id="Lgx-SF-dND"/>
                         <outlet property="modulesListViewTrailingConstraint" destination="t4V-XV-ann" id="hTX-iv-TLX"/>
                         <outlet property="powerMeteringButton" destination="ByH-hL-ViJ" id="V7X-ck-vOU"/>
                         <outlet property="scrollView" destination="LlU-U0-kIa" id="R2d-Uv-bJD"/>

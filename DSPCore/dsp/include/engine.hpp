@@ -108,6 +108,7 @@ namespace dsp {
         std::vector<Label> labels;
         std::vector<SampleBuffer> buffers;
 
+        bool hasPowerMeter = true;
         float cpuTime = 0.f;
 
         Module() {}
@@ -136,13 +137,6 @@ namespace dsp {
          * Advances the module by 1 audio frame with duration 1.0 / gSampleRate
          */
         virtual void step() {}
-
-        /**
-         * Serialization methods to store and restore from disk.
-         */
-        // TODO: implement
-//        virtual void serialize();
-//        virtual void deserialize();
     };
 
     /** does not own pointers */

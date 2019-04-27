@@ -82,7 +82,7 @@ namespace dsp {
 
             // step module
             std::chrono::high_resolution_clock::time_point startTime;
-            if (gPowerMeter) {
+            if (gPowerMeter && module->hasPowerMeter) {
                 startTime = std::chrono::high_resolution_clock::now();
 
                 module->step();
@@ -136,7 +136,6 @@ namespace dsp {
 
         while (running) {
             vipMutex.wait();
-
 
             if (!gPaused) {
                 if (gPowerMeter) {

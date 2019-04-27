@@ -79,7 +79,7 @@ using namespace library;
 }
 
 - (int)cpuTime {
-    if (gPowerMeter) {
+    if (gPowerMeter && _module->hasPowerMeter) {
         return (int)(_module->cpuTime * 1000.f);
     }
     return -1;

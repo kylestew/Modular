@@ -15,11 +15,11 @@ protocol ModuleBrowserDelegate: class {
     func moduleBrowserWantsToClose()
 }
 
-class ModuleBrowserViewController : UITableViewController {
+class ModuleBrowserViewController : UITableViewController, UISearchResultsUpdating {
 
     weak var delegate: ModuleBrowserDelegate?
 
-    let library: [Pack] = [
+    static let library: [Pack] = [
         Pack.init(title: "Core", modules: [
             "AudioInterface",
             ]),
@@ -84,14 +84,27 @@ class ModuleBrowserViewController : UITableViewController {
         Pack.init(title: "Experimental", modules: [
             "EvenVCO",
             "Branches",
-            "Slop",
+//            "Slop",
             "Plateau",
-            "LRTVCO",
+//            "LRTVCO",
             ]),
     ]
 
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredLibrary = ModuleBrowserViewController.library
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchController.dismiss(animated: false, completion: nil)
     }
 
     @IBAction func done(_ sender: Any) {
@@ -99,26 +112,50 @@ class ModuleBrowserViewController : UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return library.count
+        return filteredLibrary.count
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return library[section].title
+        return filteredLibrary[section].title
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return library[section].modules.count
+        return filteredLibrary[section].modules.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = library[indexPath.section].modules[indexPath.item]
+        cell.textLabel?.text = filteredLibrary[indexPath.section].modules[indexPath.item]
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let pack = library[indexPath.section].title
-        let slug = library[indexPath.section].modules[indexPath.item]
+        let pack = filteredLibrary[indexPath.section].title
+        let slug = filteredLibrary[indexPath.section].modules[indexPath.item]
         delegate?.moduleBrowserDidSelect(pack: pack, slug: slug)
+
+        searchController.searchBar.text = ""
+        searchController.dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: - UISearchResultsUpdating
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text?.lowercased(), !searchText.isEmpty {
+            // build a custom module result set with filtered modules
+            var packs = [Pack]()
+            for pack in ModuleBrowserViewController.library {
+                let filteredModules = pack.modules.filter { module in
+                    return module.lowercased().contains(searchText)
+                }
+                if filteredModules.count > 0 {
+                    packs.append(Pack(title: pack.title, modules: filteredModules))
+                }
+            }
+            filteredLibrary = packs
+        } else {
+            filteredLibrary = ModuleBrowserViewController.library
+        }
+        tableView.reloadData()
     }
 }
