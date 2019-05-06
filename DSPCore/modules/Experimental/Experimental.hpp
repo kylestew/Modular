@@ -6,6 +6,7 @@
 #include "Plateau.hpp"
 #include "Slop.hpp"
 #include "LRTVCO.hpp"
+#include "Sandbox.hpp"
 
 namespace library {
     namespace experimental {
@@ -20,6 +21,8 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<Plateau>("Plateau"));
                 p->addModuleBuilder(ModuleBuilder::create<Slop>("Slop"));
                 p->addModuleBuilder(ModuleBuilder::create<LRTVCO>("LRTVCO"));
+
+                p->addModuleBuilder(ModuleBuilder::create<Sandbox>("Sandbox"));
 
                 return p;
             }

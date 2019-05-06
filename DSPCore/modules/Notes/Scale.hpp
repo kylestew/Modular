@@ -33,6 +33,10 @@ namespace library {
             PulseGenerator pulse;
 
             Scale() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, NUM_LABELS, NUM_BUFFERS) {
+                for (int i = 0; i < 12; i++) {
+                    options[SEMI_OPTIONS + i].states = 2;
+                }
+
 //                options[ROOT_NOTE_PARAM].states = QuantizeUtils::NUM_NOTES;
 //                options[SCALE_PARAM].states = QuantizeUtils::NUM_SCALES;
             }
