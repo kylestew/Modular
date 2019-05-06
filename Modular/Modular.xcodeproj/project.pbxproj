@@ -81,6 +81,9 @@
 		FF52302022616679003ECB43 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52301F22616679003ECB43 /* Observable.swift */; };
 		FF52302222617B58003ECB43 /* Utilities_Slew.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF52302122617B58003ECB43 /* Utilities_Slew.xib */; };
 		FF5DBD5A224455D0006B98FE /* Primes_LFOb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF5DBD59224455D0006B98FE /* Primes_LFOb.xib */; };
+		FF6203E62280C8BA008A47AE /* Experimental_Sandbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6203E52280C8BA008A47AE /* Experimental_Sandbox.xib */; };
+		FF6203E82280CA4E008A47AE /* Simples_Pad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6203E72280CA4E008A47AE /* Simples_Pad.xib */; };
+		FF6203EA2280CDD7008A47AE /* PadWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6203E92280CDD7008A47AE /* PadWidget.swift */; };
 		FF64DF8F221C922D0086DDA8 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF8E221C922D0086DDA8 /* Port.swift */; };
 		FF64DF91221C99450086DDA8 /* CGPoint+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */; };
 		FF7059792228D4A300C6268E /* IXWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7059782228D4A300C6268E /* IXWidget.swift */; };
@@ -270,6 +273,9 @@
 		FF52301F22616679003ECB43 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FF52302122617B58003ECB43 /* Utilities_Slew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Slew.xib; sourceTree = "<group>"; };
 		FF5DBD59224455D0006B98FE /* Primes_LFOb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_LFOb.xib; sourceTree = "<group>"; };
+		FF6203E52280C8BA008A47AE /* Experimental_Sandbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_Sandbox.xib; sourceTree = "<group>"; };
+		FF6203E72280CA4E008A47AE /* Simples_Pad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Simples_Pad.xib; sourceTree = "<group>"; };
+		FF6203E92280CDD7008A47AE /* PadWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadWidget.swift; sourceTree = "<group>"; };
 		FF64DF8E221C922D0086DDA8 /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
 		FF64DF90221C99450086DDA8 /* CGPoint+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Geometry.swift"; sourceTree = "<group>"; };
 		FF7059782228D4A300C6268E /* IXWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IXWidget.swift; sourceTree = "<group>"; };
@@ -457,6 +463,7 @@
 				FF35D4E9221B37050024D5CA /* PortWidget.swift */,
 				FFE3A005221C689400960453 /* WireWidget.swift */,
 				FFBC6BC922233F3500B973D5 /* ButtonWidget.swift */,
+				FF6203E92280CDD7008A47AE /* PadWidget.swift */,
 				FF2AE3602243ED840098091E /* ToggleWidget.swift */,
 				FF055A8C225A81C900FFCCD4 /* SelectorWidget.swift */,
 				FF9A460422480ACE004F9765 /* LightWidget.swift */,
@@ -808,6 +815,7 @@
 			isa = PBXGroup;
 			children = (
 				FF39D9DD22483A4E00BE830C /* Experimental_Branches.xib */,
+				FF6203E52280C8BA008A47AE /* Experimental_Sandbox.xib */,
 				FF288F162266A17B009073EE /* Experimental_Slop.xib */,
 				FF288F182266D452009073EE /* Experimental_Plateau.xib */,
 				FFADB1CF22683420003002CD /* Experimental_LRTVCO.xib */,
@@ -954,6 +962,7 @@
 				FFBF3BBA225CE45100F2C8F3 /* Simples_AttenOff.xib */,
 				FFBF3BBC225CE5DF00F2C8F3 /* Simples_Mute.xib */,
 				FF977C7D225D8D12001F31BA /* Simples_Manual.xib */,
+				FF6203E72280CA4E008A47AE /* Simples_Pad.xib */,
 				FF977C7B225D8D0C001F31BA /* Simples_Switch.xib */,
 			);
 			path = Simples;
@@ -1048,6 +1057,7 @@
 				FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
 				FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */,
+				FF6203E82280CA4E008A47AE /* Simples_Pad.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,
 				FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */,
@@ -1079,6 +1089,7 @@
 				FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */,
 				FF105F202273973400A237E3 /* Untitled.modpatch in Resources */,
 				FFF3B744222C606C0058B759 /* Primes_VCA.xib in Resources */,
+				FF6203E62280C8BA008A47AE /* Experimental_Sandbox.xib in Resources */,
 				FF39CC2F220F8A2B00C9AF52 /* Main.storyboard in Resources */,
 				FF374AE22259598800E2EE8E /* missing in Resources */,
 				FF374ADF2259598800E2EE8E /* ltmain.sh in Resources */,
@@ -1185,6 +1196,7 @@
 				FF074E8B22654CBE006B269C /* noise.cpp in Sources */,
 				FF3FD7D32266DB9800AEEFC9 /* OnePoleFilters.cpp in Sources */,
 				FFDE9AA8222A3CFF00F061B1 /* ModuleBrowserViewController.swift in Sources */,
+				FF6203EA2280CDD7008A47AE /* PadWidget.swift in Sources */,
 				FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */,
 				FF074E8E22654CBE006B269C /* minblep.cpp in Sources */,
 				FF39CC2C220F8A2B00C9AF52 /* MasterPatchViewController.swift in Sources */,

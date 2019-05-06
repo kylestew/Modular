@@ -273,11 +273,12 @@ class ModuleWidget : UIView, ModuleDelegate {
         // set the CV param enable status
         let cvIndex = module.cvIndex(forParamId: param.index)
         if (cvIndex > -1) {
-            let port = param.registerCVPort(forIndex: cvIndex)
-            if let wireable = port as? Wireable {
-                wireable.moduleDelegate = self
+            if let port = param.registerCVPort(forIndex: cvIndex) {
+                if let wireable = port as? Wireable {
+                    wireable.moduleDelegate = self
+                }
+                updatables.append(port)
             }
-            updatables.append(port)
         }
     }
 
@@ -298,6 +299,15 @@ class ModuleWidget : UIView, ModuleDelegate {
                     bind(param)
                     updatables.append(param)
                 }
+
+            case let multiParam as MultiParam:
+                for param in multiParam.params {
+                    if param.index > -1 && param.index < module.paramCount {
+                        bind(param)
+                        updatables.append(param)
+                    }
+                }
+                break
 
             case let option as Option:
                 /**

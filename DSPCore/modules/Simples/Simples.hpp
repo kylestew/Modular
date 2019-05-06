@@ -8,6 +8,7 @@
 #include "Mute.hpp"
 #include "Manual.hpp"
 #include "Switch.hpp"
+#include "Pad.hpp"
 
 namespace library {
     namespace simples {
@@ -23,6 +24,7 @@ namespace library {
                 p->addModuleBuilder(ModuleBuilder::create<Mute>("Mute"));
                 p->addModuleBuilder(ModuleBuilder::create<Manual>("Manual"));
                 p->addModuleBuilder(ModuleBuilder::create<Switch>("Switch"));
+                p->addModuleBuilder(ModuleBuilder::create<Pad>("Pad"));
 
                 return p;
             }
