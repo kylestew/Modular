@@ -48,19 +48,9 @@ class PadWidget : UIView, MultiParam, ObservableParamDelegate {
         updateDisplayValue()
     }
 
-    /*
-    var lights: (Float, Float) = (0.0, 0.0) {
-        didSet {
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-
-            posValueLayer.opacity = lights.0
-            negValueLayer.opacity = lights.1
-
-            CATransaction.commit()
-        }
+    func lightValuesDidChange(newValue: (Float, Float), forParamIndex index: Int) {
+        // TODO: ???
     }
- */
 
     // MARK: IX
 
@@ -103,7 +93,7 @@ class PadWidget : UIView, MultiParam, ObservableParamDelegate {
             // use Y val for param val
             let trans = recognizer.translation(in: self)
             let xUnitValue = lastValue.0 + Float(trans.x * lastSensitivity)
-            let yUnitValue = lastValue.1 + Float(trans.y * lastSensitivity)
+            let yUnitValue = lastValue.1 + Float(-trans.y * lastSensitivity)
             updateValue(min(max(xUnitValue, -1), 1), min(max(yUnitValue, -1), 1))
             updateDisplayValue()
 
@@ -154,7 +144,7 @@ class PadWidget : UIView, MultiParam, ObservableParamDelegate {
         // update indicator position
         let hWidth: CGFloat = bounds.width / 2.0
         let hHeight: CGFloat = bounds.height / 2.0
-        let center = CGPoint(x: CGFloat(xValue) * hWidth, y: CGFloat(yValue) * hHeight)
+        let center = CGPoint(x: CGFloat(xValue) * hWidth, y: CGFloat(-yValue) * hHeight)
         puckLayer.position = center
 
         CATransaction.commit()

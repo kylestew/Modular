@@ -29,6 +29,7 @@ protocol MultiParam: class, IXWidget {
 
 protocol ObservableParamDelegate: class {
     func paramValueDidChange(newValue: Float, forParamIndex: Int)
+    func lightValuesDidChange(newValue: (Float, Float), forParamIndex: Int)
 }
 
 class ObservableParam: UIControl, Param, ParamValue {
@@ -57,7 +58,11 @@ class ObservableParam: UIControl, Param, ParamValue {
     var cvAmount: Float = 0.5
     var cvPortIsWired: Bool = false
 
-    var lights: (Float, Float) = (0.0, 0.0) // TODO: make callback
+    var lights: (Float, Float) = (0.0, 0.0) {
+        didSet {
+            delegate?.lightValuesDidChange(newValue: lights, forParamIndex: index)
+        }
+    }
 
     func registerCVPort(forIndex cvIndex: Int) -> Port? {
         return nil
