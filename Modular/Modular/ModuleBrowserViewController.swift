@@ -61,6 +61,7 @@ class ModuleBrowserViewController : UITableViewController, UISearchResultsUpdati
             "Mute",
             "Manual",
             "Switch",
+            "Pad",
             ]),
 
         Pack.init(title: "Utilities", modules: [

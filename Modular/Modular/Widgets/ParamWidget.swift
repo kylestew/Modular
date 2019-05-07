@@ -28,7 +28,7 @@ class ParamWidget : UIControl, Param {
     @objc var cvIndex: Int = -1
     @IBInspectable var cvAmount: Float = 0.5
     var portWidget: PortWidget?
-    func registerCVPort(forIndex cvIndex: Int) -> Port {
+    func registerCVPort(forIndex cvIndex: Int) -> Port? {
         // remove if existing
         if let existingPort = self.portWidget {
             existingPort.removeFromSuperview()

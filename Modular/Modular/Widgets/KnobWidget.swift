@@ -34,7 +34,7 @@ class KnobWidget : UIControl, Param {
     @objc var cvIndex: Int = -1
     @objc var cvAmount: Float = 1.0
     public var port: Port?
-    func registerCVPort(forIndex cvIndex: Int) -> Port {
+    func registerCVPort(forIndex cvIndex: Int) -> Port? {
         // remove if existing
         if let existingPort = port as? PortWidget {
             existingPort.removeFromSuperview()
