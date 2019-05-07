@@ -31,13 +31,19 @@ protocol ObservableParamDelegate: class {
     func paramValueDidChange(newValue: Float, forParamIndex: Int)
 }
 
-class ObservableParam: Param {
+class ObservableParam: UIControl, Param, ParamValue {
 
     weak var delegate: ObservableParamDelegate?
 
     init(index: Int, delegate: ObservableParamDelegate) {
         self.index = index
         self.delegate = delegate
+
+        super.init(frame: .zero)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     var index: Int = -1

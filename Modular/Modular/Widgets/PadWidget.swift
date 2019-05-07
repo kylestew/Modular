@@ -1,16 +1,18 @@
 import UIKit
 
 @IBDesignable
-class PadWidget : UIControl, MultiParam, ObservableParamDelegate {
+class PadWidget : UIView, MultiParam, ObservableParamDelegate {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        updateParamBindings()
         setupIX()
         setupUI()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        updateParamBindings()
         setupIX()
         setupUI()
     }
@@ -74,10 +76,16 @@ class PadWidget : UIControl, MultiParam, ObservableParamDelegate {
     }
 
     private func updateValue(_ newXValue: Float, _ newYValue: Float) {
-        xValue = newXValue
-        yValue = newXValue
-
-        sendActions(for: .valueChanged)
+        if let xParam = params.first {
+            xValue = newXValue
+            xParam.value = newXValue
+            xParam.sendActions(for: .valueChanged)
+        }
+        if let yParam = params.last {
+            yValue = newYValue
+            yParam.value = newYValue
+            yParam.sendActions(for: .valueChanged)
+        }
     }
 
     private var lastValue: (Float, Float) = (0, 0)
@@ -94,14 +102,16 @@ class PadWidget : UIControl, MultiParam, ObservableParamDelegate {
             // use X val for CV amount
             // use Y val for param val
             let trans = recognizer.translation(in: self)
-            let xUnitValue = Float(trans.x * lastSensitivity)
-            let yUnitValue = Float(-trans.y * lastSensitivity)
-            print(xUnitValue, yUnitValue)
+            let xUnitValue = lastValue.0 + Float(trans.x * lastSensitivity)
+            let yUnitValue = lastValue.1 + Float(trans.y * lastSensitivity)
             updateValue(min(max(xUnitValue, -1), 1), min(max(yUnitValue, -1), 1))
+            updateDisplayValue()
 
         case .ended:
             zoomUI(zoomed: false)
-            sendActions(for: .editingDidEnd)
+            for param in params {
+                param.sendActions(for: .editingDidEnd)
+            }
 
         default:
             zoomUI(zoomed: false)
@@ -142,12 +152,10 @@ class PadWidget : UIControl, MultiParam, ObservableParamDelegate {
         CATransaction.setDisableActions(true)
 
         // update indicator position
-//        let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
-//        var rect = paramIndicatorLayer.frame
-//        let heightStart = BORDER_WIDTH
-//        let height = (containerLayer.bounds.height - BORDER_WIDTH * 2 - INDICATOR_WIDTH)
-//        rect.origin = CGPoint(x: 0, y: heightStart + (height * (1 - CGFloat(value))))
-//        paramIndicatorLayer.frame = rect
+        let hWidth: CGFloat = bounds.width / 2.0
+        let hHeight: CGFloat = bounds.height / 2.0
+        let center = CGPoint(x: CGFloat(xValue) * hWidth, y: CGFloat(yValue) * hHeight)
+        puckLayer.position = center
 
         CATransaction.commit()
     }
