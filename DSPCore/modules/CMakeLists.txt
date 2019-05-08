@@ -12,6 +12,8 @@ set(SOURCES
 
         Experimental/LRTdsp/Oscillator.cpp
         Experimental/LRTdsp/DSPMath.cpp
+
+        Experimental/mutable/generator.cc
         )
 add_library(${PROJECT_NAME} ${SOURCES})
 
