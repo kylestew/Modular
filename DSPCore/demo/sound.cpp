@@ -30,7 +30,7 @@ int main() {
 
     sfinfo.samplerate = SAMPLE_RATE;
     sfinfo.frames = SAMPLE_COUNT;
-    sfinfo.channels = 1;
+    sfinfo.channels = 2;
     sfinfo.format = (SF_FORMAT_WAV | SF_FORMAT_PCM_24);
 
     if (! (sf = sf_open ("../output.wav", SFM_WRITE, &sfinfo))) {
@@ -47,15 +47,21 @@ int main() {
     module->reset();
     delete builder;
 
+    // settings
     int outputIdx = 0;
 //    module->params[0].setting = -0.1;
-
 
     // write samples to buffer
     for (int k = 0 ; k < SAMPLE_COUNT ; k++) {
         module->step();
-        float sample = module->outputs[outputIdx].value;
-        buffer[k] = AMPLITUDE * sample;
+
+        // mono
+//        float sample = module->outputs[outputIdx].value;
+//        buffer[k] = AMPLITUDE * sample;
+
+        // stereo
+        buffer[2 * k] = AMPLITUDE * module->outputs[1].value;
+        buffer[2 * k + 1] = AMPLITUDE * module->outputs[3].value;
     }
 
     if (sf_write_int (sf, buffer, sfinfo.channels * SAMPLE_COUNT) !=

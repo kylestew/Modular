@@ -17,7 +17,10 @@ namespace library {
                 NUM_INPUTS
             };
             enum OutputIds {
-                OUTPUT,
+                RAMP,
+                TRIVIAL_SAW,
+                TRIVIAL_SQUARE,
+                TRIVIAL_TRIANGLE,
                 NUM_OUTPUTS
             };
             enum LightIds {
@@ -33,10 +36,12 @@ namespace library {
 
             void reset() override {
                 phase = 0.f;
+                params[FREQ_PARAM].setting = 0.f;
             }
 
             void step() override {
-                float freq = params[FREQ_PARAM].value;
+//                float freq = params[FREQ_PARAM].value;
+                float freq = 220.f; // TODO: map to param
 
                 float sampleTime = engineGetSampleTime();
 
@@ -46,8 +51,18 @@ namespace library {
                 if (phase >= 1.f)
                     phase -= 1.f;
 
-                outputs[OUTPUT].value = phase;
+                // uinipolar saw - used in all oscillators
+                outputs[RAMP].value = phase;
 
+                // bipolar saw - double height of ramp and offset down
+                outputs[TRIVIAL_SAW].value = 2.0 * phase - 1.0;
+
+                // 50% PW rect - use ramp value to period
+                outputs[TRIVIAL_SQUARE].value = phase > 0.5 ? -1.0 : 1.0;
+
+                // triangle = 2 * abs(trivialsaw) - 1.0
+                // ??? IDK
+                outputs[TRIVIAL_TRIANGLE].value = 2.0 * fabs(2.0 * phase - 1.0) - 1.0;
             }
         };
     }
