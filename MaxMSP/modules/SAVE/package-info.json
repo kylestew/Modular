@@ -1,0 +1,40 @@
+{
+	"author" : "Kyle Stewart",
+	"authors" : [  ],
+	"description" : "Modules",
+	"displayname" : "Modules",
+	"extends" : "",
+	"extensible" : 1,
+	"homepatcher" : "",
+	"max_version_max" : "none",
+	"max_version_min" : "8.0",
+	"name" : "Modules",
+	"os" : 	{
+		"macintosh" : 		{
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+,
+		"windows" : 		{
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+
+	}
+,
+	"package_extra" : 	{
+
+	}
+,
+	"tags" : [  ],
+	"version" : "1.0.2",
+	"website" : "",
+	"filelist" : 	{
+		"examples" : [],
+		"patchers" : [],
+		"help" : [],
+		"misc" : [],
+		"clippings" : [ "TinyModular/simples.atten-2" ]
+	}
+
+}
