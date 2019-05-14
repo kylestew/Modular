@@ -226,10 +226,10 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 146.0, 263.5, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 21.0, 36.0, 18.0 ],
+					"presentation_rect" : [ 24.0, 21.0, 36.0, 18.0 ],
 					"text" : "IN",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 1
+					"textjustification" : 0
 				}
 
 			}
@@ -255,7 +255,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 362.125, 227.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 110.25, 108.0, 48.5, 18.0 ],
+					"presentation_rect" : [ 25.75, 145.25, 48.5, 18.0 ],
 					"text" : "OFFSET",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -277,7 +277,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 363.125, 251.0, 50.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 109.5, 75.0, 50.0, 43.0 ],
+					"presentation_rect" : [ 25.0, 112.25, 50.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_shortname" : "freq",
@@ -325,18 +325,19 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Ableton Sans Bold Regular",
 					"fontsize" : 10.0,
 					"id" : "obj-63",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 222.0, 792.0, 52.0, 18.0 ],
+					"patching_rect" : [ 222.0, 792.0, 53.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 157.5, 36.0, 18.0 ],
+					"presentation_rect" : [ 23.75, 178.5, 36.0, 18.0 ],
 					"text" : "OUT",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 1
+					"textjustification" : 0
 				}
 
 			}
@@ -356,7 +357,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 222.0, 767.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 14.0, 175.5, 20.0, 20.0 ],
+					"presentation_rect" : [ 2.0, 177.5, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -371,7 +372,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 290.125, 227.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 46.75, 108.0, 42.25, 18.0 ],
+					"presentation_rect" : [ 28.75, 83.25, 42.25, 18.0 ],
 					"text" : "ATTEN",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -393,7 +394,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 291.125, 251.0, 50.0, 43.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 43.0, 75.0, 50.0, 43.0 ],
+					"presentation_rect" : [ 25.0, 50.25, 50.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_shortname" : "freq",
@@ -431,11 +432,11 @@
 				"box" : 				{
 					"comment" : "fm",
 					"id" : "obj-13",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 210.125, 251.0, 30.0, 30.0 ]
 				}
 
@@ -451,8 +452,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 92.337188999999995, 109.0, 52.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.0, 1.0, 100.0, 18.0 ],
-					"text" : "ATTENUVERTER",
+					"presentation_rect" : [ 18.0, 1.0, 82.0, 18.0 ],
+					"text" : "ATTENUVERT",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -461,7 +462,7 @@
 				"box" : 				{
 					"comment" : "sin",
 					"id" : "obj-24",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -523,7 +524,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 178.0, 299.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 41.0, 20.0, 20.0 ],
+					"presentation_rect" : [ 2.0, 20.0, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -540,7 +541,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.337188999999995, 41.711639000000005, 37.0, 5.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 100.0, 18.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -560,7 +561,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.337188999999995, 99.0, 70.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 200.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 100.0, 200.0 ],
 					"proportion" : 0.39
 				}
 
@@ -664,28 +665,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-20" : [ "live.button[1]", "live.button", 0 ],
-			"obj-39::obj-33" : [ "led[13]", "led", 0 ],
-			"obj-10" : [ "freq[2]", "freq", 0 ],
-			"obj-52" : [ "freq[1]", "freq", 0 ],
-			"obj-42::obj-33" : [ "led[14]", "led", 0 ],
-			"parameterbanks" : 			{
-
-			}
-
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "bipolar-led.maxpat",
-				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
