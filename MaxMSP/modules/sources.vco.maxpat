@@ -1052,14 +1052,13 @@
 					"fontname" : "Ableton Sans Bold Regular",
 					"fontsize" : 10.0,
 					"id" : "obj-28",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 74.337188999999995, 81.154098510742188, 52.0, 30.0 ],
+					"patching_rect" : [ 74.337188999999995, 81.154098510742188, 52.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 18.0, 1.0, 78.0, 18.0 ],
-					"text" : "Basic VCO",
+					"text" : "VCO",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 

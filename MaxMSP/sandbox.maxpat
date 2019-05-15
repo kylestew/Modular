@@ -44,6 +44,26 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"id" : "obj-37",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "utilities.s&h.maxpat",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 34.0, 273.0, 100.0, 200.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-36",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
@@ -115,7 +135,7 @@
 					"id" : "obj-27",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "sources.basic-vco.maxpat",
+					"name" : "sources.vco.maxpat",
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
@@ -135,7 +155,7 @@
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "mod.basic-lfo.maxpat",
+					"name" : "mod.lfo.maxpat",
 					"numinlets" : 3,
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
@@ -160,7 +180,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 288.0, 452.0, 100.0, 200.0 ],
+					"patching_rect" : [ 297.0, 598.0, 100.0, 200.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -469,81 +489,86 @@
 		"parameters" : 		{
 			"obj-1::obj-52" : [ "freq[1]", "freq", 0 ],
 			"obj-34::obj-18::obj-33" : [ "led[35]", "led", 0 ],
+			"obj-2::obj-39::obj-33" : [ "led[63]", "led", 0 ],
+			"obj-27::obj-61::obj-33" : [ "led[48]", "led", 0 ],
 			"obj-1::obj-10" : [ "freq[2]", "freq", 0 ],
 			"obj-34::obj-42::obj-33" : [ "led[36]", "led", 0 ],
 			"obj-16::obj-39::obj-33" : [ "led[3]", "led", 0 ],
-			"obj-27::obj-62::obj-33" : [ "led[24]", "led", 0 ],
 			"obj-34::obj-32" : [ "pw[9]", "pw", 0 ],
+			"obj-2::obj-38::obj-33" : [ "led[62]", "led", 0 ],
 			"obj-2::obj-37" : [ "live.button[4]", "live.button[2]", 0 ],
 			"obj-15::obj-51" : [ "Rate", "Rate", 0 ],
-			"obj-2::obj-20" : [ "live.button[3]", "live.button", 0 ],
 			"obj-36::obj-19::obj-33" : [ "led[28]", "led", 0 ],
-			"obj-27::obj-61::obj-33" : [ "led[15]", "led", 0 ],
+			"obj-2::obj-20" : [ "live.button[3]", "live.button", 0 ],
 			"obj-34::obj-33::obj-33" : [ "led[40]", "led", 0 ],
 			"obj-36::obj-41" : [ "freq[11]", "freq", 0 ],
+			"obj-37::obj-62::obj-33" : [ "led[46]", "led", 0 ],
+			"obj-37::obj-37" : [ "live.button[7]", "live.button[2]", 0 ],
 			"obj-27::obj-76" : [ "pw[4]", "pw", 0 ],
 			"obj-17::obj-1" : [ "divide", "divide", 0 ],
-			"obj-2::obj-52" : [ "freq[3]", "freq", 0 ],
 			"obj-34::obj-35" : [ "freq[10]", "freq", 0 ],
+			"obj-2::obj-52" : [ "freq[3]", "freq", 0 ],
 			"obj-1::obj-42::obj-33" : [ "led[9]", "led", 0 ],
 			"obj-16::obj-58::obj-33" : [ "led[2]", "led", 0 ],
+			"obj-2::obj-27::obj-33" : [ "led[60]", "led", 0 ],
 			"obj-24" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-2::obj-42::obj-33" : [ "led[10]", "led", 0 ],
 			"obj-36::obj-38::obj-33" : [ "led[44]", "led", 0 ],
 			"obj-36::obj-20" : [ "live.button[5]", "live.button", 0 ],
-			"obj-2::obj-62::obj-33" : [ "led[14]", "led", 0 ],
-			"obj-2::obj-76" : [ "pw[2]", "pw", 0 ],
+			"obj-2::obj-61::obj-33" : [ "led[56]", "led", 0 ],
+			"obj-2::obj-62::obj-33" : [ "led[64]", "led", 0 ],
 			"obj-36::obj-12" : [ "freq[15]", "freq", 0 ],
+			"obj-27::obj-42::obj-33" : [ "led[51]", "led", 0 ],
+			"obj-2::obj-76" : [ "pw[2]", "pw", 0 ],
 			"obj-36::obj-32::obj-33" : [ "led[29]", "led", 0 ],
 			"obj-36::obj-39::obj-33" : [ "led[41]", "led", 0 ],
 			"obj-34::obj-5" : [ "freq[9]", "freq", 0 ],
-			"obj-2::obj-27::obj-33" : [ "led[8]", "led", 0 ],
-			"obj-27::obj-27::obj-33" : [ "led[19]", "led", 0 ],
 			"obj-27::obj-20" : [ "live.button", "live.button", 0 ],
-			"obj-2::obj-33::obj-33" : [ "led[11]", "led", 0 ],
-			"obj-2::obj-39::obj-33" : [ "led[13]", "led", 0 ],
+			"obj-37::obj-5::obj-33" : [ "led[47]", "led", 0 ],
+			"obj-2::obj-48::obj-33" : [ "led[58]", "led", 0 ],
+			"obj-37::obj-39::obj-33" : [ "led[45]", "led", 0 ],
 			"obj-17::obj-69" : [ "Lock", "Lock", 0 ],
 			"obj-16::obj-20" : [ "live.button[2]", "live.button", 0 ],
-			"obj-27::obj-52" : [ "freq[4]", "freq", 0 ],
 			"obj-36::obj-51::obj-33" : [ "led[25]", "led", 0 ],
+			"obj-27::obj-52" : [ "freq[4]", "freq", 0 ],
 			"obj-34::obj-36::obj-33" : [ "led[39]", "led", 0 ],
 			"obj-36::obj-52" : [ "freq[14]", "freq", 0 ],
+			"obj-27::obj-33::obj-33" : [ "led[53]", "led", 0 ],
 			"obj-4::obj-16" : [ "range[1]", "range", 0 ],
-			"obj-27::obj-48::obj-33" : [ "led[17]", "led", 0 ],
 			"obj-27::obj-75" : [ "pw[3]", "pw", 0 ],
 			"obj-17::obj-52" : [ "multiply", "multiply", 0 ],
-			"obj-27::obj-38::obj-33" : [ "led[21]", "led", 0 ],
 			"obj-36::obj-16::obj-33" : [ "led[42]", "led", 0 ],
 			"obj-1::obj-39::obj-33" : [ "led[1]", "led", 0 ],
-			"obj-27::obj-39::obj-33" : [ "led[22]", "led", 0 ],
+			"obj-27::obj-48::obj-33" : [ "led[50]", "led", 0 ],
 			"obj-16::obj-10" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-36::obj-27::obj-33" : [ "led[43]", "led", 0 ],
 			"obj-15::obj-5::obj-2" : [ "pastebang", "pastebang", 0 ],
-			"obj-2::obj-61::obj-33" : [ "led[5]", "led", 0 ],
+			"obj-27::obj-40::obj-33" : [ "led[5]", "led", 0 ],
+			"obj-2::obj-33::obj-33" : [ "led[61]", "led", 0 ],
 			"obj-1::obj-20" : [ "live.button[1]", "live.button", 0 ],
 			"obj-34::obj-39::obj-33" : [ "led[37]", "led", 0 ],
 			"obj-34::obj-20" : [ "live.button[6]", "live.button", 0 ],
 			"obj-36::obj-35" : [ "freq[13]", "freq", 0 ],
+			"obj-2::obj-58::obj-33" : [ "led[57]", "led", 0 ],
 			"obj-36::obj-23" : [ "freq[12]", "freq", 0 ],
+			"obj-27::obj-27::obj-33" : [ "led[52]", "led", 0 ],
 			"obj-36::obj-9::obj-33" : [ "led[26]", "led", 0 ],
+			"obj-27::obj-39::obj-33" : [ "led[55]", "led", 0 ],
 			"obj-2::obj-75" : [ "pw[1]", "pw", 0 ],
-			"obj-27::obj-58::obj-33" : [ "led[16]", "led", 0 ],
 			"obj-17::obj-129" : [ "Points", "Points", 0 ],
-			"obj-27::obj-33::obj-33" : [ "led[20]", "led", 0 ],
-			"obj-27::obj-11" : [ "freq[5]", "freq", 0 ],
 			"obj-34::obj-52" : [ "freq[8]", "freq", 0 ],
+			"obj-27::obj-11" : [ "freq[5]", "freq", 0 ],
 			"obj-16::obj-7::obj-33" : [ "led[4]", "led", 0 ],
-			"obj-27::obj-42::obj-33" : [ "led[18]", "led", 0 ],
-			"obj-27::obj-69" : [ "pw[5]", "pw", 0 ],
 			"obj-36::obj-42::obj-33" : [ "led[30]", "led", 0 ],
-			"obj-27::obj-40::obj-33" : [ "led[23]", "led", 0 ],
-			"obj-2::obj-58::obj-33" : [ "led[6]", "led", 0 ],
+			"obj-27::obj-69" : [ "pw[5]", "pw", 0 ],
+			"obj-27::obj-58::obj-33" : [ "led[49]", "led", 0 ],
+			"obj-27::obj-62::obj-33" : [ "led[6]", "led", 0 ],
+			"obj-2::obj-42::obj-33" : [ "led[59]", "led", 0 ],
 			"obj-34::obj-16::obj-33" : [ "led[38]", "led", 0 ],
-			"obj-2::obj-38::obj-33" : [ "led[12]", "led", 0 ],
+			"obj-27::obj-38::obj-33" : [ "led[54]", "led", 0 ],
 			"obj-2::obj-69" : [ "pw", "pw", 0 ],
 			"obj-34::obj-76" : [ "pw[10]", "pw", 0 ],
-			"obj-2::obj-48::obj-33" : [ "led[7]", "led", 0 ],
 			"obj-36::obj-2::obj-33" : [ "led[27]", "led", 0 ],
+			"obj-37::obj-20" : [ "live.button[8]", "live.button", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -553,26 +578,12 @@
 					"parameter_longname" : "pw[9]"
 				}
 ,
-				"obj-2::obj-37" : 				{
-					"parameter_longname" : "live.button[4]"
-				}
-,
-				"obj-2::obj-20" : 				{
-					"parameter_longname" : "live.button[3]"
-				}
-,
 				"obj-36::obj-41" : 				{
 					"parameter_longname" : "freq[11]"
 				}
 ,
-				"obj-27::obj-76" : 				{
-					"parameter_longname" : "pw[4]",
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_initial" : 0.5
-				}
-,
-				"obj-2::obj-52" : 				{
-					"parameter_longname" : "freq[3]"
+				"obj-37::obj-37" : 				{
+					"parameter_longname" : "live.button[7]"
 				}
 ,
 				"obj-34::obj-35" : 				{
@@ -581,11 +592,6 @@
 ,
 				"obj-36::obj-20" : 				{
 					"parameter_longname" : "live.button[5]"
-				}
-,
-				"obj-2::obj-76" : 				{
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_initial" : 0.5
 				}
 ,
 				"obj-36::obj-12" : 				{
@@ -600,22 +606,12 @@
 					"parameter_longname" : "live.button[2]"
 				}
 ,
-				"obj-27::obj-52" : 				{
-					"parameter_longname" : "freq[4]"
-				}
-,
 				"obj-36::obj-52" : 				{
 					"parameter_longname" : "freq[14]"
 				}
 ,
 				"obj-4::obj-16" : 				{
 					"parameter_longname" : "range[1]"
-				}
-,
-				"obj-27::obj-75" : 				{
-					"parameter_longname" : "pw[3]",
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_initial" : 0.5
 				}
 ,
 				"obj-34::obj-20" : 				{
@@ -630,34 +626,16 @@
 					"parameter_longname" : "freq[12]"
 				}
 ,
-				"obj-2::obj-75" : 				{
-					"parameter_range" : [ 0.0, 1.0 ],
-					"parameter_speedlim" : 1.0,
-					"parameter_initial" : 0.5
-				}
-,
-				"obj-27::obj-11" : 				{
-					"parameter_longname" : "freq[5]",
-					"parameter_range" : [ -3, 5 ],
-					"parameter_invisible" : 0,
-					"parameter_modmode" : 0,
-					"parameter_type" : 1,
-					"parameter_unitstyle" : 0,
-					"parameter_steps" : 0,
-					"parameter_exponent" : 1.0,
-					"parameter_speedlim" : 1.0
-				}
-,
 				"obj-34::obj-52" : 				{
 					"parameter_longname" : "freq[8]"
 				}
 ,
-				"obj-27::obj-69" : 				{
-					"parameter_longname" : "pw[5]"
-				}
-,
 				"obj-34::obj-76" : 				{
 					"parameter_longname" : "pw[10]"
+				}
+,
+				"obj-37::obj-20" : 				{
+					"parameter_longname" : "live.button[8]"
 				}
 
 			}
@@ -716,14 +694,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "mod.basic-lfo.maxpat",
+				"name" : "mod.lfo.maxpat",
 				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
 				"patcherrelativepath" : "./modules",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "sources.basic-vco.maxpat",
+				"name" : "sources.vco.maxpat",
 				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
 				"patcherrelativepath" : "./modules",
 				"type" : "JSON",
@@ -745,6 +723,13 @@
 			}
 , 			{
 				"name" : "routing.mixer.maxpat",
+				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
+				"patcherrelativepath" : "./modules",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "utilities.s&h.maxpat",
 				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
 				"patcherrelativepath" : "./modules",
 				"type" : "JSON",

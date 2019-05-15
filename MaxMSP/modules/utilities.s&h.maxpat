@@ -39,6 +39,44 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Ableton Sans Bold Regular",
+					"fontsize" : 10.0,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 561.999999999999886, 251.0, 52.0, 18.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 25.0, 20.0, 38.0, 18.0 ],
+					"text" : "IN",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textjustification" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-5",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bipolar-led.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 558.337188999999967, 229.0, 20.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 3.0, 19.0, 20.0, 20.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -109,7 +147,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 403.337188999999967, 380.0, 26.0, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 10.0, 110.5, 50.0, 17.0 ],
+					"presentation_rect" : [ 17.0, 76.5, 50.0, 17.0 ],
 					"text" : "noise",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -128,7 +166,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 403.337188999999967, 363.0, 26.0, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 10.0, 62.5, 50.0, 17.0 ],
+					"presentation_rect" : [ 17.0, 59.5, 50.0, 17.0 ],
 					"text" : "input",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -147,7 +185,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 431.337188999999967, 363.0, 18.0, 34.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 26.0, 77.5, 18.0, 34.0 ],
+					"presentation_rect" : [ 55.0, 59.5, 18.0, 34.0 ],
 					"size" : 2,
 					"value" : 0
 				}
@@ -187,13 +225,13 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 617.337188999999967, 403.0, 15.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 110.0, 91.5, 15.0, 15.0 ],
+					"presentation_rect" : [ 55.0, 127.75, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_shortname" : "live.button[2]",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
-							"parameter_longname" : "live.button[2]",
+							"parameter_longname" : "live.button[7]",
 							"parameter_mmax" : 1
 						}
 
@@ -213,10 +251,10 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 554.337188999999967, 820.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 156.5, 38.0, 18.0 ],
+					"presentation_rect" : [ 38.0, 177.5, 38.0, 18.0 ],
 					"text" : "OUT",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 1
+					"textjustification" : 2
 				}
 
 			}
@@ -236,7 +274,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 653.0, 367.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 88.0, 91.5, 20.0, 20.0 ],
+					"presentation_rect" : [ 33.0, 127.75, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -257,7 +295,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 554.337188999999967, 795.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 7.0, 174.5, 20.0, 20.0 ],
+					"presentation_rect" : [ 77.0, 176.5, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -272,7 +310,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 637.0, 343.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 80.0, 71.5, 54.0, 18.0 ],
+					"presentation_rect" : [ 25.0, 109.75, 54.0, 18.0 ],
 					"text" : "TRIGGER",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -283,7 +321,7 @@
 				"box" : 				{
 					"comment" : "trigger",
 					"id" : "obj-70",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -296,7 +334,7 @@
 				"box" : 				{
 					"comment" : "signal",
 					"id" : "obj-15",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -325,7 +363,7 @@
 				"box" : 				{
 					"comment" : "output",
 					"id" : "obj-24",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -349,7 +387,7 @@
 							"parameter_shortname" : "live.button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
-							"parameter_longname" : "live.button[1]",
+							"parameter_longname" : "live.button[8]",
 							"parameter_mmax" : 1
 						}
 
@@ -383,7 +421,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.337188999999995, 41.711639000000005, 37.0, 5.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 18.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 100.0, 18.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -403,7 +441,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.337188999999995, 99.0, 70.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 200.0, 200.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 100.0, 200.0 ],
 					"proportion" : 0.39
 				}
 
@@ -435,6 +473,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
+					"order" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"order" : 1,
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -518,27 +565,7 @@
 				}
 
 			}
- ],
-		"parameters" : 		{
-			"obj-20" : [ "live.button[1]", "live.button", 0 ],
-			"obj-39::obj-33" : [ "led[13]", "led", 0 ],
-			"obj-37" : [ "live.button[2]", "live.button[2]", 0 ],
-			"obj-62::obj-33" : [ "led[2]", "led", 0 ],
-			"parameterbanks" : 			{
-
-			}
-
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "bipolar-led.maxpat",
-				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
