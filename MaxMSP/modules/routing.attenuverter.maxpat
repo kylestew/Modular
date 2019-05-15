@@ -208,7 +208,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 178.0, 671.0, 123.0, 22.0 ],
@@ -228,8 +229,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 24.0, 21.0, 36.0, 18.0 ],
 					"text" : "IN",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 0
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -280,14 +280,14 @@
 					"presentation_rect" : [ 25.0, 112.25, 50.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "freq",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1,
 							"parameter_mmin" : -1.0,
 							"parameter_longname" : "freq[2]",
 							"parameter_initial_enable" : 1,
 							"parameter_mmax" : 1.0,
-							"parameter_initial" : [ 0 ]
+							"parameter_initial" : [ 0 ],
+							"parameter_shortname" : "freq"
 						}
 
 					}
@@ -334,10 +334,10 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 222.0, 792.0, 53.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 23.75, 178.5, 36.0, 18.0 ],
+					"presentation_rect" : [ 42.0, 177.5, 36.0, 18.0 ],
 					"text" : "OUT",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 0
+					"textjustification" : 2
 				}
 
 			}
@@ -357,7 +357,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 222.0, 767.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 177.5, 20.0, 20.0 ],
+					"presentation_rect" : [ 77.0, 176.5, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -397,14 +397,14 @@
 					"presentation_rect" : [ 25.0, 50.25, 50.0, 43.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "freq",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 1,
 							"parameter_mmin" : -1.0,
 							"parameter_longname" : "freq[1]",
 							"parameter_initial_enable" : 1,
 							"parameter_mmax" : 1.0,
-							"parameter_initial" : [ 0 ]
+							"parameter_initial" : [ 0 ],
+							"parameter_shortname" : "freq"
 						}
 
 					}
@@ -432,11 +432,11 @@
 				"box" : 				{
 					"comment" : "fm",
 					"id" : "obj-13",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 210.125, 251.0, 30.0, 30.0 ]
 				}
 
@@ -462,7 +462,7 @@
 				"box" : 				{
 					"comment" : "sin",
 					"id" : "obj-24",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -483,11 +483,11 @@
 					"presentation_rect" : [ 7.0, 4.0, 10.0, 10.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "live.button[1]",
-							"parameter_mmax" : 1
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.button"
 						}
 
 					}
@@ -665,7 +665,28 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-20" : [ "live.button[1]", "live.button", 0 ],
+			"obj-52" : [ "freq[1]", "freq", 0 ],
+			"obj-10" : [ "freq[2]", "freq", 0 ],
+			"obj-42::obj-33" : [ "led[9]", "led", 0 ],
+			"obj-39::obj-33" : [ "led[1]", "led", 0 ],
+			"parameterbanks" : 			{
+
+			}
+
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "bipolar-led.maxpat",
+				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

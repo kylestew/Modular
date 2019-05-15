@@ -48,24 +48,25 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 409.125, 447.5, 48.0, 136.0 ],
+					"patching_rect" : [ 409.125, 348.5, 48.0, 136.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 48.0, 34.0, 48.0, 136.0 ],
+					"presentation_rect" : [ 46.0, 34.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "live.gain~",
 							"parameter_initial_enable" : 1,
 							"parameter_mmax" : 30.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "live.gain~"
 						}
 
 					}
 ,
 					"showname" : 0,
+					"shownumber" : 0,
 					"slidercolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"tribordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
@@ -85,7 +86,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1028.0, 144.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.5, 142.75, 33.5, 18.0 ],
+					"presentation_rect" : [ 13.25, 143.75, 33.5, 18.0 ],
 					"text" : "CV",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -108,7 +109,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 1046.375, 168.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.25, 122.75, 20.0, 20.0 ],
+					"presentation_rect" : [ 20.0, 121.75, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -188,7 +189,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 64.337188999999995, 268.0, 26.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 93.5, 50.0, 17.0 ],
+					"presentation_rect" : [ 4.0, 94.5, 50.0, 17.0 ],
 					"text" : "exp",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -206,7 +207,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 64.337188999999995, 251.0, 26.0, 17.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 45.5, 50.0, 17.0 ],
+					"presentation_rect" : [ 4.0, 46.5, 50.0, 17.0 ],
 					"text" : "lin",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"textjustification" : 1
@@ -225,7 +226,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 92.337188999999995, 251.0, 18.0, 34.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.0, 60.5, 18.0, 34.0 ],
+					"presentation_rect" : [ 20.0, 61.5, 18.0, 34.0 ],
 					"size" : 2,
 					"value" : 0
 				}
@@ -241,10 +242,10 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 178.0, 1107.0, 52.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 24.0, 177.25, 36.0, 18.0 ],
+					"presentation_rect" : [ 41.0, 177.25, 36.0, 18.0 ],
 					"text" : "OUT",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 0
+					"textjustification" : 2
 				}
 
 			}
@@ -260,8 +261,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 24.0, 21.0, 33.5, 18.0 ],
 					"text" : "IN",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 0
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -281,7 +281,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 178.0, 1082.0, 20.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 176.25, 20.0, 20.0 ],
+					"presentation_rect" : [ 77.0, 176.25, 20.0, 20.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -353,11 +353,11 @@
 					"presentation_rect" : [ 7.0, 4.0, 10.0, 10.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.button",
 							"parameter_enum" : [ "off", "on" ],
 							"parameter_type" : 2,
 							"parameter_longname" : "live.button[1]",
-							"parameter_mmax" : 1
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.button"
 						}
 
 					}
@@ -439,6 +439,22 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"order" : 0,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"order" : 1,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"order" : 0,
 					"source" : [ "obj-15", 0 ]
@@ -506,22 +522,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"order" : 0,
-					"source" : [ "obj-78", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-39", 0 ],
-					"order" : 1,
-					"source" : [ "obj-78", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-8", 0 ]
 				}
@@ -529,11 +529,11 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-10" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-58::obj-33" : [ "led[16]", "led", 0 ],
 			"obj-20" : [ "live.button[1]", "live.button", 0 ],
-			"obj-39::obj-33" : [ "led[13]", "led", 0 ],
-			"obj-10" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-7::obj-33" : [ "led[9]", "led", 0 ],
+			"obj-39::obj-33" : [ "led[13]", "led", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -545,13 +545,6 @@
 				"bootpath" : "~/Projects/Modular/MaxMSP/modules",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Screen Shot 2019-05-14 at 9.53.23 AM.png",
-				"bootpath" : "~/Desktop",
-				"patcherrelativepath" : "../../../../Desktop",
-				"type" : "PNG",
 				"implicit" : 1
 			}
  ],
