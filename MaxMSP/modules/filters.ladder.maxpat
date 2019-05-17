@@ -1098,8 +1098,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 25.0, 177.0, 36.0, 18.0 ],
 					"text" : "LP",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textjustification" : 0
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1499,6 +1498,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 1 ],
+					"order" : 0,
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"order" : 1,
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -1699,6 +1707,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 1 ],
+					"order" : 0,
+					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"order" : 1,
 					"source" : [ "obj-48", 0 ]
 				}
 
