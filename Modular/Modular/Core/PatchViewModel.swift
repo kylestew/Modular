@@ -20,9 +20,12 @@ class PatchViewModel: PatchDelegate {
     let masterContainerView = UIView()
     let widgetsView = UIView()
 
-    private static let size: CGSize = CGSize(width: 10_000, height: 10_000)
+    // MARK: Grid Metrics
+    private static let gridSize: CGSize = CGSize(width: 10_000, height: 10_000)
+    private static let unitSize: CGFloat = 100.0
+    private static let unitPadding: CGFloat = 4.0
     private var center: CGPoint = {
-        return CGPoint(x: PatchViewModel.size.width / 2.0, y: PatchViewModel.size.height / 2.0)
+        return CGPoint(x: PatchViewModel.gridSize.width / 2.0, y: PatchViewModel.gridSize.height / 2.0)
     }()
 
     /**
@@ -33,20 +36,25 @@ class PatchViewModel: PatchDelegate {
     init() {
         core.prepare()
 
-        let wiresView = wireRegister.view
-        wireRegister.patchDelegate = self
+//        let wiresView = wireRegister.view
+//        wireRegister.patchDelegate = self
 
-        let rect = CGRect(origin: .zero, size: PatchViewModel.size)
+        let rect = CGRect(origin: .zero, size: PatchViewModel.gridSize)
         masterContainerView.frame = rect
-        wiresView.frame = rect
         widgetsView.frame = rect
-        masterContainerView.addSubview(wiresView)
+//        wiresView.frame = rect
         masterContainerView.addSubview(widgetsView)
+//        masterContainerView.addSubview(wiresView)
 
-        isPowerMetering.value = core.isPowerMetering
+        let gridPattern = UIImage(named: "gridPattern")!
+        masterContainerView.backgroundColor = UIColor(patternImage: gridPattern)
+
+//        isPowerMetering.value = core.isPowerMetering
     }
 
     private func destroy() {
+        assert(false, "TODO: review this")
+
         // shut down all widgets (they still have display link to destroy)
         for widget in widgetsView.subviews {
             if let widget = widget as? ModuleWidget {
@@ -75,7 +83,7 @@ class PatchViewModel: PatchDelegate {
             return
         }
 
-        // document needs to handles to data storage in the patch
+        // document needs handles to data storage in the patch
         doc.wireRegister = wireRegister
         doc.patchDelegate = self
         doc.widgetsView = widgetsView
@@ -87,24 +95,25 @@ class PatchViewModel: PatchDelegate {
     }
 
     func close(completion: @escaping (Bool) -> (Void)) {
-        guard let doc = document else {
-            destroy()
-            completion(true)
-            return
-        }
-
-        doc.close { [weak self] success in
-            self?.destroy()
-            completion(success)
-        }
+        assert(false, "TODO: review")
+//        guard let doc = document else {
+//            destroy()
+//            completion(true)
+//            return
+//        }
+//
+//        doc.close { [weak self] success in
+//            self?.destroy()
+//            completion(success)
+//        }
     }
 
     func patchDidChange() {
-        saveToDisk()
+//        saveToDisk()
     }
 
     func saveToDisk() {
-        document?.updateChangeCount(.done)
+//        document?.updateChangeCount(.done)
     }
 
     // MARK: - Module Add/Remove
@@ -118,23 +127,35 @@ class PatchViewModel: PatchDelegate {
      */
     func addModule(pack: String, slug: String, inRect: CGRect) -> Bool {
         if let widget = ModuleWidget.create(forPack: pack, andSlug: slug) {
-            for wireable in widget.getWireables() {
-                wireRegister.registerWireable(wireable, for: widget.moduleId)
-            }
+//            for wireable in widget.getWireables() {
+//                wireRegister.registerWireable(wireable, for: widget.moduleId)
+//            }
 
-            // position centered by default
+            // try to place in center by default
             widgetsView.addSubview(widget)
 
+            // TODO: offset to the right until we have space
             var frame = widget.frame
             var pos = CGPoint(x: inRect.midX, y: inRect.midY)
-            pos.x -= frame.width / 2.0
-            pos.y -= frame.height / 2.0
+            let x: Float = Float(pos.x + frame.width / 2.0)
+            let y: Float = Float(pos.y + frame.height / 2.0)
+
+            // snap to grid
+            pos.x = CGFloat(roundf(x / 100)) * 100
+            pos.y = CGFloat(roundf(y / 100)) * 100
+
+            // add padding
+            pos.x += PatchViewModel.unitPadding
+            pos.y += PatchViewModel.unitPadding
+
             frame.origin = pos
             widget.frame = frame
 
-            // serialization work
-            widget.patchDelegate = self
-            saveToDisk()
+//            // serialization work
+//            widget.patchDelegate = self
+//            saveToDisk()
+
+            print("Placed at", pos)
 
             return true
         }
@@ -142,25 +163,46 @@ class PatchViewModel: PatchDelegate {
         return false
     }
 
-    // MARK: - Widget Selection
+    // MARK: - Patch Edit Mode
 
-    let selectedWidget: Observable<ModuleWidget?> = Observable(nil)
+    let patchEditMode: Observable<Bool> = Observable(false)
 
-    func selectWidget(_ widget: ModuleWidget) {
-        // deselect current
-        if let current = selectedWidget.value {
-            current.isSelected = false
+    func togglePatchEditMode() {
+        if patchEditMode.value {
+            endEditing()
+        } else {
+            beginEditing()
         }
-        widget.isSelected = true
-        selectedWidget.value = widget
     }
 
-    func deselectWidgets() {
-        if let current = selectedWidget.value {
-            current.isSelected = false
-        }
-        selectedWidget.value = nil
+    func beginEditing() {
+        patchEditMode.value = true
+
+        // TODO: tell all widgets to flip state
     }
+
+    func endEditing() {
+        patchEditMode.value = false
+
+    }
+
+//    let selectedWidget: Observable<ModuleWidget?> = Observable(nil)
+//
+//    func selectWidget(_ widget: ModuleWidget) {
+//        // deselect current
+//        if let current = selectedWidget.value {
+//            current.isSelected = false
+//        }
+//        widget.isSelected = true
+//        selectedWidget.value = widget
+//    }
+//
+//    func deselectWidgets() {
+//        if let current = selectedWidget.value {
+//            current.isSelected = false
+//        }
+//        selectedWidget.value = nil
+//    }
 
     // MARK: - Module Actions
 
@@ -168,18 +210,18 @@ class PatchViewModel: PatchDelegate {
      Removes selected Module:
      If no module is selected, does nothing.
      */
-    func removeSelectedModule() {
-        if let selected = selectedWidget.value {
-            // remove external references to ports (otherwise they won't get released)
-            for wireable in selected.getWireables() {
-                wireRegister.unregisterWireable(wireable, for: selected.moduleId)
-            }
-            selected.destroy()
-            selectedWidget.value = nil
-
-            saveToDisk()
-        }
-    }
+//    func removeSelectedModule() {
+//        if let selected = selectedWidget.value {
+//            // remove external references to ports (otherwise they won't get released)
+//            for wireable in selected.getWireables() {
+//                wireRegister.unregisterWireable(wireable, for: selected.moduleId)
+//            }
+//            selected.destroy()
+//            selectedWidget.value = nil
+//
+//            saveToDisk()
+//        }
+//    }
 
     func move(widget: ModuleWidget, to position: CGPoint) {
         widget.center = position
@@ -188,52 +230,52 @@ class PatchViewModel: PatchDelegate {
         }
     }
 
-    func duplicateSelectedModule() {
-        if let selected = selectedWidget.value {
-            let dupState = selected.moduleState()
-            if let widget = ModuleWidget.create(with: dupState) {
-                // assign a new UUID
-                widget.moduleId = UUID().uuidString
-
-                for wireable in widget.getWireables() {
-                    wireRegister.registerWireable(wireable, for: widget.moduleId)
-                }
-
-                // position centered by default
-                widgetsView.addSubview(widget)
-
-                // offset a bit from original widget
-                var frame = widget.frame
-                var pos = selected.center
-                pos.x += frame.width * 0.2
-                pos.y += frame.height * 1.1
-                pos.x -= frame.width / 2.0
-                pos.y -= frame.height / 2.0
-                frame.origin = pos
-                widget.frame = frame
-
-                // serialization work
-                widget.patchDelegate = self
-                saveToDisk()
-            }
-        }
-    }
-
-    func resetSelectedModule() {
-        if let selected = selectedWidget.value {
-            selected.resetModule()
-
-            saveToDisk()
-        }
-    }
-
-    func randomizeSelectedModule() {
-        if let selected = selectedWidget.value {
-            selected.randomizeModule()
-
-            saveToDisk()
-        }
-    }
+//    func duplicateSelectedModule() {
+//        if let selected = selectedWidget.value {
+//            let dupState = selected.moduleState()
+//            if let widget = ModuleWidget.create(with: dupState) {
+//                // assign a new UUID
+//                widget.moduleId = UUID().uuidString
+//
+//                for wireable in widget.getWireables() {
+//                    wireRegister.registerWireable(wireable, for: widget.moduleId)
+//                }
+//
+//                // position centered by default
+//                widgetsView.addSubview(widget)
+//
+//                // offset a bit from original widget
+//                var frame = widget.frame
+//                var pos = selected.center
+//                pos.x += frame.width * 0.2
+//                pos.y += frame.height * 1.1
+//                pos.x -= frame.width / 2.0
+//                pos.y -= frame.height / 2.0
+//                frame.origin = pos
+//                widget.frame = frame
+//
+//                // serialization work
+//                widget.patchDelegate = self
+//                saveToDisk()
+//            }
+//        }
+//    }
+//
+//    func resetSelectedModule() {
+//        if let selected = selectedWidget.value {
+//            selected.resetModule()
+//
+//            saveToDisk()
+//        }
+//    }
+//
+//    func randomizeSelectedModule() {
+//        if let selected = selectedWidget.value {
+//            selected.randomizeModule()
+//
+//            saveToDisk()
+//        }
+//    }
 
     // MARK: - Power Metering
 

@@ -118,10 +118,10 @@ class ModuleWidget : UIView, ModuleDelegate {
     private var updatables = [Any]()
 
     private func setupUI() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        layer.cornerRadius = 12.0
-        layer.borderColor = WidgetColors.LINE_COLOR.cgColor
-        layer.borderWidth = 4.0
+        backgroundColor = UIColor.white
+        layer.cornerRadius = 8.0
+//        layer.borderColor = WidgetColors.LINE_COLOR.cgColor
+//        layer.borderWidth = 4.0
 
         setupDisplayLink()
     }

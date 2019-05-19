@@ -2,14 +2,12 @@ import UIKit
 
 /**
  Responsibilities:
- + Hosting scrollview
+ + Hosting the grid scrollview
  + Scrollview navigation gestures (pan, zoom, crop)
  + Top level gestures for module widgets (move, zoom)
  + Menu based actions
  */
-class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate {
-
-    var patch: PatchViewModel!
+class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -20,17 +18,49 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard patch != nil else {
-            fatalError("Patch must be assigned before showing view")
-        }
-
         self.scrollView.delegate = self
         self.scrollView.decelerationRate = .normal
-        self.scrollView.addSubview(self.patch.masterContainerView)
-        self.scrollView.contentSize = self.patch.masterContainerView.bounds.size
 
-        patch.open { [weak self] success in
-            guard let self = self else { return }
+
+        // TEMP: TODO:
+        newPatch()
+    }
+
+    // MARK: - Patch Open/Close
+
+    var patch: PatchViewModel?
+    var gestures: GridGesturesViewModel?
+
+    private var patchEditingObservation: Observation<Bool>?
+//    private var powerMeteringObservation: Observation<Bool>?
+//    private var selectedWidgetObservation: Observation<ModuleWidget?>?
+
+    private func newPatch() {
+        let destPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                           .userDomainMask,
+                                                           true).first!
+        let fileName = "Untitled.modpatch"
+        let fullDestPath = URL(fileURLWithPath: destPath)
+            .appendingPathComponent(fileName)
+        if !FileManager.default.fileExists(atPath: fullDestPath.path) {
+            // copy it in place
+            let newDocumentURL: URL = Bundle.main.url(forResource: "Untitled", withExtension: "modpatch")!
+            try! FileManager.default.copyItem(atPath: newDocumentURL.path, toPath: fullDestPath.path)
+        }
+
+        let patch = PatchViewModel()
+        patch.document = PatchDocument.init(fileURL: fullDestPath)
+        self.patch = patch
+        openPatch()
+    }
+
+    private func openPatch() {
+        patch?.open { [weak self] success in
+            guard
+                let self = self,
+                let patch = self.patch else {
+                    return
+            }
             guard success == true else {
                 assert(false, "Could not prepare patch")
                 self.dismiss(animated: true)
@@ -38,65 +68,94 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
             }
 
             self.setupObservers()
-            self.setupGestures()
+
+            self.gestures = GridGesturesViewModel(toView: self.scrollView, patchViewModel: patch, zoomDelegate: self)
+
+            self.scrollView.addSubview(patch.masterContainerView)
+            self.scrollView.contentSize = patch.masterContainerView.bounds.size
 
             self.zoomCropping(animated: false)
         }
+    }
+
+    private func closePatch() {
+        assert(false, "Not Implemented")
+        /*
+         patch.close { [weak self] success in
+         self?.teardownObservers()
+         self?.dismiss(animated: true)
+         }
+         */
+    }
+
+    private func setupObservers() {
+        patchEditingObservation = patch?.patchEditMode.observeHot(notificationBlock: { [weak self] patchIsEditing in
+            if patchIsEditing {
+                self?.togglePatchEditingButton.setTitle("LOCK", for: .normal)
+            } else {
+                self?.togglePatchEditingButton.setTitle("EDIT", for: .normal)
+                self?.closeModuleList()
+            }
+        })
+
+        /*
+         powerMeteringObservation = patch.isPowerMetering.observeHot(notificationBlock: { [weak self] isPowerMetering in
+         if isPowerMetering {
+         self?.startPowerMeter()
+         self?.powerMeteringButton.isSelected = true
+         } else {
+         self?.stopPowerMeter()
+         self?.powerMeteringButton.isSelected = false
+         }
+         })
+
+         selectedWidgetObservation = patch.selectedWidget.observeHot(notificationBlock: { [weak self] widget in
+         self?.actionsView.isHidden = widget == nil
+         })
+         */
+    }
+
+
+    private func teardownObservers() {
+//        powerMeteringObservation = nil
+//        selectedWidgetObservation = nil
+    }
+
+    // MARK: Top Bar
+
+    // MARK: Side Bar
+
+    @IBOutlet weak var togglePatchEditingButton: UIButton!
+
+    @IBAction func togglePatchEditMode(_ sender: Any) {
+        patch?.togglePatchEditMode()
     }
 
     // MARK: - Actions
 
     @IBOutlet weak var actionsView: UIView!
 
-    private var powerMeteringObservation: Observation<Bool>?
-    private var selectedWidgetObservation: Observation<ModuleWidget?>?
-
-    private func setupObservers() {
-        powerMeteringObservation = patch.isPowerMetering.observeHot(notificationBlock: { [weak self] isPowerMetering in
-            if isPowerMetering {
-                self?.startPowerMeter()
-                self?.powerMeteringButton.isSelected = true
-            } else {
-                self?.stopPowerMeter()
-                self?.powerMeteringButton.isSelected = false
-            }
-        })
-
-        selectedWidgetObservation = patch.selectedWidget.observeHot(notificationBlock: { [weak self] widget in
-            self?.actionsView.isHidden = widget == nil
-        })
-    }
-
-    private func teardownObservers() {
-        powerMeteringObservation = nil
-        selectedWidgetObservation = nil
-    }
-
-    @IBAction func closePatch(_ sender: Any) {
-        patch.close { [weak self] success in
-            self?.teardownObservers()
-            self?.dismiss(animated: true)
-        }
-    }
-
     @IBAction func displayModuleList(_ sender: UIButton) {
         openModuleList()
+
+        // put patch into editing mode if its not
+        patch?.beginEditing()
     }
 
     @IBAction func deleteModule(_ sender: Any) {
-        patch.removeSelectedModule()
+//        patch.removeSelectedModule()
     }
 
     @IBAction func duplicateModule(_ sender: Any) {
-        patch.duplicateSelectedModule()
+//        patch.duplicateSelectedModule()
     }
 
     @IBAction func resetModule(_ sender: Any) {
-        patch.resetSelectedModule()
+//        patch.resetSelectedModule()
     }
 
     @IBAction func randomizeModule(_ sender: Any) {
-        patch.randomizeSelectedModule()
+//        patch.randomizeSelectedModule()
     }
 
     @IBAction func togglePowerMeter(_ sender: UIButton) {
@@ -119,6 +178,7 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
         if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact {
             let navC = UINavigationController.init(rootViewController: moduleBrowserVC)
             present(navC, animated: true)
+            return
         } else {
             if modulesListViewContainer.subviews.count == 0 {
                 // embed module list VC before displaying
@@ -165,6 +225,8 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
     }
 
     func moduleBrowserDidSelect(pack: String, slug: String) {
+        guard let patch = patch else { return }
+
         let rect = scrollView.convert(scrollView.bounds, to: patch.masterContainerView)
         _ = patch.addModule(pack: pack, slug: slug, inRect: rect)
 
@@ -184,7 +246,7 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
     @IBOutlet weak var cpuUsageLabel: UILabel!
 
     private func togglePowerMetering() {
-        patch.togglePowerMetering()
+//        patch.togglePowerMetering()
     }
 
     var cpuTimer: Timer?
@@ -203,152 +265,32 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
         cpuUsageLabel.isHidden = true
     }
 
-    // MARK: - Gestures
-
-    private func setupGestures() {
-        // tap to select/deselect widgets
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureRecognized(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        scrollView.addGestureRecognizer(tapGesture)
-
-        // double tap to zoom on widget, or zoom all if taps not over a widget
-        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapGestureRecognized(_:)))
-        doubleTapGesture.numberOfTapsRequired = 2
-        scrollView.addGestureRecognizer(doubleTapGesture)
-
-        // drag to position widget subview
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized(_:)))
-        panGesture.maximumNumberOfTouches = 1
-        panGesture.delegate = self
-        scrollView.addGestureRecognizer(panGesture)
-    }
-
-    /**
-     Allow interactive widget subviews to also perform gestures.
-     This level will fail it's gestures based on position in view not being over the correct area.
-     */
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        if otherGestureRecognizer.view is IXWidget {
-            return true
-        }
-        return false
-    }
-
-    /**
-     Tap to Select:
-     Select a widget or deselect all widgets depending on tap location.
-     */
-    @objc func tapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
-        let loc = recognizer.location(in: recognizer.view)
-
-        if let widgetView = selectableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
-            patch.selectWidget(widgetView)
-        } else {
-            patch.deselectWidgets()
-
-            if self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.regular {
-                // close module list if open
-                closeModuleList()
-            }
-        }
-    }
-
-    /**
-     * Selectable Rules:
-     */
-    private func selectableWidget(from view: UIView?) -> ModuleWidget? {
-        guard let view = view else { return nil }
-
-        if let widgetView = view as? ModuleWidget {
-            return widgetView
-        } else if let knobWidget = view as? KnobWidget {
-            return knobWidget.superview as? ModuleWidget
-        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
-            // input port widget
-            return portWidget.superview as? ModuleWidget
-        } else if let waveformWidget = view as? WaveformWidget {
-            return waveformWidget.superview as? ModuleWidget
-        }
-
-        return nil
-    }
-
-    /**
-     Double tap to Zoom:
-     Zoom on a specific widget or the whole patch depending on double tap location.
-     */
-    @objc func doubleTapGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
-        let loc = recognizer.location(in: recognizer.view)
-
-        if let widgetView = selectableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
-            zoomCropping(view: widgetView)
-        } else {
-            zoomCropping()
-        }
-    }
-
-    /**
-     Drag to Position Widget:
-     If drag begins on widget view, move widget with finger until drag released.
-     */
-    private var draggingWidget: ModuleWidget?
-    private var originalWidgetCenter: CGPoint = .zero
-    @objc func panGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            let loc = recognizer.location(in: recognizer.view)
-            if let widgetView = draggableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
-                draggingWidget = widgetView
-                originalWidgetCenter = widgetView.center
-            }
-
-        case .changed:
-            if let widget = draggingWidget {
-                // add change in y & x as updated value
-                let trans = recognizer.translation(in: widget)
-                let center = CGPoint(x: originalWidgetCenter.x + trans.x, y: originalWidgetCenter.y + trans.y)
-                patch.move(widget: widget, to: center)
-            }
-
-        case .ended:
-            if draggingWidget != nil {
-                patch.saveToDisk()
-                draggingWidget = nil
-            }
-
-        default:
-            draggingWidget = nil
-            break
-        }
-    }
-
-    /**
-     * Draggable Rules:
-     * Pass through hit test on certain views so gestures work correctly
-     * i.e. can drag entire widget view when dragging an input port but not when dragging an output port
-     */
-    private func draggableWidget(from view: UIView?) -> ModuleWidget? {
-        guard let view = view else { return nil }
-
-        if let widgetView = view as? ModuleWidget {
-            return widgetView
-        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
-            // input port widget
-            return portWidget.superview as? ModuleWidget
-        } else if let waveformWidget = view as? WaveformWidget {
-            return waveformWidget.superview as? ModuleWidget
-        } else if let buttonWidget = view as? ButtonWidget {
-            return buttonWidget.superview as? ModuleWidget
-        }
-
-        return nil
-    }
-
-
     // MARK: - ScrollView
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return patch.masterContainerView
+        return patch?.masterContainerView
+    }
+
+}
+
+
+
+
+
+
+
+protocol ZoomCropable {
+    func zoomCropping()
+    func zoomCropping(view: UIView?)
+}
+
+extension MasterPatchViewController : ZoomCropable {
+    func zoomCropping() {
+        zoomCropping(view: nil, animated: true)
+    }
+
+    func zoomCropping(view: UIView?) {
+        zoomCropping(view: view, animated: true)
     }
 
     /**
@@ -361,11 +303,13 @@ class MasterPatchViewController: UIViewController, ModuleBrowserDelegate, UIScro
         if let view = view {
             rect = view.frame
         } else {
-            for view in patch.widgetsView.subviews {
-                if let r = rect {
-                    rect = r.union(view.frame)
-                } else {
-                    rect = view.frame
+            if let patch = patch {
+                for view in patch.widgetsView.subviews {
+                    if let r = rect {
+                        rect = r.union(view.frame)
+                    } else {
+                        rect = view.frame
+                    }
                 }
             }
         }
