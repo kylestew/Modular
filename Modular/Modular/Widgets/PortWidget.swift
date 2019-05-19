@@ -128,8 +128,8 @@ class PortWidget : UIControl, Port, Wireable {
 
     // MARK: - UI
 
-    let PORT_RADIUS: CGFloat = 20.0
-    let PORT_STROKE: CGFloat = 4.0
+    let PORT_RADIUS: CGFloat = 10.0
+    let PORT_STROKE: CGFloat = 1.0
 
     private let portBackgroundLayer = CAShapeLayer()
     private let portPosLightLayer = CAShapeLayer()

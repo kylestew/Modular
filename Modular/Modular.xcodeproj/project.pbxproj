@@ -111,6 +111,7 @@
 		FF9BD92C224494F6008277EE /* Primes_Delay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9BD92B224494F6008277EE /* Primes_Delay.xib */; };
 		FFA02B6B2246B07E0022A182 /* Notes_Quantizer.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */; };
 		FFA95EE32291F6BF0043BB96 /* GridGesturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA95EE22291F6BF0043BB96 /* GridGesturesViewModel.swift */; };
+		FFA95EE5229219290043BB96 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA95EE4229219290043BB96 /* DraggableView.swift */; };
 		FFAB6DE7227274F70044B7EA /* PatchDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB6DE6227274F70044B7EA /* PatchDocument.swift */; };
 		FFADB1CC2267E443003002CD /* Utilities_Demux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CB2267E442003002CD /* Utilities_Demux.xib */; };
 		FFADB1CE22682A42003002CD /* Utilities_Mux.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFADB1CD22682A41003002CD /* Utilities_Mux.xib */; };
@@ -349,6 +350,7 @@
 		FF9BD92B224494F6008277EE /* Primes_Delay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_Delay.xib; sourceTree = "<group>"; };
 		FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Quantizer.xib; sourceTree = "<group>"; };
 		FFA95EE22291F6BF0043BB96 /* GridGesturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGesturesViewModel.swift; sourceTree = "<group>"; };
+		FFA95EE4229219290043BB96 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		FFAB6DE6227274F70044B7EA /* PatchDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchDocument.swift; sourceTree = "<group>"; };
 		FFADB1CB2267E442003002CD /* Utilities_Demux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Demux.xib; sourceTree = "<group>"; };
 		FFADB1CD22682A41003002CD /* Utilities_Mux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Mux.xib; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				FF99C37022244E8F00C65FE1 /* WaveformWidget.swift */,
 				FFAF29D2221FAEA100FC3CBC /* _ScopeWidget.swift */,
 				FF0D8EC42249248E00D9FBCC /* PowerMeterWidget.swift */,
+				FFA95EE4229219290043BB96 /* DraggableView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -1164,6 +1167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA95EE5229219290043BB96 /* DraggableView.swift in Sources */,
 				FF52302022616679003ECB43 /* Observable.swift in Sources */,
 				FF074E8822654CBE006B269C /* engine.cpp in Sources */,
 				FF055A91225A8C1400FFCCD4 /* LabelWidget.swift in Sources */,

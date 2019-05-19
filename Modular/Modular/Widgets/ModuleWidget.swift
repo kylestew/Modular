@@ -112,16 +112,14 @@ class ModuleWidget : UIView, ModuleDelegate {
         return updatables.filter { $0 is Wireable } as! [Wireable]
     }
 
-    // MARK: - UI
+    // MARK: - Perform UI
 
     // keep track of bound sub-widgets for display updates
     private var updatables = [Any]()
 
     private func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.init(rgb: 0x3A3A3A)
         layer.cornerRadius = 8.0
-//        layer.borderColor = WidgetColors.LINE_COLOR.cgColor
-//        layer.borderWidth = 4.0
 
         setupDisplayLink()
     }
@@ -140,6 +138,22 @@ class ModuleWidget : UIView, ModuleDelegate {
 
             default: break
             }
+        }
+    }
+
+    // MARK: - Edit UI
+
+    private var editOverlayView: DraggableView?
+
+    func showEditUI(_ shown: Bool) {
+        if shown {
+            // overlay transparent view that locks down edit
+            editOverlayView = DraggableView.init(frame: self.bounds, parentWidget: self)
+            editOverlayView?.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+            self.addSubview(editOverlayView!)
+
+        } else {
+            editOverlayView?.removeFromSuperview()
         }
     }
 

@@ -151,6 +151,10 @@ class PatchViewModel: PatchDelegate {
             frame.origin = pos
             widget.frame = frame
 
+
+
+            widget.showEditUI(patchEditMode.value)
+
 //            // serialization work
 //            widget.patchDelegate = self
 //            saveToDisk()
@@ -178,12 +182,22 @@ class PatchViewModel: PatchDelegate {
     func beginEditing() {
         patchEditMode.value = true
 
-        // TODO: tell all widgets to flip state
+        // tell all widgets to start editing
+        for widget in widgetsView.subviews {
+            if let widget = widget as? ModuleWidget {
+                widget.showEditUI(true)
+            }
+        }
     }
 
     func endEditing() {
         patchEditMode.value = false
 
+        for widget in widgetsView.subviews {
+            if let widget = widget as? ModuleWidget {
+                widget.showEditUI(false)
+            }
+        }
     }
 
 //    let selectedWidget: Observable<ModuleWidget?> = Observable(nil)
@@ -224,7 +238,24 @@ class PatchViewModel: PatchDelegate {
 //    }
 
     func move(widget: ModuleWidget, to position: CGPoint) {
-        widget.center = position
+        let oldPosition = widget.frame.origin
+
+        // snap to grid
+        var newX = CGFloat(roundf(Float(position.x) / 100)) * 100
+        var newY = CGFloat(roundf(Float(position.y) / 100)) * 100
+        newX += PatchViewModel.unitPadding
+        newY += PatchViewModel.unitPadding
+
+        print(newX, newY, oldPosition)
+
+        if oldPosition.x == newX && oldPosition.y == newY {
+            // don't move
+            return
+        }
+
+        var frame = widget.frame
+        frame.origin = CGPoint(x: newX, y: newY)
+        widget.frame = frame
         for wireable in widget.getWireables() {
             wireRegister.wireableHasMoved(wireable)
         }

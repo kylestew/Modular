@@ -5,6 +5,9 @@ class GridGesturesViewModel: NSObject, UIGestureRecognizerDelegate {
     private let zoomDelegate: ZoomCropable
     private let patch: PatchViewModel
 
+    private var patchEditingObservation: Observation<Bool>?
+    private var panGesture: UIPanGestureRecognizer?
+
     init(toView view: UIView, patchViewModel: PatchViewModel, zoomDelegate: ZoomCropable) {
         self.patch = patchViewModel
         self.zoomDelegate = zoomDelegate
@@ -21,6 +24,15 @@ class GridGesturesViewModel: NSObject, UIGestureRecognizerDelegate {
         panGesture.maximumNumberOfTouches = 1
         panGesture.delegate = self
         view.addGestureRecognizer(panGesture)
+        self.panGesture = panGesture
+
+        patchEditingObservation = patch.patchEditMode.observeHot(notificationBlock: { [weak self] patchIsEditing in
+            if patchIsEditing {
+                self?.panGesture?.isEnabled = true
+            } else {
+                self?.panGesture?.isEnabled = false
+            }
+        })
     }
 
     /**
@@ -92,54 +104,58 @@ class GridGesturesViewModel: NSObject, UIGestureRecognizerDelegate {
      If drag begins on widget view, move widget with finger until drag released.
      */
     private var draggingWidget: ModuleWidget?
-    private var originalWidgetCenter: CGPoint = .zero
+    private var originalWidgetPos: CGPoint = .zero
     @objc func panGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
-                switch recognizer.state {
-                case .began:
-                    let loc = recognizer.location(in: recognizer.view)
-                    if let widgetView = draggableWidget(from: recognizer.view?.hitTest(loc, with: nil)) {
-                        draggingWidget = widgetView
-                        originalWidgetCenter = widgetView.center
-                    }
+        switch recognizer.state {
+        case .began:
+            let loc = recognizer.location(in: recognizer.view)
+            if let dragView = recognizer.view?.hitTest(loc, with: nil) as? DraggableView {
+                draggingWidget = dragView.parentWidget
+                originalWidgetPos = draggingWidget?.frame.origin ?? .zero
+            }
 
-                case .changed:
-                    if let widget = draggingWidget {
-                        // add change in y & x as updated value
-                        let trans = recognizer.translation(in: widget)
-                        let center = CGPoint(x: originalWidgetCenter.x + trans.x, y: originalWidgetCenter.y + trans.y)
-                        patch.move(widget: widget, to: center)
-                    }
+        case .changed:
+            if let widget = draggingWidget {
+                // add change in y & x as updated value
+                let trans = recognizer.translation(in: widget)
+                let center = CGPoint(x: originalWidgetPos.x + trans.x, y: originalWidgetPos.y + trans.y)
+                patch.move(widget: widget, to: center)
+            }
 
-                case .ended:
-                    if draggingWidget != nil {
-                        patch.saveToDisk()
-                        draggingWidget = nil
-                    }
+        case .ended:
+            if draggingWidget != nil {
+                patch.saveToDisk()
+                draggingWidget = nil
+            }
 
-                default:
-                    draggingWidget = nil
-                    break
-                }
+        default:
+            draggingWidget = nil
+            break
+        }
     }
 
     /**
-     * Draggable Rules:
-     * Pass through hit test on certain views so gestures work correctly
-     * i.e. can drag entire widget view when dragging an input port but not when dragging an output port
+     * Dig up to parent to find ModuleWidget
      */
     private func draggableWidget(from view: UIView?) -> ModuleWidget? {
         guard let view = view else { return nil }
 
-        if let widgetView = view as? ModuleWidget {
-            return widgetView
-        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
-            // input port widget
-            return portWidget.superview as? ModuleWidget
-        } else if let waveformWidget = view as? WaveformWidget {
-            return waveformWidget.superview as? ModuleWidget
-        } else if let buttonWidget = view as? ButtonWidget {
-            return buttonWidget.superview as? ModuleWidget
-        }
+        var widgetView: ModuleWidget? = nil
+
+
+
+
+
+//        if let widgetView = view as? ModuleWidget {
+//            return widgetView
+//        } else if let portWidget = view as? PortWidget, portWidget.isOutput == false {
+//            // input port widget
+//            return portWidget.superview as? ModuleWidget
+//        } else if let waveformWidget = view as? WaveformWidget {
+//            return waveformWidget.superview as? ModuleWidget
+//        } else if let buttonWidget = view as? ButtonWidget {
+//            return buttonWidget.superview as? ModuleWidget
+//        }
 
         return nil
     }
