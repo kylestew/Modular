@@ -24,16 +24,11 @@ class ModuleBrowserViewController : UITableViewController, UISearchResultsUpdati
             "AudioInterface",
             ]),
 
-        Pack.init(title: "Primes", modules: [
-            "VCO-1",
-            "VCO-2",
-            "LFO",
-            "VCA",
-            "VCF",
-            "ADSR",
-            "Delay",
+        Pack.init(title: "Sources", modules: [
+            "OSC",
             ]),
 
+        /*
         Pack.init(title: "Notes", modules: [
             "SEQ",
             "Quantizer",
@@ -89,6 +84,7 @@ class ModuleBrowserViewController : UITableViewController, UISearchResultsUpdati
             "Plateau",
 //            "LRTVCO",
             ]),
+ */
     ]
 
     let searchController = UISearchController(searchResultsController: nil)

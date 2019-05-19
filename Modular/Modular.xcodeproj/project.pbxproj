@@ -73,7 +73,7 @@
 		FF3FD7D42266DB9800AEEFC9 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C82266DB9800AEEFC9 /* Utilities.cpp */; };
 		FF3FD7D52266DB9800AEEFC9 /* OTAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF3FD7C92266DB9800AEEFC9 /* OTAFilter.cpp */; };
 		FF48F812225A6638004AD3C6 /* Experimental_EvenVCO.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */; };
-		FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */; };
+		FF4BEA6222164F53004E9D0B /* Sources_OSC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF4BEA6122164F53004E9D0B /* Sources_OSC.xib */; };
 		FF4BEA662216506D004E9D0B /* ModuleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BEA652216506D004E9D0B /* ModuleWidget.swift */; };
 		FF4E6AB4227214ED006FCEEB /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E6AB3227214ED006FCEEB /* DocumentBrowserViewController.swift */; };
 		FF513B432248422400C24F98 /* Primes_ADSR.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF513B422248422300C24F98 /* Primes_ADSR.xib */; };
@@ -268,7 +268,7 @@
 		FF3FD7D02266DB9800AEEFC9 /* Dattorro.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dattorro.hpp; sourceTree = "<group>"; };
 		FF3FD7D12266DB9800AEEFC9 /* OnePoleFilters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OnePoleFilters.hpp; sourceTree = "<group>"; };
 		FF48F811225A6637004AD3C6 /* Experimental_EvenVCO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Experimental_EvenVCO.xib; sourceTree = "<group>"; };
-		FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Primes_VCO-1.xib"; sourceTree = "<group>"; };
+		FF4BEA6122164F53004E9D0B /* Sources_OSC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sources_OSC.xib; sourceTree = "<group>"; };
 		FF4BEA652216506D004E9D0B /* ModuleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleWidget.swift; sourceTree = "<group>"; };
 		FF4E6AB3227214ED006FCEEB /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		FF513B422248422300C24F98 /* Primes_ADSR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Primes_ADSR.xib; sourceTree = "<group>"; };
@@ -297,18 +297,6 @@
 		FF78C9BA226836F300D8751C /* Oscillator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Oscillator.cpp; sourceTree = "<group>"; };
 		FF90CBD6222C62A400263593 /* ParamWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamWidget.swift; sourceTree = "<group>"; };
 		FF977085221CCD52002283E2 /* PatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchViewModel.swift; sourceTree = "<group>"; };
-		FF977C42225D7F8F001F31BA /* VCO1.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO1.hpp; sourceTree = "<group>"; };
-		FF977C43225D7F8F001F31BA /* VCO2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO2.hpp; sourceTree = "<group>"; };
-		FF977C44225D7F8F001F31BA /* Primes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Primes.hpp; sourceTree = "<group>"; };
-		FF977C45225D7F8F001F31BA /* ADSR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADSR.hpp; sourceTree = "<group>"; };
-		FF977C46225D7F8F001F31BA /* LowFrequencyOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LowFrequencyOscillator.hpp; sourceTree = "<group>"; };
-		FF977C47225D7F8F001F31BA /* Delay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Delay.hpp; sourceTree = "<group>"; };
-		FF977C48225D7F8F001F31BA /* VCF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCF.hpp; sourceTree = "<group>"; };
-		FF977C49225D7F8F001F31BA /* LadderFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LadderFilter.hpp; sourceTree = "<group>"; };
-		FF977C4A225D7F8F001F31BA /* VoltageControlledOscillator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoltageControlledOscillator.h; sourceTree = "<group>"; };
-		FF977C4B225D7F8F001F31BA /* LFO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LFO.hpp; sourceTree = "<group>"; };
-		FF977C4C225D7F8F001F31BA /* Seq3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Seq3.hpp; sourceTree = "<group>"; };
-		FF977C4D225D7F8F001F31BA /* VCA.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCA.hpp; sourceTree = "<group>"; };
 		FF977C4F225D7F8F001F31BA /* Simples.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Simples.hpp; sourceTree = "<group>"; };
 		FF977C50225D7F8F001F31BA /* Unity.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Unity.hpp; sourceTree = "<group>"; };
 		FF977C51225D7F8F001F31BA /* VertOff.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VertOff.hpp; sourceTree = "<group>"; };
@@ -351,6 +339,17 @@
 		FFA02B6A2246B07E0022A182 /* Notes_Quantizer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Notes_Quantizer.xib; sourceTree = "<group>"; };
 		FFA95EE22291F6BF0043BB96 /* GridGesturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGesturesViewModel.swift; sourceTree = "<group>"; };
 		FFA95EE4229219290043BB96 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		FFA95EE7229220DD0043BB96 /* OSC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = OSC.hpp; sourceTree = "<group>"; };
+		FFA95EE8229220DD0043BB96 /* VCO2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCO2.hpp; sourceTree = "<group>"; };
+		FFA95EE9229220DD0043BB96 /* Sources.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sources.hpp; sourceTree = "<group>"; };
+		FFA95EEA229220DD0043BB96 /* ADSR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADSR.hpp; sourceTree = "<group>"; };
+		FFA95EEB229220DD0043BB96 /* LowFrequencyOscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LowFrequencyOscillator.hpp; sourceTree = "<group>"; };
+		FFA95EEC229220DD0043BB96 /* Delay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Delay.hpp; sourceTree = "<group>"; };
+		FFA95EED229220DD0043BB96 /* VCF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCF.hpp; sourceTree = "<group>"; };
+		FFA95EEE229220DD0043BB96 /* LadderFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LadderFilter.hpp; sourceTree = "<group>"; };
+		FFA95EEF229220DD0043BB96 /* VoltageControlledOscillator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoltageControlledOscillator.h; sourceTree = "<group>"; };
+		FFA95EF0229220DD0043BB96 /* LFO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LFO.hpp; sourceTree = "<group>"; };
+		FFA95EF1229220DD0043BB96 /* VCA.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VCA.hpp; sourceTree = "<group>"; };
 		FFAB6DE6227274F70044B7EA /* PatchDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchDocument.swift; sourceTree = "<group>"; };
 		FFADB1CB2267E442003002CD /* Utilities_Demux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Demux.xib; sourceTree = "<group>"; };
 		FFADB1CD22682A41003002CD /* Utilities_Mux.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Utilities_Mux.xib; sourceTree = "<group>"; };
@@ -750,16 +749,16 @@
 				FF499530225CF0EC002B0D6F /* Notes */,
 				FF977C3F225D7E92001F31BA /* Mixers */,
 				FFBF3BB5225C429100F2C8F3 /* Scopes */,
-				FF5DC85E221F4A310018AC42 /* Primes */,
+				FF5DC85E221F4A310018AC42 /* Sources */,
 				FF959EFB22449BAA008F4FFC /* Experimental */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		FF5DC85E221F4A310018AC42 /* Primes */ = {
+		FF5DC85E221F4A310018AC42 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FF4BEA6122164F53004E9D0B /* Primes_VCO-1.xib */,
+				FF4BEA6122164F53004E9D0B /* Sources_OSC.xib */,
 				FFAEEF562259A6B400DC005B /* Primes_VCO-2.xib */,
 				FF02668C2225D9C400607BB1 /* Primes_LFO.xib */,
 				FF5DBD59224455D0006B98FE /* Primes_LFOb.xib */,
@@ -768,7 +767,7 @@
 				FF513B422248422300C24F98 /* Primes_ADSR.xib */,
 				FF9BD92B224494F6008277EE /* Primes_Delay.xib */,
 			);
-			path = Primes;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		FF5DC85F221F4A3A0018AC42 /* Core */ = {
@@ -859,8 +858,8 @@
 		FF977C40225D7F8F001F31BA /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				FFA95EE6229220DD0043BB96 /* Sources */,
 				FF3FD7B92266DB9800AEEFC9 /* Experimental */,
-				FF977C41225D7F8F001F31BA /* Primes */,
 				FF977C4E225D7F8F001F31BA /* Simples */,
 				FF977C63225D7F90001F31BA /* CMakeLists.txt */,
 				FF977C64225D7F90001F31BA /* Core */,
@@ -874,25 +873,6 @@
 			);
 			name = modules;
 			path = ../../../../DSPCore/modules;
-			sourceTree = "<group>";
-		};
-		FF977C41225D7F8F001F31BA /* Primes */ = {
-			isa = PBXGroup;
-			children = (
-				FF977C42225D7F8F001F31BA /* VCO1.hpp */,
-				FF977C43225D7F8F001F31BA /* VCO2.hpp */,
-				FF977C44225D7F8F001F31BA /* Primes.hpp */,
-				FF977C45225D7F8F001F31BA /* ADSR.hpp */,
-				FF977C46225D7F8F001F31BA /* LowFrequencyOscillator.hpp */,
-				FF977C47225D7F8F001F31BA /* Delay.hpp */,
-				FF977C48225D7F8F001F31BA /* VCF.hpp */,
-				FF977C49225D7F8F001F31BA /* LadderFilter.hpp */,
-				FF977C4A225D7F8F001F31BA /* VoltageControlledOscillator.h */,
-				FF977C4B225D7F8F001F31BA /* LFO.hpp */,
-				FF977C4C225D7F8F001F31BA /* Seq3.hpp */,
-				FF977C4D225D7F8F001F31BA /* VCA.hpp */,
-			);
-			path = Primes;
 			sourceTree = "<group>";
 		};
 		FF977C4E225D7F8F001F31BA /* Simples */ = {
@@ -957,6 +937,24 @@
 				FF977C76225D7F90001F31BA /* Waveform.hpp */,
 			);
 			path = Scopes;
+			sourceTree = "<group>";
+		};
+		FFA95EE6229220DD0043BB96 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FFA95EE7229220DD0043BB96 /* OSC.hpp */,
+				FFA95EE8229220DD0043BB96 /* VCO2.hpp */,
+				FFA95EE9229220DD0043BB96 /* Sources.hpp */,
+				FFA95EEA229220DD0043BB96 /* ADSR.hpp */,
+				FFA95EEB229220DD0043BB96 /* LowFrequencyOscillator.hpp */,
+				FFA95EEC229220DD0043BB96 /* Delay.hpp */,
+				FFA95EED229220DD0043BB96 /* VCF.hpp */,
+				FFA95EEE229220DD0043BB96 /* LadderFilter.hpp */,
+				FFA95EEF229220DD0043BB96 /* VoltageControlledOscillator.h */,
+				FFA95EF0229220DD0043BB96 /* LFO.hpp */,
+				FFA95EF1229220DD0043BB96 /* VCA.hpp */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		FFBF3BB2225C3CBD00F2C8F3 /* Simples */ = {
@@ -1062,7 +1060,7 @@
 				FF39CC34220F8A2C00C9AF52 /* LaunchScreen.storyboard in Resources */,
 				FF108F1E227023CD00D1CD48 /* Notes_Scale.xib in Resources */,
 				FF374B1A2259598800E2EE8E /* config.h.in in Resources */,
-				FF4BEA6222164F53004E9D0B /* Primes_VCO-1.xib in Resources */,
+				FF4BEA6222164F53004E9D0B /* Sources_OSC.xib in Resources */,
 				FF6203E82280CA4E008A47AE /* Simples_Pad.xib in Resources */,
 				FF374AE12259598800E2EE8E /* depcomp in Resources */,
 				FFD5B90A221B4B7A0064917A /* Core_AudioInterface.xib in Resources */,

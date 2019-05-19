@@ -1,14 +1,15 @@
 #pragma once
-#include "Primes.hpp"
+#include "Sources.hpp"
 #include "VoltageControlledOscillator.h"
 
 using namespace dsp;
 
-namespace library { namespace primes {
+namespace library { namespace sources {
 
-    struct VCO2: Module {
+    struct OSC: Module {
         enum ParamIds {
             FREQ_PARAM,
+            AMP_PARAM,
             PW_PARAM,
             NUM_PARAMS
         };
@@ -19,6 +20,7 @@ namespace library { namespace primes {
         enum InputIds {
             NOTE_INPUT,
             FREQ_CV,
+            AMP_CV,
             PWM_CV,
             NUM_INPUTS
         };
@@ -45,11 +47,13 @@ namespace library { namespace primes {
         VoltageControlledOscillator<1, 1> previewOsc;
 
         int lastWaveform = -1;
+        float lastAmp = 0;
         float lastPW = 0;
 
-        VCO2() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
+        OSC() : Module(NUM_PARAMS, NUM_OPTIONS, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_BUFFERS) {
             // map CVs to Params
             params[FREQ_PARAM].cvIndex = FREQ_CV;
+            params[AMP_PARAM].cvIndex = AMP_CV;
             params[PW_PARAM].cvIndex = PWM_CV;
 
             options[WAVEFORM_BUTTON].states = WAVE_TYPES_COUNT;
@@ -63,11 +67,13 @@ namespace library { namespace primes {
 
         void reset() override {
             params[FREQ_PARAM].setting = 0.f;
+            params[AMP_PARAM].setting = 1.0f;
             params[PW_PARAM].setting = 0.f;
         }
 
         void step() override {
             float freq = params[FREQ_PARAM].value;
+            float amp = clamp(rescale(params[AMP_PARAM].value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
             float pw = params[PW_PARAM].value;
             int waveform = options[WAVEFORM_BUTTON].value;
 
@@ -89,13 +95,15 @@ namespace library { namespace primes {
                 case PULSE:
                     output = oscillator.sqr();
             }
-            outputs[OUTPUT].value = output;
+            outputs[OUTPUT].value = output * amp;
 
             // update waveform preview if changes effect its display
             if (lastWaveform != waveform ||
+                lastAmp != amp ||
                 lastPW != pw) {
 
                 lastWaveform = waveform;
+                lastAmp = amp;
                 lastPW = pw;
 
                 // update params
@@ -121,7 +129,7 @@ namespace library { namespace primes {
                         case PULSE:
                             output = previewOsc.sqr();
                     }
-                    *buffer = clamp(output, -1.f, 1.f);
+                    *buffer = clamp(output * amp, -1.f, 1.f);
                     buffer++;
                 }
 
