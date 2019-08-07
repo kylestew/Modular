@@ -2,6 +2,8 @@
 #include "audio.hpp"
 #include "rtaudio/RtAudio.h"
 
+using namespace dsp;
+
 static int rtCallback(void *outputBuffer, void *inputBuffer, unsigned int nFrames, double streamTime, RtAudioStreamStatus status, void *userData) {
     AudioIO* audioIO = (AudioIO*)userData;
     assert(audioIO);
