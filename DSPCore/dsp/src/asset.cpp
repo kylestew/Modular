@@ -26,7 +26,7 @@ namespace dsp {
 std::string assetGlobalDir;
 std::string assetLocalDir;
 
-
+/*
 void assetInit(bool devMode) {
 	if (assetGlobalDir.empty()) {
 		if (devMode) {
@@ -94,6 +94,7 @@ void assetInit(bool devMode) {
 //	systemCreateDirectory(assetGlobalDir);
 //	systemCreateDirectory(assetLocalDir);
 }
+ */
 
 
 std::string assetGlobal(std::string filename) {

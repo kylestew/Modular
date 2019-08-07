@@ -1,7 +1,5 @@
 #include "dsp.hpp"
 #include "module_library.hpp"
-#include "rtaudioio.h"
-//#include "util/random.hpp"
 
 #include <thread>
 #include <chrono>
@@ -18,12 +16,11 @@ int main() {
     library::libraryInit();
     engineInit();
     engineStart();
-    registerAudioIO(new RTAudioIO());
 
     ModuleBuilder* builder;
 
     // build a VCO
-    builder = libraryGetModuleBuilder("Primes", "VCO-1");
+    builder = libraryGetModuleBuilder("Primes", "LFO");
     Module* vco1 = builder->createModule();
     delete builder;
     engineAddModule(vco1); // does not transfer pointer ownership
@@ -54,7 +51,6 @@ int main() {
     delete vco1; vco1 = NULL;
     delete audioInterface; audioInterface = NULL;
 
-    unregisterAudioIO();
     engineStop();
     engineDestroy();
 

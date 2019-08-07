@@ -31,3 +31,14 @@ target_include_directories(${PROJECT_NAME}
 
         ${PROJECT_SOURCE_DIR}/dep/libsamplerate-0.1.9/src
         )
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC ARCH_MAC=1)
+
+find_path(RT_INCLUDE_DIR NAMES rtaudio/rtaudio.h)
+find_library(RT rtaudio REQUIRED)
+message(STATUS "RT: [${RT} ${RT_INCLUDE_DIR}]")
+target_link_libraries(${PROJECT_NAME} ${RT})
+target_include_directories(${PROJECT_NAME} PUBLIC ${RT_INCLUDE_DIR})
+
+
+

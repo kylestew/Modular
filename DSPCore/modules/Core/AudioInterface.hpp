@@ -28,13 +28,14 @@ namespace library { namespace core {
         };
 
         AudioInterface() : Module(NUM_PARAMS, 0, NUM_INPUTS, NUM_OUTPUTS, 0, 0, NUM_FRAMES) {
-            gAudioIO->openStream();
+//            gAudioIO->openStream();
 
             // don't record time on this module since it pauses the CPU to wait for ring buffer ops
             hasPowerMeter = false;
         }
 
         void step() override {
+            /*
             if (gAudioIO->active && gAudioIO->numOutputs > 0) {
                 // wait until enough outputs are consumed by the audio IO thread, then continue to fill
                 // this throttles the DSP engine if audio is connected
@@ -60,6 +61,7 @@ namespace library { namespace core {
 
             // notify audio thread that an output is potentially ready
             gAudioIO->audioCv.notify_one();
+             */
         }
     };
 }}
