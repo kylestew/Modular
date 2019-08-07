@@ -10,7 +10,7 @@ namespace library {
                 Pack* p = new Pack();
                 p->slug = "Core";
 
-                p->addModuleBuilder(ModuleBuilder::create<AudioInterface>("AudioInterface"));
+                p->addModuleBuilder(ModuleBuilder::create<DSP2>("DSP-2"));
 
                 return p;
             }

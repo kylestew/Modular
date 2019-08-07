@@ -20,13 +20,13 @@ int main() {
     ModuleBuilder* builder;
 
     // build a VCO
-    builder = libraryGetModuleBuilder("Primes", "LFO");
+    builder = libraryGetModuleBuilder("Primes", "VCO-1");
     Module* vco1 = builder->createModule();
     delete builder;
     engineAddModule(vco1); // does not transfer pointer ownership
 
     // build an audio interface
-    builder = libraryGetModuleBuilder("Core", "AudioInterface");
+    builder = libraryGetModuleBuilder("Core", "DSP-2");
     Module* audioInterface = builder->createModule();
     delete builder;
     engineAddModule(audioInterface);
@@ -40,7 +40,7 @@ int main() {
     engineAddWire(wire1);
 
     // change settings
-    engineSetParam(audioInterface, 0, 0.4);
+//    engineSetParam(audioInterface, 0, 0.4);
 
     std::this_thread::sleep_for(std::chrono::seconds(4));
 
