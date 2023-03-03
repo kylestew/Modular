@@ -9,18 +9,18 @@ set(SOURCES
         src/util/string.cpp
         src/util/logger.cpp
 
-        src/dsp/filter.cpp
-        src/dsp/math.cpp
-        src/dsp/minblep.cpp
-        src/dsp/noise.cpp
-        src/dsp/signal.cpp
-        src/dsp/table.cpp
+        # src/dsp/filter.cpp
+        # src/dsp/math.cpp
+        # src/dsp/minblep.cpp
+        # src/dsp/noise.cpp
+        # src/dsp/signal.cpp
+        # src/dsp/table.cpp
 
-        dep/libsamplerate-0.1.9/src/samplerate.c
-        dep/libsamplerate-0.1.9/src/src_linear.c
-        dep/libsamplerate-0.1.9/src/src_sinc.c
-        dep/libsamplerate-0.1.9/src/src_zoh.c
-        )
+        # dep/libsamplerate-0.1.9/src/samplerate.c
+        # dep/libsamplerate-0.1.9/src/src_linear.c
+        # dep/libsamplerate-0.1.9/src/src_sinc.c
+        # dep/libsamplerate-0.1.9/src/src_zoh.c
+)
 add_library(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME}
@@ -30,4 +30,4 @@ target_include_directories(${PROJECT_NAME}
         ${PROJECT_SOURCE_DIR}/include/util
 
         ${PROJECT_SOURCE_DIR}/dep/libsamplerate-0.1.9/src
-        )
+)

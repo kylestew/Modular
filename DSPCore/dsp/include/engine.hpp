@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+
 #include "util/common.hpp"
 
 /**
@@ -18,65 +19,69 @@
  */
 namespace dsp {
 
-    struct Light {
-        /** The square of the brightness value */
-        float value = 0.0;
+struct Light {
+    /** The square of the brightness value */
+    float value = 0.0;
 
-        float getBrightness();
-        void setBrightness(float brightness) {
-            value = (brightness > 0.f) ? brightness * brightness : 0.f;
-        }
-        /** Emulates slow fall (but immediate rise) of LED brightness.
-        `frames` rescales the timestep. For example, if your module calls this method every 16 frames, use 16.0.
-        */
-        void setBrightnessSmooth(float brightness, float frames = 1.f);
-    };
+    float getBrightness();
+    void setBrightness(float brightness) {
+        value = (brightness > 0.f) ? brightness * brightness : 0.f;
+    }
+    /** Emulates slow fall (but immediate rise) of LED brightness.
+    `frames` rescales the timestep. For example, if your module calls this method every 16 frames,
+    use 16.0.
+    */
+    void setBrightnessSmooth(float brightness, float frames = 1.f);
+};
 
-    struct Param {
-        /** value are -1.0 to 1.0, CV can overdrive this range **/
-        float setting = 0.0;
+struct Param {
+    /** value are -1.0 to 1.0, CV can overdrive this range **/
+    float setting = 0.0;
 
-        /** if index != -1, param CV is bound to input with that index **/
-        /** CV values match audio -1.0 to 1.0 **/
-        int cvIndex = -1;
-        float cvAmount = 1.0;
+    /** if index != -1, param CV is bound to input with that index **/
+    /** CV values match audio -1.0 to 1.0 **/
+    int cvIndex = -1;
+    float cvAmount = 1.0;
 
-        /** internal value is value with CV applied per engine step **/
-        float value = 0.f;
-        inline float const valueNormalized() {
-            return clamp(rescale(value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
-        }
+    /** internal value is value with CV applied per engine step **/
+    float value = 0.f;
+    inline float const valueNormalized() {
+        return clamp(rescale(value, -1.f, 1.f, 0.f, 1.f), 0.f, 1.f);
+    }
 
-        Light lights[2];
-    };
+    Light lights[2];
+};
 
+/*
     struct Option {
         int value = 0;
         int states = 0;
     };
+*/
 
-    struct Input {
-        /** Voltage of the port, zero if not plugged in. Read-only by Module */
-        float value = 0.0;
-        /** Whether a wire is plugged in */
-        bool active = false;
+struct Input {
+    /** Voltage of the port, zero if not plugged in. Read-only by Module */
+    float value = 0.0;
+    /** Whether a wire is plugged in */
+    bool active = false;
 
-        Light lights[2];
-    };
+    Light lights[2];
+};
 
-    struct Output {
-        /** Voltage of the port. Write-only by Module */
-        float value = 0.0;
-        /** Whether a wire is plugged in */
-        bool active = false;
+struct Output {
+    /** Voltage of the port. Write-only by Module */
+    float value = 0.0;
+    /** Whether a wire is plugged in */
+    bool active = false;
 
-        Light lights[2];
-    };
+    Light lights[2];
+};
 
-    struct Label {
-        std::string value;
-    };
+struct Label {
+    std::string value;
+};
 
+/*
     struct SampleBuffer {
         int size;
         int version = 0; // increment when data changes
@@ -95,83 +100,93 @@ namespace dsp {
             delete samples;
         }
     };
+*/
 
-    struct Module {
-        // inputs
-        std::vector<Param> params;
-        std::vector<Option> options;
-        // I/O
-        std::vector<Input> inputs;
-        std::vector<Output> outputs;
-        // display
-        std::vector<Light> lights;
-        std::vector<Label> labels;
-        std::vector<SampleBuffer> buffers;
+struct Module {
+    // Audio I/O
+    std::vector<Input> inputs;
+    std::vector<Output> outputs;
 
-        bool hasPowerMeter = true;
-        float cpuTime = 0.f;
+    // Control I/O
+    std::vector<Input> cvInputs;
+    std::vector<Output> cvOutputs;
 
-        Module() {}
-        Module(int numParams, int numOptions, int numInputs, int numOutputs, int numLights, int numLabels, int numBuffers) {
-            params.resize(numParams);
-            options.resize(numOptions);
-            inputs.resize(numInputs);
-            outputs.resize(numOutputs);
-            lights.resize(numLights);
-            labels.resize(numLabels);
-            buffers.resize(numBuffers);
-        }
-        virtual ~Module() {}
+    // UI
+    std::vector<Param> params;
+    // std::vector<Option> options;
 
-        /**
-         * Sets defaults for module. Called on user reset action.
-         */
-        virtual void reset() {}
+    // display
+    // std::vector<Light> lights;
+    std::vector<Label> labels;
 
-        /**
-         * Override to provide appropriate randomization of params. Called by user action.
-         */
-        virtual void randomize() {}
+    // (internal?)
+    // std::vector<SampleBuffer> buffers;
 
-        /**
-         * Advances the module by 1 audio frame with duration 1.0 / gSampleRate
-         */
-        virtual void step() {}
-    };
+    bool hasPowerMeter = true;
+    float cpuTime = 0.f;
 
-    /** does not own pointers */
-    struct Wire {
-        Module *outputModule = NULL;
-        int outputId;
-        Module *inputModule = NULL;
-        int inputId;
-        void step();
-    };
+    Module() {}
+    Module(int numParams, int numOptions, int numInputs, int numOutputs, int numLights,
+           int numLabels, int numBuffers) {
+        params.resize(numParams);
+        options.resize(numOptions);
+        inputs.resize(numInputs);
+        outputs.resize(numOutputs);
+        lights.resize(numLights);
+        labels.resize(numLabels);
+        buffers.resize(numBuffers);
+    }
+    virtual ~Module() {}
 
-    void engineInit();
-    void engineDestroy();
+    /**
+     * Sets defaults for module. Called on user reset action.
+     */
+    virtual void reset() {}
 
-    void engineStart();
-    void engineStop();
+    /**
+     * Override to provide appropriate randomization of params. Called by user action.
+     */
+    virtual void randomize() {}
 
-    /** does not transfer pointer ownership */
-    void engineAddModule(Module *module);
-    void engineRemoveModule(Module *module);
-    void engineResetModule(Module* module);
-    void engineRandomizeModule(Module* module);
+    /**
+     * Advances the module by 1 audio frame with duration 1.0 / gSampleRate
+     */
+    virtual void step() {}
+};
 
-    void engineAddWire(Wire* wire);
-    void engineRemoveWire(Wire* wire);
+/** does not own pointers */
+struct Wire {
+    Module* outputModule = NULL;
+    int outputId;
+    Module* inputModule = NULL;
+    int inputId;
+    void step();
+};
 
-    void engineSetParam(Module* module, int paramId, float value);
-    void engineSetParamSmooth(Module *module, int paramId, float value);
-    void engineSetCVAmount(Module* module, int paramId, float value);
-    void engineSetOption(Module* module, int optionId, int value);
+void engineInit();
+void engineDestroy();
 
-    float engineGetSampleRate();
-    float engineGetSampleTime();
+void engineStart();
+void engineStop();
 
-    extern bool gPaused;
-    extern bool gPowerMeter;
-    extern float gEngineCPUTime;
-}
+/** does not transfer pointer ownership */
+void engineAddModule(Module* module);
+void engineRemoveModule(Module* module);
+void engineResetModule(Module* module);
+void engineRandomizeModule(Module* module);
+
+void engineAddWire(Wire* wire);
+void engineRemoveWire(Wire* wire);
+
+void engineSetParam(Module* module, int paramId, float value);
+void engineSetParamSmooth(Module* module, int paramId, float value);
+void engineSetCVAmount(Module* module, int paramId, float value);
+void engineSetOption(Module* module, int optionId, int value);
+
+float engineGetSampleRate();
+float engineGetSampleTime();
+
+extern bool gPaused;
+extern bool gPowerMeter;
+extern float gEngineCPUTime;
+}  // namespace dsp

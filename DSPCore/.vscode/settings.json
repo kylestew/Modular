@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.h": "cpp",
+        "vector": "cpp",
+        "__bit_reference": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp"
+    }
+}
